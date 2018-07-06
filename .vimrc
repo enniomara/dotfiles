@@ -10,7 +10,8 @@ Plug 'tomasiser/vim-code-dark'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " {{{
-    nnoremap <silent> <leader><space> :FZF<CR>
+    nnoremap <silent> <leader><space> :GFiles<CR> 
+    nnoremap <silent> <C-p> :FZF<CR>
 " }}}
 call plug#end()
 
@@ -41,11 +42,21 @@ set hlsearch " Will stop highlighting current search 'hits' when another search 
 set scrolloff=10 " The screen will only scroll when the cursor is 8 characters from the top/bottom.
 set wildmenu " Enable the 'autocomplete' menu when in command mode (':').
 set number " Show line numbers on left side
+set cursorline " Highlight line the cursor is currently at
+set foldcolumn=1 " Add a bit extra margin to the left
+
+set laststatus=2 " Always show statusline
 
 set mouse=a
 
 syntax on " The most important feature when coding. Vim please bless us with this option right now!.
 colorscheme codedark
+
+" Smart way to move between panes 
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
 
 let NERDTreeShowHidden=1
 
@@ -53,3 +64,6 @@ let NERDTreeShowHidden=1
 noremap <silent> <leader>d :silent! NERDTreeToggle<cr>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+" Remap VIM 0 to first non-blank character
+map 0 ^ 
