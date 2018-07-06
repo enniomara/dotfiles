@@ -3,6 +3,7 @@
 ## How to install?
 
 ### Vim
+
 ```
 ln -s [path to dotfiles]/.vimrc ~/.vimrc
 ```
@@ -11,7 +12,7 @@ ln -s [path to dotfiles]/.vimrc ~/.vimrc
 ### iTerm2
 Can be done either by the gui or the terminal.
 
-``
+```
 # Specify the preferences directory
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "[path to dotfiles]/iterm2"
 # Tell iTerm2 to use the custom preferences in the directory
