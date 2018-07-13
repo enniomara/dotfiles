@@ -7,6 +7,11 @@
 ```
 ln -s [path to dotfiles]/.vimrc ~/.vimrc
 ```
+After that install VIM-Plug from [here](https://github.com/tomasiser/vim-code-dark).
+Then run the following in vim.
+```
+:PlugInstall
+```
 
 
 ### iTerm2
