@@ -6,9 +6,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-startify'
 Plug 'StanAngeloff/php.vim'
 Plug 'tomasiser/vim-code-dark'
-" Plug 'ctrlpvim/ctrlp.vim'
+Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 " {{{
     nnoremap <silent> <leader><space> :GFiles<CR> 
     nnoremap <silent> <C-p> :FZF<CR>
@@ -42,10 +41,11 @@ set hlsearch " Will stop highlighting current search 'hits' when another search 
 set scrolloff=10 " The screen will only scroll when the cursor is 8 characters from the top/bottom.
 set wildmenu " Enable the 'autocomplete' menu when in command mode (':').
 set number " Show line numbers on left side
-set cursorline " Highlight line the cursor is currently at
+" set cursorline " Highlight line the cursor is currently at
 set foldcolumn=1 " Add a bit extra margin to the left
 
 set laststatus=2 " Always show statusline
+set updatetime=500 " Set this to 500 milliseconds so that git gutter can update the gutter
 
 set mouse=a
 
