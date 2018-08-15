@@ -8,6 +8,7 @@ Plug 'StanAngeloff/php.vim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'tpope/vim-fugitive'
 " {{{
     nnoremap <silent> <leader><space> :GFiles<CR> 
     nnoremap <silent> <C-p> :FZF<CR>
