@@ -1,0 +1,45 @@
+let configpath = "/Users/enniom/dotfiles/.cvimrc"
+set localconfig
+
+set smoothscroll
+let scrollduration = 50
+set noautofocus
+set noregexp
+set noautofocus
+set defaultnewtabpage
+let searchlimit = 40
+let barposition = "bottom"
+let hintcharacters = "sadfjklewcmpgh"
+let previousmatchpattern = "prev,previous,back,older,<,‹,←,«,≪,<<"
+let nextmatchpattern = "next,more,newer,>,›,→,»,≫,>>"
+set nativelinkorder
+set showtabindices
+
+map <C-e> scrollDown
+map <C-y> scrollUp 
+
+unmap p
+unmap P " cause more harm than good
+
+unmap < >
+map << moveTabLeft
+map >> moveTabRight
+
+map b :buffer<Space>
+map B :bookmarks<Space>
+
+site '*://www.youtube.com/*' {
+    unmap j k f l , . m
+}
+
+site '*://(www)?.reddit.com/*' {
+    unmap j k x + - , . [ ]
+}
+
+site '*://inbox.google.com/*' {
+    unmap j k
+}
+
+site '*://keep.google.com/*' {
+    unmap j k ?
+}

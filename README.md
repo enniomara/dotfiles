@@ -30,3 +30,9 @@ Make sure to remove the folder `~/.config/karabiner` before proceeding.
 ```
 $ ln -s [path to dotfiles]/misc/karabiner ~/.config/karabiner
 ```
+
+### cVim
+Install cVim from [here](https://chrome.google.com/webstore/detail/cvim/ihlenndgcmojhcghmfjfneahoeklbjjh). 
+
+Update `configpath` to reflect the location of `.cvimrc` file (in dotfiles
+folder). Then load it on the browser by running `:source {$pathToCvimRC}`.
