@@ -8,6 +8,7 @@ Plug 'StanAngeloff/php.vim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 " {{{
     nnoremap <silent> <leader><space> :GFiles<CR> 
@@ -63,8 +64,6 @@ let NERDTreeShowHidden=1
 
 " Remappings
 noremap <silent> <leader>d :silent! NERDTreeToggle<cr>
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
 
 " Remap VIM 0 to first non-blank character
 map 0 ^ 
