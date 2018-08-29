@@ -13,6 +13,7 @@ Plug 'tpope/vim-fugitive'
 " {{{
     nnoremap <silent> <leader><space> :GFiles<CR> 
     nnoremap <silent> <C-p> :FZF<CR>
+    nnoremap <silent> <leader>p :Buffers<CR>
 " }}}
 call plug#end()
 
