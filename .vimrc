@@ -43,6 +43,7 @@ set hlsearch " Will stop highlighting current search 'hits' when another search 
 
 set scrolloff=10 " The screen will only scroll when the cursor is 8 characters from the top/bottom.
 set wildmenu " Enable the 'autocomplete' menu when in command mode (':').
+set wildmode=longest:full,full " Autocomplete til the longest word and don't fill it. Fixes annoying behaviour of vim
 set number " Show line numbers on left side
 " set cursorline " Highlight line the cursor is currently at
 set foldcolumn=1 " Add a bit extra margin to the left
@@ -68,3 +69,12 @@ noremap <silent> <leader>d :silent! NERDTreeToggle<cr>
 
 " Remap VIM 0 to first non-blank character
 map 0 ^ 
+
+" Change cursor thickness based on normal/insert mode.
+if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+elseif !has("gui_running")
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
