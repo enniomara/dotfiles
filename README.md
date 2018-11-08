@@ -13,6 +13,15 @@ Then run the following in vim.
 :PlugInstall
 ```
 
+### ZSH
+Make sure [Antigen] is installed https://github.com/zsh-users/antigen. Then make sure the antigen path in .zshrc
+is correct.
+
+After that run
+```
+ln -s [path to dotfiles]/.zshrc ~/.zshrc
+```
+
 
 ### iTerm2
 Can be done either by the gui or the terminal.
