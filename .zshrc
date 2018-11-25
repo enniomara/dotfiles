@@ -16,5 +16,8 @@ antigen apply
 # Load aliases
 source $HOME/.aliases
 
+# KeyBindings
+bindkey '^P' up-line-or-search # make ctrl+p behave same as up arrow
+
 # Load Ctrl-R to reverse search command history using fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
