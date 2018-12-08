@@ -6,6 +6,7 @@ antigen bundle git
 # Syntax highlighting (green when command exists)
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-completions
 
 # Install pure theme
 antigen bundle mafredri/zsh-async
