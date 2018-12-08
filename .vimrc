@@ -52,6 +52,7 @@ set laststatus=2 " Always show statusline
 set updatetime=500 " Set this to 500 milliseconds so that git gutter can update the gutter
 
 set mouse=a
+set confirm " Make vim confirm of file should be saved when exiting
 
 syntax on " The most important feature when coding. Vim please bless us with this option right now!.
 colorscheme codedark
