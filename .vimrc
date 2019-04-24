@@ -15,6 +15,7 @@ Plug 'tpope/vim-fugitive'
     nnoremap <silent> <C-p> :FZF<CR>
     nnoremap <silent> <leader>p :Buffers<CR>
 " }}}
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 set autoread
@@ -55,6 +56,8 @@ set mouse=a
 set confirm " Make vim confirm of file should be saved when exiting
 
 syntax on " The most important feature when coding. Vim please bless us with this option right now!.
+filetype plugin on
+set nocompatible " Required by vimwiki
 colorscheme codedark
 
 " Smart way to move between panes 
