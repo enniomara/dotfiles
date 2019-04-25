@@ -14,6 +14,9 @@ antigen bundle sindresorhus/pure
 
 antigen apply
 
+# Autojump requires to be loaded manually in zsh. This plugin does that
+plugins=(... autojump)
+
 # Load aliases
 source $HOME/.aliases
 
