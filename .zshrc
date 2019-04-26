@@ -7,15 +7,13 @@ antigen bundle git
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
+antigen bundle autojump # enables autojump if installed
 
 # Install pure theme
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
 
 antigen apply
-
-# Autojump requires to be loaded manually in zsh. This plugin does that
-plugins=(... autojump)
 
 # Load aliases
 source $HOME/.aliases
