@@ -16,6 +16,12 @@ Plug 'tpope/vim-fugitive'
     nnoremap <silent> <leader>p :Buffers<CR>
 " }}}
 Plug 'vimwiki/vimwiki'
+Plug 'tmsvg/pear-tree'
+" {{{
+    let g:pear_tree_smart_openers = 1
+    let g:pear_tree_smart_closers = 1
+    let g:pear_tree_smart_backspace = 1
+" }}}
 call plug#end()
 
 set autoread
