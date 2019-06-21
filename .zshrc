@@ -24,5 +24,8 @@ bindkey '^P' up-line-or-search # make ctrl+p behave same as up arrow
 # Change color of zsh autosuggestion to dark grey
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=238'
 
+# Use ~~ to trigger autocompletion (instead of **)
+export FZF_COMPLETION_TRIGGER='~~'
+
 # Load Ctrl-R to reverse search command history using fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
