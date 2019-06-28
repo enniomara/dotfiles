@@ -79,6 +79,7 @@ noremap <silent> <leader>d :silent! NERDTreeToggle<cr>
 noremap <leader>j J
 map J 5j " easier to scroll down
 map K 5k
+inoremap jk <Esc>
 
 " Remap VIM 0 to first non-blank character
 map 0 ^ 
