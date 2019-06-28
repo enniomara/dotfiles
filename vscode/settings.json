@@ -1,0 +1,168 @@
+// Place your settings in this file to overwrite the default settings
+{
+    // ###########################
+    // ## Debug ##
+    // ###########################
+    "debug.toolBarLocation": "docked",
+
+    // ###########################
+    // ## Files ##
+    // ###########################
+    "files.trimTrailingWhitespace": true, // Trim trailing whitespace on save
+    "files.insertFinalNewline": true,
+
+
+    // ###########################
+    // ## Editor ##
+    // ###########################
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "FiraCode-Retina, Fira Code, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 14,
+    "editor.lineHeight": 20,
+    "editor.minimap.enabled": false,
+    "editor.quickSuggestionsDelay": 5,
+    "editor.renderWhitespace": "all",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.rulers": [100],
+    "editor.overviewRulerBorder": false, // remove line between code and scrollbar
+    "editor.hideCursorInOverviewRuler": true, // hide line in scrollbar indicating cursor position
+    "editor.mouseWheelZoom": true,
+    "editor.matchBrackets": false, // disable vscodes brackets. Subtle Match Brackets are used instead
+
+
+    // ###########################
+    // ## Explorer ##
+    // ###########################
+    "explorer.openEditors.visible": 0, // remove open editors bar in explorer
+
+
+    // ###########################
+    // ## Extensions ##
+    // ###########################
+    "extensions.autoUpdate": false, // Better to handle updates manually
+
+
+    // ###########################
+    // ## Keyboard ##
+    // ###########################
+    "keyboard.dispatch": "keyCode", // Fixes keybinding issues https://github.com/Microsoft/vscode/wiki/Keybinding-Issues
+
+
+    // ###########################
+    // ## Zen Mode ##
+    // ###########################
+    "zenMode.hideTabs": false,
+    "zenMode.hideStatusBar": false,
+    "zenMode.fullScreen": false,
+
+    // ###########################
+    // ## Workbench ##
+    // ###########################
+    "workbench.statusBar.feedback.visible": false, // remove twitter feedback icon
+    "workbench.editor.highlightModifiedTabs": true,
+
+
+    // ###########################
+    // ## Window ##
+    // ###########################
+    "window.title": "${dirty}${activeEditorLong}${separator}${rootName}",
+    "workbench.sideBar.location": "right",
+    "window.menuBarVisibility": "toggle",
+    "window.zoomLevel": 0,
+
+
+
+// ###########################   Extensions   #######################################
+    // ###########################
+    // ## VIM ##
+    // ###########################
+    "vim.statusBarColorControl": false,
+    "vim.startInInsertMode": false,
+    "vim.useCtrlKeys": true,
+    "vim.leader": "<Space>",
+    "vim.foldfix": true,
+    "vim.overrideCopy": true,
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-c>": false,
+        "<C-v>": false,
+        "<C-s>": false,
+        "<C-j>": false,
+        "<C-b>": false,
+        "<C-f>": false,
+        "<C-z>": false,
+        "<C-/>": false,
+        "<C-k>": false,
+        "<C-PgUp>": false,
+        "<C-PgDown>": false,
+    },
+    "vim.sneak": false,
+    "vim.easymotion": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "k"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "<leader>",
+                "d"
+            ],
+            "commands": [
+                {
+                "command": "workbench.view.explorer"
+                }
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["J"],
+            "after": ["5", "j"]
+        },
+        {
+            "before": ["K"],
+            "after": ["5", "k"]
+        },
+        {
+            "before": ["<leader>", "j"],
+            "after": ["J"]
+        }
+
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["J"],
+            "after": ["5", "j"]
+        },
+        {
+            "before": ["K"],
+            "after": ["5", "k"]
+        },
+        {
+            "before": ["<leader>", "j"],
+            "after": ["J"]
+        }
+    ],
+    "vim.hlsearch": false,
+
+    // ###########################
+    // ## Gitlens ##
+    // ###########################
+    "gitlens.defaultDateStyle": "absolute",
+
+
+
+// ############################   Language Specific ###########################
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    },
+    "php.validate.enable": true,
+}
