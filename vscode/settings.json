@@ -98,6 +98,14 @@
     },
     "vim.sneak": false,
     "vim.easymotion": true,
+    "vim.easymotionKeys": "asdfgqwertzxcvb",
+    "vim.easymotionMarkerFontFamily": "FiraCode-Retina, Fira Code, Menlo, Monaco, 'Courier New', monospace",
+    "vim.easymotionMarkerHeight": 18,
+    "vim.easymotionMarkerBackgroundColor": "yellow",
+    "vim.easymotionMarkerForegroundColorOneChar": "black",
+    "vim.easymotionMarkerForegroundColorTwoChar": "black",
+    "vim.easymotionMarkerWidthPerChar": 10,
+
     "vim.insertModeKeyBindings": [
         {
             "before": [
@@ -120,7 +128,47 @@
                 "command": "workbench.view.explorer"
                 }
             ]
-        }
+        },
+        {
+            "before": [
+                "<leader>",
+                "j",
+                "j",
+            ],
+            "after": [
+                "<leader>",
+                "<leader>",
+                "j",
+            ],
+        },
+        {
+            "before": [
+                "<leader>",
+                "j",
+                "k",
+            ],
+            "after": [
+                "<leader>",
+                "<leader>",
+                "k",
+            ],
+        },
+        {
+            "before": [
+                "<leader>",
+                "j",
+                "f"
+            ],
+            "after": [
+                "<leader>",
+                "<leader>",
+                "<leader>",
+                "b",
+                "d",
+                "j",
+                "k",
+            ],
+        },
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
         {
@@ -131,11 +179,6 @@
             "before": ["K"],
             "after": ["5", "k"]
         },
-        {
-            "before": ["<leader>", "j"],
-            "after": ["J"]
-        }
-
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
@@ -146,10 +189,6 @@
             "before": ["K"],
             "after": ["5", "k"]
         },
-        {
-            "before": ["<leader>", "j"],
-            "after": ["J"]
-        }
     ],
     "vim.hlsearch": false,
 
