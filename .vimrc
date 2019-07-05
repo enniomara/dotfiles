@@ -81,6 +81,9 @@ map J 5j " easier to scroll down
 map K 5k
 inoremap jk <Esc>
 
+nnoremap j gj
+nnoremap k gk
+
 " Remap VIM 0 to first non-blank character
 map 0 ^ 
 
