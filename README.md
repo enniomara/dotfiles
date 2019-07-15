@@ -21,6 +21,11 @@ After that run
 ```
 ln -s [path to dotfiles]/.zshrc ~/.zshrc
 ```
+#### zshrc-custom
+This file is used to add lines to zshrc that do not need to be versioned. Create and symlink it by running:
+```
+touch [path to dotfiles]/.zshrc-custom.zsh && ln -s [path to dotfiles]/.zshrc-custom.zsh ~/.zshrc-custom.zsh
+```
 
 
 ### iTerm2
