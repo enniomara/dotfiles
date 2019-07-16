@@ -21,7 +21,7 @@
     "editor.lineHeight": 20,
     "editor.minimap.enabled": false,
     "editor.quickSuggestionsDelay": 5,
-    "editor.renderWhitespace": "all",
+    "editor.highlightActiveIndentGuide": false,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.rulers": [100],
     "editor.overviewRulerBorder": false, // remove line between code and scrollbar
