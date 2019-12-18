@@ -26,7 +26,6 @@
     "editor.rulers": [100],
     "editor.overviewRulerBorder": false, // remove line between code and scrollbar
     "editor.hideCursorInOverviewRuler": true, // hide line in scrollbar indicating cursor position
-    "editor.mouseWheelZoom": true,
     "editor.matchBrackets": false, // disable vscodes brackets. Subtle Match Brackets are used instead
 
 
