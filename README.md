@@ -36,6 +36,13 @@ not installed the shell will show a warning.
 brew install autojump
 ```
 
+#### Aliases
+Symlink the aliases file by running:
+
+```
+ln -s [path to dotfiles]/.aliases ~/.aliases
+```
+
 
 ### iTerm2
 Can be done either by the gui or the terminal.

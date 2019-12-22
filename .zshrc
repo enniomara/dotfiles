@@ -16,7 +16,7 @@ antigen bundle sindresorhus/pure
 antigen apply
 
 # Load aliases
-source $HOME/.aliases
+[ -s "$HOME/.aliases" ] && source $HOME/.aliases
 
 # KeyBindings
 bindkey '^P' up-line-or-search # make ctrl+p behave same as up arrow
