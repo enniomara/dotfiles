@@ -76,3 +76,9 @@ Symlink settings.json by running
 ```
 ln -s [path to dotfiles]/vscode/{settings.json,keybindings.json} [path to vscode settings.json]
 ```
+
+### BetterTouchTool3
+
+Import the config in `misc/BetterTouchTool` by pressing preset then import.
+
+https://community.folivora.ai/t/how-to-backup-import-btt-settings/9727
