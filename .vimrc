@@ -5,7 +5,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-startify'
 Plug 'StanAngeloff/php.vim'
-Plug 'tomasiser/vim-code-dark'
+Plug 'arcticicestudio/nord-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -64,7 +64,7 @@ set confirm " Make vim confirm of file should be saved when exiting
 syntax on " The most important feature when coding. Vim please bless us with this option right now!.
 filetype plugin on
 set nocompatible " Required by vimwiki
-colorscheme codedark
+colorscheme nord
 
 " Smart way to move between panes 
 map <C-j> <C-W>j
