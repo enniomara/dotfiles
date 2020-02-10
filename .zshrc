@@ -17,6 +17,7 @@ antigen apply
 
 # Load aliases
 [ -s "$HOME/.aliases" ] && source $HOME/.aliases
+[ -s .aliases-custom.zsh ] && source ~/.aliases-custom
 
 # KeyBindings
 bindkey '^P' up-line-or-search # make ctrl+p behave same as up arrow
