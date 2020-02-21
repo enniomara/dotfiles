@@ -31,4 +31,4 @@ export FZF_COMPLETION_TRIGGER='~~'
 # Load Ctrl-R to reverse search command history using fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-[ -f .zshrc-custom.zsh ] && source ~/.zshrc-custom.zsh
+[ -f ~/.zshrc-custom.zsh ] && source ~/.zshrc-custom.zsh
