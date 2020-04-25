@@ -9,6 +9,7 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle autojump # enables autojump if installed
 antigen bundle kubectl
+antigen bundle tmux
 
 # Install pure theme
 antigen bundle mafredri/zsh-async
