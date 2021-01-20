@@ -155,7 +155,7 @@
     "showOtherTriggersTab" : true,
     "BSTSnapAreaDefaultPictoDistanceFromLeft" : 0.10000000149011612
   },
-  "BTTPresetUUID" : "DA0D23B9-23A8-453C-ADBF-58D792CBDA95",
+  "BTTPresetUUID" : "5315B182-DBD6-4BA0-AAB5-BC0FBCA90D12",
   "BTTPresetContent" : [
     {
       "BTTAppBundleIdentifier" : "com.apple.finder",
@@ -191,7 +191,7 @@
           "BTTModifierMode" : 0,
           "BTTShortcutKeyCode" : -1,
           "BTTShortcutModifierKeys" : -1,
-          "BTTOrder" : 3,
+          "BTTOrder" : 4,
           "BTTDisplayOrder" : 0,
           "BTTAutoAdaptToKeyboardLayout" : 0,
           "BTTKeySequence" : {
@@ -414,7 +414,7 @@
           "BTTModifierMode" : 0,
           "BTTShortcutKeyCode" : -1,
           "BTTShortcutModifierKeys" : -1,
-          "BTTOrder" : 5,
+          "BTTOrder" : 6,
           "BTTDisplayOrder" : 0,
           "BTTAutoAdaptToKeyboardLayout" : 0,
           "BTTKeySequence" : {
@@ -917,7 +917,7 @@
           "BTTModifierMode" : 0,
           "BTTShortcutKeyCode" : -1,
           "BTTShortcutModifierKeys" : -1,
-          "BTTOrder" : 6,
+          "BTTOrder" : 7,
           "BTTDisplayOrder" : 0,
           "BTTAutoAdaptToKeyboardLayout" : 0,
           "BTTKeySequence" : {
@@ -1062,7 +1062,7 @@
           "BTTModifierMode" : 0,
           "BTTShortcutKeyCode" : -1,
           "BTTShortcutModifierKeys" : -1,
-          "BTTOrder" : 10,
+          "BTTOrder" : 11,
           "BTTDisplayOrder" : 0,
           "BTTAutoAdaptToKeyboardLayout" : 0,
           "BTTKeySequence" : {
@@ -1232,7 +1232,7 @@
           "BTTModifierMode" : 0,
           "BTTShortcutKeyCode" : -1,
           "BTTShortcutModifierKeys" : -1,
-          "BTTOrder" : 7,
+          "BTTOrder" : 8,
           "BTTDisplayOrder" : 0,
           "BTTAutoAdaptToKeyboardLayout" : 0,
           "BTTKeySequence" : {
@@ -1387,6 +1387,186 @@
           }
         },
         {
+          "BTTTriggerType" : 624,
+          "BTTTriggerTypeDescription" : "Please Select a Trigger ",
+          "BTTTriggerClass" : "BTTTriggerTypeKeySequence",
+          "BTTPredefinedActionType" : 177,
+          "BTTPredefinedActionName" : "Show \/ Hide Specific Application",
+          "BTTAppToShowOrHide" : "file:\/\/\/Applications\/Discord.app",
+          "BTTShowHideAppConfig" : "{\"BTTShowHideSpecificAppOnlyHide\":false,\"BTTShowHideSpecificAppOnlyIfRunning\":false,\"BTTShowHideSpecificAppCMDN\":false,\"BTTShowHideSpecificAppOnlyShow\":false}",
+          "BTTEnabled2" : 1,
+          "BTTAlternateModifierKeys" : 0,
+          "BTTRepeatDelay" : 0,
+          "BTTUUID" : "3E2D14DB-10B4-49D7-B9F9-059D983BF1D9",
+          "BTTNotesInsteadOfDescription" : 0,
+          "BTTEnabled" : 1,
+          "BTTModifierMode" : 0,
+          "BTTOrder" : 1,
+          "BTTDisplayOrder" : 0,
+          "BTTKeySequence" : {
+            "BTTPauseBetween" : 0.29999999999999999,
+            "BTTKeyCount" : 12,
+            "BTTKeySequenceDownKeys" : [
+              {
+                "BTTKEYCode" : 55,
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 632871296
+              },
+              {
+                "BTTKEYCode" : 59,
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 632871296
+              },
+              {
+                "BTTKEYCode" : 58,
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 632871296
+              },
+              {
+                "BTTKEYCode" : 56,
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 632871296
+              },
+              {
+                "BTTKEYCharacter" : " D",
+                "BTTKEYCode" : 2,
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 632871296
+              },
+              {
+                "BTTKEYCharacter" : " I",
+                "BTTKEYCode" : 34,
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 632871296
+              }
+            ],
+            "BTTKeySequenceMixedKeys" : [
+              {
+                "BTTKEYCode" : 55,
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 632871296
+              },
+              {
+                "BTTKEYCode" : 59,
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 632871296
+              },
+              {
+                "BTTKEYCode" : 58,
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 632871296
+              },
+              {
+                "BTTKEYCode" : 56,
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 632871296
+              },
+              {
+                "BTTKEYCharacter" : " D",
+                "BTTKEYCode" : 2,
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 632871296
+              },
+              {
+                "BTTKEYCharacter" : " I",
+                "BTTKEYCode" : 34,
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 632871296
+              },
+              {
+                "BTTKEYCharacter" : " D",
+                "BTTKEYCode" : 2,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 632871296
+              },
+              {
+                "BTTKEYCode" : 56,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 632871296
+              },
+              {
+                "BTTKEYCharacter" : " I",
+                "BTTKEYCode" : 34,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 632871296
+              },
+              {
+                "BTTKEYCode" : 59,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 632871296
+              },
+              {
+                "BTTKEYCode" : 58,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 632871296
+              },
+              {
+                "BTTKEYCode" : 55,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 632871296
+              }
+            ],
+            "BTTKeySequenceUpKeys" : [
+              {
+                "BTTKEYCharacter" : " D",
+                "BTTKEYCode" : 2,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 632871296
+              },
+              {
+                "BTTKEYCode" : 56,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 632871296
+              },
+              {
+                "BTTKEYCharacter" : " I",
+                "BTTKEYCode" : 34,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 632871296
+              },
+              {
+                "BTTKEYCode" : 59,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 632871296
+              },
+              {
+                "BTTKEYCode" : 58,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 632871296
+              },
+              {
+                "BTTKEYCode" : 55,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 632871296
+              }
+            ]
+          }
+        },
+        {
           "BTTTriggerType" : 104,
           "BTTTriggerTypeDescription" : "3 Finger Tap",
           "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
@@ -1418,7 +1598,7 @@
           "BTTModifierMode" : 0,
           "BTTShortcutKeyCode" : -1,
           "BTTShortcutModifierKeys" : -1,
-          "BTTOrder" : 11,
+          "BTTOrder" : 12,
           "BTTDisplayOrder" : 0,
           "BTTAutoAdaptToKeyboardLayout" : 0,
           "BTTKeySequence" : {
@@ -1607,7 +1787,7 @@
           "BTTModifierMode" : 0,
           "BTTShortcutKeyCode" : -1,
           "BTTShortcutModifierKeys" : -1,
-          "BTTOrder" : 9,
+          "BTTOrder" : 10,
           "BTTDisplayOrder" : 0,
           "BTTAutoAdaptToKeyboardLayout" : 0,
           "BTTKeySequence" : {
@@ -1795,7 +1975,7 @@
           "BTTNotesInsteadOfDescription" : 0,
           "BTTEnabled" : 1,
           "BTTModifierMode" : 0,
-          "BTTOrder" : 1,
+          "BTTOrder" : 2,
           "BTTDisplayOrder" : 0,
           "BTTKeySequence" : {
             "BTTPauseBetween" : 0.29999999999999999,
@@ -1990,7 +2170,7 @@
           "BTTNotesInsteadOfDescription" : 0,
           "BTTEnabled" : 1,
           "BTTModifierMode" : 0,
-          "BTTOrder" : 2,
+          "BTTOrder" : 3,
           "BTTDisplayOrder" : 0,
           "BTTKeySequence" : {
             "BTTPauseBetween" : 0.29999999999999999,
@@ -2189,7 +2369,7 @@
           "BTTModifierMode" : 0,
           "BTTShortcutKeyCode" : -1,
           "BTTShortcutModifierKeys" : -1,
-          "BTTOrder" : 13,
+          "BTTOrder" : 14,
           "BTTDisplayOrder" : 0,
           "BTTAutoAdaptToKeyboardLayout" : 0,
           "BTTKeySequence" : {
@@ -2371,7 +2551,7 @@
           "BTTModifierMode" : 0,
           "BTTShortcutKeyCode" : -1,
           "BTTShortcutModifierKeys" : -1,
-          "BTTOrder" : 8,
+          "BTTOrder" : 9,
           "BTTDisplayOrder" : 0,
           "BTTAutoAdaptToKeyboardLayout" : 0,
           "BTTKeySequence" : {
@@ -2580,7 +2760,7 @@
           "BTTModifierMode" : 0,
           "BTTShortcutKeyCode" : -1,
           "BTTShortcutModifierKeys" : -1,
-          "BTTOrder" : 4,
+          "BTTOrder" : 5,
           "BTTDisplayOrder" : 0,
           "BTTAutoAdaptToKeyboardLayout" : 0,
           "BTTKeySequence" : {
@@ -2749,7 +2929,7 @@
           "BTTNotesInsteadOfDescription" : 0,
           "BTTEnabled" : 1,
           "BTTModifierMode" : 0,
-          "BTTOrder" : 12,
+          "BTTOrder" : 13,
           "BTTDisplayOrder" : 0,
           "BTTKeySequence" : {
             "BTTPauseBetween" : 0.29999999999999999,
