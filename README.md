@@ -58,7 +58,7 @@ defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 Make sure to remove the folder `~/.config/karabiner` before proceeding.
 
 ```
-$ ln -s [path to dotfiles]/misc/karabiner ~/.config/karabiner
+$ ln -s [path to dotfiles]/misc/karabiner/ ~/.config/karabiner
 ```
 
 ### cVim
