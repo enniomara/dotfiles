@@ -208,8 +208,4 @@
 
 
 // ############################   Language Specific ###########################
-    "[php]": {
-        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
-    },
-    "php.validate.enable": true,
 }
