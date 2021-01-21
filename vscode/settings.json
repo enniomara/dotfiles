@@ -68,7 +68,6 @@
     // ###########################
     "window.title": "${dirty}${activeEditorLong}${separator}${rootName}",
     "workbench.sideBar.location": "right",
-    "window.menuBarVisibility": "toggle",
     "window.zoomLevel": 0,
 
 
@@ -100,12 +99,9 @@
     "vim.sneak": false,
     "vim.easymotion": true,
     "vim.easymotionKeys": "asdfgqwertzxcvb",
-    "vim.easymotionMarkerFontFamily": "FiraCode-Retina, Fira Code, Menlo, Monaco, 'Courier New', monospace",
-    "vim.easymotionMarkerHeight": 18,
     "vim.easymotionMarkerBackgroundColor": "yellow",
     "vim.easymotionMarkerForegroundColorOneChar": "black",
-    "vim.easymotionMarkerForegroundColorTwoChar": "black",
-    "vim.easymotionMarkerWidthPerChar": 10,
+    "vim.easymotionMarkerForegroundColorTwoCharFirst": "black",
 
     "vim.insertModeKeyBindings": [
         {
