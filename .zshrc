@@ -33,6 +33,10 @@ export FZF_COMPLETION_TRIGGER='~~'
 # do not quit shell when Ctrl+D is registered
 set -o ignoreeof
 
+# Avoid issues with `gpg` as installed via Homebrew.
+# # https://stackoverflow.com/a/42265848/96656
+export GPG_TTY=$(tty)
+
 # Load Ctrl-R to reverse search command history using fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
