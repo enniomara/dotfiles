@@ -10,6 +10,8 @@
 	<false/>
 	<key>AutoCommandHistory</key>
 	<false/>
+	<key>BootstrapDaemon</key>
+	<false/>
 	<key>CopySelection</key>
 	<false/>
 	<key>Custom Color Presets</key>
@@ -1006,7 +1008,7 @@
 			<key>ASCII Anti Aliased</key>
 			<true/>
 			<key>ASCII Ligatures</key>
-			<true/>
+			<false/>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
