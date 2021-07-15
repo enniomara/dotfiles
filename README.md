@@ -62,7 +62,7 @@ $ ln -s [path to dotfiles]/misc/karabiner/ ~/.config/karabiner
 ```
 
 ### cVim
-Install cVim from [here](https://chrome.google.com/webstore/detail/cvim/ihlenndgcmojhcghmfjfneahoeklbjjh). 
+Install cVim from [here](https://chrome.google.com/webstore/detail/cvim/ihlenndgcmojhcghmfjfneahoeklbjjh).
 
 Update `configpath` to reflect the location of `.cvimrc` file (in dotfiles
 folder). Then load it on the browser by running `:source {$pathToCvimRC}`.
@@ -72,7 +72,7 @@ Install Visual Studio Code from [here](https://code.visualstudio.com/).
 
 Find the setting file location from [here](https://code.visualstudio.com/docs/getstarted/settings#_settings-file-locations)
 
-Symlink settings.json by running 
+Symlink settings.json by running
 ```
 ln -s [path to dotfiles]/vscode/{settings.json,keybindings.json} [path to vscode settings.json]
 ```
@@ -83,7 +83,7 @@ Import the config in `misc/BetterTouchTool` by pressing preset then import.
 
 https://community.folivora.ai/t/how-to-backup-import-btt-settings/9727
 
-### Tmux 
+### Tmux
 
 Install TPM from [here](https://github.com/tmux-plugins/tpm) and clone it to
 the `~/.tmux/plugins/tpm`. Then symlink the conf files by running:
