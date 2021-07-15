@@ -1,6 +1,8 @@
 {:input-sources {:en-keyboard {:input_source_id "com.apple.keylayout.US"
                                :language "en"}}
 
+ :simlayers {:a-mode {:key :a}}
+
  :main
  [{:des "Capslock to cmd+ctrl+opt+shift"
    :rules [[:caps_lock :!CTOleft_shift nil {:alone :escape}]]}
@@ -29,11 +31,11 @@
            [:!F##0 :f10]
            [:!F##hyphen :f11]
            [:!F##equal_sign :f12]]}
-  {:des "fn+[hjkl] for arrows"
-   :rules [[:!Fh :left_arrow]
-           [:!Fj :down_arrow]
-           [:!Fk :up_arrow]
-           [:!Fl :right_arrow]]}
+  {:des "a any+[hjkl] for arrows"
+   :rules [[:##h :left_arrow :a-mode]
+           [:##j :down_arrow :a-mode]
+           [:##k :up_arrow :a-mode]
+           [:##l :right_arrow :a-mode]]}
   {:des "Move ` key to above tab in swedish keyboard"
    :rules [[:##non_us_backslash :##grave_accent_and_tilde [:en-keyboard]] ;; Switch normal key above tab
            [:##grave_accent_and_tilde :##non_us_backslash [:en-keyboard]] ;; Switch normal to the right of left-shift
