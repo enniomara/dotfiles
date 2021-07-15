@@ -1,0 +1,40 @@
+{:input-sources {:en-keyboard {:input_source_id "com.apple.keylayout.US"
+                               :language "en"}}
+
+ :main
+ [{:des "Capslock to cmd+ctrl+opt+shift"
+   :rules [[:caps_lock :!CTOleft_shift nil {:alone :escape}]]}
+  {:des "Swap left cmd for left control"
+   :rules [:right_command :control]}
+  {:des "fn+åäö to åäö in non-swedish layout"
+   :rules [[:!Fsemicolon [:!Ou :o] [:en-keyboard]] ;; fn+: => ö
+           [:!SFsemicolon [:!Ou :!So] [:en-keyboard]] ;; fn+shift+: => Ö
+
+           [:!Fquote [:!Ou :a] [:en-keyboard]] ;; fn+' => ä
+           [:!SFquote [:!Ou :!Sa] [:en-keyboard]] ;; fn+shift+' => Ä
+
+           [:!Fopen_bracket [:!Oa] [:en-keyboard]] ;; fn+[ => å
+           [:!SFopen_bracket [:!SOa] [:en-keyboard]] ;; fn+shift+[ => Å
+           ]}
+  {:des "fn+[1-9] to F[1-9], fn+0 to F10, fn+Hyphen (-) to F11, fn+Equal Sign (=) to F12"
+   :rules [[:!F##1 :f1]
+           [:!F##2 :f2]
+           [:!F##3 :f3]
+           [:!F##4 :f4]
+           [:!F##5 :f5]
+           [:!F##6 :f6]
+           [:!F##7 :f7]
+           [:!F##8 :f8]
+           [:!F##9 :f9]
+           [:!F##0 :f10]
+           [:!F##hyphen :f11]
+           [:!F##equal_sign :f12]]}
+  {:des "fn+[hjkl] for arrows"
+   :rules [[:!Fh :left_arrow]
+           [:!Fj :down_arrow]
+           [:!Fk :up_arrow]
+           [:!Fl :right_arrow]]}
+  {:des "Move ` key to above tab in swedish keyboard"
+   :rules [[:##non_us_backslash :##grave_accent_and_tilde [:en-keyboard]] ;; Switch normal key above tab
+           [:##grave_accent_and_tilde :##non_us_backslash [:en-keyboard]] ;; Switch normal to the right of left-shift
+           ]}]}
