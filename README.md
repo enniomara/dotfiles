@@ -14,7 +14,7 @@ Then run the following in vim.
 ```
 
 ### ZSH
-Make sure [Antigen] is installed https://github.com/zsh-users/antigen. Then make sure the antigen path in .zshrc
+Make sure is installed [Antigen](https://github.com/zsh-users/antigen). Then make sure the antigen path in .zshrc
 is correct.
 
 After that run
