@@ -20,6 +20,7 @@ end tell
 if startIt then
 	tell application appName to activate
 end if'"
+        :btt "osascript -e 'tell application \"BetterTouchTool\" to trigger_named_async_without_response \"%s\"'"
 }
 
  :main
@@ -65,5 +66,6 @@ end if'"
    :rules [:open-app-mode
            [:j [:km "Google Chrome"]]
            [:k [:km "iTerm2"]]
+           [:l [:btt "show/hide: VSCode"]]
            [:u [:km "Telegram"]]
    ]}]}
