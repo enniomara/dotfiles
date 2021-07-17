@@ -1,7 +1,26 @@
 {:input-sources {:en-keyboard {:input_source_id "com.apple.keylayout.US"
                                :language "en"}}
+ :simlayers {
+             :a-mode {:key :a}
+             :open-app-mode {:key :d}}
 
- :simlayers {:a-mode {:key :a}}
+ :templates {
+            :km "osascript -e '
+set appName to \"%s\"
+set startIt to false
+tell application \"System Events\"
+	if not (exists process appName) then
+		set startIt to true
+	else if frontmost of process appName then
+		set visible of process appName to false
+	else
+		set frontmost of process appName to true
+	end if
+end tell
+if startIt then
+	tell application appName to activate
+end if'"
+}
 
  :main
  [{:des "Capslock to cmd+ctrl+opt+shift"
@@ -41,4 +60,10 @@
   {:des "Move ` key to above tab in swedish keyboard"
    :rules [[:##non_us_backslash :##grave_accent_and_tilde [:en-keyboard]] ;; Switch normal key above tab
            [:##grave_accent_and_tilde :##non_us_backslash [:en-keyboard]] ;; Switch normal to the right of left-shift
-           ]}]}
+           ]}
+  {:des "Show/hi(D)e applications"
+   :rules [:open-app-mode
+           [:j [:km "Google Chrome"]]
+           [:k [:km "iTerm2"]]
+           [:u [:km "Telegram"]]
+   ]}]}
