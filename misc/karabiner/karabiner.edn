@@ -70,4 +70,5 @@ end run' \"%s\""
            [:k [:km "iTerm2"]]
            [:l [:btt "show/hide: VSCode"]]
            [:u [:km "Telegram"]]
+           [:s [:km "Spotify"]]
    ]}]}
