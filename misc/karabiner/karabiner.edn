@@ -6,7 +6,8 @@
 
  :templates {
             :km "osascript -e '
-set appName to \"%s\"
+on run argv
+set appName to (item 1 of argv)
 set startIt to false
 tell application \"System Events\"
 	if not (exists process appName) then
@@ -19,7 +20,8 @@ tell application \"System Events\"
 end tell
 if startIt then
 	tell application appName to activate
-end if'"
+end if
+end run' \"%s\""
         :btt "osascript -e 'tell application \"BetterTouchTool\" to trigger_named_async_without_response \"%s\"'"
 }
 
