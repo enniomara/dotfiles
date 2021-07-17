@@ -2,7 +2,7 @@
                                :language "en"}}
  :simlayers {
              :a-mode {:key :a}
-             :open-app-mode {:key :d}}
+             :open-app-mode {:key :w}}
 
  :templates {
             :km "osascript -e '
