@@ -7,7 +7,7 @@
  [{:des "Capslock to cmd+ctrl+opt+shift"
    :rules [[:caps_lock :!CTOleft_shift nil {:alone :escape}]]}
   {:des "Swap left cmd for left control"
-   :rules [:right_command :control]}
+   :rules [:right_command :left_control]}
   {:des "fn+åäö to åäö in non-swedish layout"
    :rules [[:!Fsemicolon [:!Ou :o] [:en-keyboard]] ;; fn+: => ö
            [:!SFsemicolon [:!Ou :!So] [:en-keyboard]] ;; fn+shift+: => Ö
