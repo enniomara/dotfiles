@@ -71,4 +71,5 @@ end run' \"%s\""
            [:l [:btt "show/hide: VSCode"]]
            [:u [:km "Telegram"]]
            [:s [:km "Spotify"]]
+           [:t [:km "TickTick"]]
    ]}]}
