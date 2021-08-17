@@ -1,21 +1,23 @@
-source /usr/local/share/antigen/antigen.zsh
+source /usr/local/share/zinit/zinit.zsh
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
-antigen use oh-my-zsh
+zinit wait lucid light-mode for \
+    zsh-users/zsh-syntax-highlighting \
+    atload"_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
+    zsh-users/zsh-completions
 
-antigen bundle git
-# Syntax highlighting (green when command exists)
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions
-antigen bundle autojump # enables autojump if installed
-antigen bundle kubectl
-antigen bundle tmux
+zinit wait lucid light-mode for \
+    OMZL::directories.zsh \
+    OMZL::key-bindings.zsh \
+    OMZP::autojump \
+    OMZP::git \
+    OMZP::kubectl \
+    OMZP::tmux
 
-# Install pure theme
-antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
 
-antigen apply
+zinit load mafredri/zsh-async
+zinit load sindresorhus/pure
 
 # Load aliases
 [ -s "$HOME/.aliases" ] && source $HOME/.aliases
