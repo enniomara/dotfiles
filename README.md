@@ -14,13 +14,13 @@ Then run the following in vim.
 ```
 
 ### ZSH
-Make sure is installed [Antigen](https://github.com/zsh-users/antigen). Then make sure the antigen path in .zshrc
-is correct.
-
-After that run
-```
+Run the following to install [zinit](https://github.com/zdharma/zinit.git), and symlink `.zshrc`.
+```bash
+mkdir /usr/local/share/zinit/
+git clone https://github.com/zdharma/zinit.git /usr/local/share/zinit/
 ln -s [path to dotfiles]/.zshrc ~/.zshrc
 ```
+
 #### zshrc-custom
 This file is used to add lines to zshrc that do not need to be versioned. Create and symlink it by running:
 ```
