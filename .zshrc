@@ -15,6 +15,8 @@ zinit wait lucid light-mode for \
     OMZP::kubectl \
     OMZP::tmux
 
+zinit ice wait lucid multisrc'shell/{key-bindings,completion}.zsh'
+zinit light junegunn/fzf
 
 zinit load mafredri/zsh-async
 zinit load sindresorhus/pure
@@ -38,8 +40,5 @@ set -o ignoreeof
 # Avoid issues with `gpg` as installed via Homebrew.
 # # https://stackoverflow.com/a/42265848/96656
 export GPG_TTY=$(tty)
-
-# Load Ctrl-R to reverse search command history using fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -f ~/.zshrc-custom.zsh ] && source ~/.zshrc-custom.zsh
