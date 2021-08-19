@@ -26,8 +26,8 @@ end run' \"%s\""
 
  :main
  [{:des "Correct configruation for work HP keyboard" :rules [:work
-                                                             [:left_option :left_command]
-                                                             [:left_command :left_option]]}
+                                                             [:##left_option :##left_command]
+                                                             [:##left_command :##left_option]]}
   {:des "Capslock to cmd+ctrl+opt+shift" :rules [[:caps_lock :!CTOleft_shift nil {:alone :escape}]]}
   {:des "Swap left cmd for left control" :rules [:laptop_keyboard [:right_command :left_control]]}
   {:des "fn+åäö to åäö in non-swedish layout"
