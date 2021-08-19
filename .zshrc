@@ -8,9 +8,12 @@ zinit wait lucid light-mode for \
     zsh-users/zsh-completions
 
 zinit wait lucid light-mode for \
+    OMZL::functions.zsh \
     OMZL::directories.zsh \
     OMZL::key-bindings.zsh \
     OMZL::history.zsh \
+    OMZL::misc.zsh \
+    OMZL::termsupport.zsh \
     OMZP::autojump \
     OMZP::git \
     OMZP::kubectl \
