@@ -74,5 +74,4 @@ end run' \"%s\""
            [:u [:km "Telegram"]]
            [:s [:km "Spotify"]]
            [:t [:km "TickTick"]]
-           [:o [:km "Outlook"]]
-   ]}]}
+           [:o [:km "Outlook"]]]}]}
