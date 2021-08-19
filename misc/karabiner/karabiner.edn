@@ -1,11 +1,11 @@
 {:input-sources {:en-keyboard {:input_source_id "com.apple.keylayout.US"
                                :language "en"}}
- :simlayers {
-             :a-mode {:key :a}
+ :simlayers {:a-mode {:key :a}
              :open-app-mode {:key :w}}
+ :devices {:work [{:vendor_id 1008 :product_id 842}]}
 
- :templates {
-            :km "osascript -e '
+
+ :templates {:km "osascript -e '
 on run argv
 set appName to (item 1 of argv)
 set startIt to false
@@ -22,14 +22,14 @@ if startIt then
 	tell application appName to activate
 end if
 end run' \"%s\""
-        :btt "osascript -e 'tell application \"BetterTouchTool\" to trigger_named_async_without_response \"%s\"'"
-}
+             :btt "osascript -e 'tell application \"BetterTouchTool\" to trigger_named_async_without_response \"%s\"'"}
 
  :main
- [{:des "Capslock to cmd+ctrl+opt+shift"
-   :rules [[:caps_lock :!CTOleft_shift nil {:alone :escape}]]}
-  {:des "Swap left cmd for left control"
-   :rules [:right_command :left_control]}
+ [{:des "Correct configruation for work HP keyboard" :rules [:work
+                                                             [:left_option :left_command]
+                                                             [:left_command :left_option]]}
+  {:des "Capslock to cmd+ctrl+opt+shift" :rules [[:caps_lock :!CTOleft_shift nil {:alone :escape}]]}
+  {:des "Swap left cmd for left control" :rules [:laptop_keyboard [:right_command :left_control]]}
   {:des "fn+åäö to åäö in non-swedish layout"
    :rules [[:!Fsemicolon [:!Ou :o] [:en-keyboard]] ;; fn+: => ö
            [:!SFsemicolon [:!Ou :!So] [:en-keyboard]] ;; fn+shift+: => Ö
