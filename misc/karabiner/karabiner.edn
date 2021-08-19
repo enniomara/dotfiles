@@ -1,7 +1,8 @@
 {:input-sources {:en-keyboard {:input_source_id "com.apple.keylayout.US"
                                :language "en"}}
  :simlayers {:a-mode {:key :a}
-             :open-app-mode {:key :w}}
+             :open-app-mode {:key :w}
+             :ctrl-shift {:key :s}}
  :devices {:work [{:vendor_id 1008 :product_id 842}]
            :laptop_keyboard [{:vendor_id 1452}]}
 
@@ -66,6 +67,11 @@ end run' \"%s\""
            [:##non_us_backslash :##grave_accent_and_tilde [:en-keyboard]] ;; Switch normal key above tab
            [:##grave_accent_and_tilde :##non_us_backslash [:en-keyboard]] ;; Switch normal to the right of left-shift
            ]}
+  {:des "s to cmd+shift"
+        :rules [:en-keyboard :ctrl-shift
+                [:open_bracket :!CSopen_bracket]
+                [:close_bracket :!CSclose_bracket]
+        ] }
   {:des "Show/hi(D)e applications"
    :rules [:open-app-mode
            [:j [:km "Google Chrome"]]
