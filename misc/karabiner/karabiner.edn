@@ -2,8 +2,8 @@
                                :language "en"}}
  :simlayers {:a-mode {:key :a}
              :open-app-mode {:key :w}}
- :devices {:work [{:vendor_id 1008 :product_id 842}]}
-
+ :devices {:work [{:vendor_id 1008 :product_id 842}]
+           :laptop_keyboard [{:vendor_id 1452}]}
 
  :templates {:km "osascript -e '
 on run argv
@@ -62,7 +62,8 @@ end run' \"%s\""
            [:u :!Oup_arrow :a-mode]
            [:o :return_or_enter :a-mode]]}
   {:des "Move ` key to above tab in swedish keyboard"
-   :rules [[:##non_us_backslash :##grave_accent_and_tilde [:en-keyboard]] ;; Switch normal key above tab
+   :rules [:laptop_keyboard
+           [:##non_us_backslash :##grave_accent_and_tilde [:en-keyboard]] ;; Switch normal key above tab
            [:##grave_accent_and_tilde :##non_us_backslash [:en-keyboard]] ;; Switch normal to the right of left-shift
            ]}
   {:des "Show/hi(D)e applications"
