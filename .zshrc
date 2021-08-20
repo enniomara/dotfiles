@@ -2,10 +2,6 @@ source /usr/local/share/zinit/zinit.zsh
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
-zinit wait lucid light-mode for \
-    zsh-users/zsh-syntax-highlighting \
-    atload"_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
-    zsh-users/zsh-completions
 
 zinit wait lucid light-mode for \
     OMZL::functions.zsh \
@@ -18,6 +14,11 @@ zinit wait lucid light-mode for \
     OMZP::git \
     OMZP::kubectl \
     OMZP::tmux
+
+zinit wait lucid light-mode for \
+    zsh-users/zsh-syntax-highlighting \
+    atload"_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
+    zsh-users/zsh-completions
 
 zinit ice wait lucid multisrc'shell/{key-bindings,completion}.zsh'
 zinit light junegunn/fzf
