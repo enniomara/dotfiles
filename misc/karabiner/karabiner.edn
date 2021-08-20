@@ -69,8 +69,8 @@ end run' \"%s\""
            ]}
   {:des "s to cmd+shift"
         :rules [:en-keyboard :ctrl-shift
-                [:open_bracket :!CSopen_bracket]
-                [:close_bracket :!CSclose_bracket]
+                [:j :!CSopen_bracket]
+                [:k :!CSclose_bracket]
         ] }
   {:des "Show/hi(D)e applications"
    :rules [:open-app-mode
