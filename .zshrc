@@ -10,6 +10,7 @@ zinit wait lucid light-mode for \
     OMZL::history.zsh \
     OMZL::misc.zsh \
     OMZL::termsupport.zsh \
+    OMZL::completion.zsh \
     OMZP::autojump \
     OMZP::git \
     OMZP::kubectl \
