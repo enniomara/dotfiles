@@ -25,6 +25,7 @@ zinit light junegunn/fzf
 
 zinit load mafredri/zsh-async
 zinit load sindresorhus/pure
+RPROMPT='%F{8}%*'
 
 # Load aliases
 [ -s "$HOME/.aliases" ] && source $HOME/.aliases
