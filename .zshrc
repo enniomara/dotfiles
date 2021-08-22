@@ -4,14 +4,14 @@ autoload -Uz _zinit
 
 
 zinit wait lucid light-mode for \
-    OMZL::functions.zsh \
+    OMZL::clipboard.zsh \
+    OMZL::completion.zsh \
     OMZL::directories.zsh \
-    OMZL::key-bindings.zsh \
+    OMZL::functions.zsh \
     OMZL::history.zsh \
+    OMZL::key-bindings.zsh \
     OMZL::misc.zsh \
     OMZL::termsupport.zsh \
-    OMZL::completion.zsh \
-    OMZL::clipboard.zsh \
     OMZP::autojump \
     OMZP::git \
     OMZP::kubectl \
