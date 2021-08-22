@@ -11,6 +11,7 @@ zinit wait lucid light-mode for \
     OMZL::misc.zsh \
     OMZL::termsupport.zsh \
     OMZL::completion.zsh \
+    OMZL::clipboard.zsh \
     OMZP::autojump \
     OMZP::git \
     OMZP::kubectl \
