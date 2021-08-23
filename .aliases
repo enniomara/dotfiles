@@ -2,3 +2,4 @@ alias gs="/usr/bin/git status"
 
 alias ccat="/bin/cat"
 alias cat="bat"
+alias ..="cd .."
