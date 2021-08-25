@@ -68,7 +68,7 @@
     // ###########################
     "window.title": "${dirty}${activeEditorLong}${separator}${rootName}",
     "workbench.sideBar.location": "right",
-    "window.zoomLevel": 0,
+    "window.zoomLevel": -1,
 
 
 
