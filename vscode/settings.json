@@ -23,7 +23,7 @@
     "editor.quickSuggestionsDelay": 5,
     "editor.highlightActiveIndentGuide": false,
     "editor.multiCursorModifier": "ctrlCmd",
-    "editor.rulers": [100],
+    "editor.rulers": [120],
     "editor.overviewRulerBorder": false, // remove line between code and scrollbar
     "editor.hideCursorInOverviewRuler": true, // hide line in scrollbar indicating cursor position
     "editor.matchBrackets": "never", // disable vscodes brackets. Subtle Match Brackets are used instead
