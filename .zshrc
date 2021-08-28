@@ -14,7 +14,7 @@ zinit wait lucid light-mode for \
     OMZL::termsupport.zsh \
     OMZP::autojump \
     OMZP::git \
-    OMZP::kubectl \
+    atinit"zicompinit; zicdreplay" OMZP::kubectl \
     OMZP::tmux
 
 zinit wait lucid light-mode for \
