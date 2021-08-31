@@ -166,6 +166,12 @@
                 "k",
             ],
         },
+        {
+            "before": ["`"],
+            "after": [
+                "C-w",
+            ]
+        }
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
         {
