@@ -102,6 +102,7 @@
     "vim.easymotionMarkerBackgroundColor": "yellow",
     "vim.easymotionMarkerForegroundColorOneChar": "black",
     "vim.easymotionMarkerForegroundColorTwoCharFirst": "black",
+    "vim.highlightedyank.enable": true,
 
     "vim.insertModeKeyBindings": [
         {
