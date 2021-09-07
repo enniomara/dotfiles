@@ -56,6 +56,19 @@
         "key": "ctrl+k",
         "command": "list.focusUp",
         "when": "listFocus && !inputFocus" // e.g. scroll in changed items in git view
-    }
+    },
+
+    // ctrl+w h to move between back to editor from explorer tree
+    {
+        "key": "` h",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "filesExplorerFocus"
+    },
+    {
+        "key": "ctrl+w h",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "filesExplorerFocus"
+    },
+
 
 ]
