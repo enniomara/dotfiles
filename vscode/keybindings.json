@@ -69,6 +69,4 @@
         "command": "workbench.action.focusActiveEditorGroup",
         "when": "filesExplorerFocus"
     },
-
-
 ]
