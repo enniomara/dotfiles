@@ -18,26 +18,6 @@
         "when": "textInputFocus"
     },
     {
-        "key": "ctrl+j",
-        "command": "workbench.action.quickOpenSelectNext",
-        "when": "inQuickOpen" // e.g. when pressing ctrl+P
-    },
-    {
-        "key": "ctrl+k",
-        "command": "workbench.action.quickOpenSelectPrevious",
-        "when": "inQuickOpen" // e.g. when pressing ctrl+P
-    },
-    {
-        "key": "ctrl+j",
-        "command": "selectNextSuggestion",
-        "when": "editorTextFocus && suggestWidgetVisible" // when code autocomplete is shown
-    },
-    {
-        "key": "ctrl+k",
-        "command": "selectPrevSuggestion",
-        "when": "editorTextFocus && suggestWidgetVisible" // when code autocomplete is shown
-    },
-    {
         "key": "ctrl+h",
         "command": "list.collapse",
         "when": "listFocus && !inputFocus" // e.g. scroll in changed items in git view
