@@ -172,7 +172,38 @@
             "after": [
                 "C-w",
             ]
-        }
+        },
+        {
+            "before": [
+                "C-w",
+                "|"
+            ],
+            "after": [
+                "C-w",
+                "v"
+            ]
+        },
+        {
+            "before": [
+                "C-w",
+                "-"
+            ],
+            "after": [
+                "C-w",
+                "s"
+            ]
+        },
+        {
+            "before": [
+                "C-w",
+                "x"
+            ],
+            "after": [
+                "shift",
+                "Z",
+                "Z"
+            ]
+        },
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
         {
