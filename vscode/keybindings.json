@@ -49,4 +49,19 @@
         "command": "workbench.action.focusActiveEditorGroup",
         "when": "filesExplorerFocus"
     },
+    {
+        "key": "` shift+\\",
+        "command": "workbench.action.splitEditorRight",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "` -",
+        "command": "workbench.action.splitEditorDown",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "` x",
+        "command": "workbench.action.closeGroup",
+        "when": "editorTextFocus"
+    }
 ]
