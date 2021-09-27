@@ -7,7 +7,7 @@ end
 
 vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function()
+require('packer').startup(function()
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
 	use 'scrooloose/nerdtree'
@@ -16,3 +16,5 @@ return require('packer').startup(function()
 		requires = 'kyazdani42/nvim-web-devicons'
 	}
 end)
+
+require('options')
