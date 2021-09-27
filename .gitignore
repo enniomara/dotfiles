@@ -6,4 +6,4 @@ misc/karabiner/automatic_backups
 misc/karabiner/karabiner.json
 
 .DS_Store
-.swp
+*.swp
