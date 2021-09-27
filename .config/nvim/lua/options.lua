@@ -1,5 +1,6 @@
 local indent = 4
 
+vim.opt.autoread = true
 vim.opt.expandtab = true -- Expand tab characters to space characters.
 vim.opt.shiftwidth= indent -- One tab is now 4 spaces.
 vim.opt.shiftround = true -- Always round up to the nearest tab.
