@@ -27,3 +27,6 @@ vim.opt.updatetime = 500 -- Set this to 500 milliseconds so that git gutter can 
 
 vim.opt.mouse= 'a'
 vim.opt.confirm = true -- Make vim confirm of file should be saved when exiting
+
+vim.opt.syntax = 'on'
+vim.cmd[[colorscheme nord]]

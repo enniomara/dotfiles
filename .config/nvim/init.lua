@@ -15,6 +15,7 @@ require('packer').startup(function()
 		'kyazdani42/nvim-tree.lua',
 		requires = 'kyazdani42/nvim-web-devicons'
 	}
+    use 'shaunsingh/nord.nvim'
 end)
 
 require('options')
