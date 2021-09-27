@@ -18,3 +18,12 @@ vim.opt.hlsearch = true -- Will stop highlighting current search 'hits' when ano
 vim.opt.scrolloff = 10 -- The screen will only scroll when the cursor is 8 characters from the top/bottom.
 vim.opt.wildmenu = true -- Enable the 'autocomplete' menu when in command mode (':').
 vim.opt.wildmode = {'longest:full', 'full'} -- Autocomplete til the longest word and don't fill it. Fixes annoying behaviour of vim
+
+vim.opt.number = true -- Show line numbers on left side
+vim.opt.foldcolumn = "1" -- Add a bit extra margin to the left
+
+vim.opt.laststatus = 2 -- Always show statusline
+vim.opt.updatetime = 500 -- Set this to 500 milliseconds so that git gutter can update the gutter
+
+vim.opt.mouse= 'a'
+vim.opt.confirm = true -- Make vim confirm of file should be saved when exiting
