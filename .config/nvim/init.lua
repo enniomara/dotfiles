@@ -20,3 +20,4 @@ end)
 
 require('options')
 require('plugins.nvim-tree')
+require('mappings')
