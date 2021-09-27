@@ -5,3 +5,16 @@ vim.opt.shiftwidth= indent -- One tab is now 4 spaces.
 vim.opt.shiftround = true -- Always round up to the nearest tab.
 vim.opt.tabstop= indent -- This one is also needed to achieve the desired effect.
 vim.opt.softtabstop = indent -- Enables easy removal of an indentation level.
+
+vim.opt.autoindent = true -- Automatically copy the previous indent level. Don't use smartindent!!!
+-- vim.opt.backspace = 2 -- Used for making backspace work like in most other editors (e.g. removing a single indent).
+vim.opt.wrap = true -- Wrap text. This is also quite optional, replace with textwidth=80 is you don't want this behaviour.
+vim.opt.lazyredraw = true -- Good performance boost when executing macros, redraw the screen only on certain commands.
+
+vim.opt.ignorecase = true --- Search is not case sensitive, which is usually what we want.
+vim.opt.incsearch = true -- Enables the user to step through each search 'hit', usually what is desired here.
+vim.opt.hlsearch = true -- Will stop highlighting current search 'hits' when another search is performed.
+
+vim.opt.scrolloff = 10 -- The screen will only scroll when the cursor is 8 characters from the top/bottom.
+vim.opt.wildmenu = true -- Enable the 'autocomplete' menu when in command mode (':').
+vim.opt.wildmode = {'longest:full', 'full'} -- Autocomplete til the longest word and don't fill it. Fixes annoying behaviour of vim
