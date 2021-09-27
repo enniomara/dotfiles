@@ -19,3 +19,4 @@ require('packer').startup(function()
 end)
 
 require('options')
+require('plugins.nvim-tree')
