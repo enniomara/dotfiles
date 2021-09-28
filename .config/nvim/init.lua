@@ -20,10 +20,20 @@ require('packer').startup(function()
         'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
+    use {
+        'sudormrfbin/cheatsheet.nvim',
+
+        requires = {
+            {'nvim-telescope/telescope.nvim'},
+            {'nvim-lua/popup.nvim'},
+            {'nvim-lua/plenary.nvim'},
+        }
+    }
 end)
 
 require('options')
 require('plugins.nvim-tree')
 require('plugins.telescope')
+require('plugins.cheatsheet')
 require('mappings')
 
