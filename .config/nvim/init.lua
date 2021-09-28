@@ -16,8 +16,14 @@ require('packer').startup(function()
 		requires = 'kyazdani42/nvim-web-devicons'
 	}
     use 'shaunsingh/nord.nvim'
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
 end)
 
 require('options')
 require('plugins.nvim-tree')
+require('plugins.telescope')
 require('mappings')
+
