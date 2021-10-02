@@ -31,6 +31,8 @@ vim.opt.mouse= 'a'
 vim.opt.confirm = true -- Make vim confirm of file should be saved when exiting
 
 vim.opt.syntax = 'on'
+
+vim.g.nord_borders = true
 vim.cmd[[colorscheme nord]]
 
 vim.opt.termguicolors = true
