@@ -30,6 +30,7 @@ require('packer').startup(function()
         }
     }
     use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+    use 'ntpeters/vim-better-whitespace'
 end)
 
 require('options')
@@ -37,5 +38,6 @@ require('plugins.nvim-tree')
 require('plugins.telescope')
 require('plugins.cheatsheet')
 require('plugins.bufferline')
+require('plugins.vim-better-whitespace')
 require('mappings')
 
