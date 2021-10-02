@@ -31,6 +31,12 @@ require('packer').startup(function()
     }
     use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
     use 'ntpeters/vim-better-whitespace'
+    use {
+        'lewis6991/gitsigns.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim'
+        },
+    }
 end)
 
 require('options')
@@ -39,5 +45,6 @@ require('plugins.telescope')
 require('plugins.cheatsheet')
 require('plugins.bufferline')
 require('plugins.vim-better-whitespace')
+require('plugins.gitsigns')
 require('mappings')
 
