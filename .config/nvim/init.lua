@@ -29,11 +29,13 @@ require('packer').startup(function()
             {'nvim-lua/plenary.nvim'},
         }
     }
+    use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 end)
 
 require('options')
 require('plugins.nvim-tree')
 require('plugins.telescope')
 require('plugins.cheatsheet')
+require('plugins.bufferline')
 require('mappings')
 
