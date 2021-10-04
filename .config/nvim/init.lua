@@ -41,6 +41,7 @@ require('packer').startup(function()
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
+    use 'tpope/vim-fugitive'
 end)
 
 require('options')
