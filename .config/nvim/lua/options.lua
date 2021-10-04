@@ -37,3 +37,9 @@ vim.cmd[[colorscheme nord]]
 
 vim.opt.termguicolors = true
 
+-- Due to a bug in telescope, folding will not be applied automatically so a
+-- `zx` needs to be ran in order to recompute folds.
+-- See https://github.com/nvim-telescope/telescope.nvim/issues/699
+vim.opt.foldenable = false -- I don't want to fold by default
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
