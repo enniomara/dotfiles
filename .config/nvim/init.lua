@@ -37,6 +37,10 @@ require('packer').startup(function()
             'nvim-lua/plenary.nvim'
         },
     }
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
 end)
 
 require('options')
@@ -46,5 +50,6 @@ require('plugins.cheatsheet')
 require('plugins.bufferline')
 require('plugins.vim-better-whitespace')
 require('plugins.gitsigns')
+require('plugins.treesitter')
 require('mappings')
 
