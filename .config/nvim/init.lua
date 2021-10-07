@@ -42,6 +42,12 @@ require('packer').startup(function(use)
         run = ':TSUpdate'
     }
     use 'tpope/vim-fugitive'
+    use 'neovim/nvim-lspconfig'
+    use 'kabouzeid/nvim-lspinstall'
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'saadparwaiz1/cmp_luasnip'
+    use 'L3MON4D3/LuaSnip' -- Snippets plugin
 end)
 
 require('options')
@@ -52,5 +58,7 @@ require('plugins.bufferline')
 require('plugins.vim-better-whitespace')
 require('plugins.gitsigns')
 require('plugins.treesitter')
+require('plugins.lspconfig')
+require('plugins.cmp')
 require('mappings')
 
