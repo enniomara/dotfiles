@@ -42,6 +42,8 @@ require("packer").startup(function(use)
 		run = ":TSUpdate",
 	})
 	use("tpope/vim-fugitive")
+	use("tpope/vim-sleuth")
+
 	use({ -- used for formatting mainly
 		"jose-elias-alvarez/null-ls.nvim",
 		requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
