@@ -42,6 +42,11 @@ require('packer').startup(function(use)
         run = ':TSUpdate'
     }
     use 'tpope/vim-fugitive'
+    use { -- used for formatting mainly
+        'jose-elias-alvarez/null-ls.nvim',
+        after = "nvim-lspconfig",
+        requires = {"nvim-lua/plenary.nvim", "neovim/nvim-lspconfig"}
+    }
     use 'neovim/nvim-lspconfig'
     use 'kabouzeid/nvim-lspinstall'
     use 'hrsh7th/nvim-cmp'
@@ -64,6 +69,7 @@ require('plugins.bufferline')
 require('plugins.vim-better-whitespace')
 require('plugins.gitsigns')
 require('plugins.treesitter')
+require('plugins.null-ls')
 require('plugins.lspconfig')
 require('plugins.cmp')
 require('mappings')
