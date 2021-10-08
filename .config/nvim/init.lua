@@ -44,7 +44,6 @@ require("packer").startup(function(use)
 	use("tpope/vim-fugitive")
 	use({ -- used for formatting mainly
 		"jose-elias-alvarez/null-ls.nvim",
-		after = "nvim-lspconfig",
 		requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 	})
 	use("neovim/nvim-lspconfig")
