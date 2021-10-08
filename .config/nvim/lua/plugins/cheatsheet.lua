@@ -1,8 +1,8 @@
-require('cheatsheet').setup{
-    bundled_cheatsheets = {
-        disabled = {
-            "nerd-fonts",
-            "unicode",
-        },
-    },
-}
+require("cheatsheet").setup({
+	bundled_cheatsheets = {
+		disabled = {
+			"nerd-fonts",
+			"unicode",
+		},
+	},
+})

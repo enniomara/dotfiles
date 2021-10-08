@@ -3,9 +3,9 @@ vim.g.mapleader = " "
 
 vim.opt.autoread = true
 vim.opt.expandtab = true -- Expand tab characters to space characters.
-vim.opt.shiftwidth= indent -- One tab is now 4 spaces.
+vim.opt.shiftwidth = indent -- One tab is now 4 spaces.
 vim.opt.shiftround = true -- Always round up to the nearest tab.
-vim.opt.tabstop= indent -- This one is also needed to achieve the desired effect.
+vim.opt.tabstop = indent -- This one is also needed to achieve the desired effect.
 vim.opt.softtabstop = indent -- Enables easy removal of an indentation level.
 
 vim.opt.autoindent = true -- Automatically copy the previous indent level. Don't use smartindent!!!
@@ -19,7 +19,7 @@ vim.opt.hlsearch = true -- Will stop highlighting current search 'hits' when ano
 
 vim.opt.scrolloff = 10 -- The screen will only scroll when the cursor is 8 characters from the top/bottom.
 vim.opt.wildmenu = true -- Enable the 'autocomplete' menu when in command mode (':').
-vim.opt.wildmode = {'longest:full', 'full'} -- Autocomplete til the longest word and don't fill it. Fixes annoying behaviour of vim
+vim.opt.wildmode = { "longest:full", "full" } -- Autocomplete til the longest word and don't fill it. Fixes annoying behaviour of vim
 
 vim.opt.number = true -- Show line numbers on left side
 vim.opt.foldcolumn = "1" -- Add a bit extra margin to the left
@@ -27,13 +27,13 @@ vim.opt.foldcolumn = "1" -- Add a bit extra margin to the left
 vim.opt.laststatus = 2 -- Always show statusline
 vim.opt.updatetime = 500 -- Set this to 500 milliseconds so that git gutter can update the gutter
 
-vim.opt.mouse= 'a'
+vim.opt.mouse = "a"
 vim.opt.confirm = true -- Make vim confirm of file should be saved when exiting
 
-vim.opt.syntax = 'on'
+vim.opt.syntax = "on"
 
 vim.g.nord_borders = true
-vim.cmd[[colorscheme nord]]
+vim.cmd([[colorscheme nord]])
 
 vim.opt.termguicolors = true
 
