@@ -13,11 +13,17 @@ require("packer").startup(function(use)
 	use({
 		"kyazdani42/nvim-tree.lua",
 		requires = "kyazdani42/nvim-web-devicons",
+		config = function()
+			require("plugins.nvim-tree")
+		end,
 	})
 	use("shaunsingh/nord.nvim")
 	use({
 		"nvim-telescope/telescope.nvim",
 		requires = { { "nvim-lua/plenary.nvim" } },
+		config = function()
+			require("plugins.telescope")
+		end,
 	})
 	use({
 		"sudormrfbin/cheatsheet.nvim",
@@ -27,18 +33,38 @@ require("packer").startup(function(use)
 			{ "nvim-lua/popup.nvim" },
 			{ "nvim-lua/plenary.nvim" },
 		},
+		config = function()
+			require("plugins.cheatsheet")
+		end,
 	})
-	use({ "akinsho/bufferline.nvim", requires = "kyazdani42/nvim-web-devicons" })
-	use("ntpeters/vim-better-whitespace")
+	use({
+		"akinsho/bufferline.nvim",
+		requires = "kyazdani42/nvim-web-devicons",
+		config = function()
+			require("plugins.bufferline")
+		end,
+	})
+	use({
+		"ntpeters/vim-better-whitespace",
+		config = function()
+			require("plugins.vim-better-whitespace")
+		end,
+	})
 	use({
 		"lewis6991/gitsigns.nvim",
 		requires = {
 			"nvim-lua/plenary.nvim",
 		},
+		config = function()
+			require("plugins.gitsigns")
+		end,
 	})
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
+		config = function()
+			require("plugins.treesitter")
+		end,
 	})
 	use("tpope/vim-fugitive")
 	use("tpope/vim-sleuth")
@@ -46,10 +72,23 @@ require("packer").startup(function(use)
 	use({ -- used for formatting mainly
 		"jose-elias-alvarez/null-ls.nvim",
 		requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		config = function()
+			require("plugins.null-ls")
+		end,
 	})
-	use("neovim/nvim-lspconfig")
+	use({
+		"neovim/nvim-lspconfig",
+		config = function()
+			require("plugins.lspconfig")
+		end,
+	})
 	use("kabouzeid/nvim-lspinstall")
-	use("hrsh7th/nvim-cmp")
+	use({
+		"hrsh7th/nvim-cmp",
+		config = function()
+			require("plugins.cmp")
+		end,
+	})
 	use("hrsh7th/cmp-nvim-lsp")
 	use("saadparwaiz1/cmp_luasnip")
 	use("L3MON4D3/LuaSnip") -- Snippets plugin
@@ -62,14 +101,4 @@ require("packer").startup(function(use)
 end)
 
 require("options")
-require("plugins.nvim-tree")
-require("plugins.telescope")
-require("plugins.cheatsheet")
-require("plugins.bufferline")
-require("plugins.vim-better-whitespace")
-require("plugins.gitsigns")
-require("plugins.treesitter")
-require("plugins.null-ls")
-require("plugins.lspconfig")
-require("plugins.cmp")
 require("mappings")
