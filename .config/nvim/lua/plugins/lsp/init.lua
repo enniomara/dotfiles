@@ -1,4 +1,3 @@
-local nvim_lsp = require("lspconfig")
 local on_attach = function(_, bufnr)
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
@@ -47,34 +46,8 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 
-require("lspinstall").setup() -- important
+local lspconfig = require("plugins.lsp.lspconfig")
+local null_ls = require("plugins.lsp.null-ls")
 
-local servers = require("lspinstall").installed_servers()
-for _, server in pairs(servers) do
-	require("lspconfig")[server].setup({
-		on_attach = on_attach,
-		capabilities = capabilities,
-	})
-end
-
--- add vim to the list of globals
-require("lspconfig").lua.setup({
-	settings = {
-		Lua = {
-			diagnostics = {
-				-- Get the language server to recognize the `vim` global
-				globals = { "vim" },
-			},
-			workspace = {
-				-- Make the server aware of Neovim runtime files
-				library = vim.api.nvim_get_runtime_file("", true),
-			},
-			-- Do not send telemetry data containing a randomized but unique identifier
-			telemetry = {
-				enable = false,
-			},
-		},
-	},
-})
-
-require("lspconfig")["null-ls"].setup({ on_attach = on_attach })
+lspconfig.setup(on_attach, capabilities)
+null_ls.setup(on_attach)

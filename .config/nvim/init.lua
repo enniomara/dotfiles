@@ -72,15 +72,9 @@ require("packer").startup(function(use)
 	use({ -- used for formatting mainly
 		"jose-elias-alvarez/null-ls.nvim",
 		requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-		config = function()
-			require("plugins.null-ls")
-		end,
 	})
 	use({
 		"neovim/nvim-lspconfig",
-		config = function()
-			require("plugins.lspconfig")
-		end,
 	})
 	use("kabouzeid/nvim-lspinstall")
 	use({
@@ -102,3 +96,4 @@ end)
 
 require("options")
 require("mappings")
+require("plugins.lsp")
