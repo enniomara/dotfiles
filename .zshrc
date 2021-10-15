@@ -45,5 +45,10 @@ set -o ignoreeof
 # Avoid issues with `gpg` as installed via Homebrew.
 # # https://stackoverflow.com/a/42265848/96656
 export GPG_TTY=$(tty)
+# The terminal in tmux in kitty did not render characters correctly. This fixed
+# that see link below for details
+# https://github.com/sindresorhus/pure/issues/300#issuecomment-386371460
+export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
 
 [ -f ~/.zshrc-custom.zsh ] && source ~/.zshrc-custom.zsh
