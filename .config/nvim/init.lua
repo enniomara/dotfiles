@@ -102,6 +102,12 @@ require("packer").startup(function(use)
 			})
 		end,
 	})
+	use({
+		"terrortylor/nvim-comment",
+		config = function ()
+			require("nvim_comment").setup()
+		end
+	})
 end)
 
 require("options")
