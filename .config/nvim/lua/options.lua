@@ -45,3 +45,4 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 vim.opt.timeoutlen = 500 -- more reasonalble default (and to make which-key show result faster)
+vim.opt.cursorline = true
