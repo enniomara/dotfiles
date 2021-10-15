@@ -93,16 +93,15 @@ require("packer").startup(function(use)
 			require("which-key").setup({})
 		end,
 	})
-	use {
-	  "windwp/nvim-autopairs",
-	  event = "InsertEnter",
-	  config = function ()
-	    require('nvim-autopairs').setup({
-	      disable_filetype = { "TelescopePrompt" , "vim" },
-	    })
-	  end
-	}
-
+	use({
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		config = function()
+			require("nvim-autopairs").setup({
+				disable_filetype = { "TelescopePrompt", "vim" },
+			})
+		end,
+	})
 end)
 
 require("options")
