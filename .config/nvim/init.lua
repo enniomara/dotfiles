@@ -109,6 +109,15 @@ require("packer").startup(function(use)
 			require("nvim_comment").setup()
 		end,
 	})
+	use({
+		"lukas-reineke/indent-blankline.nvim",
+		config = function()
+			require("indent_blankline").setup({
+				space_char_blankline = " ",
+				show_current_context = true,
+			})
+		end,
+	})
 end)
 
 require("options")
