@@ -80,13 +80,15 @@ require("packer").startup(function(use)
 	use("kabouzeid/nvim-lspinstall")
 	use({
 		"hrsh7th/nvim-cmp",
+		requires = {
+			"L3MON4D3/LuaSnip",
+			"saadparwaiz1/cmp_luasnip",
+			"hrsh7th/cmp-nvim-lsp",
+		},
 		config = function()
 			require("plugins.cmp")
 		end,
 	})
-	use("hrsh7th/cmp-nvim-lsp")
-	use("saadparwaiz1/cmp_luasnip")
-	use("L3MON4D3/LuaSnip") -- Snippets plugin
 	use({
 		"folke/which-key.nvim",
 		config = function()
