@@ -104,9 +104,10 @@ require("packer").startup(function(use)
 	})
 	use({
 		"terrortylor/nvim-comment",
-		config = function ()
+		event = "InsertEnter",
+		config = function()
 			require("nvim_comment").setup()
-		end
+		end,
 	})
 end)
 
