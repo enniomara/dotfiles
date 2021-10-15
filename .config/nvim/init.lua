@@ -111,6 +111,7 @@ require("packer").startup(function(use)
 	})
 	use({
 		"lukas-reineke/indent-blankline.nvim",
+		event = "BufRead",
 		config = function()
 			require("indent_blankline").setup({
 				space_char_blankline = " ",
