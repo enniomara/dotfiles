@@ -119,6 +119,14 @@ require("packer").startup(function(use)
 			})
 		end,
 	})
+	use({
+		"Shatur/neovim-session-manager",
+		after = "telescope.nvim",
+		config = function()
+			require("session_manager").setup({})
+			require("telescope").load_extension("sessions")
+		end,
+	})
 end)
 
 require("options")
