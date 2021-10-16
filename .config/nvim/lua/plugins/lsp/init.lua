@@ -46,5 +46,8 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 
+local lspinstall = require("plugins.lspinstall")
+lspinstall.setup(on_attach, capabilities)
+
 local null_ls = require("plugins.lsp.null-ls")
 null_ls.setup(on_attach)
