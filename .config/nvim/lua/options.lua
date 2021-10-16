@@ -17,7 +17,6 @@ vim.opt.ignorecase = true --- Search is not case sensitive, which is usually wha
 vim.opt.incsearch = true -- Enables the user to step through each search 'hit', usually what is desired here.
 vim.opt.hlsearch = true -- Will stop highlighting current search 'hits' when another search is performed.
 
-vim.opt.scrolloff = 10 -- The screen will only scroll when the cursor is 8 characters from the top/bottom.
 vim.opt.wildmenu = true -- Enable the 'autocomplete' menu when in command mode (':').
 vim.opt.wildmode = { "longest:full", "full" } -- Autocomplete til the longest word and don't fill it. Fixes annoying behaviour of vim
 
