@@ -51,3 +51,6 @@ lspinstall.setup(on_attach, capabilities)
 
 local null_ls = require("plugins.lsp.null-ls")
 null_ls.setup(on_attach)
+
+require("lsp_signature").setup({})
+
