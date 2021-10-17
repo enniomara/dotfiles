@@ -133,6 +133,31 @@ require("packer").startup(function(use)
 			require("telescope").load_extension("sessions")
 		end,
 	})
+	use({
+		"hoob3rt/lualine.nvim",
+		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+		config = function()
+			require("lualine").setup({
+				options = {
+					theme = "nord",
+				},
+				sections = {
+					lualine_x = {
+						"diff",
+						{
+							"diagnostics",
+							sources = { "nvim_lsp" },
+							symbols = { error = " ", warn = " ", info = " ", hint = " " },
+							color = {},
+						},
+						"encoding",
+						"fileformat",
+						"filetype",
+					},
+				},
+			})
+		end,
+	})
 end)
 
 require("options")
