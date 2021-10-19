@@ -45,3 +45,11 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 vim.opt.timeoutlen = 500 -- more reasonalble default (and to make which-key show result faster)
 vim.opt.cursorline = true
+
+-- Fixes annoying problem where if cursorline is set, the highlight would
+-- highlight multiple lines for some reason. Colorcolumn fixes the bug, the
+-- 9999 is so that the column is not visisble See the following issues for more
+-- details:
+-- https://github.com/neovim/neovim/issues/14209
+-- https://github.com/lukas-reineke/indent-blankline.nvim/issues/59#issuecomment-806374954
+vim.opt.colorcolumn = "9999"
