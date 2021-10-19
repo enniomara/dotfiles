@@ -7,6 +7,8 @@ local sources = {
 
 	-- Shell
 	b.formatting.shfmt,
+
+	null_ls.builtins.code_actions.gitsigns,
 }
 
 local M = {}

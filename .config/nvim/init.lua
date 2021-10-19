@@ -72,7 +72,11 @@ require("packer").startup(function(use)
 
 	use({ -- used for formatting mainly
 		"jose-elias-alvarez/null-ls.nvim",
-		requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"neovim/nvim-lspconfig",
+			"lewis6991/gitsigns.nvim",
+		},
 	})
 	use({
 		"neovim/nvim-lspconfig",
