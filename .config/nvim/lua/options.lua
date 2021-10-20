@@ -53,3 +53,5 @@ vim.opt.cursorline = true
 -- https://github.com/neovim/neovim/issues/14209
 -- https://github.com/lukas-reineke/indent-blankline.nvim/issues/59#issuecomment-806374954
 vim.opt.colorcolumn = "9999"
+
+vim.opt.relativenumber = true
