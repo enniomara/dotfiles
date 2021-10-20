@@ -58,3 +58,5 @@ vim.opt.relativenumber = true
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+
+vim.cmd([[au BufNewFile,BufRead Jenkinsfile setf groovy]]) -- the syntax of jenkinsfile is groovy
