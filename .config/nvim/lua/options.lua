@@ -55,3 +55,6 @@ vim.opt.cursorline = true
 vim.opt.colorcolumn = "9999"
 
 vim.opt.relativenumber = true
+
+vim.opt.splitbelow = true
+vim.opt.splitright = true
