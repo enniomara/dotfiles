@@ -130,11 +130,9 @@ require("packer").startup(function(use)
 		end,
 	})
 	use({
-		"Shatur/neovim-session-manager",
-		after = "telescope.nvim",
+		"rmagatti/auto-session",
 		config = function()
-			require("session_manager").setup({})
-			require("telescope").load_extension("sessions")
+			require("auto-session").setup({})
 		end,
 	})
 	use({
