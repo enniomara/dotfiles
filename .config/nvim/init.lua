@@ -97,6 +97,7 @@ require("packer").startup(function(use)
 			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",
 			"hrsh7th/cmp-nvim-lsp",
+			"windwp/nvim-autopairs",
 		},
 		config = function()
 			require("plugins.cmp")
@@ -110,7 +111,6 @@ require("packer").startup(function(use)
 	})
 	use({
 		"windwp/nvim-autopairs",
-		event = "InsertEnter",
 		config = function()
 			require("nvim-autopairs").setup({
 				disable_filetype = { "TelescopePrompt", "vim" },
