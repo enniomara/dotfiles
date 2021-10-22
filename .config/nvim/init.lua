@@ -20,10 +20,17 @@ require("packer").startup(function(use)
 	use("shaunsingh/nord.nvim")
 	use({
 		"nvim-telescope/telescope.nvim",
-		requires = { { "nvim-lua/plenary.nvim" } },
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope-fzf-native.nvim",
+		},
 		config = function()
 			require("plugins.telescope")
 		end,
+	})
+	use({
+		"nvim-telescope/telescope-fzf-native.nvim",
+		run = "make",
 	})
 	use({
 		"sudormrfbin/cheatsheet.nvim",
