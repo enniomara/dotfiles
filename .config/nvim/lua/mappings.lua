@@ -27,3 +27,6 @@ mapper("n", "<Leader>5", ":BufferLineGoToBuffer 5<CR>")
 
 -- Tmux-zoom like feature, full-screens the current pane
 mapper("n", "<C-W>z", ":tab split <CR>")
+
+mapper("n", "<Leader>gg", ":Git <CR>")
+mapper("n", "<Leader>gcv", ":Git commit -v<CR>")
