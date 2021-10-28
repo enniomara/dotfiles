@@ -9,6 +9,7 @@ mapper("n", "<Leader>fd", "<cmd>lua require('telescope.builtin').file_browser()<
 mapper("n", "<Leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<CR>")
 mapper("n", "<Leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>")
 mapper("n", "<Leader>fs", ":Telescope sessions<CR>")
+mapper("n", "<Leader>fp", ":Telescope<CR>")
 
 mapper("n", "gb", ":BufferLinePick<CR>")
 mapper("n", "<Tab>", ":BufferLineCycleNext <CR>")
