@@ -103,6 +103,7 @@ require("packer").startup(function(use)
 			require("plugins.cmp")
 		end,
 	})
+	use("rafamadriz/friendly-snippets")
 	use({
 		"folke/which-key.nvim",
 		config = function()
