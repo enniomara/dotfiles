@@ -15,6 +15,7 @@ vim.opt.lazyredraw = true -- Good performance boost when executing macros, redra
 
 vim.opt.ignorecase = true --- Search is not case sensitive, which is usually what we want.
 vim.opt.incsearch = true -- Enables the user to step through each search 'hit', usually what is desired here.
+vim.opt.inccommand= "split" -- show changes live when searching and replacing
 vim.opt.hlsearch = true -- Will stop highlighting current search 'hits' when another search is performed.
 
 vim.opt.wildmenu = true -- Enable the 'autocomplete' menu when in command mode (':').
