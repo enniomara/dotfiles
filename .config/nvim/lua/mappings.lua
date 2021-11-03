@@ -32,3 +32,7 @@ mapper("n", "<C-W>z", ":tab split <CR>")
 
 mapper("n", "<Leader>gg", ":Git <CR>")
 mapper("n", "<Leader>gcv", ":Git commit -v<CR>")
+
+-- Make sure search result is in the middle of buffer
+mapper("n", "n", "nzzzv")
+mapper("n", "N", "Nzzzv")
