@@ -36,3 +36,5 @@ mapper("n", "<Leader>gcv", ":Git commit -v<CR>")
 -- Make sure search result is in the middle of buffer
 mapper("n", "n", "nzzzv")
 mapper("n", "N", "Nzzzv")
+
+mapper("n", "Q", "<nop>") -- disable entering to ex-mode
