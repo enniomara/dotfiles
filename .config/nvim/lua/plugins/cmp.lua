@@ -1,12 +1,16 @@
 -- nvim-cmp setup
 local cmp = require("cmp")
 local luasnip = require("luasnip")
+local lspkind = require("lspkind")
 
 cmp.setup({
 	snippet = {
 		expand = function(args)
 			require("luasnip").lsp_expand(args.body)
 		end,
+	},
+	formatting = {
+		format = lspkind.cmp_format({ with_text = false, maxwidth = 70 }),
 	},
 	mapping = {
 		["<C-p>"] = cmp.mapping.select_prev_item(),

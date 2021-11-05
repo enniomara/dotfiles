@@ -98,6 +98,7 @@ require("packer").startup(function(use)
 			"saadparwaiz1/cmp_luasnip",
 			"hrsh7th/cmp-nvim-lsp",
 			"windwp/nvim-autopairs",
+			"onsails/lspkind-nvim"
 		},
 		config = function()
 			require("plugins.cmp")
