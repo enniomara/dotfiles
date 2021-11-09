@@ -75,6 +75,7 @@ require("packer").startup(function(use)
 		end,
 	})
 	use("tpope/vim-fugitive")
+	use("tpope/vim-unimpaired")
 	use("tpope/vim-sleuth")
 
 	use({ -- used for formatting mainly
