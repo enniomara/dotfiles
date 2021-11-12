@@ -27,6 +27,15 @@ M.setup = function (on_attach, capabilities)
 				},
 			}
 		end
+		if server.name == "gopls" then
+			opts.settings = {
+				gopls = {
+					buildFlags = {
+						"-tags=requireDB,aws"
+					},
+				}
+			}
+		end
 
 		-- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
 		server:setup(opts)
