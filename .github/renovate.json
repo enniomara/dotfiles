@@ -7,6 +7,6 @@
         "abc"
       ],
       "datasourceTemplate": "git-tags"
-    },
+    }
   ]
 }
