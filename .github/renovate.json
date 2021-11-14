@@ -1,13 +1,16 @@
 {
   "dependencyDashboard": true,
+  "packageRules": [{
+    "datasources": ["git-tags"],
+    "registryUrl": ["github.com"]
+  }],
   "regexManagers": [
     {
       "fileMatch": [".config/nvim/init.lua"],
       "matchStrings": [
         "\\({\\s*\"(?<depName>.*)\",\\s*tag = \"(?<currentValue>.*)\""
       ],
-      "datasourceTemplate": "git-tags",
-      "registryUrl": "github.com"
+      "datasourceTemplate": "git-tags"
     }
   ]
 }
