@@ -6,7 +6,8 @@
       "matchStrings": [
         "\\({\\s*\"(?<depName>.*)\",\\s*tag = \"(?<currentValue>.*)\""
       ],
-      "datasourceTemplate": "github-tags"
+      "datasourceTemplate": "git-tags",
+      "registryUrl": "github.com"
     }
   ]
 }
