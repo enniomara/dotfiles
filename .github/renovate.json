@@ -15,7 +15,7 @@
         "\\({\\s*\"(?<depName>.*)\",\\s*commit = \"(?<currentDigest>.*)\""
       ],
       "datasourceTemplate": "git-refs",
-      "currentValueTemplate": "main"
+      "currentValueTemplate": "main",
       "lookupNameTemplate": "https://github.com/{{depName}}.git"
     }
   ]
