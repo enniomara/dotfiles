@@ -8,6 +8,14 @@
       ],
       "datasourceTemplate": "git-tags",
       "lookupNameTemplate": "https://github.com/{{depName}}.git"
+    },
+    {
+      "fileMatch": [".config/nvim/init.lua"],
+      "matchStrings": [
+        "\\({\\s*\"(?<depName>.*)\",\\s*commit = \"(?<currentDigest>.*)\""
+      ],
+      "datasourceTemplate": "git-refs",
+      "lookupNameTemplate": "https://github.com/{{depName}}.git"
     }
   ]
 }
