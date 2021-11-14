@@ -45,6 +45,8 @@ require("packer").startup(function(use)
 	})
 	use({
 		"sudormrfbin/cheatsheet.nvim",
+		branch = "main",
+		commit = "3f0b718a030dd2c2757e053345de4f130f213514",
 
 		requires = {
 			{ "nvim-telescope/telescope.nvim" },
