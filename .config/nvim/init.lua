@@ -18,7 +18,10 @@ require("packer").startup(function(use)
 			require("plugins.nvim-tree")
 		end,
 	})
-	use({ "shaunsingh/nord.nvim", lock = true })
+	use({
+		"shaunsingh/nord.nvim",
+		commit = "467d684f296a57b0069ff4ee9566df439511efe3",
+	})
 	use({
 		"nvim-telescope/telescope.nvim",
 		requires = {
