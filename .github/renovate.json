@@ -12,7 +12,7 @@
     {
       "fileMatch": [".config/nvim/init.lua"],
       "matchStrings": [
-        "\\({\\s*\"(?<depName>.*)\",\\s*commit = \"(?<currentDigest>.*)\""
+        "\\({\\s*\"(?<depName>.*)\",\\s*commit = \"(?<currentValue>.*)\""
       ],
       "datasourceTemplate": "git-refs",
       "lookupNameTemplate": "https://github.com/{{depName}}.git"
