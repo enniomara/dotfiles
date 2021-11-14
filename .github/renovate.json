@@ -2,7 +2,7 @@
   "dependencyDashboard": true,
   "packageRules": [{
     "datasources": ["git-tags"],
-    "registryUrl": ["github.com"]
+    "registryUrls": ["github.com"]
   }],
   "regexManagers": [
     {
