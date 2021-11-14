@@ -9,15 +9,16 @@ vim.cmd([[packadd packer.nvim]])
 
 require("packer").startup(function(use)
 	-- Packer can manage itself
-	use("wbthomason/packer.nvim")
+	use({ "wbthomason/packer.nvim", lock = true })
 	use({
 		"kyazdani42/nvim-tree.lua",
 		requires = "kyazdani42/nvim-web-devicons",
 		config = function()
 			require("plugins.nvim-tree")
 		end,
+		lock = true,
 	})
-	use("shaunsingh/nord.nvim")
+	use({ "shaunsingh/nord.nvim", lock = true })
 	use({
 		"nvim-telescope/telescope.nvim",
 		requires = {
@@ -27,10 +28,12 @@ require("packer").startup(function(use)
 		config = function()
 			require("plugins.telescope")
 		end,
+		lock = true,
 	})
 	use({
 		"nvim-telescope/telescope-fzf-native.nvim",
 		run = "make",
+		lock = true,
 	})
 	use({
 		"sudormrfbin/cheatsheet.nvim",
@@ -43,6 +46,7 @@ require("packer").startup(function(use)
 		config = function()
 			require("plugins.cheatsheet")
 		end,
+		lock = true,
 	})
 	use({
 		"akinsho/bufferline.nvim",
@@ -50,12 +54,14 @@ require("packer").startup(function(use)
 		config = function()
 			require("plugins.bufferline")
 		end,
+		lock = true,
 	})
 	use({
 		"ntpeters/vim-better-whitespace",
 		config = function()
 			require("plugins.vim-better-whitespace")
 		end,
+		lock = true,
 	})
 	use({
 		"lewis6991/gitsigns.nvim",
@@ -65,6 +71,7 @@ require("packer").startup(function(use)
 		config = function()
 			require("plugins.gitsigns")
 		end,
+		lock = true,
 	})
 	use({
 		"nvim-treesitter/nvim-treesitter",
@@ -73,10 +80,11 @@ require("packer").startup(function(use)
 		config = function()
 			require("plugins.treesitter")
 		end,
+		lock = true,
 	})
-	use("tpope/vim-fugitive")
-	use("tpope/vim-unimpaired")
-	use("tpope/vim-sleuth")
+	use({ "tpope/vim-fugitive", lock = true })
+	use({ "tpope/vim-unimpaired", lock = true })
+	use({ "tpope/vim-sleuth", lock = true })
 
 	use({ -- used for formatting mainly
 		"jose-elias-alvarez/null-ls.nvim",
@@ -85,12 +93,15 @@ require("packer").startup(function(use)
 			"neovim/nvim-lspconfig",
 			"lewis6991/gitsigns.nvim",
 		},
+		lock = true,
 	})
 	use({
 		"neovim/nvim-lspconfig",
+		lock = true,
 	})
 	use({
 		"williamboman/nvim-lsp-installer",
+		lock = true,
 	})
 	use({
 		"hrsh7th/nvim-cmp",
@@ -99,11 +110,12 @@ require("packer").startup(function(use)
 			"saadparwaiz1/cmp_luasnip",
 			"hrsh7th/cmp-nvim-lsp",
 			"windwp/nvim-autopairs",
-			"onsails/lspkind-nvim"
+			"onsails/lspkind-nvim",
 		},
 		config = function()
 			require("plugins.cmp")
 		end,
+		lock = true,
 	})
 	use("rafamadriz/friendly-snippets")
 	use({
@@ -111,6 +123,7 @@ require("packer").startup(function(use)
 		config = function()
 			require("which-key").setup({})
 		end,
+		lock = true,
 	})
 	use({
 		"windwp/nvim-autopairs",
@@ -119,6 +132,7 @@ require("packer").startup(function(use)
 				disable_filetype = { "TelescopePrompt", "vim" },
 			})
 		end,
+		lock = true,
 	})
 	use({
 		"terrortylor/nvim-comment",
@@ -126,6 +140,7 @@ require("packer").startup(function(use)
 		config = function()
 			require("nvim_comment").setup()
 		end,
+		lock = true,
 	})
 	use({
 		"lukas-reineke/indent-blankline.nvim",
@@ -138,12 +153,14 @@ require("packer").startup(function(use)
 				show_trailing_blankline_indent = false,
 			})
 		end,
+		lock = true,
 	})
 	use({
 		"rmagatti/auto-session",
 		config = function()
 			require("auto-session").setup({})
 		end,
+		lock = true,
 	})
 	use({
 		"hoob3rt/lualine.nvim",
@@ -169,11 +186,13 @@ require("packer").startup(function(use)
 				},
 			})
 		end,
+		lock = true,
 	})
 	use({
 		"ray-x/lsp_signature.nvim",
+		lock = true,
 	})
-	use 'ggandor/lightspeed.nvim'
+	use({ "ggandor/lightspeed.nvim", lock = true })
 end)
 
 require("options")
