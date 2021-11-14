@@ -20,6 +20,7 @@ require("packer").startup(function(use)
 	})
 	use({
 		"shaunsingh/nord.nvim",
+		branch = "master",
 		commit = "467d684f296a57b0069ff4ee9566df439511efe3",
 	})
 	use({
