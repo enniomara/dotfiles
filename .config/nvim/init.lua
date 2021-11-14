@@ -19,11 +19,6 @@ require("packer").startup(function(use)
 		end,
 	})
 	use({
-		"shaunsingh/nord.nvim",
-		branch = "master",
-		commit = "467d684f296a57b0069ff4ee9566df439511efe3",
-	})
-	use({
 		"nvim-telescope/telescope.nvim",
 		branch = "master",
 		commit = "729492406ec3b545c4ecf2beadf7bd30c81e70e4",
@@ -34,6 +29,11 @@ require("packer").startup(function(use)
 		config = function()
 			require("plugins.telescope")
 		end,
+	})
+	use({
+		"shaunsingh/nord.nvim",
+		branch = "master",
+		commit = "467d684f296a57b0069ff4ee9566df439511efe3",
 	})
 	use({
 		"nvim-telescope/telescope-fzf-native.nvim",
