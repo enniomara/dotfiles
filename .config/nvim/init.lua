@@ -33,7 +33,7 @@ require("packer").startup(function(use)
 	use({
 		"shaunsingh/nord.nvim",
 		branch = "master",
-		commit = "467d684f296a57b0069ff4ee9566df439511efe3",
+		commit = "c9265653e7fbf70326d671b37c7c89e4fa2b8093",
 	})
 	use({
 		"nvim-telescope/telescope-fzf-native.nvim",
