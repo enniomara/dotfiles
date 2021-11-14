@@ -1,0 +1,13 @@
+{
+  "dependencyDashboard": true,
+  "regexManagers": [
+    {
+      "fileMatch": [".config/nvim/init.lua"],
+      "matchStrings": [
+        "\({\s*\"(?<depName>.*)\",\s*tag = \"(?<currentValue>.*)\""
+
+      ],
+      "datasourceTemplate": "git-tags"
+    },
+  ]
+}
