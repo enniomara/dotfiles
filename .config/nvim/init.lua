@@ -12,7 +12,7 @@ require("packer").startup(function(use)
 	use({ "wbthomason/packer.nvim", lock = true })
 	use({
 		"kyazdani42/nvim-tree.lua",
-		tag = "1.6.5",
+		tag = "1.6.7",
 		requires = "kyazdani42/nvim-web-devicons",
 		config = function()
 			require("plugins.nvim-tree")
