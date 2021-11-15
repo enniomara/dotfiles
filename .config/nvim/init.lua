@@ -134,6 +134,7 @@ require("packer").startup(function(use)
 			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",
 			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-omni",
 			"windwp/nvim-autopairs",
 			"onsails/lspkind-nvim",
 		},
@@ -229,6 +230,11 @@ require("packer").startup(function(use)
 		"ggandor/lightspeed.nvim",
 		branch = "main",
 		commit = "c0ebc350e65b1f7370ec2d5b6f83bdc1ce602761",
+	})
+	use({
+		"lervag/vimtex",
+		tag = "v2.8",
+		ft = { "tex" },
 	})
 end)
 
