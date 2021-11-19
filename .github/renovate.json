@@ -1,5 +1,7 @@
 {
-  "extends": ["schedule:earlySaturdays"],
+  "schedule": [
+    "every saturday"
+  ],
   "dependencyDashboard": true,
   "regexManagers": [
     {
