@@ -135,6 +135,7 @@ require("packer").startup(function(use)
 			"saadparwaiz1/cmp_luasnip",
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-omni",
+			"hrsh7th/cmp-buffer",
 			"windwp/nvim-autopairs",
 			"onsails/lspkind-nvim",
 		},
