@@ -13,13 +13,13 @@ cmp.setup({
 		format = lspkind.cmp_format({ with_text = false, maxwidth = 70 }),
 	},
 	mapping = {
-		["<C-p>"] = cmp.mapping.select_prev_item(),
-		["<C-n>"] = cmp.mapping.select_next_item(),
-		["<C-d>"] = cmp.mapping.scroll_docs(-4),
-		["<C-f>"] = cmp.mapping.scroll_docs(4),
-		["<C-Space>"] = cmp.mapping.complete(),
-		["<C-e>"] = cmp.mapping.close(),
-		["<Tab>"] = function(fallback)
+		["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i" }),
+		["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i" }),
+		["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i" }),
+		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i" }),
+		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i" }),
+		["<C-e>"] = cmp.mapping(cmp.mapping.close(), { "i" }),
+		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
 			elseif luasnip.expand_or_jumpable() then
@@ -27,8 +27,10 @@ cmp.setup({
 			else
 				fallback()
 			end
-		end,
-		["<S-Tab>"] = function(fallback)
+		end, {
+			"i",
+		}),
+		["<S-Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
 			elseif luasnip.jumpable(-1) then
@@ -36,13 +38,15 @@ cmp.setup({
 			else
 				fallback()
 			end
-		end,
+		end, {
+			"i",
+		}),
 	},
 	sources = {
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
 		{ name = "buffer" },
-		{ name = "omni" }
+		{ name = "omni" },
 	},
 })
 
