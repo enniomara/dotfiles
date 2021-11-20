@@ -13,12 +13,12 @@ cmp.setup({
 		format = lspkind.cmp_format({ with_text = false, maxwidth = 70 }),
 	},
 	mapping = {
-		["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i" }),
-		["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i" }),
-		["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i" }),
-		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i" }),
-		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i" }),
-		["<C-e>"] = cmp.mapping(cmp.mapping.close(), { "i" }),
+		["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
+		["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
+		["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
+		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+		["<C-e>"] = cmp.mapping(cmp.mapping.close(), { "i", "c" }),
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
@@ -29,6 +29,7 @@ cmp.setup({
 			end
 		end, {
 			"i",
+			"c",
 		}),
 		["<S-Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
@@ -40,6 +41,7 @@ cmp.setup({
 			end
 		end, {
 			"i",
+			"c",
 		}),
 	},
 	sources = {
@@ -48,6 +50,13 @@ cmp.setup({
 		{ name = "buffer" },
 		{ name = "omni" },
 	},
+})
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(":", {
+	sources = cmp.config.sources({
+		{ name = "path" },
+		{ name = "cmdline" },
+	}),
 })
 
 require("nvim-autopairs.completion.cmp").setup({
