@@ -34,7 +34,7 @@ vim.opt.hidden = true -- make leaving unsaved buffer possible
 vim.opt.syntax = "on"
 
 vim.g.nord_borders = true
-vim.cmd([[colorscheme nord]])
+vim.cmd([[colorscheme onenord]])
 
 vim.opt.termguicolors = true
 

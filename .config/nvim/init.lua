@@ -31,9 +31,9 @@ require("packer").startup(function(use)
 		end,
 	})
 	use({
-		"shaunsingh/nord.nvim",
-		branch = "master",
-		commit = "467d684f296a57b0069ff4ee9566df439511efe3",
+		"rmehri01/onenord.nvim",
+		branch = "main",
+		commit = "34154ee1cadbb01186bb8aeea18ca3a6b8e0ddde",
 	})
 	use({
 		"nvim-telescope/telescope-fzf-native.nvim",
