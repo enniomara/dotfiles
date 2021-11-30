@@ -31,7 +31,7 @@ M.setup = function (on_attach, capabilities)
 			opts.settings = {
 				gopls = {
 					buildFlags = {
-						"-tags=requireDB,aws"
+						"-tags=requireDB,requireAWS,aws"
 					},
 				}
 			}
