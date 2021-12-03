@@ -42,20 +42,6 @@ require("packer").startup(function(use)
 		run = "make",
 	})
 	use({
-		"sudormrfbin/cheatsheet.nvim",
-		branch = "master",
-		commit = "3f0b718a030dd2c2757e053345de4f130f213514",
-
-		requires = {
-			{ "nvim-telescope/telescope.nvim" },
-			{ "nvim-lua/popup.nvim" },
-			{ "nvim-lua/plenary.nvim" },
-		},
-		config = function()
-			require("plugins.cheatsheet")
-		end,
-	})
-	use({
 		"akinsho/bufferline.nvim",
 		branch = "master",
 		commit = "782fab8a2352e872dc991c42f806dae18e848b2d",
