@@ -44,7 +44,7 @@ require("packer").startup(function(use)
 	use({
 		"akinsho/bufferline.nvim",
 		branch = "master",
-		commit = "782fab8a2352e872dc991c42f806dae18e848b2d",
+		commit = "463637a3ac86dcaacbcd47aa608f53aaad749696",
 		requires = "kyazdani42/nvim-web-devicons",
 		config = function()
 			require("plugins.bufferline")
