@@ -4,7 +4,7 @@
              :open-app-mode {:key :w}
              :ctrl-shift {:key :s}}
  :devices {:work [{:vendor_id 1008 :product_id 842}]
-           :laptop_keyboard [{:vendor_id 1452}]}
+           :laptop_keyboard [{:vendor_id 1452 :product_id 638}]}
 
  :templates {:km "osascript -e '
 on run argv
