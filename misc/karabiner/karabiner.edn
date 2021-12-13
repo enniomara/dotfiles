@@ -75,6 +75,8 @@ end run' \"%s\""
    :rules [:en-keyboard :ctrl-shift
            [:j :!CSopen_bracket]
            [:k :!CSclose_bracket]]}
+  {:des "left_control to fn in keychron" ;; in lack of a fn key on left side
+        :rules [[:left_control :fn [:keychron]]]}
   {:des "Show/hi(D)e applications"
    :rules [:open-app-mode
            [:j [:km "Google Chrome"]]
