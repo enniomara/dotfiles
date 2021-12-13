@@ -4,7 +4,9 @@
              :open-app-mode {:key :w}
              :ctrl-shift {:key :s}}
  :devices {:work [{:vendor_id 1008 :product_id 842}]
-           :laptop_keyboard [{:vendor_id 1452 :product_id 638}]
+           :laptop_keyboard [{:vendor_id 1452 :product_id 638} ;; work mbp
+                             {:vendor_id 1452 :product_id 631} ;; home mbp
+                             ]
            :keychron [{:vendor_id 1452 :product_id 592}]}
 
  :templates {:km "osascript -e '
@@ -76,7 +78,7 @@ end run' \"%s\""
            [:j :!CSopen_bracket]
            [:k :!CSclose_bracket]]}
   {:des "left_control to fn in keychron" ;; in lack of a fn key on left side
-        :rules [[:left_control :fn [:keychron]]]}
+   :rules [[:left_control :fn [:keychron]]]}
   {:des "Show/hi(D)e applications"
    :rules [:open-app-mode
            [:j [:km "Google Chrome"]]
