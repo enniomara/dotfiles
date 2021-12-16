@@ -81,7 +81,7 @@ end run' \"%s\""
    :rules [[:left_control :fn [:keychron]]]}
   {:des "Show/hi(D)e applications"
    :rules [:open-app-mode
-           [:j [:km "Google Chrome"]]
+           [:j [:km "Firefox"]]
            [:k [:km "kitty"]]
            [:l [:btt "show/hide: VSCode"]]
            [:u [:km "Telegram"]]
