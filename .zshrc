@@ -20,7 +20,8 @@ zinit wait lucid light-mode for \
 zinit wait lucid light-mode for \
     zsh-users/zsh-syntax-highlighting \
     atload"_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
-    zsh-users/zsh-completions
+    zsh-users/zsh-completions \
+    spwhitt/nix-zsh-completions
 
 zinit ice wait lucid multisrc'shell/{key-bindings,completion}.zsh'
 zinit light junegunn/fzf
