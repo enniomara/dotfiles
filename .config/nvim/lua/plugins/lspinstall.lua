@@ -37,6 +37,42 @@ M.setup = function (on_attach, capabilities)
 			}
 		end
 
+		if server.name == "yamlls" then
+			opts.settings = {
+				yaml = {
+					customTags = {
+						"!And",
+						"!And sequence",
+						"!If",
+						"!If sequence",
+						"!Not",
+						"!Not sequence",
+						"!Equals",
+						"!Equals sequence",
+						"!Or",
+						"!Or sequence",
+						"!FindInMap",
+						"!FindInMap sequence",
+						"!Base64",
+						"!Join",
+						"!Join sequence",
+						"!Cidr",
+						"!Ref",
+						"!Sub",
+						"!Sub sequence",
+						"!GetAtt",
+						"!GetAZs",
+						"!ImportValue",
+						"!ImportValue sequence",
+						"!Select",
+						"!Select sequence",
+						"!Split",
+						"!Split sequence"
+					}
+				}
+			}
+		end
+
 		-- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
 		server:setup(opts)
 		vim.cmd([[ do User LspAttachBuffers ]])
