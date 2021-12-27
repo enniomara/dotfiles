@@ -2,11 +2,11 @@ local lsp_installer = require("nvim-lsp-installer")
 
 local M = {}
 
-M.setup = function (on_attach, capabilities)
+M.setup = function(on_attach, capabilities)
 	lsp_installer.on_server_ready(function(server)
 		local opts = {
 			on_attach = on_attach,
-			capabilities = capabilities
+			capabilities = capabilities,
 		}
 
 		if server.name == "sumneko_lua" then
@@ -31,9 +31,9 @@ M.setup = function (on_attach, capabilities)
 			opts.settings = {
 				gopls = {
 					buildFlags = {
-						"-tags=requireDB,requireAWS,aws"
+						"-tags=requireDB,requireAWS,aws",
 					},
-				}
+				},
 			}
 		end
 
@@ -67,9 +67,9 @@ M.setup = function (on_attach, capabilities)
 						"!Select",
 						"!Select sequence",
 						"!Split",
-						"!Split sequence"
-					}
-				}
+						"!Split sequence",
+					},
+				},
 			}
 		end
 
