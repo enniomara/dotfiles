@@ -92,7 +92,7 @@ require("packer").startup(function(use)
 		tag = "v1.2",
 	})
 
-	use({ -- used for formatting mainly
+	use({
 		"jose-elias-alvarez/null-ls.nvim",
 		branch = "main",
 		commit = "a3ded9b1525b06136e58a95f4d9ed2f090c0f908",
