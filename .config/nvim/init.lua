@@ -231,6 +231,11 @@ require("packer").startup(function(use)
 		tag = "v2.8",
 		ft = { "tex" },
 	})
+	use({
+		"kevinhwang91/nvim-bqf",
+		tag = "v0.2.0",
+		ft = "qf",
+	})
 end)
 
 require("options")
