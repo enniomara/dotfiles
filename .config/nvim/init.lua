@@ -34,6 +34,11 @@ require("packer").startup(function(use)
 		"rmehri01/onenord.nvim",
 		branch = "main",
 		commit = "9d437b69afac269e0a24a94c9bf9ce5328730fed",
+		config = function()
+			require("onenord").setup({
+				fade_nc = false, -- Fade non-current windows, making them more distinguishable
+			})
+		end,
 	})
 	use({
 		"nvim-telescope/telescope-fzf-native.nvim",
