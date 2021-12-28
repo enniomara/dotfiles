@@ -98,7 +98,6 @@ require("packer").startup(function(use)
 		commit = "0bf6d358b86ae13f87cd45f6446e7b3ab924d060",
 		requires = {
 			"nvim-lua/plenary.nvim",
-			"neovim/nvim-lspconfig",
 			"lewis6991/gitsigns.nvim",
 		},
 		config = function ()
