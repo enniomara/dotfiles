@@ -101,6 +101,9 @@ require("packer").startup(function(use)
 			"neovim/nvim-lspconfig",
 			"lewis6991/gitsigns.nvim",
 		},
+		config = function ()
+			require("plugins.lsp.null-ls")
+		end
 	})
 	use({
 		"neovim/nvim-lspconfig",

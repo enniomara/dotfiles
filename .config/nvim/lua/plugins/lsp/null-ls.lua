@@ -12,12 +12,7 @@ local sources = {
 	null_ls.builtins.code_actions.gitsigns,
 }
 
-local M = {}
-M.setup = function(on_attach)
-   null_ls.config {
-      sources = sources,
-   }
-   require("lspconfig")["null-ls"].setup { on_attach = on_attach }
-end
-
-return M
+null_ls.setup({
+	sources = sources,
+	on_attach = require("plugins.lsp.config").on_attach,
+})
