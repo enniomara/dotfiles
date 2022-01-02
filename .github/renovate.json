@@ -20,5 +20,8 @@
       "datasourceTemplate": "git-refs",
       "lookupNameTemplate": "https://github.com/{{depName}}.git"
     }
-  ]
+  ],
+  "prBodyDefinitions": {
+    "Package": "github.com/{{{depname}}}"
+  }
 }
