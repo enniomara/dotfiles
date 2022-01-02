@@ -22,6 +22,6 @@
     }
   ],
   "prBodyDefinitions": {
-    "Package": "github.com/{{{depname}}}"
+    "Package": "github.com/{{{depName}}}"
   }
 }
