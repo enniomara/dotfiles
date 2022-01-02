@@ -22,6 +22,6 @@
     }
   ],
   "prBodyDefinitions": {
-    "Package": "[{{{depName}}}](github.com/{{{depName}}})"
+    "Package": "[{{{depName}}}](https://github.com/{{{depName}}})"
   }
 }
