@@ -9,6 +9,7 @@ mapper("n", "<Leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR
 mapper("n", "<Leader>fd", "<cmd>lua require('telescope.builtin').file_browser()<CR>")
 mapper("n", "<Leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<CR>")
 mapper("n", "<Leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>")
+mapper("n", "<Leader>f;", "<cmd>lua require('telescope.builtin').commands()<CR>")
 mapper("n", "<Leader>fs", ":Telescope sessions<CR>")
 mapper("n", "<Leader>fp", ":Telescope<CR>")
 
