@@ -20,6 +20,7 @@ vim.opt.hlsearch = true -- Will stop highlighting current search 'hits' when ano
 
 vim.opt.wildmenu = true -- Enable the 'autocomplete' menu when in command mode (':').
 vim.opt.wildmode = { "longest:full", "full" } -- Autocomplete til the longest word and don't fill it. Fixes annoying behaviour of vim
+vim.opt.showmode = false -- Do not show which mode (insert, visual etc)
 
 vim.opt.number = true -- Show line numbers on left side
 vim.opt.foldcolumn = "1" -- Add a bit extra margin to the left
