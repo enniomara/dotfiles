@@ -107,7 +107,7 @@ require("packer").startup(function(use)
 		},
 		config = function()
 			require("plugins.lsp.null-ls")
-		end
+		end,
 	})
 	use({
 		"neovim/nvim-lspconfig",
@@ -162,12 +162,12 @@ require("packer").startup(function(use)
 		end,
 	})
 	use({
-		"terrortylor/nvim-comment",
-		branch = "main",
-		commit = "6363118acf86824ed11c2238292b72dc5ef8bdde",
+		"numToStr/Comment.nvim",
+		branch = "master",
+		commit = "90df2f87c0b17193d073d1f72cea2e528e5b162d",
 		event = "BufRead",
 		config = function()
-			require("nvim_comment").setup()
+			require("Comment").setup()
 		end,
 	})
 	use({
