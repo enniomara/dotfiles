@@ -15,7 +15,14 @@ cmp.setup({
 		end,
 	},
 	formatting = {
-		format = lspkind.cmp_format({ with_text = false, maxwidth = 70 }),
+		format = lspkind.cmp_format({
+			with_text = true,
+			menu = {
+				buffer = "[buf]",
+				nvim_lsp = "[LSP]",
+				luasnip = "[snip]",
+			},
+		}),
 	},
 	mapping = {
 		["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
