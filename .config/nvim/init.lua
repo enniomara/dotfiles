@@ -225,7 +225,7 @@ require("packer").startup(function(use)
 	use({
 		"ggandor/lightspeed.nvim",
 		branch = "main",
-		commit = "9fddb6ebf4007eaa26f44cd31b5140cbd3bbb820",
+		commit = "2cc567615b4889a7fd3db502b42f9207e8cab6f1",
 	})
 	use({
 		"lervag/vimtex",
