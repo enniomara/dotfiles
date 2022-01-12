@@ -188,7 +188,7 @@ require("packer").startup(function(use)
 		branch = "main",
 		commit = "08e766c1467d3fa3b53ca1dafdfa9815ea830b3c",
 		config = function()
-			require("auto-session").setup({})
+			require("plugins.auto-session")
 		end,
 	})
 	use({
