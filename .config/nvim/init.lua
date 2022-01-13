@@ -237,6 +237,15 @@ require("packer").startup(function(use)
 		tag = "v0.2.0",
 		ft = "qf",
 	})
+	use({
+		"abecodes/tabout.nvim",
+		branch = "master",
+		commit = "6ff556b1b2274c8ba3eaedbf62339789e79baca8",
+		config = function()
+			require("tabout").setup({})
+		end,
+		after = { "nvim-treesitter" },
+	})
 end)
 
 require("options")
