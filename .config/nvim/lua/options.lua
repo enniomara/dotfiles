@@ -64,7 +64,7 @@ vim.opt.splitright = true
 
 vim.cmd([[au BufNewFile,BufRead Jenkinsfile setf groovy]]) -- the syntax of jenkinsfile is groovy
 
-vim.cmd([[cabbrev gpom Git push origin HEAD:refs/for/master]]) -- pushing to gerrit
+vim.cmd([[cabbrev gpum Git push origin HEAD:refs/for/master]]) -- pushing to gerrit
 vim.cmd([[
 	autocmd Filetype gitcommit iabbrev <buffer> solj Solves: Jira DDM-
 ]])
