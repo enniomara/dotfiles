@@ -21,7 +21,7 @@ require("packer").startup(function(use)
 	use({
 		"nvim-telescope/telescope.nvim",
 		branch = "master",
-		commit = "015a35626d5a293dc9c19dc2bb301f25850961f6",
+		commit = "0011b1148d3975600f5a9f0be8058cdaac4e30d9",
 		requires = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope-fzf-native.nvim",
