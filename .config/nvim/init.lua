@@ -90,7 +90,7 @@ require("packer").startup(function(use)
 	use({
 		"tpope/vim-unimpaired",
 		branch = "master",
-		commit = "e4006d68cd4f390efef935bc09be0ce3bd022e72",
+		commit = "f992923d336e93c7f50fe9b35a07d5a92660ecaf",
 	})
 	use({
 		"tpope/vim-sleuth",
