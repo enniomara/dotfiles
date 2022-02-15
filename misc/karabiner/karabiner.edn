@@ -88,4 +88,5 @@ end run' \"%s\""
            [:s [:km "Spotify"]]
            [:t [:km "TickTick"]]
            [:semicolon [:km "Teams"]]
+           [:p [:km "Obsidian"]]
            [:o [:km "Outlook"]]]}]}
