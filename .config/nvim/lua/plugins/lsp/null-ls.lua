@@ -9,8 +9,10 @@ local sources = {
 	b.formatting.shfmt,
 	b.formatting.prettier, -- YAML etc
 	b.diagnostics.yamllint,
+	b.diagnostics.shellcheck,
 
 	null_ls.builtins.code_actions.gitsigns,
+	null_ls.builtins.code_actions.shellcheck,
 }
 
 null_ls.setup({
