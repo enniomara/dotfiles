@@ -246,6 +246,11 @@ require("packer").startup(function(use)
 		end,
 		after = { "nvim-treesitter" },
 	})
+	use({
+		"ojroques/vim-oscyank",
+		branch = "main",
+		commit = "23b0846e26d946bda9ebcd267839fea83435aff2"
+	})
 end)
 
 require("options")
