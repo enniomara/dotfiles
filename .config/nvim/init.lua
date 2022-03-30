@@ -117,7 +117,7 @@ require("packer").startup(function(use)
 	use({
 		"williamboman/nvim-lsp-installer",
 		branch = "main",
-		commit = "8c32ee62b8a08f3a3d66d87a83b59bb37d57a388",
+		commit = "e79f0a516e2e2a33a4493df4b9eac47013f37b69",
 	})
 	use({
 		"hrsh7th/nvim-cmp",
