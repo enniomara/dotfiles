@@ -11,11 +11,15 @@ require("packer").startup(function(use)
 	-- Packer can manage itself
 	use({ "wbthomason/packer.nvim", lock = true })
 	use({
-		"kyazdani42/nvim-tree.lua",
-		tag = "1.6.7",
-		requires = "kyazdani42/nvim-web-devicons",
+		"nvim-neo-tree/neo-tree.nvim",
+		tag = "v2.6",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+		},
 		config = function()
-			require("plugins.nvim-tree")
+			require("plugins.neotree")
 		end,
 	})
 	use({
