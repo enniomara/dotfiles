@@ -2,7 +2,8 @@
                                :language "en"}}
  :simlayers {:a-mode {:key :a}
              :open-app-mode {:key :w}
-             :ctrl-shift {:key :s}}
+             :ctrl-shift {:key :s}
+             :d-mode {:key :d}}
  :devices {:work [{:vendor_id 1008 :product_id 842}]
            :laptop_keyboard [{:vendor_id 1452 :product_id 638} ;; work mbp
                              {:vendor_id 1452 :product_id 631} ;; home mbp
@@ -73,4 +74,12 @@
            [:t [:toggle "TickTick"]]
            [:semicolon [:toggle "Teams"]]
            [:p [:toggle "Obsidian"]]
-           [:o [:toggle "Outlook"]]]}]}
+           [:o [:toggle "Outlook"]]]}
+  {:des "bracket sequences"
+   :rules [:d-mode
+           [:j :!S9]
+           [:k :!S0]
+           [:i :open_bracket]
+           [:o :close_bracket]
+           [:n :!Sopen_bracket]
+           [:m :!Sclose_bracket]]}]}
