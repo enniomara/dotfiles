@@ -9,6 +9,9 @@ function ToggleApplication(app_name)
       app:activate()
     end
   else
-    hs.application.open(app_name)
+    local appExists = hs.application.launchOrFocus(app_name)
+    if not appExists then
+      hs.alert.show("Could not find app: " .. app_name)
+    end
   end
 end
