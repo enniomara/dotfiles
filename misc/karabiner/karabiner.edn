@@ -9,7 +9,7 @@
                              ]
            :keychron [{:vendor_id 1452 :product_id 592}]}
 
- :templates {:km "osascript ~/.config/karabiner/ToggleApplication.scpt \"%s\""
+ :templates {:toggle "osascript ~/.config/karabiner/ToggleApplication.scpt \"%s\""
              :btt "osascript -e 'tell application \"BetterTouchTool\" to trigger_named_async_without_response \"%s\"'"}
 
  :main
@@ -65,12 +65,12 @@
    :rules [[:left_control :fn [:keychron]]]}
   {:des "Show/hi(D)e applications"
    :rules [:open-app-mode
-           [:j [:km "Firefox"]]
-           [:k [:km "kitty"]]
+           [:j [:toggle "Firefox"]]
+           [:k [:toggle "kitty"]]
            [:l [:btt "show/hide: VSCode"]]
-           [:u [:km "Telegram"]]
-           [:s [:km "Spotify"]]
-           [:t [:km "TickTick"]]
-           [:semicolon [:km "Teams"]]
-           [:p [:km "Obsidian"]]
-           [:o [:km "Outlook"]]]}]}
+           [:u [:toggle "Telegram"]]
+           [:s [:toggle "Spotify"]]
+           [:t [:toggle "TickTick"]]
+           [:semicolon [:toggle "Teams"]]
+           [:p [:toggle "Obsidian"]]
+           [:o [:toggle "Outlook"]]]}]}
