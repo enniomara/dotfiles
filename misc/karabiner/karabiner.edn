@@ -74,7 +74,8 @@
            [:t [:toggle "TickTick"]]
            [:semicolon [:toggle "Teams"]]
            [:p [:toggle "Obsidian"]]
-           [:o [:toggle "Outlook"]]]}
+           [:o [:toggle "Outlook"]]
+           [:m [:toggle "Calendar"]]]}
   {:des "bracket sequences"
    :rules [:d-mode
            [:j :!S9]
