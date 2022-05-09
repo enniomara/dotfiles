@@ -11,6 +11,11 @@ require("packer").startup(function(use)
 	-- Packer can manage itself
 	use({ "wbthomason/packer.nvim", lock = true })
 	use({
+		"lewis6991/impatient.nvim",
+		branch = "main",
+		commit = "2337df7d778e17a58d8709f651653b9039946d8d",
+	})
+	use({
 		"nvim-neo-tree/neo-tree.nvim",
 		tag = "v2.6",
 		requires = {
@@ -253,10 +258,11 @@ require("packer").startup(function(use)
 	use({
 		"ojroques/vim-oscyank",
 		branch = "main",
-		commit = "23b0846e26d946bda9ebcd267839fea83435aff2"
+		commit = "23b0846e26d946bda9ebcd267839fea83435aff2",
 	})
 end)
 
+require("impatient")
 require("options")
 require("mappings")
 require("plugins.lsp")
