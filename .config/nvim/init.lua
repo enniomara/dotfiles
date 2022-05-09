@@ -95,6 +95,7 @@ require("packer").startup(function(use)
 	use({
 		"tpope/vim-fugitive",
 		tag = "v3.4",
+		event = "BufRead",
 	})
 	use({
 		"tpope/vim-unimpaired",
