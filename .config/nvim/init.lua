@@ -101,6 +101,7 @@ require("packer").startup(function(use)
 		"tpope/vim-unimpaired",
 		branch = "master",
 		commit = "f992923d336e93c7f50fe9b35a07d5a92660ecaf",
+		event = "BufRead",
 	})
 	use({
 		"tpope/vim-sleuth",
