@@ -251,7 +251,7 @@ require("packer").startup(function(use)
 	use({
 		"abecodes/tabout.nvim",
 		branch = "master",
-		commit = "f3fc7584696aa1746917fdfcd24aded8698176dd",
+		commit = "be655cc7ce0f5d6d24eeaf8b36e82693fd2facca",
 		config = function()
 			require("tabout").setup({})
 		end,
