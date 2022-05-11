@@ -30,14 +30,20 @@ require("packer").startup(function(use)
 	use({
 		"nvim-telescope/telescope.nvim",
 		branch = "master",
-		commit = "cf2d6d34282afd90f0f5d2aba265a23b068494c2",
+		commit = "795a63ed293ba249a588e9e67aa1f2cec82028e8",
 		requires = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope-fzf-native.nvim",
+			"nvim-telescope/telescope-ui-select.nvim",
 		},
 		config = function()
 			require("plugins.telescope")
 		end,
+	})
+	use({
+		"nvim-telescope/telescope-ui-select.nvim",
+		branch = "master",
+		commit = "62ea5e58c7bbe191297b983a9e7e89420f581369",
 	})
 	use({
 		"rmehri01/onenord.nvim",
