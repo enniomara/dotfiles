@@ -34,10 +34,16 @@ require("packer").startup(function(use)
 		requires = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope-fzf-native.nvim",
+			"nvim-telescope/telescope-ui-select.nvim",
 		},
 		config = function()
 			require("plugins.telescope")
 		end,
+	})
+	use({
+		"nvim-telescope/telescope-ui-select.nvim",
+		branch = "master",
+		commit = "62ea5e58c7bbe191297b983a9e7e89420f581369",
 	})
 	use({
 		"rmehri01/onenord.nvim",
