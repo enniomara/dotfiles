@@ -25,7 +25,7 @@ vim.opt.showmode = false -- Do not show which mode (insert, visual etc)
 vim.opt.number = true -- Show line numbers on left side
 vim.opt.foldcolumn = "1" -- Add a bit extra margin to the left
 
-vim.opt.laststatus = 2 -- Always show statusline
+vim.opt.laststatus = 3 -- show global statusline
 vim.opt.updatetime = 500 -- Set this to 500 milliseconds so that git gutter can update the gutter
 
 vim.opt.mouse = "a"
