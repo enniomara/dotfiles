@@ -69,3 +69,6 @@ vim.cmd([[cabbrev gpu Git push]]) -- pushing to gerrit
 vim.cmd([[
 	autocmd Filetype gitcommit iabbrev <buffer> solj Solves: Jira DDM-
 ]])
+vim.cmd([[ -- highlight yanked text
+	au TextYankPost * silent! lua vim.highlight.on_yank {on_visual=false}
+]])
