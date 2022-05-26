@@ -84,5 +84,5 @@
            [:k :!S0]
            [:i :open_bracket]
            [:o :close_bracket]
-           [:n :!Sopen_bracket]
-           [:m :!Sclose_bracket]]}]}
+           [:m :!Sopen_bracket]
+           [:comma :!Sclose_bracket]]}]}
