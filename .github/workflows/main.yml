@@ -13,8 +13,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Print body
         env:
-          PR_BODY: ${{ github.event.pull_request.body}}
+          PR: ${{ github.event.pull_request}}
           GH_OAUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "$PR_BODY" | hack/diff.sh
+          echo "$PR" | hack/diff.sh
 
