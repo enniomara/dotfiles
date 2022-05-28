@@ -269,7 +269,7 @@ require("packer").startup(function(use)
 	use({
 		"ojroques/vim-oscyank",
 		branch = "main",
-		commit = "23b0846e26d946bda9ebcd267839fea83435aff2",
+		commit = "ebcb47da66329d2c654e380d87879a935576c176",
 	})
 end)
 
