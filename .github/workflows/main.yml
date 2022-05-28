@@ -16,5 +16,14 @@ jobs:
           PR: ${{ toJson(github.event.pull_request) }}
           GH_OAUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "$PR" | hack/diff.sh
+          DIFF_OUTPUT=$(echo "$PR" | hack/diff.sh)
+          # the eof is needed since output is multiline
+          echo 'DIFF_OUTPUT<<EOF' >> $GITHUB_ENV
+          echo "$DIFF_OUTPUT" >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
+      - name: Print comment
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          message: |
+            ${{ env.DIFF_OUTPUT }}
 
