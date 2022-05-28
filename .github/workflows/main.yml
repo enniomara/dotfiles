@@ -9,6 +9,8 @@ jobs:
     if:  startsWith(github.head_ref, 'renovate/')
     runs-on: ubuntu-latest
     steps:
+      - name: Clone repository
+        uses: actions/checkout@v2
       - name: Print body
         env:
           PR_BODY: ${{ github.event.pull_request.body}}
