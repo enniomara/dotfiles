@@ -192,7 +192,7 @@ require("packer").startup(function(use)
 	})
 	use({
 		"lukas-reineke/indent-blankline.nvim",
-		tag = "v2.18.2",
+		tag = "v2.18.4",
 		event = "BufRead",
 		config = function()
 			require("indent_blankline").setup({
