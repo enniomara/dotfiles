@@ -1,0 +1,16 @@
+name: Neovim plugin diff commenter
+on:
+  pull_request:
+    types: [opened,edited,reopened]
+    paths:
+      - '**/init.lua'
+jobs:
+  pr_body:
+    if:  startsWith(github.head_ref, 'renovate/')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print body
+        env:
+          PR_BODY: ${{ github.event.pull_request.body}}
+        run: |
+          echo "$PR_BODY"
