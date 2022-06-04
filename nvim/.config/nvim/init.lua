@@ -91,7 +91,7 @@ require("packer").startup(function(use)
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		branch = "master",
-		commit = "a10b603a2cd6d336412e996970e91566492562d2",
+		commit = "d7ec2e6ab938b60baa5a9f4cd46d1d88d6da22ac",
 		run = ":TSUpdate",
 		event = "BufRead",
 		config = function()
