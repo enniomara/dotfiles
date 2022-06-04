@@ -1,3 +1,6 @@
+require("nvim-lsp-installer").setup({
+	automatic_installation = true,
+})
 local config = require("plugins.lsp.config")
 local lspconfig = require("lspconfig")
 
