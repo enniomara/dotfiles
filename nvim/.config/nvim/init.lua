@@ -99,6 +99,15 @@ require("packer").startup(function(use)
 		end,
 	})
 	use({
+		"nvim-treesitter/nvim-treesitter-context",
+		branch = "master",
+		commit = "0804542f61adfa4598020f203c6f28349c112c42",
+		requires = { "nvim-treesitter/nvim-treesitter" },
+		config = function()
+			require("treesitter-context").setup()
+		end,
+	})
+	use({
 		"tpope/vim-fugitive",
 		tag = "v3.4",
 		event = "BufRead",
