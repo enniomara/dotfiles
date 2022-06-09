@@ -167,6 +167,7 @@ require("packer").startup(function(use)
 			"windwp/nvim-autopairs",
 			"onsails/lspkind-nvim",
 		},
+		event = { "InsertEnter" },
 		config = function()
 			require("plugins.cmp")
 		end,
