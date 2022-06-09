@@ -84,6 +84,7 @@ require("packer").startup(function(use)
 		requires = {
 			"nvim-lua/plenary.nvim",
 		},
+		event = { "BufEnter" },
 		config = function()
 			require("plugins.gitsigns")
 		end,
