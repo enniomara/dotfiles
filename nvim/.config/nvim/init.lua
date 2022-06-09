@@ -131,6 +131,7 @@ require("packer").startup(function(use)
 			"nvim-lua/plenary.nvim",
 			"lewis6991/gitsigns.nvim",
 		},
+		event = { "BufRead", "BufNewFile" },
 		config = function()
 			require("plugins.lsp.null-ls")
 		end,
