@@ -139,11 +139,13 @@ require("packer").startup(function(use)
 		"neovim/nvim-lspconfig",
 		branch = "master",
 		commit = "2a455c148341c4faf2dd60401397fed35d084c59",
+		event = { "VimEnter" },
 	})
 	use({
 		"williamboman/nvim-lsp-installer",
 		branch = "main",
 		commit = "f5f6538984b5bc9bccfc544960e05d47304f3c5e",
+		after = { "nvim-lspconfig", "lsp_signature.nvim" },
 		config = function()
 			require("plugins.lsp")
 		end,
