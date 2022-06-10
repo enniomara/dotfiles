@@ -23,6 +23,7 @@ require("packer").startup(function(use)
 			"kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
 			"MunifTanjim/nui.nvim",
 		},
+		cmd = "Neotree",
 		config = function()
 			require("plugins.neotree")
 		end,
@@ -84,7 +85,6 @@ require("packer").startup(function(use)
 		requires = {
 			"nvim-lua/plenary.nvim",
 		},
-		event = { "BufEnter" },
 		config = function()
 			require("plugins.gitsigns")
 		end,
@@ -104,6 +104,7 @@ require("packer").startup(function(use)
 		branch = "master",
 		commit = "0804542f61adfa4598020f203c6f28349c112c42",
 		requires = { "nvim-treesitter/nvim-treesitter" },
+		event = { "BufEnter" },
 		config = function()
 			require("treesitter-context").setup()
 		end,
@@ -111,7 +112,7 @@ require("packer").startup(function(use)
 	use({
 		"tpope/vim-fugitive",
 		tag = "v3.4",
-		event = "BufRead",
+		cmd = "Git",
 	})
 	use({
 		"tpope/vim-unimpaired",
@@ -167,7 +168,7 @@ require("packer").startup(function(use)
 			"windwp/nvim-autopairs",
 			"onsails/lspkind-nvim",
 		},
-		event = { "InsertEnter" },
+		event = { "InsertEnter", "CmdlineEnter" },
 		config = function()
 			require("plugins.cmp")
 		end,
@@ -194,6 +195,7 @@ require("packer").startup(function(use)
 				disable_filetype = { "TelescopePrompt", "vim" },
 			})
 		end,
+		event = { "InsertEnter" },
 	})
 	use({
 		"numToStr/Comment.nvim",
