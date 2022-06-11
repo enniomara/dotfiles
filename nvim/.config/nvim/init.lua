@@ -183,7 +183,7 @@ require("packer").startup(function(use)
 	use({
 		"windwp/nvim-autopairs",
 		branch = "master",
-		commit = "b9cc0a26f3b5610ce772004e1efd452b10b36bc9",
+		commit = "84cde3547e9a8b16db0bfe523e98e19b7be5148b",
 		config = function()
 			require("nvim-autopairs").setup({
 				disable_filetype = { "TelescopePrompt", "vim" },
