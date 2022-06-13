@@ -26,7 +26,7 @@ M.on_attach = function(_, bufnr)
 		bufnr,
 		"n",
 		"<leader>e",
-		"<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>",
+		"<cmd>lua vim.diagnostic.open_float()<CR>",
 		opts
 	)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
