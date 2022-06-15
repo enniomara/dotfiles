@@ -79,4 +79,6 @@ lspconfig.yamlls.setup({
 	},
 })
 
+lspconfig.pyright.setup({})
+
 require("lsp_signature").setup({})
