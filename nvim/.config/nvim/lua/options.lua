@@ -58,6 +58,7 @@ vim.cmd([[au BufNewFile,BufRead Jenkinsfile setf groovy]]) -- the syntax of jenk
 
 vim.cmd([[cabbrev gpum Git push origin HEAD:refs/for/master]]) -- pushing to gerrit
 vim.cmd([[cabbrev gpu Git push]]) -- pushing to gerrit
+vim.cmd([[cabbrev gpulr Git pull --rebase]])
 vim.cmd([[
 	autocmd Filetype gitcommit iabbrev <buffer> solj Solves: Jira DDM-
 ]])
