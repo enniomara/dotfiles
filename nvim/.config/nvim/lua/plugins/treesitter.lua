@@ -28,6 +28,7 @@ local gofolds = [[
 	(type_declaration)
 	(var_declaration)
 	(argument_list)
+	(composite_literal)
 	] @fold
 ]]
 require("vim.treesitter.query").set_query("go", "folds", gofolds)
