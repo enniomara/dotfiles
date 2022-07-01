@@ -287,6 +287,14 @@ require("packer").startup(function(use)
 		branch = "main",
 		commit = "360ccdc01b18cd434588c34e15e5ea382b436de8",
 	})
+	use({
+		"anuvyklack/pretty-fold.nvim",
+		branch = "master",
+		commit = "af4afff523fc1daee33bee32d6786c90d8bcc121",
+		config = function()
+			require("pretty-fold").setup({})
+		end,
+	})
 end)
 
 require("impatient")
