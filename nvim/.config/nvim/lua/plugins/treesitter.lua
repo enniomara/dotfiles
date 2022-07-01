@@ -14,3 +14,19 @@ require("nvim-treesitter.configs").setup({
 		},
 	},
 })
+
+local gofolds = [[
+	[
+	(const_declaration)
+	(expression_switch_statement)
+	(for_statement)
+	(func_literal)
+	(function_declaration)
+	(if_statement)
+	(import_declaration)
+	(method_declaration)
+	(type_declaration)
+	(var_declaration)
+	] @fold
+]]
+require("vim.treesitter.query").set_query("go", "folds", gofolds)
