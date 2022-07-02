@@ -54,6 +54,9 @@ vim.opt.relativenumber = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
+-- used by session autosaver
+vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
+
 vim.cmd([[au BufNewFile,BufRead Jenkinsfile setf groovy]]) -- the syntax of jenkinsfile is groovy
 
 vim.cmd([[cabbrev gpum Git push origin HEAD:refs/for/master]]) -- pushing to gerrit
