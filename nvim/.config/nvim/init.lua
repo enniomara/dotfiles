@@ -286,11 +286,13 @@ require("packer").startup(function(use)
 		"ojroques/vim-oscyank",
 		branch = "main",
 		commit = "360ccdc01b18cd434588c34e15e5ea382b436de8",
+		event = "BufRead",
 	})
 	use({
 		"anuvyklack/pretty-fold.nvim",
 		branch = "master",
 		commit = "af4afff523fc1daee33bee32d6786c90d8bcc121",
+		event = "BufRead",
 		config = function()
 			require("pretty-fold").setup({})
 		end,
