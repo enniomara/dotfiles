@@ -80,5 +80,9 @@ lspconfig.yamlls.setup({
 })
 
 lspconfig.pyright.setup({})
+lspconfig.tsserver.setup({
+	on_attach = config.on_attach,
+	capabilities = capabilities,
+})
 
 require("lsp_signature").setup({})
