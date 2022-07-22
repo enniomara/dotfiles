@@ -60,6 +60,7 @@ vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,te
 vim.cmd([[au BufNewFile,BufRead Jenkinsfile setf groovy]]) -- the syntax of jenkinsfile is groovy
 
 vim.cmd([[cabbrev gpum Git push origin HEAD:refs/for/master]]) -- pushing to gerrit
+vim.cmd([[cabbrev gpumw Git push origin HEAD:refs/for/master\%wip]])
 vim.cmd([[cabbrev gpu Git push]]) -- pushing to gerrit
 vim.cmd([[cabbrev gpulr Git pull --rebase]])
 vim.cmd([[cabbrev git Git]]) -- fix annoying behaviour, sometimes I don't hit shift
