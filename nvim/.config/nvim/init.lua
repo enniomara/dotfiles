@@ -291,7 +291,7 @@ require("packer").startup(function(use)
 	use({
 		"anuvyklack/pretty-fold.nvim",
 		branch = "master",
-		commit = "af4afff523fc1daee33bee32d6786c90d8bcc121",
+		commit = "a7d8b424abe0eedf50116c460fbe6dfd5783b1d5",
 		event = "BufRead",
 		config = function()
 			require("pretty-fold").setup({})
