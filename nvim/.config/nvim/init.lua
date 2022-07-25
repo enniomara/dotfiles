@@ -30,7 +30,7 @@ require("packer").startup(function(use)
 	})
 	use({
 		"nvim-telescope/telescope.nvim",
-		branch = "master",
+		branch = "0.1.x",
 		commit = "d88b44ddf14670cffa9fdb1eaca7a0429a973653",
 		requires = {
 			"nvim-lua/plenary.nvim",
