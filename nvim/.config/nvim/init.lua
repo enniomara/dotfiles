@@ -74,7 +74,7 @@ require("packer").startup(function(use)
 	use({
 		"ntpeters/vim-better-whitespace",
 		branch = "master",
-		commit = "c5afbe91d29c5e3be81d5125ddcdc276fd1f1322",
+		commit = "1b22dc57a2751c7afbc6025a7da39b7c22db635d",
 		config = function()
 			require("plugins.vim-better-whitespace")
 		end,
