@@ -63,6 +63,8 @@ vim.cmd([[cabbrev gpum Git push origin HEAD:refs/for/master]]) -- pushing to ger
 vim.cmd([[cabbrev gpumw Git push origin HEAD:refs/for/master\%wip]])
 vim.cmd([[cabbrev gpu Git push]]) -- pushing to gerrit
 vim.cmd([[cabbrev gpulr Git pull --rebase]])
+vim.cmd([[cabbrev grbc Git rebase --continue]])
+vim.cmd([[cabbrev grbim Git rebase -i origin/master]])
 vim.cmd([[cabbrev git Git]]) -- fix annoying behaviour, sometimes I don't hit shift
 vim.cmd([[
 	autocmd Filetype gitcommit iabbrev <buffer> solj Solves: Jira DDM-
