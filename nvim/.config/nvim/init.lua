@@ -296,6 +296,14 @@ require("packer").startup(function(use)
 			require("pretty-fold").setup({})
 		end,
 	})
+	use({
+		"kylechui/nvim-surround",
+		branch = "main",
+		commit = "328f20c1d0e39ed30df3fc6334c093e8e8b72453",
+		config = function()
+			require("nvim-surround").setup({})
+		end,
+	})
 end)
 
 require("impatient")
