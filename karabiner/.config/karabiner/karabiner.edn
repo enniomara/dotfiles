@@ -70,7 +70,6 @@
    :rules [:open-app-mode
            [:j [:toggle "Firefox"]]
            [:k [:toggle "kitty"]]
-           [:l [:btt "show/hide: VSCode"]]
            [:u [:toggle "Telegram"]]
            [:s [:toggle "Spotify"]]
            [:t [:toggle "TickTick"]]
