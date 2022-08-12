@@ -77,7 +77,8 @@
            [:semicolon [:toggle "Teams"]]
            [:p [:toggle "Obsidian"]]
            [:o [:toggle "Outlook"]]
-           [:m [:toggle "Calendar"]]]}
+           [:m [:toggle "Calendar"]]
+           [:d [:toggle "Discord"]]]}
   {:des "bracket sequences"
    :rules [:d-mode
            [:j :!S9]
