@@ -284,7 +284,7 @@ require("packer").startup(function(use)
 	use({
 		"ojroques/vim-oscyank",
 		branch = "main",
-		commit = "360ccdc01b18cd434588c34e15e5ea382b436de8",
+		commit = "849c67adf24a86935b8be62860ad9acb00cf4572",
 		event = "BufRead",
 	})
 	use({
