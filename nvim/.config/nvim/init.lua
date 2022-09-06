@@ -255,7 +255,7 @@ require("packer").startup(function(use)
 	})
 	use({
 		"ray-x/lsp_signature.nvim",
-		tag = "v0.1.1",
+		tag = "v0.2.0",
 	})
 	use({
 		"ggandor/lightspeed.nvim",
