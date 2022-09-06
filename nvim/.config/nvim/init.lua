@@ -299,7 +299,7 @@ require("packer").startup(function(use)
 	use({
 		"kylechui/nvim-surround",
 		branch = "main",
-		commit = "328f20c1d0e39ed30df3fc6334c093e8e8b72453",
+		tag = "v1.0.0",
 		config = function()
 			require("nvim-surround").setup({})
 		end,
