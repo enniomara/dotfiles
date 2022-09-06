@@ -175,7 +175,7 @@ require("packer").startup(function(use)
 	use({
 		"rafamadriz/friendly-snippets",
 		branch = "main",
-		commit = "7339def34e46237eb7c9a893cb7d42dcb90e05e6",
+		commit = "22a99756492a340c161ab122b0ded90ab115a1b3",
 	})
 	use({
 		"folke/which-key.nvim",
