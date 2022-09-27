@@ -54,4 +54,7 @@ export LC_CTYPE=en_US.UTF-8
 
 export EDITOR="nvim"
 
+# load direnv, used to load content of .envrc if present in directory
+eval "$(direnv hook zsh)"
+
 [ -f ~/.zshrc-custom.zsh ] && source ~/.zshrc-custom.zsh
