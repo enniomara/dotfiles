@@ -79,6 +79,12 @@ lspconfig.yamlls.setup({
 	},
 })
 
+-- LSP for nix
+lspconfig.rnix.setup({
+	on_attach = config.on_attach,
+	capabilities = capabilities,
+})
+
 lspconfig.pyright.setup({})
 lspconfig.tsserver.setup({
 	on_attach = config.on_attach,
