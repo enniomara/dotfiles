@@ -40,9 +40,6 @@ bindkey '^P' up-line-or-search # make ctrl+p behave same as up arrow
 # Use ~~ to trigger autocompletion (instead of **)
 export FZF_COMPLETION_TRIGGER='~~'
 
-# do not quit shell when Ctrl+D is registered
-set -o ignoreeof
-
 # Avoid issues with `gpg` as installed via Homebrew.
 # # https://stackoverflow.com/a/42265848/96656
 export GPG_TTY=$(tty)
