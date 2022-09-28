@@ -97,5 +97,9 @@ lspconfig.clojure_lsp.setup({
 	on_attach = config.on_attach,
 	capabilities = capabilities,
 })
+lspconfig.eslint.setup({
+	on_attach = config.on_attach,
+	capabilities = capabilities,
+})
 
 require("lsp_signature").setup({})

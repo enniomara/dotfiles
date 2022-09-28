@@ -13,6 +13,11 @@ local sources = {
 
 	b.diagnostics.cfn_lint,
 
+	b.code_actions.eslint,
+	b.diagnostics.eslint.with({
+		method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
+	}),
+
 	null_ls.builtins.code_actions.shellcheck,
 }
 
