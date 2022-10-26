@@ -11,6 +11,12 @@ require("telescope").setup({
 			"--smart-case",
 			"--hidden", -- so that it shows dotfiles
 		},
+		layout_config = {
+			horizontal = {
+				preview_width = 0.55,
+				results_width = 0.8,
+			},
+		},
 	},
 	pickers = {
 		find_files = {
