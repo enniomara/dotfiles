@@ -29,6 +29,7 @@ mapper("n", "<Leader>5", ":BufferLineGoToBuffer 5<CR>")
 
 -- easier movement to save buffer than :w
 mapper("n", "<Leader>ss", ":w<CR>")
+mapper("n", "<C-s>", ":w<CR>")
 
 -- Tmux-zoom like feature, full-screens the current pane
 mapper("n", "<C-W>z", ":tab split <CR>")
