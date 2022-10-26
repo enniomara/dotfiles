@@ -144,14 +144,22 @@ require("packer").startup(function(use)
 		event = { "VimEnter" },
 	})
 	use({
-		"williamboman/nvim-lsp-installer",
+		"williamboman/mason.nvim",
 		branch = "main",
-		commit = "23820a878a5c2415bfd3b971d1fe3c79e4dd6763",
-		after = { "nvim-lspconfig", "lsp_signature.nvim" },
+		commit = "7380bd04bd194ce7317a8a8b3f0fe144d1917e72",
+		after = { "nvim-lspconfig" },
+		-- configuration done in mason-lspconfig.nvim
+	})
+	use({
+		"williamboman/mason-lspconfig.nvim",
+		branch = "main",
+		commit = "6768067573d97a033824b38bdce18ae0c8490a52",
+		after = { "nvim-lspconfig", "mason.nvim", "lsp_signature.nvim" },
 		config = function()
 			require("plugins.lsp")
 		end,
 	})
+
 	use({
 		"hrsh7th/nvim-cmp",
 		branch = "main",
