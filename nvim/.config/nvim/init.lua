@@ -221,7 +221,7 @@ require("packer").startup(function(use)
 	use({
 		"rmagatti/auto-session",
 		branch = "main",
-		commit = "9c302e01ebb474f9b19998488060d9f110ef75c5",
+		commit = "39319bf7ad15a1881f180fa7c14bf6703775035e",
 		config = function()
 			require("plugins.auto-session")
 		end,
