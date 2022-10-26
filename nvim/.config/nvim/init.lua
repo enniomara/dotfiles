@@ -91,7 +91,7 @@ require("packer").startup(function(use)
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		branch = "master",
-		commit = "3e09c81b4c33bf14907b8a59025904d14c234b1e",
+		commit = "3ad2aa578a4cf6947d38dab9bcc50d7d6041b796",
 		run = ":TSUpdate",
 		event = "BufRead",
 		config = function()
@@ -155,7 +155,7 @@ require("packer").startup(function(use)
 	use({
 		"hrsh7th/nvim-cmp",
 		branch = "main",
-		commit = "b16e5bcf1d8fd466c289eab2472d064bcd7bab5d",
+		commit = "cdb77665bbf23bd2717d424ddf4bf98057c30bb3",
 		requires = {
 			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",

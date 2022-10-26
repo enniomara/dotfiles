@@ -22,7 +22,7 @@ M.on_attach = function(_, bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "v", "<leader>ca", "<cmd>lua vim.lsp.buf.range_code_action()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>e", "<cmd>lua vim.diagnostic.open_float({scope=\"line\"})<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>e", '<cmd>lua vim.diagnostic.open_float({scope="line"})<CR>', opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
@@ -33,8 +33,8 @@ M.on_attach = function(_, bufnr)
 		[[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]],
 		opts
 	)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>fm", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>fm", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opts)
+	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]])
 end
 
 return M
