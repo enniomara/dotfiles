@@ -5,10 +5,10 @@ end
 
 mapper("n", "<Leader>d", ":Neotree toggle=true<CR>")
 mapper("n", "<Leader>qq", ":bp<bar>sp<bar>bn<bar>bd<CR>") -- close current buffer
-mapper("n", "<Leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>")
-mapper("n", "<Leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<CR>")
-mapper("n", "<Leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>")
-mapper("n", "<Leader>f;", "<cmd>lua require('telescope.builtin').commands()<CR>")
+mapper("n", "<Leader>ff", ":Telescope find_files<CR>")
+mapper("n", "<Leader>fg", ":Telescope live_grep<CR>")
+mapper("n", "<Leader>fb", ":Telescope buffers<CR>")
+mapper("n", "<Leader>f;", ":Telescope commands<CR>")
 mapper("n", "<Leader>fs", ":Telescope sessions<CR>")
 mapper("n", "<Leader>fp", ":Telescope<CR>")
 
