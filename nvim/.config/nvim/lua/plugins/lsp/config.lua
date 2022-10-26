@@ -33,8 +33,8 @@ M.on_attach = function(_, bufnr)
 		[[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]],
 		opts
 	)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>fm", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>fm", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opts)
+	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]])
 end
 
 return M
