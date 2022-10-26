@@ -4,7 +4,7 @@ local mapper = function(mode, key, result)
 end
 
 mapper("n", "<Leader>d", ":Neotree toggle=true<CR>")
-mapper("n", "<Leader>qq", ":bp<bar>sp<bar>bn<bar>bd<CR>") -- close current buffer
+mapper("n", "<Leader>qq", ":Bdelete<CR>") -- close current buffer
 mapper("n", "<Leader>ff", ":Telescope find_files<CR>")
 mapper("n", "<Leader>fg", ":Telescope live_grep<CR>")
 mapper("n", "<Leader>fb", ":Telescope buffers<CR>")

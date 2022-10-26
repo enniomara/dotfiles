@@ -313,6 +313,12 @@ require("packer").startup(function(use)
 			require("nvim-surround").setup({})
 		end,
 	})
+	use({
+		"famiu/bufdelete.nvim",
+		branch = "master",
+		commit = "e88dbe0ba5829119d8edb5fc69d3c8553e324a93",
+		cmd = { "Bdelete", "Bwipeout" },
+	})
 end)
 
 require("impatient")
