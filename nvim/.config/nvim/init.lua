@@ -80,7 +80,7 @@ require("packer").startup(function(use)
 	})
 	use({
 		"lewis6991/gitsigns.nvim",
-		tag = "v0.3",
+		tag = "v0.5",
 		requires = {
 			"nvim-lua/plenary.nvim",
 		},
