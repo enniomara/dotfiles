@@ -64,7 +64,7 @@ require("packer").startup(function(use)
 	})
 	use({
 		"akinsho/bufferline.nvim",
-		tag = "v3.0.1",
+		tag = "v3.1.0",
 		requires = "kyazdani42/nvim-web-devicons",
 		config = function()
 			require("plugins.bufferline")
