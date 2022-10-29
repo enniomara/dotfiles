@@ -32,8 +32,6 @@ vim.opt.mouse = "a"
 vim.opt.confirm = true -- Make vim confirm of file should be saved when exiting
 vim.opt.hidden = true -- make leaving unsaved buffer possible
 
-vim.opt.cmdheight = 0
-
 vim.opt.syntax = "on"
 
 vim.g.nord_borders = true
