@@ -42,3 +42,5 @@ mapper("n", "n", "nzzzv")
 mapper("n", "N", "Nzzzv")
 
 mapper("n", "Q", "<nop>") -- disable entering to ex-mode
+
+mapper("v", "<Leader>yy", ":OSCYank<CR>")
