@@ -107,4 +107,9 @@ lspconfig.rust_analyzer.setup({
 	capabilities = capabilities,
 })
 
+lspconfig.astro.setup({
+	on_attach = config.on_attach,
+	capabilities = capabilities,
+})
+
 require("lsp_signature").setup({})
