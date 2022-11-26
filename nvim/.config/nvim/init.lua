@@ -117,7 +117,7 @@ require("packer").startup(function(use)
 	use({
 		"tpope/vim-unimpaired",
 		branch = "master",
-		commit = "efdc6475f7ea789346716dabf9900ac04ee8604a",
+		commit = "6d44a6dc2ec34607c41ec78acf81657248580bf1",
 		event = "BufRead",
 	})
 	use({
