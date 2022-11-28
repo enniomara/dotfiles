@@ -51,6 +51,12 @@ export LC_CTYPE=en_US.UTF-8
 
 export EDITOR="nvim"
 
+# Configure less to behave consistently across environments
+# -M, prompt more in the screen
+# -q quiet, do not ring bell
+# -i ignore case
+export LESS="Mqi"
+
 # load direnv, used to load content of .envrc if present in directory
 eval "$(direnv hook zsh)"
 
