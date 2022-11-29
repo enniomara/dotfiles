@@ -55,7 +55,8 @@ export EDITOR="nvim"
 # -M, prompt more in the screen
 # -q quiet, do not ring bell
 # -i ignore case
-export LESS="Mqi"
+# -R color output
+export LESS="MqiR"
 
 # load direnv, used to load content of .envrc if present in directory
 eval "$(direnv hook zsh)"
