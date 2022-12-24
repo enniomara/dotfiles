@@ -187,7 +187,7 @@ require("packer").startup(function(use)
 	use({
 		"folke/which-key.nvim",
 		branch = "main",
-		commit = "61553aeb3d5ca8c11eea8be6eadf478062982ac9",
+		commit = "8682d3003595017cd8ffb4c860a07576647cc6f8",
 		config = function()
 			require("which-key").setup({})
 		end,
