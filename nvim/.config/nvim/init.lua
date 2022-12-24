@@ -50,7 +50,7 @@ require("packer").startup(function(use)
 	use({
 		"rmehri01/onenord.nvim",
 		branch = "main",
-		commit = "0cd9f681bee019715bfbe928891579a3af3331e8",
+		commit = "3fca21ce5a849b0a5f4c97a2e6db8e61669cc617",
 		config = function()
 			require("onenord").setup({
 				fade_nc = false, -- Fade non-current windows, making them more distinguishable
