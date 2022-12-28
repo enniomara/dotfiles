@@ -13,7 +13,7 @@ require("packer").startup(function(use)
 	use({
 		"lewis6991/impatient.nvim",
 		branch = "main",
-		commit = "d3dd30ff0b811756e735eb9020609fa315bfbbcc",
+		commit = "c90e273f7b8c50a02f956c24ce4804a47f18162e",
 	})
 	use({
 		"nvim-neo-tree/neo-tree.nvim",
