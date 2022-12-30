@@ -7,9 +7,11 @@ local sources = {
 
 	-- Shell
 	b.formatting.shfmt,
+	b.diagnostics.shellcheck,
+	null_ls.builtins.code_actions.shellcheck,
+
 	b.formatting.prettier, -- YAML etc
 	b.diagnostics.yamllint,
-	b.diagnostics.shellcheck,
 
 	b.diagnostics.cfn_lint,
 
@@ -18,12 +20,10 @@ local sources = {
 		method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
 	}),
 
-	null_ls.builtins.code_actions.shellcheck,
-
 	-- python
 	b.diagnostics.flake8.with({ extra_args = { "--max-line-length=100" } }), -- 100 because wide screens are a thing,
 	b.formatting.black.with({ extra_args = { "--fast" } }),
-	b.formatting.isort
+	b.formatting.isort,
 }
 
 null_ls.setup({
