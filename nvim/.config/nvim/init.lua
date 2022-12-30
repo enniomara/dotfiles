@@ -17,7 +17,7 @@ require("packer").startup(function(use)
 	})
 	use({
 		"nvim-neo-tree/neo-tree.nvim",
-		tag = "v2.6",
+		tag = "2.48",
 		requires = {
 			"nvim-lua/plenary.nvim",
 			"kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
