@@ -34,7 +34,13 @@ mapper("n", "<C-s>", ":w<CR>")
 -- Tmux-zoom like feature, full-screens the current pane
 mapper("n", "<C-W>z", ":tab split <CR>")
 
-mapper("n", "<Leader>gg", ":Git <CR>")
+vim.keymap.set({ "n" }, "<Leader>gg", function()
+	if vim.bo.filetype == "fugitive" then
+		vim.cmd(":q")
+	else
+		vim.cmd("Git")
+	end
+end)
 mapper("n", "<Leader>gcv", ":Git commit -v<CR>")
 
 -- Make sure search result is in the middle of buffer
