@@ -78,3 +78,5 @@ vim.cmd([[
 -- recommendation is to set this
 -- see https://github.com/ojroques/vim-oscyank/issues/26
 vim.g.oscyank_term = 'default'
+
+vim.opt.cmdheight = 0
