@@ -51,5 +51,9 @@ mapper("n", "Q", "<nop>") -- disable entering to ex-mode
 
 mapper("v", "<Leader>yy", ":OSCYank<CR>")
 
-mapper("n", "<Leader>ld", ":lua vim.diagnostic.disable(0)<CR>") -- disable diagnostics on this buffer
-mapper("n", "<Leader>le", ":lua vim.diagnostic.enable(0)<CR>") -- enable diagnostics on this buffer
+mapper("n", "<Leader>ld", function() -- disable diagnostics on this buffer
+	vim.diagnostic.disable(0)
+end)
+mapper("n", "<Leader>le", function() -- enable diagnostics on this buffer
+	vim.diagnostic.enable(0)
+end)
