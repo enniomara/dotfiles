@@ -105,4 +105,13 @@ require("neo-tree").setup({
 		hijack_netrw_behavior = "open_default", -- netrw disabled, opening a directory opens neo-tree
 		use_libuv_file_watcher = true, -- This will use the OS level file watchers to detect changes
 	},
+	event_handlers = {
+		{
+			event = "neo_tree_buffer_enter",
+			handler = function(_)
+				-- Set relative numbers on neo-tree
+				vim.opt.relativenumber = true
+			end,
+		},
+	},
 })
