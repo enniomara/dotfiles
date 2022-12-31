@@ -20,6 +20,13 @@
           packages = [
             pkgs.stow
           ];
+          commands = [
+            {
+              name = "rebuild-home";
+              command = "home-manager switch --flake \"$PRJ_ROOT/nix/.config/nixpkgs/\"";
+
+            }
+          ];
         };
     });
 }
