@@ -31,5 +31,7 @@
     pkgs.jq
     pkgs.ripgrep
     pkgs.tldr
+
+    pkgs.tmux
   ];
 }
