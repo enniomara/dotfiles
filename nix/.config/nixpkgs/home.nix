@@ -22,6 +22,10 @@
   home.packages = [
     pkgs.htop
     pkgs.direnv
+
+    # for karabiner configuration
+    pkgs.goku
+
     pkgs.neovim
 
     # cli
