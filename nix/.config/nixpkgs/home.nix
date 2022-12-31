@@ -23,5 +23,13 @@
     pkgs.htop
     pkgs.direnv
     pkgs.neovim
+
+    # cli
+    pkgs.autojump
+    pkgs.bat
+    pkgs.fd
+    pkgs.jq
+    pkgs.ripgrep
+    pkgs.tldr
   ];
 }
