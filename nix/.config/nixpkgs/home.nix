@@ -22,5 +22,6 @@
   home.packages = [
     pkgs.htop
     pkgs.direnv
+    pkgs.neovim
   ];
 }
