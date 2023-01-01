@@ -20,12 +20,8 @@ Then run the following in vim.
 ```
 
 ### ZSH
-Run the following to install [zinit](https://github.com/zdharma/zinit.git), and symlink `.zshrc`.
-```bash
-mkdir /usr/local/share/zinit/
-git clone https://github.com/zdharma/zinit.git /usr/local/share/zinit/
-ln -s [path to dotfiles]/.zshrc ~/.zshrc
-```
+Follow the installation instructions in the [zinit Github Page](https://github.com/zdharma-continuum/zinit#install) to install zinit.
+The rest of zsh configuration should take care of itself.
 
 #### zshrc-custom
 This file is used to add lines to zshrc that do not need to be versioned. Create and symlink it by running:
