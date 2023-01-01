@@ -29,15 +29,6 @@ This file is used to add lines to zshrc that do not need to be versioned. Create
 touch [path to dotfiles]/.zshrc-custom.zsh && ln -s [path to dotfiles]/.zshrc-custom.zsh ~/.zshrc-custom.zsh
 ```
 
-#### Autojump
-
-Install autojump by running. This is autoloaded into zsh by default. If it's
-not installed the shell will show a warning.
-
-```
-brew install autojump
-```
-
 #### Aliases
 Symlink the aliases file by running:
 
