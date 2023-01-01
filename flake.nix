@@ -27,6 +27,10 @@
               command = "home-manager switch --flake \"$PRJ_ROOT/nix/.config/nixpkgs/\"";
 
             }
+            {
+              name = "rebuild-darwin";
+              command = "darwin-rebuild switch --flake \"$PRJ_ROOT/nix/.config/nixpkgs/\"";
+            }
           ];
         };
     });
