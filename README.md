@@ -2,6 +2,12 @@
 
 ## How to install?
 
+### Home Manager
+
+Install Nix by running following the steps on the [NixOS website](https://nixos.org/download.html#nix-install-macos). Then install Home Manager using the 
+[standalone installation guide](https://rycee.gitlab.io/home-manager/index.html#sec-install-standalone). The installation may fail since it cannot find 
+the attribute. Make sure that the username of the user matches the ones defined in flake.nix.
+
 ### Vim
 
 ```
