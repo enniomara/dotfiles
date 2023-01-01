@@ -23,6 +23,10 @@
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
 
+  fonts.fonts = [
+    pkgs.nerdfonts
+  ];
+
   system = {
     defaults = {
       NSGlobalDomain = {
