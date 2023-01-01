@@ -4,10 +4,8 @@
 
 ### Home Manager
 
-Install Nix by running following the steps on the [NixOS website](https://nixos.org/download.html#nix-install-macos). Then install Home Manager using the 
-[standalone installation guide](https://rycee.gitlab.io/home-manager/index.html#sec-install-standalone). The installation may fail since it cannot find 
-the attribute. Make sure that the username of the user matches the ones defined in flake.nix.
-
+Install Nix by running following the steps on the [NixOS website](https://nixos.org/download.html#nix-install-macos). 
+Then install nix-darwin by following the instructions on its [Github page](https://github.com/LnL7/nix-darwin#install).
 
 ### ZSH
 Follow the installation instructions in the [zinit Github Page](https://github.com/zdharma-continuum/zinit#install) to install zinit.
