@@ -26,7 +26,7 @@
           }
         ];
       };
-      darwinConfigurations."Ennios-MacBook-Pro.local" = darwin.lib.darwinSystem {
+      darwinConfigurations."Ennios-MacBook-Pro" = darwin.lib.darwinSystem {
         system = "x86_64-darwin";
         modules = [
           ./configuration.nix
@@ -34,7 +34,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.marae = import ./home.nix;
+            home-manager.users.enniomara = import ./home.nix;
           }
         ];
       };
