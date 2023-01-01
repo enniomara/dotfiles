@@ -8,16 +8,6 @@ Install Nix by running following the steps on the [NixOS website](https://nixos.
 [standalone installation guide](https://rycee.gitlab.io/home-manager/index.html#sec-install-standalone). The installation may fail since it cannot find 
 the attribute. Make sure that the username of the user matches the ones defined in flake.nix.
 
-### Vim
-
-```
-ln -s [path to dotfiles]/.vimrc ~/.vimrc
-```
-After that install VIM-Plug from [here](https://github.com/junegunn/vim-plug).
-Then run the following in vim.
-```
-:PlugInstall
-```
 
 ### ZSH
 Follow the installation instructions in the [zinit Github Page](https://github.com/zdharma-continuum/zinit#install) to install zinit.
