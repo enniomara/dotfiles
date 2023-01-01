@@ -25,6 +25,9 @@
 
   homebrew = {
     enable = true;
+    taps = [
+      "homebrew/cask-fonts"
+    ];
     casks = [
       "bettertouchtool"
       "hammerspoon"
@@ -35,7 +38,7 @@
       "obsidian"
       "telegram"
       "ticktick"
-      "font-fira-code"
+      "font-fira-code-nerd-font"
     ];
   };
 
