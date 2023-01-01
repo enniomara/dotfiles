@@ -36,6 +36,12 @@
         appswitcher-all-displays = true;
         tilesize = 33;
       };
+
+      finder = {
+        AppleShowAllExtensions = true;
+        AppleShowAllFiles = true; # by default finder hides files starting with . (dot)
+        ShowPathbar = true; # show the breadcrunb
+      };
     };
 
     keyboard = {
