@@ -23,10 +23,6 @@
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
 
-  fonts.fonts = [
-    pkgs.nerdfonts
-  ];
-
   homebrew = {
     enable = true;
     casks = [
@@ -39,6 +35,7 @@
       "obsidian"
       "telegram"
       "ticktick"
+      "font-fira-code"
     ];
   };
 
