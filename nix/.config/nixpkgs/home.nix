@@ -32,6 +32,7 @@
     pkgs.jq
     pkgs.ripgrep
     pkgs.tldr
+    pkgs.fzf
 
     pkgs.tmux
   ];
