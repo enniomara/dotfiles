@@ -29,6 +29,7 @@
         InitialKeyRepeat = 15; # * 15ms
         KeyRepeat = 2; # * 15ms
         ApplePressAndHoldEnabled = false; # Turn off accent menu on hold
+        AppleInterfaceStyleSwitchesAutomatically = true; # auto dark mode
       };
 
       dock = {
