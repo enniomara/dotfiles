@@ -42,6 +42,11 @@
         AppleShowAllFiles = true; # by default finder hides files starting with . (dot)
         ShowPathbar = true; # show the breadcrunb
       };
+
+      trackpad = {
+        Clicking = true; # tap to click
+        FirstClickThreshold = 0; # light clicking, default is medium
+      };
     };
 
     keyboard = {
