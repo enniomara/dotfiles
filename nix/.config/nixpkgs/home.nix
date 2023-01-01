@@ -35,5 +35,7 @@
     pkgs.fzf
 
     pkgs.tmux
+
+    pkgs.gh
   ];
 }
