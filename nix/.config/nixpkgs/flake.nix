@@ -8,45 +8,36 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    darwin.url = "github:lnl7/nix-darwin/master";
+    darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, flake-utils, home-manager }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let pkgs = nixpkgs.legacyPackages.${system}; in
-      {
-        # Got the tip of using legacypackages from
-        # https://www.reddit.com/r/NixOS/comments/x2ohne/converting_my_home_manager_setup_to_flake/imktfr5/,
-        # which is needed because home-manager doesn't seem to support
-        # generating configuration for all supported systems (using
-        # flake-utils). Issue tracking that is in
-        # https://github.com/nix-community/home-manager/issues/3075
-        # It doesn't feel good to do this but it seems to work at the time of
-        # writing (2022-12-31)
-        legacyPackages.homeConfigurations.marae = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
+  outputs = { self, nixpkgs, flake-utils, home-manager, darwin }:
+    {
+      darwinConfigurations."M-C02G32FSML7H" = darwin.lib.darwinSystem {
+        system = "x86_64-darwin";
+        modules = [
+          ./configuration.nix
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.marae = import ./home.nix;
+          }
+        ];
+      };
+      darwinConfigurations."Ennios-MacBook-Pro.local" = darwin.lib.darwinSystem {
+        system = "x86_64-darwin";
+        modules = [
+          ./configuration.nix
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.marae = import ./home.nix;
+          }
+        ];
+      };
 
-          # Specify your home configuration modules here, for example,
-          # the path to your home.nix.
-          modules = [
-            ./home.nix
-          ];
-
-          # Optionally use extraSpecialArgs
-          # to pass through arguments to home.nix
-        };
-
-        legacyPackages.homeConfigurations.enniomara = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-
-          # Specify your home configuration modules here, for example,
-          # the path to your home.nix.
-          modules = [
-            ./home.nix
-          ];
-
-          # Optionally use extraSpecialArgs
-          # to pass through arguments to home.nix
-        };
-      }
-    );
+    };
 }
