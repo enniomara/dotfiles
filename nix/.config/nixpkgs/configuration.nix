@@ -22,4 +22,25 @@
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
+
+  system = {
+    defaults = {
+      NSGlobalDomain = {
+        InitialKeyRepeat = 15; # * 15ms
+        KeyRepeat = 2; # * 15ms
+        ApplePressAndHoldEnabled = false; # Turn off accent menu on hold
+      };
+
+      dock = {
+        autohide = false;
+        appswitcher-all-displays = true;
+        tilesize = 33;
+      };
+    };
+
+    keyboard = {
+      enableKeyMapping = true;
+      remapCapsLockToEscape = true;
+    };
+  };
 }
