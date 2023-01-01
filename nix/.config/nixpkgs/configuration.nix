@@ -27,6 +27,21 @@
     pkgs.nerdfonts
   ];
 
+  homebrew = {
+    enable = true;
+    casks = [
+      "bettertouchtool"
+      "hammerspoon"
+      "karabiner-elements"
+
+      "kitty"
+      "spotify"
+      "obsidian"
+      "telegram"
+      "ticktick"
+    ];
+  };
+
   system = {
     defaults = {
       NSGlobalDomain = {
