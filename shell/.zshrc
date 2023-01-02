@@ -13,10 +13,12 @@ zinit wait lucid light-mode for \
     OMZL::key-bindings.zsh \
     OMZL::misc.zsh \
     OMZL::termsupport.zsh \
-    OMZP::autojump \
     OMZP::git \
     atinit"zicompinit; zicdreplay" OMZP::kubectl \
     OMZP::tmux
+
+zinit ice wait lucid light-mode
+zinit snippet 'https://github.com/enniomara/ohmyzsh/raw/fix-nix-sourcing/plugins/autojump/autojump.plugin.zsh'
 
 zinit wait lucid light-mode for \
     zsh-users/zsh-syntax-highlighting \
