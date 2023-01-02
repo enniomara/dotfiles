@@ -1,4 +1,7 @@
 {
+  "nix": {
+    "enabled": true,
+  },
   "schedule": [
     "every saturday"
   ],
