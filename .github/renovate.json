@@ -5,6 +5,9 @@
   "schedule": [
     "every saturday"
   ],
+  "lockFileMaintenance": {
+    "enabled": true,
+  },
   "dependencyDashboard": true,
   "regexManagers": [
     {
