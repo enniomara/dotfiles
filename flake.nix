@@ -19,7 +19,6 @@
           name = "dotfiles";
           packages = [
             pkgs.stow
-            pkgs.goku
           ];
           commands = [
             {
