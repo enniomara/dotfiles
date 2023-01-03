@@ -40,7 +40,7 @@
       };
 
       # work workstation
-      homeConfigurations.marae = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."marae@pcczc65196q9" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
         # Specify your home configuration modules here, for example,
