@@ -50,6 +50,7 @@
           ({
             home.username = "marae";
             home.homeDirectory = "/home/marae";
+            targets.genericLinux.enable = true;
           })
         ];
       };
