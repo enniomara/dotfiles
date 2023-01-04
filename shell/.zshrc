@@ -15,6 +15,7 @@ zinit wait lucid light-mode for \
     OMZL::termsupport.zsh \
     OMZP::autojump \
     OMZP::git \
+    OMZP::fzf \
     atinit"zicompinit; zicdreplay" OMZP::kubectl \
     OMZP::tmux
 
@@ -23,9 +24,6 @@ zinit wait lucid light-mode for \
     atload"_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
     zsh-users/zsh-completions \
     spwhitt/nix-zsh-completions
-
-zinit ice wait lucid multisrc'shell/{key-bindings,completion}.zsh'
-zinit light junegunn/fzf
 
 zinit load mafredri/zsh-async
 zinit load sindresorhus/pure
