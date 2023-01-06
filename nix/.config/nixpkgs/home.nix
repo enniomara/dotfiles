@@ -53,9 +53,9 @@
       ccat = "cat";
       cat = "bat";
     };
-    initExtra = ''
-      alias -g L="| less"
-    '';
+    shellGlobalAliases = {
+      L = "| less";
+    };
     plugins = [
       {
         name = "pure";
