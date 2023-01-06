@@ -23,6 +23,7 @@
     enable = true;
     plugins = [
       pkgs.vimPlugins.nvim-treesitter.withAllGrammars
+      pkgs.vimPlugins.packer-nvim
     ];
   };
 
