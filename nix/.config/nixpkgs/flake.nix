@@ -13,31 +13,24 @@
   };
 
   outputs = { self, nixpkgs, flake-utils, home-manager, darwin }:
+    let
+      mkDarwinSystem = username: args: darwin.lib.darwinSystem {
+        system = "x86_64-darwin";
+        modules = [
+          ./configuration.nix
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.${username} = import ./home.nix;
+          }
+        ];
+      };
+    in
     {
-      darwinConfigurations."M-C02G32FSML7H" = darwin.lib.darwinSystem {
-        system = "x86_64-darwin";
-        modules = [
-          ./configuration.nix
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.marae = import ./home.nix;
-          }
-        ];
-      };
-      darwinConfigurations."Ennios-MacBook-Pro" = darwin.lib.darwinSystem {
-        system = "x86_64-darwin";
-        modules = [
-          ./configuration.nix
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.enniomara = import ./home.nix;
-          }
-        ];
-      };
+      darwinConfigurations."M-C02G32FSML7H" = mkDarwinSystem "marae" {};
+
+      darwinConfigurations."Ennios-MacBook-Pro" = mkDarwinSystem "enniomara" {};
 
       # work workstation
       homeConfigurations."marae@pcczc65196q9" = home-manager.lib.homeManagerConfiguration {
