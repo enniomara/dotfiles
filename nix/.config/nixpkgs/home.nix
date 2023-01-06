@@ -53,6 +53,13 @@
       ccat = "cat";
       cat = "bat";
     };
+    envExtra = ''
+      # The terminal in tmux in kitty did not render characters correctly. This fixed
+      # that see link below for details
+      # https://github.com/sindresorhus/pure/issues/300#issuecomment-386371460
+      export LANG=en_US.UTF-8
+      export LC_CTYPE=en_US.UTF-8
+    '';
     shellGlobalAliases = {
       L = "| less";
     };
