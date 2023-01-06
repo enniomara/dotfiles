@@ -84,6 +84,16 @@
         };
       }
     ];
+    history = {
+      save = 10000;
+      size = 50000;
+      extended = true;
+      ignoreDups = true;
+      ignoreSpace = true;
+      path = "$HOME/.zsh_history";
+      expireDuplicatesFirst = true;
+      share = true; # share history between zsh sessions
+    };
   };
 
   home.packages = [
