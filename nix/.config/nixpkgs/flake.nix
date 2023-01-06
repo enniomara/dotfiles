@@ -33,9 +33,9 @@
       };
     in
     {
-      darwinConfigurations."M-C02G32FSML7H" = mkDarwinSystem "marae" {};
+      darwinConfigurations."M-C02G32FSML7H" = mkDarwinSystem "marae" { };
 
-      darwinConfigurations."Ennios-MacBook-Pro" = mkDarwinSystem "enniomara" {};
+      darwinConfigurations."Ennios-MacBook-Pro" = mkDarwinSystem "enniomara" { };
 
       # work workstation
       homeConfigurations."marae@pcczc65196q9" = home-manager.lib.homeManagerConfiguration {
