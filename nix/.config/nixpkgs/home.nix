@@ -59,6 +59,13 @@
       # https://github.com/sindresorhus/pure/issues/300#issuecomment-386371460
       LANG = "en_US.UTF-8";
       LC_CTYPE = "en_US.UTF-8";
+
+      # Configure less to behave consistently across environments
+      # -M, prompt more in the screen
+      # -q quiet, do not ring bell
+      # -i ignore case
+      # -R color output
+      LESS = "MqiR";
     };
     localVariables = {
       RPROMPT = "%F{8}%*";
