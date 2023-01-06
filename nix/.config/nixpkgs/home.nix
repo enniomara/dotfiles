@@ -34,6 +34,41 @@
     };
   };
 
+  programs.zsh = {
+    enable = true;
+    enableAutosuggestions = true;
+    enableSyntaxHighlighting = true;
+    oh-my-zsh = {
+      enable = true;
+      plugins = [
+        "autojump"
+        "git"
+        "fzf"
+        "kubectl"
+        "tmux"
+      ];
+    };
+    shellAliases = {
+      gs = "git status";
+      ccat = "cat";
+      cat = "bat";
+    };
+    initExtra = ''
+      alias -g L="| less"
+    '';
+    plugins = [
+      {
+        name = "pure";
+        src = pkgs.fetchFromGitHub {
+          owner = "sindresorhus";
+          repo = "pure";
+          rev = "v1.20.4";
+          sha256 = "sha256-e1D+9EejlVZxOyErg6eRgawth5gAhv6KpgjhK06ErZc=";
+        };
+      }
+    ];
+  };
+
   home.packages = [
     pkgs.htop
 
