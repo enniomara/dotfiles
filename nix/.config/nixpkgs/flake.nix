@@ -14,12 +14,17 @@
 
   outputs = { self, nixpkgs, flake-utils, home-manager, darwin }:
     let
+      customOverlays = import ./overlays.nix;
+      overlays = [];
+
       mkDarwinSystem = username: args: darwin.lib.darwinSystem {
         system = "x86_64-darwin";
         modules = [
           ./configuration.nix
           home-manager.darwinModules.home-manager
           {
+            nixpkgs.overlays = overlays;
+
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.${username} = import ./home.nix;
