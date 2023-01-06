@@ -27,6 +27,13 @@
     ];
   };
 
+  programs.bat = {
+    enable = true;
+    config = {
+      theme = "base16";
+    };
+  };
+
   home.packages = [
     pkgs.htop
 
@@ -34,7 +41,6 @@
 
     # cli
     pkgs.autojump
-    pkgs.bat
     pkgs.fd
     pkgs.jq
     pkgs.ripgrep
