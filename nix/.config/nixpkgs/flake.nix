@@ -15,7 +15,9 @@
   outputs = { self, nixpkgs, flake-utils, home-manager, darwin }:
     let
       customOverlays = import ./overlays.nix;
-      overlays = [];
+      overlays = [
+        customOverlays.oh-my-zsh
+      ];
 
       mkDarwinSystem = username: args: darwin.lib.darwinSystem {
         system = "x86_64-darwin";
