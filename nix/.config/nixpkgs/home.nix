@@ -60,6 +60,9 @@
       export LANG=en_US.UTF-8
       export LC_CTYPE=en_US.UTF-8
     '';
+    localVariables = {
+      RPROMPT = "%F{8}%*";
+    };
     shellGlobalAliases = {
       L = "| less";
     };
