@@ -265,7 +265,7 @@ require("packer").startup(function(use)
 	})
 	use({
 		"kevinhwang91/nvim-bqf",
-		tag = "v0.9.9",
+		tag = "v1.0.0",
 		ft = "qf",
 	})
 	use({
