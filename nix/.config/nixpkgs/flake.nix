@@ -48,6 +48,7 @@
         modules = [
           ./home.nix
           ({
+            nixpkgs.overlays = overlays;
             home.username = "marae";
             home.homeDirectory = "/home/marae";
             targets.genericLinux.enable = true;
