@@ -57,5 +57,6 @@
 
       # work workstation
       homeConfigurations."marae@pcczc65196q9" = mkLinuxSystem "marae" { };
+      homeConfigurations."vagrant@linux-box" = mkLinuxSystem "vagrant" { };
     };
 }
