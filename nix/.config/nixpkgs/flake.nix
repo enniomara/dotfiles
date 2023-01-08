@@ -32,15 +32,9 @@
             home-manager.users.${username} = import ./home.nix;
           }
         ];
+
       };
-    in
-    {
-      darwinConfigurations."M-C02G32FSML7H" = mkDarwinSystem "marae" { };
-
-      darwinConfigurations."Ennios-MacBook-Pro" = mkDarwinSystem "enniomara" { };
-
-      # work workstation
-      homeConfigurations."marae@pcczc65196q9" = home-manager.lib.homeManagerConfiguration {
+      mkLinuxSystem = username: args: home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
         # Specify your home configuration modules here, for example,
@@ -49,11 +43,19 @@
           ./home.nix
           ({
             nixpkgs.overlays = overlays;
-            home.username = "marae";
-            home.homeDirectory = "/home/marae";
+            home.username = username;
+            home.homeDirectory = "/home/${username}";
             targets.genericLinux.enable = true;
           })
         ];
       };
+    in
+    {
+      darwinConfigurations."M-C02G32FSML7H" = mkDarwinSystem "marae" { };
+
+      darwinConfigurations."Ennios-MacBook-Pro" = mkDarwinSystem "enniomara" { };
+
+      # work workstation
+      homeConfigurations."marae@pcczc65196q9" = mkLinuxSystem "marae" { };
     };
 }
