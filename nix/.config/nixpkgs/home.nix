@@ -128,6 +128,7 @@
     };
     shellGlobalAliases = {
       L = "| less";
+      G = "| grep -i";
     };
     plugins = [
       {
