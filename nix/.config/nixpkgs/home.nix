@@ -77,6 +77,7 @@
           regex
           ruby
           tsx
+          typescript
           yaml
         ]
       ))
