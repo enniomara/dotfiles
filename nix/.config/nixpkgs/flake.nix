@@ -19,7 +19,7 @@
         customOverlays.oh-my-zsh
       ];
 
-      mkDarwinSystem = username: args: darwin.lib.darwinSystem {
+      mkDarwinSystem = { username }: darwin.lib.darwinSystem {
         system = "x86_64-darwin";
         modules = [
           ./configuration.nix
@@ -34,7 +34,7 @@
         ];
 
       };
-      mkLinuxSystem = username: args: home-manager.lib.homeManagerConfiguration {
+      mkLinuxSystem = { username }: home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
         # Specify your home configuration modules here, for example,
@@ -51,12 +51,15 @@
       };
     in
     {
-      darwinConfigurations."M-C02G32FSML7H" = mkDarwinSystem "marae" { };
+      darwinConfigurations."M-C02G32FSML7H" = mkDarwinSystem { username = "marae"; };
 
-      darwinConfigurations."Ennios-MacBook-Pro" = mkDarwinSystem "enniomara" { };
+      darwinConfigurations."Ennios-MacBook-Pro" = mkDarwinSystem { username = "enniomara"; };
 
       # work workstation
-      homeConfigurations."marae@pcczc65196q9" = mkLinuxSystem "marae" { };
-      homeConfigurations."vagrant@linux-box" = mkLinuxSystem "vagrant" { };
+      homeConfigurations."marae@pcczc65196q9" = mkLinuxSystem {
+        username = "marae";
+      };
+
+      homeConfigurations."vagrant@linux-box" = mkLinuxSystem { username = "vagrant"; };
     };
 }
