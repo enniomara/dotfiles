@@ -107,6 +107,7 @@
         "fzf"
         "kubectl"
         "tmux"
+        "asdf"
       ];
     };
     shellAliases = {
@@ -177,6 +178,7 @@
     pkgs.ripgrep
     pkgs.tldr
     pkgs.fzf
+    pkgs.asdf-vm
 
     pkgs.tmux
 
