@@ -51,13 +51,21 @@
       };
     in
     {
-      darwinConfigurations."M-C02G32FSML7H" = mkDarwinSystem { username = "marae"; };
+      darwinConfigurations."M-C02G32FSML7H" = mkDarwinSystem {
+        username = "marae";
+        extraModules = [
+          ./axis.nix
+        ];
+      };
 
       darwinConfigurations."Ennios-MacBook-Pro" = mkDarwinSystem { username = "enniomara"; };
 
       # work workstation
       homeConfigurations."marae@pcczc65196q9" = mkLinuxSystem {
         username = "marae";
+        extraModules = [
+          ./axis.nix
+        ];
       };
 
       homeConfigurations."vagrant@linux-box" = mkLinuxSystem { username = "vagrant"; };
