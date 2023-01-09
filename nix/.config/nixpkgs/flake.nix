@@ -19,7 +19,7 @@
         customOverlays.oh-my-zsh
       ];
 
-      mkDarwinSystem = { username }: darwin.lib.darwinSystem {
+      mkDarwinSystem = { username, extraModules ? [ ] }: darwin.lib.darwinSystem {
         system = "x86_64-darwin";
         modules = [
           ./configuration.nix
@@ -31,10 +31,10 @@
             home-manager.useUserPackages = true;
             home-manager.users.${username} = import ./home.nix;
           }
-        ];
+        ] ++ extraModules;
 
       };
-      mkLinuxSystem = { username }: home-manager.lib.homeManagerConfiguration {
+      mkLinuxSystem = { username, extraModules ? [ ] }: home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
         # Specify your home configuration modules here, for example,
@@ -47,7 +47,7 @@
             home.homeDirectory = "/home/${username}";
             targets.genericLinux.enable = true;
           })
-        ];
+        ] ++ extraModules;
       };
     in
     {
