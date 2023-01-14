@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-STOW_FOLDERS="hammerspoon,karabiner,kitty,nvim"
+STOW_FOLDERS="karabiner,kitty,nvim"
 TARGET="$HOME"
 
 for folder in ${STOW_FOLDERS//,/ }

@@ -30,7 +30,10 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.${username} = { ... }: {
-              imports = [ ./home.nix ] ++ extraModules;
+              imports = [
+                ./home.nix
+                ./hammerspoon.nix
+              ] ++ extraModules;
             };
           }
         ];
