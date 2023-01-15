@@ -306,6 +306,15 @@ require("packer").startup(function(use)
 		commit = "f79e9d186b42fba5f1b1362006e7c70240db97a4",
 		cmd = { "Bdelete", "Bwipeout" },
 	})
+	use({
+		"echasnovski/mini.ai",
+		branch = "stable",
+		commit = "14a1382372195573c6c7f494ab8bb298b03e6f04",
+		event = "BufRead",
+		config = function()
+			require("mini.ai").setup()
+		end,
+	})
 end)
 
 require("impatient")
