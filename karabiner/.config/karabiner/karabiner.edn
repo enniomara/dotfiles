@@ -3,7 +3,8 @@
  :simlayers {:a-mode {:key :a}
              :open-app-mode {:key :w}
              :ctrl-shift {:key :s}
-             :d-mode {:key :d}}
+             :d-mode {:key :d}
+             :space-mode {:key :spacebar}}
  :devices {:work [{:vendor_id 1008 :product_id 842}]
            :laptop_keyboard [{:vendor_id 1452 :product_id 638} ;; work mbp
                              {:vendor_id 1452 :product_id 631} ;; home mbp
@@ -85,4 +86,7 @@
            [:i :open_bracket]
            [:o :close_bracket]
            [:m :!Sopen_bracket]
-           [:comma :!Sclose_bracket]]}]}
+           [:comma :!Sclose_bracket]]}
+  {:des "bracket sequences"
+   :rules [:space-mode
+           [:o :return_or_enter]]}]}
