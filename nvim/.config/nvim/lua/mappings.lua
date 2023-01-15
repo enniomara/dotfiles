@@ -47,3 +47,8 @@ end)
 mapper("n", "<Leader>le", function() -- enable diagnostics on this buffer
 	vim.diagnostic.enable(0)
 end)
+
+-- becusae : is in a horrible place to reach in qwerty
+mapper({ "n", "v" }, "<Leader>jj", ":")
+mapper({ "n", "v" }, "<Leader>jk", "/")
+
