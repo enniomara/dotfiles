@@ -225,7 +225,7 @@ require("packer").startup(function(use)
 	use({
 		"hoob3rt/lualine.nvim",
 		branch = "master",
-		commit = "32a7382a75a52e8ad05f4cec7eeb8bbfbe80d461",
+		commit = "0050b308552e45f7128f399886c86afefc3eb988",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 		config = function()
 			require("lualine").setup({
