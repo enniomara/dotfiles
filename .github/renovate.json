@@ -1,12 +1,10 @@
 {
   "nix": {
-    "enabled": true,
+    "enabled": true
   },
-  "schedule": [
-    "every saturday"
-  ],
+  "schedule": ["every saturday"],
   "lockFileMaintenance": {
-    "enabled": true,
+    "enabled": true
   },
   "dependencyDashboard": true,
   "regexManagers": [
