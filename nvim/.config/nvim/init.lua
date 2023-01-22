@@ -296,6 +296,7 @@ require("packer").startup(function(use)
 		"kylechui/nvim-surround",
 		branch = "main",
 		tag = "v1.0.0",
+		event = { "BufRead" },
 		config = function()
 			require("nvim-surround").setup({})
 		end,
