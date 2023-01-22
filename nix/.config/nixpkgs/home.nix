@@ -61,6 +61,7 @@
     plugins = [
       (pkgs.vimPlugins.nvim-treesitter.withPlugins (
         plugins: with plugins; [
+          astro
           bash
           comment
           css
