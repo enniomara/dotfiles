@@ -63,7 +63,7 @@
         ];
       };
 
-      darwinConfigurations."Ennios-MBP" = mkDarwinSystem { username = "enniomara"; };
+      darwinConfigurations."Ennios-MacBook-Pro" = mkDarwinSystem { username = "enniomara"; };
 
       # work workstation
       homeConfigurations."marae@pcczc65196q9" = mkLinuxSystem {
