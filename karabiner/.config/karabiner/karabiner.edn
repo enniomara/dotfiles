@@ -1,9 +1,9 @@
 {:profiles
  {:Default {:default true
-            :alone 1000 ; hold for .. ms to register single tap
-            :held 500
-            :delay 500 ; time after which the key press is delayed
-            :sim 50}} ;  keys need to be pressed within this threshold to be considered simultaneous
+            :alone 300 ; hold for .. ms to register single tap
+            :held 50
+            :delay 0 ; time after which the key press is delayed
+            :sim 30}} ;  keys need to be pressed within this threshold to be considered simultaneous
  :input-sources {:en-keyboard {:input_source_id "com.apple.keylayout.US"
                                :language "en"}}
  :simlayers {:a-mode {:key :a}
