@@ -52,7 +52,10 @@
            [:u :!Oup_arrow :a-mode]
            [:o :return_or_enter :a-mode]
            [:m :page_down :a-mode]
-           [:comma :page_up :a-mode]]}
+           [:comma :page_up :a-mode]
+           [:e :!Cright_arrow :a-mode]
+           [:b :!Cleft_arrow :a-mode]]}
+
   {:des "Move ` key to above tab in swedish keyboard"
    :rules [:laptop_keyboard
            [:##non_us_backslash :##grave_accent_and_tilde [:en-keyboard]] ;; Switch normal key above tab
