@@ -139,6 +139,7 @@
     };
     localVariables = {
       RPROMPT = "%F{8}%*";
+      EDITOR = "nvim";
     };
     shellGlobalAliases = {
       L = "| less";
