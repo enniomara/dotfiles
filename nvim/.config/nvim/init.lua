@@ -152,7 +152,7 @@ require("packer").startup(function(use)
 	use({
 		"hrsh7th/nvim-cmp",
 		branch = "main",
-		commit = "11a95792a5be0f5a40bab5fc5b670e5b1399a939",
+		commit = "cfafe0a1ca8933f7b7968a287d39904156f2c57d",
 		requires = {
 			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",
