@@ -304,7 +304,7 @@ require("packer").startup(function(use)
 	use({
 		"famiu/bufdelete.nvim",
 		branch = "master",
-		commit = "f79e9d186b42fba5f1b1362006e7c70240db97a4",
+		commit = "8933abc09df6c381d47dc271b1ee5d266541448e",
 		cmd = { "Bdelete", "Bwipeout" },
 	})
 	use({
