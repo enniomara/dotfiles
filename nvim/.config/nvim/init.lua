@@ -195,7 +195,7 @@ require("packer").startup(function(use)
 	use({
 		"numToStr/Comment.nvim",
 		branch = "master",
-		commit = "eab2c83a0207369900e92783f56990808082eac2",
+		commit = "6821b3ae27a57f1f3cf8ed030e4a55d70d0c4e43",
 		event = "BufRead",
 		config = function()
 			require("Comment").setup()
