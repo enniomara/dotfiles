@@ -136,7 +136,7 @@ require("packer").startup(function(use)
 	use({
 		"williamboman/mason.nvim",
 		branch = "main",
-		commit = "14ae1ca58440b158a0a35cf90773013caddf788a",
+		commit = "11e34da70dc531e5d917fd4303db2d81258f6ada",
 		after = { "nvim-lspconfig" },
 		-- configuration done in mason-lspconfig.nvim
 	})
