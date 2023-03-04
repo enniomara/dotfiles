@@ -192,5 +192,6 @@
     pkgs.tmux
 
     pkgs.gh
+    pkgs.lazygit
   ];
 }
