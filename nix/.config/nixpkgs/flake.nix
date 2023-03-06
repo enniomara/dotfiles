@@ -75,6 +75,7 @@
         username = "marae";
         extraModules = [
           ./axis.nix
+          ./agent-forwarding-tmux.nix
         ];
       };
 
