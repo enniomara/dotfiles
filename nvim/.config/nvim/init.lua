@@ -117,7 +117,7 @@ require("packer").startup(function(use)
 	use({
 		"jose-elias-alvarez/null-ls.nvim",
 		branch = "main",
-		commit = "a82aa08c0063843926947f3688b0e61fd71db680",
+		commit = "900c38cfa91eb7ff2716da70f2f2c1d33741cf0a",
 		requires = {
 			"nvim-lua/plenary.nvim",
 			"lewis6991/gitsigns.nvim",
