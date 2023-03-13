@@ -16,7 +16,7 @@ mapper("n", "<C-k>", ":BufferLineCycleNext <CR>")
 mapper("n", "<C-j>", ":BufferLineCyclePrev <CR>")
 mapper("n", "]b", ":BufferLineCycleNext <CR>")
 mapper("n", "[b", ":BufferLineCyclePrev <CR>")
-mapper("n", "<Leader>bb", ":BufferLineTogglePin<CR>")
+mapper("n", "<Leader>bp", ":BufferLineTogglePin<CR>")
 mapper("n", "<Leader>bP", ":BufferLineGroupClose ungrouped<CR>")
 
 -- easier movement to save buffer than :w
