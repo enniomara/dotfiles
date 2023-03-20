@@ -50,7 +50,7 @@ require("packer").startup(function(use)
 	use({
 		"nvim-telescope/telescope-fzf-native.nvim",
 		branch = "main",
-		commit = "fab3e2212e206f4f8b3bbaa656e129443c9b802e",
+		commit = "580b6c48651cabb63455e97d7e131ed557b8c7e2",
 		run = "make",
 	})
 	use({
