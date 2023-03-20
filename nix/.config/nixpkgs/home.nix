@@ -172,6 +172,13 @@
     enable = true;
     delta = {
       enable = true;
+      options = {
+        line-numbers = "true";
+        features = "decorations";
+        decorations = {
+          commit-decoration-style = "yellow ol";
+        };
+      };
     };
   };
 
