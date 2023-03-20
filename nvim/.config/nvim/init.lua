@@ -175,7 +175,7 @@ require("packer").startup(function(use)
 	})
 	use({
 		"folke/which-key.nvim",
-		tag = "v1.1.1",
+		tag = "v1.2.0",
 		config = function()
 			require("which-key").setup({})
 		end,
