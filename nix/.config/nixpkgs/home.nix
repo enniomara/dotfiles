@@ -25,6 +25,7 @@
   imports = [
     ./shell.nix
     ./tmux.nix
+    ./neovim.nix
   ];
 
   # Let Home Manager install and manage itself.
@@ -38,43 +39,6 @@
     (builtins.readFile ../../../kitty/.config/kitty/kitty.conf)
     (builtins.readFile ../../../kitty/.config/kitty/nord.conf)
   ];
-
-  programs.neovim = {
-    enable = true;
-    plugins = [
-      (pkgs.vimPlugins.nvim-treesitter.withPlugins (
-        plugins: with plugins; [
-          astro
-          bash
-          comment
-          css
-          diff
-          dockerfile
-          git_rebase
-          go
-          gomod
-          html
-          javascript
-          jq
-          json
-          jsonc
-          latex
-          lua
-          make
-          markdown
-          nix
-          python
-          regex
-          ruby
-          tsx
-          typescript
-          yaml
-        ]
-      ))
-      # pkgs.vimPlugins.nvim-treesitter.withAllGrammars
-      pkgs.vimPlugins.packer-nvim
-    ];
-  };
 
   programs.git = {
     enable = true;
