@@ -22,7 +22,6 @@
         "fzf"
         "kubectl"
         "tmux"
-        "asdf"
       ];
     };
     shellAliases = {
@@ -73,5 +72,9 @@
       expireDuplicatesFirst = true;
       share = true; # share history between zsh sessions
     };
+    initExtra = ''
+      # asdf - need to source to add shim path to PATH
+      source "${pkgs.asdf-vm}/etc/profile.d/asdf-prepare.sh"
+    '';
   };
 }
