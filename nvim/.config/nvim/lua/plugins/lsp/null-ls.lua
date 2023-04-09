@@ -20,6 +20,9 @@ local sources = {
 		method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
 	}),
 
+	-- elm
+	b.formatting.elm_format,
+
 	-- python
 	b.diagnostics.flake8.with({ extra_args = { "--max-line-length=100" } }), -- 100 because wide screens are a thing,
 	b.formatting.black.with({ extra_args = { "--fast" } }),
