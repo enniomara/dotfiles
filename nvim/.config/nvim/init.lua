@@ -277,12 +277,6 @@ require("packer").startup(function(use)
 		after = { "nvim-treesitter" },
 	})
 	use({
-		"ojroques/vim-oscyank",
-		branch = "main",
-		commit = "ffe827a27dae98aa826e2295336c650c9a434da0",
-		event = "BufRead",
-	})
-	use({
 		"anuvyklack/pretty-fold.nvim",
 		branch = "master",
 		commit = "a7d8b424abe0eedf50116c460fbe6dfd5783b1d5",
