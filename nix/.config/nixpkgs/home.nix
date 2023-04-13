@@ -70,5 +70,6 @@
 
     pkgs.gh
     pkgs.lazygit
+    pkgs.lazydocker
   ];
 }
