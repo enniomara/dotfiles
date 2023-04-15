@@ -29,6 +29,7 @@
           ruby
           tsx
           typescript
+          terraform
           yaml
         ]
       ))
