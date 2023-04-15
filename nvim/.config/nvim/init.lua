@@ -302,7 +302,7 @@ require("packer").startup(function(use)
 	use({
 		"echasnovski/mini.ai",
 		branch = "stable",
-		commit = "efeab91f9373d6d3c73314fda9e3366020d05157",
+		commit = "fdb8dd34c326040f99b178536eeaee41d1efe643",
 		event = "BufRead",
 		config = function()
 			require("mini.ai").setup()
