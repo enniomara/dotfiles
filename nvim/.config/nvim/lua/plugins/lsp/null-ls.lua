@@ -1,4 +1,5 @@
 local null_ls = require("null-ls")
+local u = require("null-ls.utils")
 
 local b = null_ls.builtins
 local sources = {
@@ -27,6 +28,28 @@ local sources = {
 	b.diagnostics.flake8.with({ extra_args = { "--max-line-length=100" } }), -- 100 because wide screens are a thing,
 	b.formatting.black.with({ extra_args = { "--fast" } }),
 	b.formatting.isort,
+
+	-- golang
+	b.diagnostics.golangci_lint.with({
+		ignore_stderr = false,
+		args = function(params)
+			local path = u.root_pattern("go.mod")(params.bufname)
+			return {
+				"run",
+				"--fix=false",
+				"--out-format=json",
+				"--path-prefix",
+				-- Nulls requires the full file path to show diagnostics. By default it sets the path prefix to $ROOT,
+				-- which points to the repo root. Since we're changing CWD below, the repo root will lead to an incorrect path.
+				path,
+			}
+		end,
+		debug = true,
+		cwd = h.cache.by_bufnr(function(params)
+			-- start golangcilint where the go.mod is located at. Without this golint will not start since it cannot find the project root
+			return u.root_pattern("go.mod")(params.bufname)
+		end),
+	}),
 }
 
 null_ls.setup({
