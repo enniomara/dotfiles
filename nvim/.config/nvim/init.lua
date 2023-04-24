@@ -308,9 +308,20 @@ require("packer").startup(function(use)
 			require("mini.ai").setup()
 		end,
 	})
+	use({
+		"tpope/vim-dadbod",
+		opt = true,
+		requires = {
+			{
+				"kristijanhusak/vim-dadbod-ui",
+				branch = "master",
+				commit = "4c306bef457ebfdbe71c76b49672d48ef310ddd3",
+			},
+		},
+		cmd = { "DBUIToggle", "DBUI", "DBUIAddConnection", "DBUIFindBuffer", "DBUIRenameBuffer", "DBUILastQueryInfo" },
+	})
 end)
 
 require("impatient")
 require("options")
 require("mappings")
-
