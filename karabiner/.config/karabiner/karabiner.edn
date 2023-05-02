@@ -73,7 +73,10 @@
   {:des "s to cmd+shift"
    :rules [:en-keyboard :ctrl-shift
            [:j :!CSopen_bracket]
-           [:k :!CSclose_bracket]]}
+           [:k :!CSclose_bracket]
+           [:0 :play_or_pause]
+           [:hyphen :volume_decrement]
+           [:equal_sign :volume_increment]]}
   {:des "left_control to fn in keychron" ;; in lack of a fn key on left side
    :rules [[:left_control :fn [:keychron]]]}
   {:des "Show/hi(D)e applications"
