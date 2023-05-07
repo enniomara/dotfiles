@@ -108,21 +108,20 @@ require("lazy").setup({
 		},
 		{
 			"neovim/nvim-lspconfig",
-			event = { "VimEnter" },
-		},
-		{
-			"williamboman/mason.nvim",
-			version = "*",
-			-- after = { "nvim-lspconfig" },
-			-- configuration done in mason-lspconfig.nvim
-		},
-		{
-			"williamboman/mason-lspconfig.nvim",
-			version = "*",
-			-- after = { "nvim-lspconfig", "mason.nvim", "lsp_signature.nvim" },
+			dependencies = {
+				{
+					"williamboman/mason.nvim",
+					version = "*",
+				},
+				{
+					"williamboman/mason-lspconfig.nvim",
+					version = "*",
+				},
+			},
 			config = function()
 				require("plugins.lsp")
 			end,
+			event = { "BufReadPre", "BufNewFile" },
 		},
 		{
 			"hrsh7th/nvim-cmp",
