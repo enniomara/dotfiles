@@ -2,7 +2,6 @@ require("lazy").setup({
 	spec = {
 		{
 			"nvim-neo-tree/neo-tree.nvim",
-			version = "2.48",
 			dependencies = {
 				"nvim-lua/plenary.nvim",
 				"kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
@@ -16,7 +15,6 @@ require("lazy").setup({
 		{
 			"nvim-telescope/telescope.nvim",
 			branch = "0.1.x",
-			commit = "9de317bdea2bc393074651179c4fc7f93e9b2d56",
 			cmd = "Telescope",
 			dependencies = {
 				"nvim-lua/plenary.nvim",
@@ -30,12 +28,10 @@ require("lazy").setup({
 		{
 			"nvim-telescope/telescope-ui-select.nvim",
 			branch = "master",
-			commit = "62ea5e58c7bbe191297b983a9e7e89420f581369",
 		},
 		{
 			"rmehri01/onenord.nvim",
 			branch = "main",
-			commit = "9a59d47db81e566d4e254904479f129cfffe5f21",
 			config = function()
 				require("onenord").setup({
 					fade_nc = false, -- Fade non-current windows, making them more distinguishable
@@ -45,7 +41,6 @@ require("lazy").setup({
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
 			branch = "main",
-			commit = "580b6c48651cabb63455e97d7e131ed557b8c7e2",
 			build = "make",
 		},
 		{
@@ -59,7 +54,6 @@ require("lazy").setup({
 		{
 			"ntpeters/vim-better-whitespace",
 			branch = "master",
-			commit = "1b22dc57a2751c7afbc6025a7da39b7c22db635d",
 			config = function()
 				require("plugins.vim-better-whitespace")
 			end,
@@ -77,7 +71,6 @@ require("lazy").setup({
 		{
 			"nvim-treesitter/nvim-treesitter",
 			branch = "master",
-			-- commit = "2083a34dc6b70b8d87391419fd197830fc26c9a4",
 			event = "BufRead",
 			build = ":TsUpdate",
 			config = function()
@@ -87,7 +80,6 @@ require("lazy").setup({
 		{
 			"nvim-treesitter/nvim-treesitter-context",
 			branch = "master",
-			commit = "8cd25630a4cd69f4baab32086e96b979c50b56e4",
 			dependencies = { "nvim-treesitter/nvim-treesitter" },
 			event = { "BufRead" },
 			config = function()
@@ -102,7 +94,6 @@ require("lazy").setup({
 		{
 			"tpope/vim-unimpaired",
 			branch = "master",
-			commit = "6d44a6dc2ec34607c41ec78acf81657248580bf1",
 			event = "BufRead",
 		},
 		{
@@ -113,7 +104,6 @@ require("lazy").setup({
 		{
 			"jose-elias-alvarez/null-ls.nvim",
 			branch = "main",
-			commit = "f8ffcd7cb8fb3325c711d459152ef132b5b65aed",
 			dependencies = {
 				"nvim-lua/plenary.nvim",
 				"lewis6991/gitsigns.nvim",
@@ -126,20 +116,17 @@ require("lazy").setup({
 		{
 			"neovim/nvim-lspconfig",
 			branch = "master",
-			commit = "844e1c5b27cf4b3987587b3311a9ea4912c6d8d8",
 			event = { "VimEnter" },
 		},
 		{
 			"williamboman/mason.nvim",
 			branch = "main",
-			commit = "3fb2be48864b7850a26c54c04cedb54e95dcdf3f",
 			-- after = { "nvim-lspconfig" },
 			-- configuration done in mason-lspconfig.nvim
 		},
 		{
 			"williamboman/mason-lspconfig.nvim",
 			branch = "main",
-			commit = "b64fdede85fd5e0b720ce722919e0a9b95ed6547",
 			-- after = { "nvim-lspconfig", "mason.nvim", "lsp_signature.nvim" },
 			config = function()
 				require("plugins.lsp")
@@ -148,7 +135,6 @@ require("lazy").setup({
 		{
 			"hrsh7th/nvim-cmp",
 			branch = "main",
-			commit = "777450fd0ae289463a14481673e26246b5e38bf2",
 			dependencies = {
 				"L3MON4D3/LuaSnip",
 				"saadparwaiz1/cmp_luasnip",
@@ -167,7 +153,6 @@ require("lazy").setup({
 		{
 			"rafamadriz/friendly-snippets",
 			branch = "main",
-			commit = "9590ff90759488674cf97fe5d5754a0733ab37bb",
 		},
 		{
 			"folke/which-key.nvim",
@@ -179,7 +164,6 @@ require("lazy").setup({
 		{
 			"windwp/nvim-autopairs",
 			branch = "master",
-			commit = "7470af886ffb3df32800e5ef9c072a6cd825770d",
 			config = function()
 				require("nvim-autopairs").setup({
 					disable_filetype = { "TelescopePrompt", "vim" },
@@ -190,7 +174,6 @@ require("lazy").setup({
 		{
 			"numToStr/Comment.nvim",
 			branch = "master",
-			commit = "a89339ffbee677ab0521a483b6dac7e2e67c907e",
 			event = "BufRead",
 			config = function()
 				require("Comment").setup()
@@ -212,7 +195,6 @@ require("lazy").setup({
 		{
 			"rmagatti/auto-session",
 			branch = "main",
-			commit = "f391aba10ee61927a1cceb9ea3a9dde501e87e9e",
 			config = function()
 				require("plugins.auto-session")
 			end,
@@ -220,7 +202,6 @@ require("lazy").setup({
 		{
 			"hoob3rt/lualine.nvim",
 			branch = "master",
-			commit = "84ffb80e452d95e2c46fa29a98ea11a240f7843e",
 			dependencies = { "kyazdani42/nvim-web-devicons", opt = true },
 			config = function()
 				require("lualine").setup({
@@ -251,7 +232,6 @@ require("lazy").setup({
 		{
 			"ggandor/lightspeed.nvim",
 			branch = "main",
-			commit = "299eefa6a9e2d881f1194587c573dad619fdb96f",
 		},
 		{
 			"lervag/vimtex",
@@ -266,7 +246,6 @@ require("lazy").setup({
 		{
 			"abecodes/tabout.nvim",
 			branch = "master",
-			commit = "0d275c8d25f32457e67b5c66d6ae43f26a61bce5",
 			config = function()
 				require("tabout").setup({})
 			end,
@@ -275,7 +254,6 @@ require("lazy").setup({
 		{
 			"anuvyklack/pretty-fold.nvim",
 			branch = "master",
-			commit = "a7d8b424abe0eedf50116c460fbe6dfd5783b1d5",
 			event = "BufRead",
 			config = function()
 				require("pretty-fold").setup({})
@@ -292,13 +270,11 @@ require("lazy").setup({
 		{
 			"famiu/bufdelete.nvim",
 			branch = "master",
-			commit = "8933abc09df6c381d47dc271b1ee5d266541448e",
 			cmd = { "Bdelete", "Bwipeout" },
 		},
 		{
 			"echasnovski/mini.ai",
 			branch = "stable",
-			commit = "fdb8dd34c326040f99b178536eeaee41d1efe643",
 			event = "BufRead",
 			config = function()
 				require("mini.ai").setup()
@@ -311,7 +287,6 @@ require("lazy").setup({
 				{
 					"kristijanhusak/vim-dadbod-ui",
 					branch = "master",
-					commit = "4c306bef457ebfdbe71c76b49672d48ef310ddd3",
 				},
 			},
 			cmd = {
