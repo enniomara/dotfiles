@@ -52,6 +52,12 @@ require("lazy").setup({
 					command_palette = true,
 					long_message_to_split = true,
 				},
+				views = {
+					notify = {
+						-- use minimal theme to render notification
+						render = "minimal",
+					},
+				},
 			},
 		},
 		{
