@@ -121,12 +121,14 @@ require("lazy").setup({
 		{
 			"williamboman/mason.nvim",
 			branch = "main",
+			version = "*",
 			-- after = { "nvim-lspconfig" },
 			-- configuration done in mason-lspconfig.nvim
 		},
 		{
 			"williamboman/mason-lspconfig.nvim",
 			branch = "main",
+			version = "*",
 			-- after = { "nvim-lspconfig", "mason.nvim", "lsp_signature.nvim" },
 			config = function()
 				require("plugins.lsp")
