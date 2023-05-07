@@ -1,5 +1,32 @@
 require("nvim-treesitter.configs").setup({
-	ensure_installed = {},
+	ensure_installed = {
+		"astro",
+		"bash",
+		"comment",
+		"css",
+		"diff",
+		"dockerfile",
+		"git_rebase",
+		"go",
+		"gomod",
+		"html",
+		"javascript",
+		"jq",
+		"json",
+		"jsonc",
+		"latex",
+		"lua",
+		"make",
+		"markdown",
+		"nix",
+		"python",
+		"regex",
+		"ruby",
+		"tsx",
+		"typescript",
+		"terraform",
+		"yaml",
+	},
 	highlight = {
 		enable = true,
 	},
@@ -30,4 +57,4 @@ local gofolds = [[
 	(composite_literal)
 	] @fold
 ]]
-require("vim.treesitter.query").set_query("go", "folds", gofolds)
+vim.treesitter.query.set("go", "folds", gofolds)
