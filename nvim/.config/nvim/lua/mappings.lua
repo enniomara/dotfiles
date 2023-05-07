@@ -21,8 +21,8 @@ mapper("n", "<Leader>bP", ":BufferLineGroupClose ungrouped<CR>")
 mapper("n", "<Leader>,z", ":Lazy<CR>")
 
 -- easier movement to save buffer than :w
-mapper("n", "<Leader>ss", ":w<CR>")
-mapper("n", "<C-s>", ":w<CR>")
+mapper("n", "<Leader>ss", ":silent write<CR>")
+mapper("n", "<C-s>", ":silent write<CR>")
 
 -- Tmux-zoom like feature, full-screens the current pane
 mapper("n", "<C-W>z", ":tab split <CR>")
