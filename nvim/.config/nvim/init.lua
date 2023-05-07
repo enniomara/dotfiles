@@ -138,9 +138,7 @@ require("lazy").setup({
 				require("plugins.cmp")
 			end,
 		},
-		{
-			"rafamadriz/friendly-snippets",
-		},
+		"rafamadriz/friendly-snippets",
 		{
 			"folke/which-key.nvim",
 			version = "*",
@@ -212,9 +210,7 @@ require("lazy").setup({
 			"ray-x/lsp_signature.nvim",
 			version = "*",
 		},
-		{
-			"ggandor/lightspeed.nvim",
-		},
+		"ggandor/lightspeed.nvim",
 		{
 			"lervag/vimtex",
 			version = "*",
