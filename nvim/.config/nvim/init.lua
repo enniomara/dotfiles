@@ -1,16 +1,6 @@
 require("lazy").setup({
 	spec = {
 		{
-			"lewis6991/impatient.nvim",
-			branch = "main",
-			commit = "c90e273f7b8c50a02f956c24ce4804a47f18162e",
-		},
-		{
-			"lewis6991/impatient.nvim",
-			branch = "main",
-			commit = "c90e273f7b8c50a02f956c24ce4804a47f18162e",
-		},
-		{
 			"nvim-neo-tree/neo-tree.nvim",
 			version = "2.48",
 			dependencies = {
@@ -336,6 +326,5 @@ require("lazy").setup({
 	},
 })
 
-require("impatient")
 require("options")
 require("mappings")
