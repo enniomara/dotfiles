@@ -65,6 +65,7 @@ require("lazy").setup({
 			config = function()
 				require("plugins.gitsigns")
 			end,
+			event = { "BufReadPre", "BufNewFile" },
 		},
 		{
 			"nvim-treesitter/nvim-treesitter",
@@ -144,6 +145,7 @@ require("lazy").setup({
 		{
 			"folke/which-key.nvim",
 			version = "*",
+			event = "VeryLazy",
 			config = function()
 				require("which-key").setup({})
 			end,
@@ -228,6 +230,7 @@ require("lazy").setup({
 			config = function()
 				require("tabout").setup({})
 			end,
+			lazy = true,
 			-- after = { "nvim-treesitter" },
 		},
 		{
