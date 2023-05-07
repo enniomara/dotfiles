@@ -3,6 +3,46 @@ vim.g.mapleader = " "
 require("lazy").setup({
 	spec = {
 		{
+			"folke/noice.nvim",
+			event = "VeryLazy",
+			dependencies = {
+				"rcarriga/nvim-notify",
+			},
+			keys = {
+				{
+					"<S-Enter>",
+					function()
+						require("noice").redirect(vim.fn.getcmdline())
+					end,
+					mode = "c",
+					desc = "Redirect Cmdline",
+				},
+			},
+			opts = {
+				routes = {
+					{
+						filter = {
+							event = "msg_show", -- hide written messages
+							kind = "",
+							find = "written",
+						},
+						opts = { skip = true },
+					},
+				},
+				lsp = {
+					override = {
+						["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+						["vim.lsp.util.stylize_markdown"] = true,
+					},
+				},
+				presets = {
+					bottom_search = true,
+					command_palette = true,
+					long_message_to_split = true,
+				},
+			},
+		},
+		{
 			"nvim-neo-tree/neo-tree.nvim",
 			dependencies = {
 				"nvim-lua/plenary.nvim",
