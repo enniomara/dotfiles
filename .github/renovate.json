@@ -7,25 +7,4 @@
     "enabled": true
   },
   "dependencyDashboard": true,
-  "regexManagers": [
-    {
-      "fileMatch": [".config/nvim/init.lua"],
-      "matchStrings": [
-        "\\({\\s*\"(?<depName>.*)\",\\s*tag = \"(?<currentValue>.*)\""
-      ],
-      "datasourceTemplate": "git-tags",
-      "lookupNameTemplate": "https://github.com/{{depName}}.git"
-    },
-    {
-      "fileMatch": [".config/nvim/init.lua"],
-      "matchStrings": [
-        "\\({\\s*\"(?<depName>.*)\",\\s*branch = \"(?<currentValue>.*)\",\\s*commit = \"(?<currentDigest>.*)\""
-      ],
-      "datasourceTemplate": "git-refs",
-      "lookupNameTemplate": "https://github.com/{{depName}}.git"
-    }
-  ],
-  "prBodyDefinitions": {
-    "Package": "[{{{depName}}}](https://github.com/{{{depName}}})"
-  }
 }
