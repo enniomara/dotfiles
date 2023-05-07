@@ -21,12 +21,17 @@ require("lazy").setup({
 			opts = {
 				routes = {
 					{
+						-- show @ recording messages in mini
+						view = "mini",
+						filter = { event = "msg_showmode" },
+					},
+					{
+						-- route all msg_show messages to mini
+						view = "mini",
 						filter = {
-							event = "msg_show", -- hide written messages
+							event = "msg_show",
 							kind = "",
-							find = "written",
 						},
-						opts = { skip = true },
 					},
 				},
 				lsp = {
@@ -34,6 +39,13 @@ require("lazy").setup({
 						["vim.lsp.util.convert_input_to_markdown_lines"] = true,
 						["vim.lsp.util.stylize_markdown"] = true,
 					},
+					signature = {
+						enabled = false,
+					},
+				},
+				cmdline = {
+					enabled = true,
+					view = "cmdline",
 				},
 				presets = {
 					bottom_search = true,
