@@ -25,13 +25,9 @@ require("lazy").setup({
 				require("plugins.telescope")
 			end,
 		},
-		{
-			"nvim-telescope/telescope-ui-select.nvim",
-			branch = "master",
-		},
+		"nvim-telescope/telescope-ui-select.nvim",
 		{
 			"rmehri01/onenord.nvim",
-			branch = "main",
 			config = function()
 				require("onenord").setup({
 					fade_nc = false, -- Fade non-current windows, making them more distinguishable
@@ -40,7 +36,6 @@ require("lazy").setup({
 		},
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
-			branch = "main",
 			build = "make",
 		},
 		{
@@ -53,7 +48,6 @@ require("lazy").setup({
 		},
 		{
 			"ntpeters/vim-better-whitespace",
-			branch = "master",
 			config = function()
 				require("plugins.vim-better-whitespace")
 			end,
@@ -70,7 +64,6 @@ require("lazy").setup({
 		},
 		{
 			"nvim-treesitter/nvim-treesitter",
-			branch = "master",
 			event = "BufRead",
 			build = ":TsUpdate",
 			config = function()
@@ -79,7 +72,6 @@ require("lazy").setup({
 		},
 		{
 			"nvim-treesitter/nvim-treesitter-context",
-			branch = "master",
 			dependencies = { "nvim-treesitter/nvim-treesitter" },
 			event = { "BufRead" },
 			config = function()
@@ -93,7 +85,6 @@ require("lazy").setup({
 		},
 		{
 			"tpope/vim-unimpaired",
-			branch = "master",
 			event = "BufRead",
 		},
 		{
@@ -103,7 +94,6 @@ require("lazy").setup({
 
 		{
 			"jose-elias-alvarez/null-ls.nvim",
-			branch = "main",
 			dependencies = {
 				"nvim-lua/plenary.nvim",
 				"lewis6991/gitsigns.nvim",
@@ -115,19 +105,16 @@ require("lazy").setup({
 		},
 		{
 			"neovim/nvim-lspconfig",
-			branch = "master",
 			event = { "VimEnter" },
 		},
 		{
 			"williamboman/mason.nvim",
-			branch = "main",
 			version = "*",
 			-- after = { "nvim-lspconfig" },
 			-- configuration done in mason-lspconfig.nvim
 		},
 		{
 			"williamboman/mason-lspconfig.nvim",
-			branch = "main",
 			version = "*",
 			-- after = { "nvim-lspconfig", "mason.nvim", "lsp_signature.nvim" },
 			config = function()
@@ -136,7 +123,6 @@ require("lazy").setup({
 		},
 		{
 			"hrsh7th/nvim-cmp",
-			branch = "main",
 			dependencies = {
 				"L3MON4D3/LuaSnip",
 				"saadparwaiz1/cmp_luasnip",
@@ -154,7 +140,6 @@ require("lazy").setup({
 		},
 		{
 			"rafamadriz/friendly-snippets",
-			branch = "main",
 		},
 		{
 			"folke/which-key.nvim",
@@ -165,7 +150,6 @@ require("lazy").setup({
 		},
 		{
 			"windwp/nvim-autopairs",
-			branch = "master",
 			config = function()
 				require("nvim-autopairs").setup({
 					disable_filetype = { "TelescopePrompt", "vim" },
@@ -175,7 +159,6 @@ require("lazy").setup({
 		},
 		{
 			"numToStr/Comment.nvim",
-			branch = "master",
 			event = "BufRead",
 			config = function()
 				require("Comment").setup()
@@ -196,14 +179,12 @@ require("lazy").setup({
 		},
 		{
 			"rmagatti/auto-session",
-			branch = "main",
 			config = function()
 				require("plugins.auto-session")
 			end,
 		},
 		{
 			"hoob3rt/lualine.nvim",
-			branch = "master",
 			dependencies = { "kyazdani42/nvim-web-devicons", opt = true },
 			config = function()
 				require("lualine").setup({
@@ -233,7 +214,6 @@ require("lazy").setup({
 		},
 		{
 			"ggandor/lightspeed.nvim",
-			branch = "main",
 		},
 		{
 			"lervag/vimtex",
@@ -247,7 +227,6 @@ require("lazy").setup({
 		},
 		{
 			"abecodes/tabout.nvim",
-			branch = "master",
 			config = function()
 				require("tabout").setup({})
 			end,
@@ -255,7 +234,6 @@ require("lazy").setup({
 		},
 		{
 			"anuvyklack/pretty-fold.nvim",
-			branch = "master",
 			event = "BufRead",
 			config = function()
 				require("pretty-fold").setup({})
@@ -271,7 +249,6 @@ require("lazy").setup({
 		},
 		{
 			"famiu/bufdelete.nvim",
-			branch = "master",
 			cmd = { "Bdelete", "Bwipeout" },
 		},
 		{
@@ -288,7 +265,6 @@ require("lazy").setup({
 			dependencies = {
 				{
 					"kristijanhusak/vim-dadbod-ui",
-					branch = "master",
 				},
 			},
 			cmd = {
