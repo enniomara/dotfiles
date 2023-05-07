@@ -55,3 +55,4 @@ end)
 mapper({ "n", "v" }, "<Leader>jj", ":")
 mapper({ "n", "v" }, "<Leader>jk", "/")
 
+mapper("n", "<Leader>ql", ":SessionRestore<CR>")
