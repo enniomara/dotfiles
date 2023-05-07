@@ -45,7 +45,7 @@ require("lazy").setup({
 		},
 		{
 			"akinsho/bufferline.nvim",
-			version = "v3.5.0",
+			version = "*",
 			dependencies = "kyazdani42/nvim-web-devicons",
 			config = function()
 				require("plugins.bufferline")
@@ -60,7 +60,7 @@ require("lazy").setup({
 		},
 		{
 			"lewis6991/gitsigns.nvim",
-			version = "v0.5",
+			version = "*",
 			dependencies = {
 				"nvim-lua/plenary.nvim",
 			},
@@ -88,7 +88,7 @@ require("lazy").setup({
 		},
 		{
 			"tpope/vim-fugitive",
-			version = "v3.4",
+			version = "*",
 			cmd = "Git",
 		},
 		{
@@ -98,7 +98,7 @@ require("lazy").setup({
 		},
 		{
 			"tpope/vim-sleuth",
-			version = "v1.2",
+			version = "*",
 		},
 
 		{
@@ -156,7 +156,7 @@ require("lazy").setup({
 		},
 		{
 			"folke/which-key.nvim",
-			version = "v1.2.0",
+			version = "*",
 			config = function()
 				require("which-key").setup({})
 			end,
@@ -181,7 +181,7 @@ require("lazy").setup({
 		},
 		{
 			"lukas-reineke/indent-blankline.nvim",
-			version = "v2.20.4",
+			version = "*",
 			event = "BufRead",
 			config = function()
 				require("indent_blankline").setup({
@@ -227,7 +227,7 @@ require("lazy").setup({
 		},
 		{
 			"ray-x/lsp_signature.nvim",
-			version = "v0.2.0",
+			version = "*",
 		},
 		{
 			"ggandor/lightspeed.nvim",
@@ -235,12 +235,12 @@ require("lazy").setup({
 		},
 		{
 			"lervag/vimtex",
-			version = "v2.8",
+			version = "*",
 			ft = { "tex" },
 		},
 		{
 			"kevinhwang91/nvim-bqf",
-			version = "v1.1.0",
+			version = "*",
 			ft = "qf",
 		},
 		{
@@ -261,7 +261,7 @@ require("lazy").setup({
 		},
 		{
 			"kylechui/nvim-surround",
-			version = "v2.0.4",
+			version = "*",
 			event = { "BufRead" },
 			config = function()
 				require("nvim-surround").setup({})
