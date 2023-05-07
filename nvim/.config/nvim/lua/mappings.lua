@@ -3,7 +3,6 @@ local mapper = function(mode, key, result)
 	vim.keymap.set(mode, key, result, { noremap = true, silent = true })
 end
 
-mapper("n", "<Leader>d", ":Neotree toggle=true<CR>")
 mapper("n", "<Leader>qq", ":Bdelete<CR>") -- close current buffer
 mapper("n", "<Leader>ff", ":Telescope find_files<CR>")
 mapper("n", "<Leader>fg", ":Telescope live_grep<CR>")

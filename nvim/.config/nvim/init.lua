@@ -1,3 +1,5 @@
+vim.g.mapleader = " "
+
 require("lazy").setup({
 	spec = {
 		{
@@ -7,10 +9,12 @@ require("lazy").setup({
 				"kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
 				"MunifTanjim/nui.nvim",
 			},
-			cmd = "Neotree",
 			config = function()
 				require("plugins.neotree")
 			end,
+			keys = {
+				{ "<leader>d", "<cmd>Neotree toggle=true<cr>", desc = "Explorer Neotree" },
+			},
 		},
 		{
 			"nvim-telescope/telescope.nvim",
@@ -91,7 +95,6 @@ require("lazy").setup({
 			"tpope/vim-sleuth",
 			version = "*",
 		},
-
 		{
 			"jose-elias-alvarez/null-ls.nvim",
 			dependencies = {

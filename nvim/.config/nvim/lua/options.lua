@@ -1,5 +1,4 @@
 local indent = 4
-vim.g.mapleader = " "
 
 vim.opt.autoread = true
 vim.opt.expandtab = true -- Expand tab characters to space characters.
