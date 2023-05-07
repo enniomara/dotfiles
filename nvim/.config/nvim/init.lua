@@ -181,9 +181,10 @@ require("lazy").setup({
 		},
 		{
 			"rmagatti/auto-session",
-			config = function()
-				require("plugins.auto-session")
-			end,
+			opts = {
+				auto_restore_enabled = false,
+				pre_save_cmds = { "Neotree action=close" },
+			},
 		},
 		{
 			"hoob3rt/lualine.nvim",
