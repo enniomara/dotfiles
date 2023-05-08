@@ -10,7 +10,7 @@ vim.opt.softtabstop = indent -- Enables easy removal of an indentation level.
 vim.opt.autoindent = true -- Automatically copy the previous indent level. Don't use smartindent!!!
 -- vim.opt.backspace = 2 -- Used for making backspace work like in most other editors (e.g. removing a single indent).
 vim.opt.wrap = true -- Wrap text. This is also quite optional, replace with textwidth=80 is you don't want this behaviour.
-vim.opt.lazyredraw = true -- Good performance boost when executing macros, redraw the screen only on certain commands.
+-- vim.opt.lazyredraw = true -- Good performance boost when executing macros, redraw the screen only on certain commands.
 
 vim.opt.ignorecase = true --- Search is not case sensitive, which is usually what we want.
 vim.opt.incsearch = true -- Enables the user to step through each search 'hit', usually what is desired here.
