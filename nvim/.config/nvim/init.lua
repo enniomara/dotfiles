@@ -18,6 +18,27 @@ require("lazy").setup({
 					mode = "c",
 					desc = "Redirect Cmdline",
 				},
+				{
+					"<leader>snd",
+					function()
+						require("noice").cmd("dismiss")
+					end,
+					desc = "Dismiss All",
+				},
+				{
+					"<leader>snt",
+					function()
+						require("noice").cmd("telescope")
+					end,
+					desc = "Open notifications in telescope",
+				},
+				{
+					"<leader>sna",
+					function()
+						require("noice").cmd("all")
+					end,
+					desc = "Open all notifications",
+				},
 			},
 			opts = {
 				routes = {
