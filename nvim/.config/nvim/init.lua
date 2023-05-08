@@ -1,5 +1,9 @@
 vim.g.mapleader = " "
 
+-- Needed so that packer knows how to load the treesitter grammars installed by
+-- nix
+vim.cmd([[packloadall ]])
+
 require("lazy").setup({
 	spec = {
 		{
