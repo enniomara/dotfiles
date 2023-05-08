@@ -54,5 +54,3 @@ end)
 -- becusae : is in a horrible place to reach in qwerty
 mapper({ "n", "v" }, "<Leader>jj", ":")
 mapper({ "n", "v" }, "<Leader>jk", "/")
-
-mapper("n", "<Leader>ql", ":SessionRestore<CR>")

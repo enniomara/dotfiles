@@ -243,6 +243,13 @@ require("lazy").setup({
 		},
 		{
 			"rmagatti/auto-session",
+			keys = {
+				{
+					"<Leader>ql",
+					":SessionRestore<CR>",
+					desc = "Restore last session",
+				},
+			},
 			opts = {
 				auto_restore_enabled = false,
 				pre_save_cmds = { "Neotree action=close" },
