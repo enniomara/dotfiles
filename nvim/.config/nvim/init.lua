@@ -9,9 +9,6 @@ require("lazy").setup({
 		{
 			"folke/noice.nvim",
 			event = "VeryLazy",
-			dependencies = {
-				"rcarriga/nvim-notify",
-			},
 			keys = {
 				{
 					"<S-Enter>",
