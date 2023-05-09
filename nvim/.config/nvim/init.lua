@@ -5,6 +5,14 @@ vim.g.mapleader = " "
 vim.cmd([[packloadall ]])
 
 require("lazy").setup({
+	-- Problems with treesitter and nix, the dependencies for grammas were not
+	-- loaded propery when resetting packpath and rtp
+	performance = {
+		reset_packpath = false,
+		rtp = {
+			reset = false,
+		},
+	},
 	spec = {
 		{
 			"folke/noice.nvim",
