@@ -119,12 +119,10 @@ require("lazy").setup({
 		},
 		"nvim-telescope/telescope-ui-select.nvim",
 		{
-			"rmehri01/onenord.nvim",
-			config = function()
-				require("onenord").setup({
-					fade_nc = false, -- Fade non-current windows, making them more distinguishable
-				})
-			end,
+			"folke/tokyonight.nvim",
+			opts = {
+				style = "night",
+			},
 		},
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
@@ -287,7 +285,7 @@ require("lazy").setup({
 			config = function()
 				require("lualine").setup({
 					options = {
-						theme = "nord",
+						theme = "tokyonight",
 					},
 					sections = {
 						lualine_x = {

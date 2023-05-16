@@ -37,7 +37,7 @@
 
   xdg.configFile."kitty/kitty.conf".text = pkgs.lib.strings.concatStrings [
     (builtins.readFile ../../../kitty/.config/kitty/kitty.conf)
-    (builtins.readFile ../../../kitty/.config/kitty/nord.conf)
+    (builtins.readFile ../../../kitty/.config/kitty/tokyo-night-kitty.conf)
   ];
 
   programs.git = {
