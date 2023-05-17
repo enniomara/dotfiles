@@ -121,7 +121,7 @@ require("lazy").setup({
 		{
 			"folke/tokyonight.nvim",
 			opts = {
-				style = "moon,
+				style = "moon",
 			},
 		},
 		{
