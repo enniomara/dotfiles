@@ -23,22 +23,13 @@ AccountPrimaryTag:
     - AccountAlias
     - Email
 PromptColors:
-    descriptionbgcolor: Turquoise
-    descriptiontextcolor: Black
-    inputbgcolor: DefaultColor
-    inputtextcolor: DefaultColor
-    prefixbackgroundcolor: DefaultColor
-    prefixtextcolor: Blue
-    previewsuggestionbgcolor: DefaultColor
-    previewsuggestiontextcolor: Green
-    scrollbarbgcolor: Cyan
-    scrollbarthumbcolor: LightGrey
-    selecteddescriptionbgcolor: DarkGray
-    selecteddescriptiontextcolor: White
-    selectedsuggestionbgcolor: DarkGray
-    selectedsuggestiontextcolor: White
-    suggestionbgcolor: Cyan
-    suggestiontextcolor: White
+    SuggestionTextColor: Black
+    SuggestionBGColor: Cyan
+    DescriptionTextColor: Black
+    DescriptionBGColor: LightGrey
+    SelectedSuggestionTextColor: Black
+    SelectedSuggestionBGColor: Fuchsia
+    SelectedDescriptionBGColor: LightGrey
 ListFields:
     - AccountId
     - AccountAlias
