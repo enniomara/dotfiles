@@ -1,0 +1,47 @@
+SSOConfig:
+    DefaultSSO:
+        SSORegion: eu-west-1
+        StartUrl: https://axis-communications.awsapps.com/start
+        DefaultRegion: eu-west-1
+DefaultSSO: DefaultSSO
+DefaultRegion: eu-west-1
+ConsoleDuration: 60
+CacheRefresh: 168
+Threads: 5
+AutoConfigCheck: true
+UrlAction: open-url-in-container
+ConfigProfilesUrlAction: open-url-in-container
+UrlExecCommand:
+    - /Applications/Firefox.app/Contents/MacOS/firefox
+    - "%s"
+LogLevel: warn
+HistoryLimit: 10
+HistoryMinutes: 1440
+ProfileFormat: "{{ AccountIdStr .AccountId }}:{{ .RoleName }}"
+AccountPrimaryTag:
+    - AccountName
+    - AccountAlias
+    - Email
+PromptColors:
+    descriptionbgcolor: Turquoise
+    descriptiontextcolor: Black
+    inputbgcolor: DefaultColor
+    inputtextcolor: DefaultColor
+    prefixbackgroundcolor: DefaultColor
+    prefixtextcolor: Blue
+    previewsuggestionbgcolor: DefaultColor
+    previewsuggestiontextcolor: Green
+    scrollbarbgcolor: Cyan
+    scrollbarthumbcolor: LightGrey
+    selecteddescriptionbgcolor: DarkGray
+    selecteddescriptiontextcolor: White
+    selectedsuggestionbgcolor: DarkGray
+    selectedsuggestiontextcolor: White
+    suggestionbgcolor: Cyan
+    suggestiontextcolor: White
+ListFields:
+    - AccountId
+    - AccountAlias
+    - RoleName
+    - Profile
+    - ExpiresStr

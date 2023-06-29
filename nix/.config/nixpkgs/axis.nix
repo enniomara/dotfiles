@@ -1,5 +1,9 @@
 { ... }:
 {
+  imports = [
+    ./work/aws.nix # aws sso configuration
+  ];
+
   programs.zsh.sessionVariables = {
     GOPRIVATE = "gittools.se.axis.com";
   };
