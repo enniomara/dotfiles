@@ -17,7 +17,7 @@ UrlExecCommand:
 LogLevel: warn
 HistoryLimit: 10
 HistoryMinutes: 1440
-ProfileFormat: "{{ AccountIdStr .AccountId }}:{{ .RoleName }}"
+ProfileFormat: "{{ .AccountAlias }}:{{ .RoleName }}"
 AccountPrimaryTag:
     - AccountName
     - AccountAlias
