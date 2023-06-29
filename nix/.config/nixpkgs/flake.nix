@@ -35,6 +35,12 @@
                 ./hammerspoon.nix
               ] ++ extraModules;
             };
+
+            # a new version of home manager broke compatibility with
+            # nix-darwin. It started saying that $HOME as empty.
+            # https://github.com/nix-community/home-manager/issues/4026
+            # https://github.com/nix-community/home-manager/issues/4026
+            users.users.${username}.home = "/Users/${username}";
           }
         ];
 
