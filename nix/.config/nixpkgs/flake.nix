@@ -65,7 +65,9 @@
       darwinConfigurations."M-C02G32FSML7H" = mkDarwinSystem {
         username = "marae";
         extraModules = [
-          ./axis.nix
+          (import ./axis.nix {
+            awsSSOSecureStore = "keychain";
+          })
         ];
       };
 
@@ -80,7 +82,9 @@
       homeConfigurations."marae@pcczc65196q9" = mkLinuxSystem {
         username = "marae";
         extraModules = [
-          ./axis.nix
+          (import ./axis.nix {
+            awsSSOSecureStore = "keychain";
+          })
           ./agent-forwarding-tmux.nix
         ];
       };
