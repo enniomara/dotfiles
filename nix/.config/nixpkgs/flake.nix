@@ -83,7 +83,7 @@
         username = "marae";
         extraModules = [
           (import ./axis.nix {
-            awsSSOSecureStore = "keychain";
+            awsSSOSecureStore = "file";
           })
           ./agent-forwarding-tmux.nix
         ];
