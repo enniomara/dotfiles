@@ -57,6 +57,10 @@
             home.username = username;
             home.homeDirectory = "/home/${username}";
             targets.genericLinux.enable = true;
+            home.activation.report-changes = home-manager.lib.hm.dag.entryAnywhere ''
+              echo "++++* System Changes ++++++"
+              nix store diff-closures $(ls -dv /nix/var/nix/profiles/per-user/${username}/home-manager-*-link | tail -2)
+            '';
           })
         ] ++ extraModules;
       };
