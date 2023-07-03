@@ -29,11 +29,20 @@
 
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.${username} = { ... }: {
+            home-manager.users.${username} = { config, ... }: {
               imports = [
                 ./home.nix
                 ./hammerspoon.nix
               ] ++ extraModules;
+
+              config = {
+                # from https://discourse.nixos.org/t/nvd-simple-nix-nixos-version-diff-tool/12397/31
+                home.activation.report-changes = config.lib.dag.entryAnywhere ''
+                  echo "++++* System Changes ++++++"
+                  nix store diff-closures $(ls -dv /nix/var/nix/profiles/system-*-link | tail -2)
+                '';
+
+              };
             };
 
             # a new version of home manager broke compatibility with

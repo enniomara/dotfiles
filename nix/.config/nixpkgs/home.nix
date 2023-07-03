@@ -16,12 +16,6 @@
   # changes in each release.
   home.stateVersion = "23.05";
 
-  # from https://discourse.nixos.org/t/nvd-simple-nix-nixos-version-diff-tool/12397/31
-  home.activation.report-changes = config.lib.dag.entryAnywhere ''
-    echo "++++* System Changes ++++++"
-    nix store diff-closures $(ls -dv /nix/var/nix/profiles/system-*-link | tail -2)
-  '';
-
   imports = [
     ./shell.nix
     ./tmux.nix
