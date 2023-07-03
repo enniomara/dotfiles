@@ -57,6 +57,7 @@
     pkgs.autojump
     pkgs.fd
     pkgs.jq
+    pkgs.jqp # live jq
     pkgs.ripgrep
     pkgs.tldr
     pkgs.fzf
