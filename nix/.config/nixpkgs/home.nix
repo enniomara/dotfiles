@@ -71,5 +71,6 @@
     pkgs.gh
     pkgs.lazygit
     pkgs.lazydocker
+    pkgs.awscli2
   ];
 }
