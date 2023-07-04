@@ -5,7 +5,7 @@ SSOConfig:
         DefaultRegion: eu-west-1
 DefaultSSO: DefaultSSO
 DefaultRegion: eu-west-1
-ConsoleDuration: 60
+ConsoleDuration: 480 # 8 hours
 CacheRefresh: 168
 Threads: 5
 AutoConfigCheck: true
