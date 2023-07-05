@@ -78,6 +78,7 @@
       darwinConfigurations."M-C02G32FSML7H" = mkDarwinSystem {
         username = "marae";
         extraModules = [
+          (import ./axis.nix)
           ({
             services.aws-sso = {
               enable = true;
@@ -105,6 +106,7 @@
       homeConfigurations."marae@pcczc65196q9" = mkLinuxSystem {
         username = "marae";
         extraModules = [
+          (import ./axis.nix)
           ({
             services.aws-sso = {
               enable = true;
