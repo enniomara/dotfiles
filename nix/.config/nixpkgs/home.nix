@@ -20,6 +20,7 @@
     ./shell.nix
     ./tmux.nix
     ./neovim.nix
+    ./work/aws.nix
   ];
 
   # Let Home Manager install and manage itself.

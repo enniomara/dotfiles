@@ -1,11 +1,5 @@
-{ awsSSOSecureStore, ... }:
+{ ... }:
 {
-  imports = [
-    ./work/aws.nix
-  ];
-
-  services.aws-sso.secureStore = awsSSOSecureStore;
-
   programs.zsh.sessionVariables = {
     GOPRIVATE = "gittools.se.axis.com";
   };

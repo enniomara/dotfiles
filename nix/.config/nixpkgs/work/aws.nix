@@ -2,12 +2,21 @@
 let
   cfg = config.services.aws-sso; in
 {
-  options.services.aws-sso.secureStore = lib.mkOption {
-    type = lib.types.enum [ "file" "keychain" ];
-    description = "What secure store will be used";
+  options.services.aws-sso = {
+    enable = lib.mkEnableOption "Enable aws-sso-cli";
+
+    secureStore = lib.mkOption {
+      type = lib.types.enum [ "file" "keychain" ];
+      description = "What secure store will be used";
+    };
+
+    extraConfig = lib.mkOption {
+      type = lib.types.str;
+      description = "Extra config to pass to aws-sso-cli config";
+    };
   };
 
-  config = {
+  config = lib.mkIf cfg.enable {
     home.file = {
       awsSSOConfig = {
         # source = ./aws-sso-config.yaml;
@@ -19,6 +28,7 @@ let
               ''
                 SecureStore: ${cfg.secureStore}
               ''
+              cfg.extraConfig
             ])
           );
       };

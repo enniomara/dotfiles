@@ -78,8 +78,18 @@
       darwinConfigurations."M-C02G32FSML7H" = mkDarwinSystem {
         username = "marae";
         extraModules = [
-          (import ./axis.nix {
-            awsSSOSecureStore = "keychain";
+          ({
+            services.aws-sso = {
+              enable = true;
+              secureStore = "keychain";
+              extraConfig = ''
+                UrlAction: open-url-in-container
+                ConfigProfilesUrlAction: open-url-in-container
+                UrlExecCommand:
+                  - /Applications/Firefox.app/Contents/MacOS/firefox
+                  - "%s"
+              '';
+            };
           })
         ];
       };
@@ -95,8 +105,14 @@
       homeConfigurations."marae@pcczc65196q9" = mkLinuxSystem {
         username = "marae";
         extraModules = [
-          (import ./axis.nix {
-            awsSSOSecureStore = "file";
+          ({
+            services.aws-sso = {
+              enable = true;
+              secureStore = "file";
+              extraConfig = ''
+                UrlAction: print
+              '';
+            };
           })
           ./agent-forwarding-tmux.nix
         ];
