@@ -13,11 +13,15 @@ finish () {
 
 trap finish EXIT
 
-host=localhost
-port=54821
+serverPath=$1
+shift
+host=$1
+shift
+port=$1
+shift
 
 echo "starting server on $host:$port"
 
-python3 ./nix/.config/nixpkgs/work/server.py "$host" "$port" &
+python3 "$serverPath" "$host" "$port" &
 
 ssh -R "$port:$host:$port" "$@" && exit
