@@ -115,6 +115,10 @@
                 UrlAction: print
               '';
             };
+
+            # I want to automatically open in my laptop's browser, instead of
+            # having to override the BROWSER variable
+            services.open-url-via-ssh.automaticBrowserOverride = true;
           })
           ./agent-forwarding-tmux.nix
         ];
