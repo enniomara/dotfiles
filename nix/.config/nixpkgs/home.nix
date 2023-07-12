@@ -21,6 +21,7 @@
     ./tmux.nix
     ./neovim.nix
     ./work/aws.nix
+    ./open-url-via-ssh
   ];
 
   # Let Home Manager install and manage itself.
