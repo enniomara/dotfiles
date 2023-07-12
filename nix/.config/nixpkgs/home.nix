@@ -50,6 +50,8 @@
     };
   };
 
+  services.open-url-via-ssh.enable = true;
+
   home.packages = [
     pkgs.htop
 
