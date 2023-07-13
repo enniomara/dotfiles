@@ -108,17 +108,16 @@
         extraModules = [
           (import ./axis.nix)
           ({
+            # I want to automatically open in my laptop's browser, instead of
+            # having to override the BROWSER variable
+            services.open-url-via-ssh.automaticBrowserOverride = true;
             services.aws-sso = {
               enable = true;
               secureStore = "file";
               extraConfig = ''
-                UrlAction: print
+                UrlAction: open
               '';
             };
-
-            # I want to automatically open in my laptop's browser, instead of
-            # having to override the BROWSER variable
-            services.open-url-via-ssh.automaticBrowserOverride = true;
           })
           ./agent-forwarding-tmux.nix
         ];
