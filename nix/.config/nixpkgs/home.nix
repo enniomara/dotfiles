@@ -66,6 +66,7 @@
     pkgs.tldr
     pkgs.fzf
     pkgs.asdf-vm
+    pkgs.kubectl
 
     pkgs.gh
     pkgs.lazygit
