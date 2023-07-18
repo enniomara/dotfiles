@@ -58,26 +58,6 @@
         "type": "github"
       }
     },
-    "nix-index-database": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1689479461,
-        "narHash": "sha256-Ak+PTYdmfOQEmcOsOEnrwqdP0HP20PLraRwpjSAzSeE=",
-        "owner": "Mic92",
-        "repo": "nix-index-database",
-        "rev": "22fa44b7f14684d184733fb26a628f3878ff7aaf",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Mic92",
-        "repo": "nix-index-database",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1687946342,
@@ -99,7 +79,6 @@
         "darwin": "darwin",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
-        "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs"
       }
     },

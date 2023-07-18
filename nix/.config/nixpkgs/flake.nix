@@ -10,12 +10,9 @@
     };
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
-
-    nix-index-database.url = "github:Mic92/nix-index-database";
-    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, flake-utils, home-manager, darwin, nix-index-database }:
+  outputs = { self, nixpkgs, flake-utils, home-manager, darwin }:
     let
       customOverlays = import ./overlays.nix;
       overlays = [
@@ -26,10 +23,6 @@
         system = "x86_64-darwin";
         modules = [
           ./configuration.nix
-          nix-index-database.darwinModules.nix-index
-          # optional to also wrap and install comma
-          { programs.nix-index-database.comma.enable = true; }
-
           home-manager.darwinModules.home-manager
           {
             nixpkgs.overlays = overlays;
@@ -68,10 +61,6 @@
         # the path to your home.nix.
         modules = [
           ./home.nix
-          nix-index-database.hmModules.nix-index
-          # optional to also wrap and install comma
-          { programs.nix-index-database.comma.enable = true; }
-
           ({
             nixpkgs.overlays = overlays;
             home.username = username;
