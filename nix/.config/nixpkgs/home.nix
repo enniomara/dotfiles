@@ -52,6 +52,11 @@
 
   services.open-url-via-ssh.enable = true;
 
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   home.packages = [
     pkgs.htop
 
@@ -64,7 +69,6 @@
     pkgs.jqp # live jq
     pkgs.ripgrep
     pkgs.tldr
-    pkgs.fzf
     pkgs.asdf-vm
     pkgs.kubectl
 
