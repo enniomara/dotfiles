@@ -40,6 +40,7 @@
       "ticktick"
       "font-fira-code-nerd-font"
       "monitorcontrol" # allows to control brigtness of external monitor
+      "raycast"
     ];
   };
 
