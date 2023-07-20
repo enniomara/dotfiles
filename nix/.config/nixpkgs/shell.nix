@@ -61,6 +61,11 @@
     localVariables = {
       RPROMPT = "%F{8}%*";
       EDITOR = "nvim";
+      # zsh by default has a list of chars (- / # etc) which can be used as a
+      # separator but still be called a word. Annoying thing since running
+      # Ctrl-W on "nixpkgs#git" removed the entire word, instead of returning
+      # "nixpkgs#
+      WORDCHARS = "";
     };
     shellGlobalAliases = {
       L = "| less";
