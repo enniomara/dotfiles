@@ -22,8 +22,6 @@
 
       # Give completion list color support
       zstyle ':completion:*' list-colors ''
-
-      autoload -U compinit && compinit
     ";
     syntaxHighlighting = {
       enable = true;
