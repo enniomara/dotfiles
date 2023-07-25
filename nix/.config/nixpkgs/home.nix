@@ -71,6 +71,7 @@
     pkgs.tldr
     pkgs.asdf-vm
     pkgs.kubectl
+    pkgs.curl
 
     pkgs.gh
     pkgs.lazygit
