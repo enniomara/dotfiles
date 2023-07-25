@@ -71,6 +71,7 @@
     pkgs.tldr
     pkgs.asdf-vm
     pkgs.kubectl
+    pkgs.k9s
     pkgs.curl
 
     pkgs.gh
