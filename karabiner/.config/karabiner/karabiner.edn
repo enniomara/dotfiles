@@ -17,7 +17,9 @@
                              ]
            :keychron [{:vendor_id 1452 :product_id 592}]}
 
- :templates {:toggle "osascript ~/.config/karabiner/ToggleApplication.scpt \"%s\""
+
+
+ :templates {:toggle "osascript @toggleApplicationPath@ \"%s\""
              :btt "osascript -e 'tell application \"BetterTouchTool\" to trigger_named_async_without_response \"%s\"'"}
 
  :main

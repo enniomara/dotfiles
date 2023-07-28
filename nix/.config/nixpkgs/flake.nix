@@ -33,6 +33,7 @@
               imports = [
                 ./home.nix
                 ./hammerspoon.nix
+                ./karabiner.nix
               ] ++ extraModules;
 
               config = {

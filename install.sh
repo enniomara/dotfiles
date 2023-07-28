@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-STOW_FOLDERS="karabiner,nvim"
+STOW_FOLDERS="nvim"
 TARGET="$HOME"
 
 for folder in ${STOW_FOLDERS//,/ }
