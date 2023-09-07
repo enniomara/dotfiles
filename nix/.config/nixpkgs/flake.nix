@@ -19,11 +19,6 @@
         customOverlays.oh-my-zsh
       ];
 
-      commonHomeManagerConfig = {
-        # Create registry so that it can be used in `nix run` commands without downloading upstream nixpkgs again
-        nix.registry.home.flake = nixpkgs;
-      };
-
       mkDarwinSystem = { username, extraModules ? [ ] }: darwin.lib.darwinSystem {
         system = "x86_64-darwin";
         modules = [
@@ -47,7 +42,7 @@
                   echo "++++* System Changes ++++++"
                   nix store diff-closures $(ls -dv /nix/var/nix/profiles/system-*-link | tail -2)
                 '';
-              } + commonHomeManagerConfig;
+              };
             };
 
             # a new version of home manager broke compatibility with
@@ -55,6 +50,9 @@
             # https://github.com/nix-community/home-manager/issues/4026
             # https://github.com/nix-community/home-manager/issues/4026
             users.users.${username}.home = "/Users/${username}";
+
+            # Create registry so that it can be used in `nix run` commands without downloading upstream nixpkgs again
+            nix.registry.home.flake = nixpkgs;
           }
         ];
 
@@ -66,7 +64,6 @@
         # the path to your home.nix.
         modules = [
           ./home.nix
-          commonHomeManagerConfig
           ({
             nixpkgs.overlays = overlays;
             home.username = username;
@@ -76,6 +73,9 @@
               echo "++++* System Changes ++++++"
               nix store diff-closures $(ls -dv /nix/var/nix/profiles/per-user/${username}/home-manager-*-link | tail -2)
             '';
+
+            # Create registry so that it can be used in `nix run` commands without downloading upstream nixpkgs again
+            nix.registry.home.flake = nixpkgs;
           })
         ] ++ extraModules;
       };
