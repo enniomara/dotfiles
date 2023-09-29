@@ -534,6 +534,89 @@ require("lazy").setup({
 				},
 			},
 		},
+		{
+			"nvim-neotest/neotest",
+			dependencies = {
+				"nvim-lua/plenary.nvim",
+				"nvim-treesitter/nvim-treesitter",
+				"antoinemadec/FixCursorHold.nvim",
+				"nvim-neotest/neotest-go",
+			},
+			keys = {
+				{
+					"<leader>tr",
+					function()
+						require('neotest').run.run()
+					end,
+					desc = "Test: Run Single Function",
+				},
+				{
+					"<leader>tt",
+					function()
+						require('neotest').run.run(vim.fn.expand("%"))
+					end,
+					desc = "Test: Run Current File",
+				},
+				{
+					"<leader>tT",
+					function()
+						require('neotest').run.run(vim.loop.cwd())
+					end,
+					desc = "Test: Run All Tests",
+				},
+				{
+					"<leader>tl",
+					function()
+						require('neotest').run.run_last()
+					end,
+					desc = "Test: Run All Tests",
+				},
+				{
+					"<leader>te",
+					function()
+						require("neotest").output.open({ enter = true, auto_close = true })
+					end,
+					desc = "Test: Open single test output",
+				},
+				{
+					"<leader>to",
+					function()
+						require("neotest").summary.toggle()
+					end,
+					desc = "Test: Open Test Summary",
+				},
+				{
+					"<leader>tO",
+					function()
+						require("neotest").output_panel.toggle()
+					end,
+					desc = "Test: Open Output Panel",
+				},
+
+			},
+			config = function()
+				-- get neotest namespace (api call creates or returns namespace)
+				local neotest_ns = vim.api.nvim_create_namespace("neotest")
+				vim.diagnostic.config({
+					virtual_text = {
+						format = function(diagnostic)
+							local message = diagnostic.message
+								:gsub("\n", " ")
+								:gsub("\t", " ")
+								:gsub("%s+", " ")
+								:gsub("^%s+", "")
+							return message
+						end,
+					},
+				}, neotest_ns)
+				require("neotest").setup({
+					-- your neotest config here
+					adapters = {
+						require("neotest-go"),
+					},
+				})
+			end,
+		},
 	},
 })
 
