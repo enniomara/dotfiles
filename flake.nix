@@ -18,9 +18,9 @@
   outputs = inputs @ { self, nixpkgs, flake-utils, home-manager, darwin, devshell }:
     let
       # the devshells used by this repo
-      devshells = (import ../../../modules/devShell.nix) inputs;
+      devshells = (import ./modules/devShell.nix) inputs;
 
-      customOverlays = import ./overlays.nix;
+      customOverlays = import ./nix/.config/nixpkgs/overlays.nix;
       overlays = [
         customOverlays.oh-my-zsh
       ];
@@ -28,7 +28,7 @@
       mkDarwinSystem = { username, extraModules ? [ ] }: darwin.lib.darwinSystem {
         system = "x86_64-darwin";
         modules = [
-          ./configuration.nix
+          ./nix/.config/nixpkgs/configuration.nix
           home-manager.darwinModules.home-manager
           {
             nixpkgs.overlays = overlays;
@@ -37,9 +37,9 @@
             home-manager.useUserPackages = true;
             home-manager.users.${username} = { config, ... }: {
               imports = [
-                ./home.nix
-                ./hammerspoon.nix
-                ./karabiner.nix
+                ./nix/.config/nixpkgs/home.nix
+                ./nix/.config/nixpkgs/hammerspoon.nix
+                ./nix/.config/nixpkgs/karabiner.nix
               ] ++ extraModules;
 
               config = {
@@ -69,7 +69,7 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
-          ./home.nix
+          ./nix/.config/nixpkgs/home.nix
           ({
             nixpkgs.overlays = overlays;
             home.username = username;
@@ -90,7 +90,7 @@
       darwinConfigurations."M-C02G32FSML7H" = mkDarwinSystem {
         username = "marae";
         extraModules = [
-          (import ./axis.nix)
+          (import ./nix/.config/nixpkgs/axis.nix)
           ({
             services.aws-sso = {
               enable = true;
@@ -110,7 +110,7 @@
       darwinConfigurations."Ennios-MacBook-Pro" = mkDarwinSystem {
         username = "enniomara";
         extraModules = [
-          ./personal.nix
+          ./nix/.config/nixpkgs/personal.nix
         ];
       };
 
@@ -118,7 +118,7 @@
       homeConfigurations."marae@pcczc65196q9" = mkLinuxSystem {
         username = "marae";
         extraModules = [
-          (import ./axis.nix)
+          (import ./nix/.config/nixpkgs/axis.nix)
           ({
             # I want to automatically open in my laptop's browser, instead of
             # having to override the BROWSER variable
@@ -131,7 +131,7 @@
               '';
             };
           })
-          ./agent-forwarding-tmux.nix
+          ./nix/.config/nixpkgs/agent-forwarding-tmux.nix
         ];
       };
 
