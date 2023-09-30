@@ -16,7 +16,7 @@
   home.file = {
     PublicKey = {
       target = ".ssh/id_ed25519.pub";
-      source = ../../../ssh_work_key.pub;
+      source = ../ssh_work_key.pub;
     };
   };
 

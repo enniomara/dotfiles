@@ -20,7 +20,7 @@
       # the devshells used by this repo
       devshells = (import ./modules/devShell.nix) inputs;
 
-      customOverlays = import ./nix/.config/nixpkgs/overlays.nix;
+      customOverlays = import ./home-manager/overlays.nix;
       overlays = [
         customOverlays.oh-my-zsh
       ];
@@ -28,7 +28,7 @@
       mkDarwinSystem = { username, extraModules ? [ ] }: darwin.lib.darwinSystem {
         system = "x86_64-darwin";
         modules = [
-          ./nix/.config/nixpkgs/configuration.nix
+          ./home-manager/configuration.nix
           home-manager.darwinModules.home-manager
           {
             nixpkgs.overlays = overlays;
@@ -37,9 +37,9 @@
             home-manager.useUserPackages = true;
             home-manager.users.${username} = { config, ... }: {
               imports = [
-                ./nix/.config/nixpkgs/home.nix
-                ./nix/.config/nixpkgs/hammerspoon.nix
-                ./nix/.config/nixpkgs/karabiner.nix
+                ./home-manager/home.nix
+                ./home-manager/hammerspoon.nix
+                ./home-manager/karabiner.nix
               ] ++ extraModules;
 
               config = {
@@ -53,8 +53,8 @@
 
             # a new version of home manager broke compatibility with
             # nix-darwin. It started saying that $HOME as empty.
-            # https://github.com/nix-community/home-manager/issues/4026
-            # https://github.com/nix-community/home-manager/issues/4026
+            # https://github.com/nix-community/./home-manager/issues/4026
+            # https://github.com/nix-community/./home-manager/issues/4026
             users.users.${username}.home = "/Users/${username}";
 
             # Create registry so that it can be used in `nix run` commands without downloading upstream nixpkgs again
@@ -69,7 +69,7 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
-          ./nix/.config/nixpkgs/home.nix
+          ./home-manager/home.nix
           ({
             nixpkgs.overlays = overlays;
             home.username = username;
@@ -90,7 +90,7 @@
       darwinConfigurations."M-C02G32FSML7H" = mkDarwinSystem {
         username = "marae";
         extraModules = [
-          (import ./nix/.config/nixpkgs/axis.nix)
+          (import ./home-manager/axis.nix)
           ({
             services.aws-sso = {
               enable = true;
@@ -110,7 +110,7 @@
       darwinConfigurations."Ennios-MacBook-Pro" = mkDarwinSystem {
         username = "enniomara";
         extraModules = [
-          ./nix/.config/nixpkgs/personal.nix
+          ./home-manager/personal.nix
         ];
       };
 
@@ -118,7 +118,7 @@
       homeConfigurations."marae@pcczc65196q9" = mkLinuxSystem {
         username = "marae";
         extraModules = [
-          (import ./nix/.config/nixpkgs/axis.nix)
+          (import ./home-manager/axis.nix)
           ({
             # I want to automatically open in my laptop's browser, instead of
             # having to override the BROWSER variable
@@ -131,7 +131,7 @@
               '';
             };
           })
-          ./nix/.config/nixpkgs/agent-forwarding-tmux.nix
+          ./home-manager/agent-forwarding-tmux.nix
         ];
       };
 

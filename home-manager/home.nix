@@ -32,8 +32,8 @@
   };
 
   xdg.configFile."kitty/kitty.conf".text = pkgs.lib.strings.concatStrings [
-    (builtins.readFile ../../../kitty/.config/kitty/kitty.conf)
-    (builtins.readFile ../../../kitty/.config/kitty/tokyo-night-moon.conf)
+    (builtins.readFile ../kitty/.config/kitty/kitty.conf)
+    (builtins.readFile ../kitty/.config/kitty/tokyo-night-moon.conf)
   ];
 
   programs.git = {

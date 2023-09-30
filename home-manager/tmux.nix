@@ -8,11 +8,11 @@
     pkgs.lib.strings.intersperse "\n" (
       with pkgs.tmuxPlugins; [
         (builtins.readFile (pkgs.substituteAll {
-          src = ../../../tmux/.tmux.conf;
-          sessionizerPath = ../../../tmux/bin/tmux-sessionizer;
+          src = ../tmux/.tmux.conf;
+          sessionizerPath = ../tmux/bin/tmux-sessionizer;
         }))
         # load my custom theme
-        (builtins.readFile ../../../tmux/.tmux-theme.conf)
+        (builtins.readFile ../tmux/.tmux-theme.conf)
 
         # install plugins - last
         ''
