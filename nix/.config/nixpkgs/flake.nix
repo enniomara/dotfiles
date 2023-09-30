@@ -10,10 +10,16 @@
     };
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    flake-utils.url = "github:numtide/flake-utils";
+    devshell.url = "github:numtide/devshell";
   };
 
-  outputs = { self, nixpkgs, flake-utils, home-manager, darwin }:
+  outputs = inputs @ { self, nixpkgs, flake-utils, home-manager, darwin, devshell }:
     let
+      # the devshells used by this repo
+      devshells = (import ../../../modules/devShell.nix) inputs;
+
       customOverlays = import ./overlays.nix;
       overlays = [
         customOverlays.oh-my-zsh
@@ -130,5 +136,5 @@
       };
 
       homeConfigurations."vagrant@linux-box" = mkLinuxSystem { username = "vagrant"; };
-    };
+    } // devshells;
 }

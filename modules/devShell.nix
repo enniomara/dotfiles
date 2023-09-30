@@ -1,4 +1,4 @@
-{ self, nixpkgs, flake-utils, devshell }:
+{ self, nixpkgs, flake-utils, devshell, ... }:
 flake-utils.lib.eachDefaultSystem (system: {
   devShell =
     let pkgs = import nixpkgs {
