@@ -64,6 +64,10 @@
       # Ctrl-W on "nixpkgs#git" removed the entire word, instead of returning
       # "nixpkgs#
       WORDCHARS = "";
+
+      # Disable pure's (zsh theme) automatic git fetching. Very annoying to get
+      # the authentication popup every time
+      PURE_GIT_PULL = 0;
     };
     shellGlobalAliases = {
       L = "| less";
