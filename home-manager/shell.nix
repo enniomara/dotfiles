@@ -14,6 +14,7 @@
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
+    defaultKeymap = "viins";
     completionInit = "
       zstyle ':completion:*:*:*:*:*' menu select
 
@@ -94,12 +95,16 @@
       expireDuplicatesFirst = true;
       share = true; # share history between zsh sessions
     };
+    defaultKeymap = "viins";
     initExtra = ''
       # get Delete button working
       bindkey -M emacs "^[[3~" delete-char
 
       # asdf - need to source to add shim path to PATH
       source "${pkgs.asdf-vm}/etc/profile.d/asdf-prepare.sh"
+
+      # better vi integration
+      source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
     '';
   };
 }
