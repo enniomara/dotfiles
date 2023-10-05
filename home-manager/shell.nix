@@ -14,7 +14,6 @@
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
-    defaultKeymap = "viins";
     completionInit = "
       zstyle ':completion:*:*:*:*:*' menu select
 
