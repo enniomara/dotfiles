@@ -72,6 +72,7 @@
     shellGlobalAliases = {
       L = "| less";
       G = "| grep -i";
+      H = "--help";
     };
     plugins = [
       {
