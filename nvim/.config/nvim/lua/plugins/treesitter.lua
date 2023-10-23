@@ -12,6 +12,24 @@ require("nvim-treesitter.configs").setup({
 			node_decremental = "grm",
 		},
 	},
+
+	textobjects = {
+		move = {
+			enable = true,
+			goto_next_start = {
+				["]f"] = "@function.outer",
+			},
+			goto_next_end = {
+				["]F"] = "@function.outer",
+			},
+			goto_previous_start = {
+				["[f"] = "@function.outer",
+			},
+			goto_previous_end = {
+				["[F"] = "@function.outer",
+			},
+		},
+	},
 })
 
 local gofolds = [[

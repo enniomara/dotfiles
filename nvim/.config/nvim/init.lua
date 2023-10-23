@@ -155,6 +155,9 @@ require("lazy").setup({
 		},
 		{
 			"nvim-treesitter/nvim-treesitter",
+			dependencies = {
+				"nvim-treesitter/nvim-treesitter-textobjects",
+			},
 			event = "BufRead",
 			build = ":TsUpdate",
 			config = function()
@@ -546,28 +549,28 @@ require("lazy").setup({
 				{
 					"<leader>tr",
 					function()
-						require('neotest').run.run()
+						require("neotest").run.run()
 					end,
 					desc = "Test: Run Single Function",
 				},
 				{
 					"<leader>tt",
 					function()
-						require('neotest').run.run(vim.fn.expand("%"))
+						require("neotest").run.run(vim.fn.expand("%"))
 					end,
 					desc = "Test: Run Current File",
 				},
 				{
 					"<leader>tT",
 					function()
-						require('neotest').run.run(vim.loop.cwd())
+						require("neotest").run.run(vim.loop.cwd())
 					end,
 					desc = "Test: Run All Tests",
 				},
 				{
 					"<leader>tl",
 					function()
-						require('neotest').run.run_last()
+						require("neotest").run.run_last()
 					end,
 					desc = "Test: Run All Tests",
 				},
@@ -592,7 +595,6 @@ require("lazy").setup({
 					end,
 					desc = "Test: Open Output Panel",
 				},
-
 			},
 			config = function()
 				-- get neotest namespace (api call creates or returns namespace)
