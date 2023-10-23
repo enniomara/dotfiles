@@ -260,14 +260,12 @@ require("lazy").setup({
 			"lukas-reineke/indent-blankline.nvim",
 			version = "*",
 			event = "BufRead",
-			config = function()
-				require("indent_blankline").setup({
-					space_char_blankline = " ",
-					show_current_context = true,
-					filetype_exclude = { "help" },
-					show_trailing_blankline_indent = false,
-				})
-			end,
+			main = "ibl",
+			opts = {
+				scope = {
+					enabled = false
+				}
+			},
 		},
 		{
 			"rmagatti/auto-session",
@@ -545,7 +543,7 @@ require("lazy").setup({
 				"antoinemadec/FixCursorHold.nvim",
 				"nvim-neotest/neotest-go",
 			},
-			version = '*',
+			version = "*",
 			keys = {
 				{
 					"<leader>tr",
