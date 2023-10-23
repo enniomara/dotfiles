@@ -17,6 +17,7 @@ require("lazy").setup({
 		{
 			"folke/noice.nvim",
 			event = "VeryLazy",
+			version = "*",
 			keys = {
 				{
 					"<S-Enter>",
