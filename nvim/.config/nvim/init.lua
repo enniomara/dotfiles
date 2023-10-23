@@ -541,10 +541,10 @@ require("lazy").setup({
 			"nvim-neotest/neotest",
 			dependencies = {
 				"nvim-lua/plenary.nvim",
-				"nvim-treesitter/nvim-treesitter",
 				"antoinemadec/FixCursorHold.nvim",
 				"nvim-neotest/neotest-go",
 			},
+			version = '*',
 			keys = {
 				{
 					"<leader>tr",
