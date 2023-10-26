@@ -78,5 +78,6 @@
     pkgs.lazygit
     pkgs.lazydocker
     pkgs.awscli2
+    pkgs.rustup
   ];
 }
