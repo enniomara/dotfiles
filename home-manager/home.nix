@@ -54,7 +54,8 @@
 
   programs.fzf = {
     enable = true;
-    enableZshIntegration = true;
+    # false because shell.nix imports fzf
+    enableZshIntegration = false;
   };
 
   home.packages = [
