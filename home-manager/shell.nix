@@ -99,6 +99,7 @@
     initExtra = ''
       # get Delete button working
       bindkey -M emacs "^[[3~" delete-char
+      bindkey "^o" accept-line  # enter on Ctrl-O
 
       # asdf - need to source to add shim path to PATH
       source "${pkgs.asdf-vm}/etc/profile.d/asdf-prepare.sh"
