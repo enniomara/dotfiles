@@ -14,6 +14,7 @@
           git_rebase
           go
           gomod
+          graphql
           html
           javascript
           jq
