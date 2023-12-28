@@ -42,5 +42,23 @@
       # https://github.com/folke/lazy.nvim/issues/516
       pkgs.vimPlugins.lazy-nvim
     ];
+    extraPackages = with pkgs; [
+      # python
+      black
+      isort
+      python311Packages.flake8
+      nodePackages.pyright
+
+      rnix-lsp
+      clojure-lsp
+
+      gopls
+
+      lua-language-server
+
+      # ts/html/css etc
+      prettierd
+      vscode-langservers-extracted # eslint
+    ];
   };
 }
