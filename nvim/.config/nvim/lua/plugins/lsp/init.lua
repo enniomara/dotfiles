@@ -117,4 +117,9 @@ lspconfig.elmls.setup({
 	capabilities = capabilities,
 })
 
+lspconfig.terraformls.setup({
+	on_attach = config.on_attach,
+	capabilities = capabilities,
+})
+
 require("lsp_signature").setup({})

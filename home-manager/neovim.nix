@@ -58,7 +58,9 @@
 
       # ts/html/css etc
       prettierd
+      nodePackages.prettier
       vscode-langservers-extracted # eslint
+      nodePackages.typescript-language-server
     ];
   };
 }
