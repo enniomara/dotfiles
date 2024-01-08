@@ -14,7 +14,7 @@
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
-    completionInit = "
+    completionInit = /* bash */ "
       zstyle ':completion:*:*:*:*:*' menu select
 
       # Complete . and .. special directories
@@ -96,7 +96,7 @@
       share = true; # share history between zsh sessions
     };
     defaultKeymap = "viins";
-    initExtra = ''
+    initExtra = /* bash */''
       # get Delete button working
       bindkey -M emacs "^[[3~" delete-char
       bindkey "^o" accept-line  # enter on Ctrl-O

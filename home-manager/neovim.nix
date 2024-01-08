@@ -61,6 +61,9 @@
       nodePackages.prettier
       vscode-langservers-extracted # eslint
       nodePackages.typescript-language-server
+
+      # rust
+      rust-analyzer
     ];
   };
 }
