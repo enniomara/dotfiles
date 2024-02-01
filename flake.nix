@@ -126,6 +126,9 @@
             services.aws-sso = {
               enable = true;
               secureStore = "file";
+              # if url opening doesn't work, make sure that the GUI services in
+              # ubuntu are not started (i.e. when a user is logged in through
+              # the gui)
               extraConfig = ''
                 UrlAction: open
               '';
