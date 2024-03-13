@@ -10,6 +10,17 @@
   # brings color to ls
   programs.dircolors.enable = true;
 
+  programs.mise = {
+    enable = true;
+    enableZshIntegration = true;
+    globalConfig = {
+      tools = {
+        golang = "1.21";
+        nodejs = "18";
+      };
+    };
+  };
+
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
@@ -100,9 +111,6 @@
       # get Delete button working
       bindkey -M emacs "^[[3~" delete-char
       bindkey "^o" accept-line  # enter on Ctrl-O
-
-      # asdf - need to source to add shim path to PATH
-      source "${pkgs.asdf-vm}/etc/profile.d/asdf-prepare.sh"
 
       # better vi integration
       # initialize ZVM as sson as it's called. Workaround so that it doesn't

@@ -70,7 +70,6 @@
     pkgs.jqp # live jq
     pkgs.ripgrep
     pkgs.tldr
-    pkgs.asdf-vm
     pkgs.kubectl
     pkgs.k9s
     pkgs.curl
