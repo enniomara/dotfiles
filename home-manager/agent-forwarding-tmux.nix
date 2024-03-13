@@ -9,6 +9,21 @@
       if [ ! -S ~/.ssh/ssh_auth_sock ] && [ -S "$SSH_AUTH_SOCK" ]; then
         ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
       fi
+
+      # rewriting sshrc means that X-forwarding no longer works. The code below
+      # is taken from the `sshd` manual.
+      # https://unix.stackexchange.com/a/231301
+      if read proto cookie && [ -n "$DISPLAY" ]; then
+        if [ 'echo $DISPLAY | cut -c1-10' = 'localhost:' ]; then
+                # X11UseLocalhost=yes
+                echo add unix:'echo $DISPLAY |
+                    cut -c11-' $proto $cookie
+        else
+                # X11UseLocalhost=no
+                echo add $DISPLAY $proto $cookie
+        fi | xauth -q -
+      fi
+
     '';
   };
 
