@@ -434,6 +434,7 @@ require("lazy").setup({
 				"williamboman/mason.nvim",
 				{
 					"jay-babu/mason-nvim-dap.nvim",
+					version = "*",
 					config = function()
 						require("mason-nvim-dap").setup({
 							-- Makes a best effort to setup the various debuggers with
