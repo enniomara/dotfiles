@@ -49,7 +49,7 @@
       python311Packages.flake8
       nodePackages.pyright
 
-      rnix-lsp
+      nil
       clojure-lsp
 
       gopls
