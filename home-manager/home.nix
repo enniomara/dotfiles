@@ -73,6 +73,7 @@
     pkgs.kubectl
     pkgs.k9s
     pkgs.curl
+    pkgs.nushell
 
     pkgs.gh
     pkgs.lazygit
