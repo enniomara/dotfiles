@@ -80,5 +80,6 @@
     pkgs.lazydocker
     pkgs.awscli2
     pkgs.rustup
+    pkgs.duckdb
   ];
 }
