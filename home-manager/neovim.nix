@@ -65,6 +65,11 @@
 
       # rust
       rust-analyzer
+
+      # yaml
+      yaml-language-server
+      python311Packages.cfn-lint
+      yamllint
     ];
   };
 }
