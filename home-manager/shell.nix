@@ -97,8 +97,8 @@
       }
     ];
     history = {
-      save = 10000;
-      size = 50000;
+      save = 1000000;
+      size = 5000000;
       extended = true;
       ignoreDups = true;
       ignoreSpace = true;
