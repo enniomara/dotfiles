@@ -66,6 +66,9 @@
       # -i ignore case
       # -R color output
       LESS = "MqiR";
+
+      # attempt to fix problems like libc++ not found when running python
+      LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib64:$LD_LIBRARY_PATH";
     };
     localVariables = {
       RPROMPT = "%F{8}%*";
