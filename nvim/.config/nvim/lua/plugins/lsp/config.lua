@@ -1,6 +1,6 @@
 local M = {}
 
-M.on_attach = function(_, bufnr)
+M.on_attach = function(client, bufnr)
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
 	local opts = { noremap = true, silent = true }
@@ -35,6 +35,12 @@ M.on_attach = function(_, bufnr)
 	)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>fm", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opts)
 	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]])
+
+	if client.server_capabilities.inlayHintProvider then
+		vim.lsp.inlay_hint.enable(true, {
+			bufnr = bufnr,
+		})
+	end
 end
 
 return M
