@@ -42,8 +42,6 @@ mapper("n", "N", "Nzzzv")
 
 mapper("n", "Q", "<nop>") -- disable entering to ex-mode
 
-mapper("v", "<Leader>yy", ":OSCYankVisual<CR>")
-
 mapper("n", "<Leader>ld", function() -- disable diagnostics on this buffer
 	vim.diagnostic.disable(0)
 end)
