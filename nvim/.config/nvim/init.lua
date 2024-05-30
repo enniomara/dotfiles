@@ -328,13 +328,6 @@ require("lazy").setup({
 			-- after = { "nvim-treesitter" },
 		},
 		{
-			"anuvyklack/pretty-fold.nvim",
-			event = "BufRead",
-			config = function()
-				require("pretty-fold").setup({})
-			end,
-		},
-		{
 			"kylechui/nvim-surround",
 			version = "*",
 			event = { "BufRead" },
