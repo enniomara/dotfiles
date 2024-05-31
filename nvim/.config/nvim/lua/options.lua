@@ -73,9 +73,4 @@ vim.cmd([[
 	au TextYankPost * silent! lua vim.highlight.on_yank {on_visual=false}
 ]])
 
--- Due to changes in tmux 3.3, yanking did not work. The official plugin
--- recommendation is to set this
--- see https://github.com/ojroques/vim-oscyank/issues/26
-vim.g.oscyank_term = 'default'
-
 vim.opt.cmdheight = 0

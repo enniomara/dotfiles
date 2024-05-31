@@ -250,13 +250,6 @@ require("lazy").setup({
 			event = { "InsertEnter" },
 		},
 		{
-			"numToStr/Comment.nvim",
-			event = "BufRead",
-			config = function()
-				require("Comment").setup()
-			end,
-		},
-		{
 			"lukas-reineke/indent-blankline.nvim",
 			version = "*",
 			event = "BufRead",
@@ -333,13 +326,6 @@ require("lazy").setup({
 			end,
 			lazy = true,
 			-- after = { "nvim-treesitter" },
-		},
-		{
-			"anuvyklack/pretty-fold.nvim",
-			event = "BufRead",
-			config = function()
-				require("pretty-fold").setup({})
-			end,
 		},
 		{
 			"kylechui/nvim-surround",

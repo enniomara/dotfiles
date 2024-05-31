@@ -14,6 +14,9 @@ lspconfig.lua_ls.setup({
 	capabilities = capabilities,
 	settings = {
 		Lua = {
+			hint = {
+				enable = true,
+			},
 			diagnostics = {
 				-- Get the language server to recognize the `vim` global
 				globals = { "vim" },
@@ -37,6 +40,11 @@ lspconfig.gopls.setup({
 		gopls = {
 			buildFlags = {
 				"-tags=requireDB,requireAWS,aws",
+			},
+			hints = {
+				compositeLiteralFields = true,
+				constantValues = true,
+				parameterNames = true,
 			},
 		},
 	},
