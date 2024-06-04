@@ -256,8 +256,8 @@ require("lazy").setup({
 			main = "ibl",
 			opts = {
 				scope = {
-					enabled = false
-				}
+					enabled = false,
+				},
 			},
 		},
 		{
@@ -306,7 +306,7 @@ require("lazy").setup({
 		{
 			"ggandor/leap.nvim",
 			config = function()
-				require('leap').create_default_mappings()
+				require("leap").create_default_mappings()
 			end,
 		},
 		{
@@ -609,6 +609,16 @@ require("lazy").setup({
 					},
 				})
 			end,
+		},
+		{
+			"robitx/gp.nvim",
+			lazy = true,
+			cmd = {
+				"GpEnable", -- not a proper command, just want something to lazy load this plugin on
+			},
+			opts = {
+				openai_api_key = { "cat", os.getenv("HOME") .. "/.config/openai/api.key" },
+			},
 		},
 	},
 })
