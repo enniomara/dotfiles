@@ -38,6 +38,18 @@
 
   programs.git = {
     enable = true;
+    extraConfig = {
+      commit = {
+        # sign all commits
+        gpgsign = true;
+      };
+      gpg = {
+        format = "ssh";
+      };
+      user = {
+        signingkey = "~/.ssh/id_ed25519.pub";
+      };
+    };
     delta = {
       enable = true;
       options = {
