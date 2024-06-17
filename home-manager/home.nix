@@ -62,6 +62,13 @@
     };
   };
 
+  programs.gh = {
+    enable = true;
+    settings = {
+      protocol = "https";
+    };
+  };
+
   services.open-url-via-ssh.enable = true;
 
   programs.fzf = {
@@ -87,7 +94,6 @@
     pkgs.curl
     pkgs.nushell
 
-    pkgs.gh
     pkgs.lazygit
     pkgs.lazydocker
     pkgs.awscli2
