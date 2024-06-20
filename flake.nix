@@ -49,6 +49,9 @@
                   echo "++++* System Changes ++++++"
                   nix store diff-closures $(ls -dv /nix/var/nix/profiles/system-*-link | tail -2)
                 '';
+
+                # use the 1password agent to sign commits on mac
+                programs.git.extraConfig."gpg \"ssh\"".program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
               };
             };
 
