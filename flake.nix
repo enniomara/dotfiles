@@ -40,6 +40,7 @@
                 ./home-manager/home.nix
                 ./home-manager/hammerspoon.nix
                 ./home-manager/karabiner.nix
+                ./home-manager/mac-containers.nix
               ] ++ extraModules;
 
               config = {
