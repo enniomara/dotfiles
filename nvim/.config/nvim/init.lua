@@ -113,6 +113,7 @@ require("lazy").setup({
 				"nvim-lua/plenary.nvim",
 				"nvim-telescope/telescope-fzf-native.nvim",
 				"nvim-telescope/telescope-ui-select.nvim",
+				"princejoogie/dir-telescope.nvim",
 			},
 			config = function()
 				require("plugins.telescope")
@@ -128,6 +129,10 @@ require("lazy").setup({
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
 			build = "make",
+		},
+		{
+			"princejoogie/dir-telescope.nvim",
+			version = "*",
 		},
 		{
 			"akinsho/bufferline.nvim",

@@ -6,6 +6,7 @@ end
 mapper("n", "<Leader>qq", ":Bdelete<CR>") -- close current buffer
 mapper("n", "<Leader>ff", ":Telescope find_files<CR>")
 mapper("n", "<Leader>fg", ":Telescope live_grep<CR>")
+mapper("n", "<Leader>fG", ":Telescope dir live_grep<CR>")
 mapper("n", "<Leader>fb", ":Telescope buffers<CR>")
 mapper("n", "<Leader>f;", ":Telescope keymaps<CR>")
 mapper("n", "<Leader>fs", ":Telescope sessions<CR>")
