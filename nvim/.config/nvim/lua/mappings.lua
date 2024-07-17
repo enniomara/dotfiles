@@ -49,6 +49,10 @@ end)
 mapper("n", "<Leader>le", function() -- enable diagnostics on this buffer
 	vim.diagnostic.enable(true)
 end)
+mapper("n", "<Leader>lh", function() -- Toggle inlay hints
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end)
+
 
 -- becusae : is in a horrible place to reach in qwerty
 mapper({ "n", "v" }, "<Leader>jj", ":")
