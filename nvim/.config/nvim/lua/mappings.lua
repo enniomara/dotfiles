@@ -44,10 +44,7 @@ mapper("n", "N", "Nzzzv")
 mapper("n", "Q", "<nop>") -- disable entering to ex-mode
 
 mapper("n", "<Leader>ld", function() -- disable diagnostics on this buffer
-	vim.diagnostic.enable(false)
-end)
-mapper("n", "<Leader>le", function() -- enable diagnostics on this buffer
-	vim.diagnostic.enable(true)
+	vim.diagnostic.enable(not vim.diagnostic.is_enabled())
 end)
 mapper("n", "<Leader>lh", function() -- Toggle inlay hints
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
