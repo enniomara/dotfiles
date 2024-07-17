@@ -114,6 +114,12 @@
       bindkey -M emacs "^[[3~" delete-char
       bindkey "^o" accept-line  # enter on Ctrl-O
 
+      # better vi integration
+      # initialize ZVM as sson as it's called. Workaround so that it doesn't
+      # override bindings in fzf
+      export ZVM_INIT_MODE=sourcing
+      source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
       # load fzf
       source ${pkgs.fzf}/share/fzf/completion.zsh
       source ${pkgs.fzf}/share/fzf/key-bindings.zsh
