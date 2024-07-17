@@ -16,7 +16,7 @@
     globalConfig = {
       tools = {
         golang = "1.21";
-        nodejs = "18";
+        nodejs = "20";
       };
     };
   };
