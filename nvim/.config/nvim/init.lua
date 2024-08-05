@@ -135,14 +135,6 @@ require("lazy").setup({
 			version = "*",
 		},
 		{
-			"akinsho/bufferline.nvim",
-			version = "*",
-			dependencies = "kyazdani42/nvim-web-devicons",
-			config = function()
-				require("plugins.bufferline")
-			end,
-		},
-		{
 			"ntpeters/vim-better-whitespace",
 			config = function()
 				require("plugins.vim-better-whitespace")
@@ -299,6 +291,17 @@ require("lazy").setup({
 							"encoding",
 							"fileformat",
 							"filetype",
+						},
+					},
+					tabline = {
+						lualine_a = {
+							{
+								"filename",
+								path = 1,
+							},
+						},
+						lualine_y = {
+							"tabs",
 						},
 					},
 				})
