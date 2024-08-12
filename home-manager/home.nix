@@ -93,6 +93,7 @@
     pkgs.k9s
     pkgs.curl
     pkgs.nushell
+    pkgs.go-task
 
     pkgs.lazygit
     pkgs.lazydocker
