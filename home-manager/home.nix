@@ -50,6 +50,10 @@
         signingkey = "~/.ssh/id_ed25519.pub";
       };
     };
+    aliases = {
+      # used to remove the branches which have been merged
+      "clean-branches" = "!git switch main && git pull --prune && git branch --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" { print $1 }' | xargs -r git branch -D";
+    };
     delta = {
       enable = true;
       options = {
