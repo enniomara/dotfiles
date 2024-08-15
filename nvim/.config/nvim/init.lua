@@ -629,6 +629,27 @@ require("lazy").setup({
 			},
 		},
 		{
+			"olimorris/codecompanion.nvim",
+			dependencies = {
+				"nvim-lua/plenary.nvim",
+				"nvim-treesitter/nvim-treesitter",
+			},
+			opts = {
+				adapters = {
+					openai = function()
+						return require("codecompanion.adapters").use("openai", {
+							env = {
+								api_key = string.format("cmd:cat %s", os.getenv("HOME") .. "/.config/openai/api.key"),
+							},
+							schema = {
+								model = { default = "gpt-4o-mini" },
+							},
+						})
+					end,
+				},
+			},
+		},
+		{
 			"ThePrimeagen/harpoon",
 			branch = "harpoon2",
 			dependencies = { "nvim-lua/plenary.nvim" },
