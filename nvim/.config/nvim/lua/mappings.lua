@@ -4,15 +4,10 @@ vim.keymap.set("n", "<Leader>fg", ":Telescope live_grep<CR>", { desc = "Fuzzy fi
 vim.keymap.set("n", "<Leader>fG", ":Telescope dir live_grep<CR>", { desc = "Fuzzy find in directory" })
 vim.keymap.set("n", "<Leader>fb", ":Telescope buffers<CR>", { desc = "Find buffer" })
 vim.keymap.set("n", "<Leader>f;", ":Telescope keymaps<CR>", { desc = "Find keymaps" })
-vim.keymap.set("n", "<Leader>fs", ":Telescope sessions<CR>", { desc = "Find sessions" })
 vim.keymap.set("n", "<Leader>fp", ":Telescope<CR>")
 
 vim.keymap.set("n", "<C-k>", ":bnext <CR>")
 vim.keymap.set("n", "<C-j>", ":bprev <CR>")
-vim.keymap.set("n", "]b", ":BufferLineCycleNext <CR>")
-vim.keymap.set("n", "[b", ":BufferLineCyclePrev <CR>")
-vim.keymap.set("n", "<Leader>bp", ":BufferLineTogglePin<CR>")
-vim.keymap.set("n", "<Leader>bP", ":BufferLineGroupClose ungrouped<CR>")
 
 vim.keymap.set("n", "<Leader>,z", ":Lazy<CR>")
 
