@@ -1,6 +1,6 @@
 -- Mapping helper
-local mapper = function(mode, key, result)
-	vim.keymap.set(mode, key, result, { noremap = true, silent = true })
+local mapper = function(mode, key, result, opts)
+	vim.keymap.set(mode, key, result, opts)
 end
 
 mapper("n", "<Leader>qq", ":Bdelete<CR>") -- close current buffer
