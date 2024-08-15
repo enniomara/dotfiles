@@ -1,32 +1,27 @@
--- Mapping helper
-local mapper = function(mode, key, result, opts)
-	vim.keymap.set(mode, key, result, opts)
-end
+vim.keymap.set("n", "<Leader>qq", ":Bdelete<CR>") -- close current buffer
+vim.keymap.set("n", "<Leader>ff", ":Telescope find_files<CR>")
+vim.keymap.set("n", "<Leader>fg", ":Telescope live_grep<CR>")
+vim.keymap.set("n", "<Leader>fG", ":Telescope dir live_grep<CR>")
+vim.keymap.set("n", "<Leader>fb", ":Telescope buffers<CR>")
+vim.keymap.set("n", "<Leader>f;", ":Telescope keymaps<CR>")
+vim.keymap.set("n", "<Leader>fs", ":Telescope sessions<CR>")
+vim.keymap.set("n", "<Leader>fp", ":Telescope<CR>")
 
-mapper("n", "<Leader>qq", ":Bdelete<CR>") -- close current buffer
-mapper("n", "<Leader>ff", ":Telescope find_files<CR>")
-mapper("n", "<Leader>fg", ":Telescope live_grep<CR>")
-mapper("n", "<Leader>fG", ":Telescope dir live_grep<CR>")
-mapper("n", "<Leader>fb", ":Telescope buffers<CR>")
-mapper("n", "<Leader>f;", ":Telescope keymaps<CR>")
-mapper("n", "<Leader>fs", ":Telescope sessions<CR>")
-mapper("n", "<Leader>fp", ":Telescope<CR>")
+vim.keymap.set("n", "<C-k>", ":bnext <CR>")
+vim.keymap.set("n", "<C-j>", ":bprev <CR>")
+vim.keymap.set("n", "]b", ":BufferLineCycleNext <CR>")
+vim.keymap.set("n", "[b", ":BufferLineCyclePrev <CR>")
+vim.keymap.set("n", "<Leader>bp", ":BufferLineTogglePin<CR>")
+vim.keymap.set("n", "<Leader>bP", ":BufferLineGroupClose ungrouped<CR>")
 
-mapper("n", "<C-k>", ":bnext <CR>")
-mapper("n", "<C-j>", ":bprev <CR>")
-mapper("n", "]b", ":BufferLineCycleNext <CR>")
-mapper("n", "[b", ":BufferLineCyclePrev <CR>")
-mapper("n", "<Leader>bp", ":BufferLineTogglePin<CR>")
-mapper("n", "<Leader>bP", ":BufferLineGroupClose ungrouped<CR>")
-
-mapper("n", "<Leader>,z", ":Lazy<CR>")
+vim.keymap.set("n", "<Leader>,z", ":Lazy<CR>")
 
 -- easier movement to save buffer than :w
-mapper("n", "<Leader>ss", ":silent write<CR>")
-mapper("n", "<C-s>", ":silent write<CR>")
+vim.keymap.set("n", "<Leader>ss", ":silent write<CR>")
+vim.keymap.set("n", "<C-s>", ":silent write<CR>")
 
 -- Tmux-zoom like feature, full-screens the current pane
-mapper("n", "<C-W>z", ":tab split <CR>")
+vim.keymap.set("n", "<C-W>z", ":tab split <CR>")
 
 vim.keymap.set({ "n" }, "<Leader>gg", function()
 	if vim.bo.filetype == "fugitive" then
@@ -35,22 +30,21 @@ vim.keymap.set({ "n" }, "<Leader>gg", function()
 		vim.cmd("Git")
 	end
 end)
-mapper("n", "<Leader>gcv", ":Git commit -v<CR>")
+vim.keymap.set("n", "<Leader>gcv", ":Git commit -v<CR>")
 
 -- Make sure search result is in the middle of buffer
-mapper("n", "n", "nzzzv")
-mapper("n", "N", "Nzzzv")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
 
-mapper("n", "Q", "<nop>") -- disable entering to ex-mode
+vim.keymap.set("n", "Q", "<nop>") -- disable entering to ex-mode
 
-mapper("n", "<Leader>ld", function() -- disable diagnostics on this buffer
+vim.keymap.set("n", "<Leader>ld", function() -- disable diagnostics on this buffer
 	vim.diagnostic.enable(not vim.diagnostic.is_enabled())
 end)
-mapper("n", "<Leader>lh", function() -- Toggle inlay hints
+vim.keymap.set("n", "<Leader>lh", function() -- Toggle inlay hints
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end)
 
-
 -- becusae : is in a horrible place to reach in qwerty
-mapper({ "n", "v" }, "<Leader>jj", ":")
-mapper({ "n", "v" }, "<Leader>jk", "/")
+vim.keymap.set({ "n", "v" }, "<Leader>jj", ":")
+vim.keymap.set({ "n", "v" }, "<Leader>jk", "/")
