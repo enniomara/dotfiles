@@ -234,7 +234,19 @@ require("lazy").setup({
 			version = "*",
 			event = "VeryLazy",
 			config = function()
-				require("which-key").setup({})
+				local wk = require("which-key")
+				wk.setup({})
+
+				local opts = { nowait = false, remap = false }
+				wk.add({
+					{ "<leader>g", group = "Git", unpack(opts) },
+					{ "<leader>t", group = "Test", unpack(opts) },
+					{ "<leader>d", group = "Debug", unpack(opts) },
+					{ "<leader>f", group = "Find", unpack(opts) },
+					{ "<leader>k", group = "Harpoon", unpack(opts) },
+					{ "<leader>l", group = "LSP", unpack(opts) },
+					{ "<leader>a", group = "AI", unpack(opts) },
+				})
 			end,
 		},
 		{
@@ -620,34 +632,50 @@ require("lazy").setup({
 		},
 		{
 			"robitx/gp.nvim",
-			lazy = true,
-			cmd = {
-				"GpEnable", -- not a proper command, just want something to lazy load this plugin on
-			},
-			opts = {
-				openai_api_key = { "cat", os.getenv("HOME") .. "/.config/openai/api.key" },
-			},
+			event = "VeryLazy",
+			config = function()
+				require("gp").setup({
+					openai_api_key = { "cat", os.getenv("HOME") .. "/.config/openai/api.key" },
+				})
+
+				vim.keymap.set(
+					{ "n", "v" },
+					"<leader>aC",
+					":GpChatNew vsplit<cr>",
+					{ desc = "AI (GP): Start new chat" }
+				)
+				vim.keymap.set({ "n", "v" }, "<leader>aT", ":GpChatToggle<cr>", { desc = "AI (GP): Toggle chat" })
+			end,
 		},
 		{
 			"olimorris/codecompanion.nvim",
+			event = "VeryLazy",
 			dependencies = {
 				"nvim-lua/plenary.nvim",
 				"nvim-treesitter/nvim-treesitter",
 			},
-			opts = {
-				adapters = {
-					openai = function()
-						return require("codecompanion.adapters").use("openai", {
-							env = {
-								api_key = string.format("cmd:cat %s", os.getenv("HOME") .. "/.config/openai/api.key"),
-							},
-							schema = {
-								model = { default = "gpt-4o-mini" },
-							},
-						})
-					end,
-				},
-			},
+			config = function()
+				require("codecompanion").setup({
+					adapters = {
+						openai = function()
+							return require("codecompanion.adapters").use("openai", {
+								env = {
+									api_key = string.format(
+										"cmd:cat %s",
+										os.getenv("HOME") .. "/.config/openai/api.key"
+									),
+								},
+								schema = {
+									model = { default = "gpt-4o-mini" },
+								},
+							})
+						end,
+					},
+				})
+
+				vim.keymap.set({ "n", "v" }, "<leader>ac", ":CodeCompanionChat<cr>", { desc = "AI: Start new chat" })
+				vim.keymap.set({ "n", "v" }, "<leader>at", ":CodeCompanionToggle<cr>", { desc = "AI: Toggle chat" })
+			end,
 		},
 		{
 			"ThePrimeagen/harpoon",
