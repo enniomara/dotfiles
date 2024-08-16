@@ -239,13 +239,13 @@ require("lazy").setup({
 
 				local opts = { nowait = false, remap = false }
 				wk.add({
-					{ "<leader>g", group = "Git", unpack(opts) },
-					{ "<leader>t", group = "Test", unpack(opts) },
-					{ "<leader>d", group = "Debug", unpack(opts) },
-					{ "<leader>f", group = "Find", unpack(opts) },
+					{ "<leader>g", group = "Git",     unpack(opts) },
+					{ "<leader>t", group = "Test",    unpack(opts) },
+					{ "<leader>d", group = "Debug",   unpack(opts) },
+					{ "<leader>f", group = "Find",    unpack(opts) },
 					{ "<leader>k", group = "Harpoon", unpack(opts) },
-					{ "<leader>l", group = "LSP", unpack(opts) },
-					{ "<leader>a", group = "AI", unpack(opts) },
+					{ "<leader>l", group = "LSP",     unpack(opts) },
+					{ "<leader>a", group = "AI",      unpack(opts) },
 				})
 			end,
 		},
