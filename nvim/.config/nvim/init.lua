@@ -638,8 +638,13 @@ require("lazy").setup({
 					openai_api_key = { "cat", os.getenv("HOME") .. "/.config/openai/api.key" },
 				})
 
-				vim.keymap.set("n", "<leader>aC", ":GpChatNew vsplit<cr>", {desc = "AI (GP): Start new chat"})
-				vim.keymap.set("n", "<leader>aT", ":GpChatToggle<cr>", {desc = "AI (GP): Toggle chat"})
+				vim.keymap.set(
+					{ "n", "v" },
+					"<leader>aC",
+					":GpChatNew vsplit<cr>",
+					{ desc = "AI (GP): Start new chat" }
+				)
+				vim.keymap.set({ "n", "v" }, "<leader>aT", ":GpChatToggle<cr>", { desc = "AI (GP): Toggle chat" })
 			end,
 		},
 		{
@@ -668,8 +673,8 @@ require("lazy").setup({
 					},
 				})
 
-				vim.keymap.set("n", "<leader>ac", ":CodeCompanionChat<cr>", {desc = "AI: Start new chat"})
-				vim.keymap.set("n", "<leader>at", ":CodeCompanionToggle<cr>", {desc = "AI: Toggle chat"})
+				vim.keymap.set({ "n", "v" }, "<leader>ac", ":CodeCompanionChat<cr>", { desc = "AI: Start new chat" })
+				vim.keymap.set({ "n", "v" }, "<leader>at", ":CodeCompanionToggle<cr>", { desc = "AI: Toggle chat" })
 			end,
 		},
 		{
