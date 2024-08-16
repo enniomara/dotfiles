@@ -3,7 +3,7 @@ require("mason-lspconfig").setup({
 	automatic_installation = false, -- managed via nix
 })
 
-local config = require("plugins.lsp.config")
+local config = require("config.lsp.config")
 local lspconfig = require("lspconfig")
 
 -- nvim-cmp supports additional completion capabilities

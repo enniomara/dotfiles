@@ -63,5 +63,5 @@ local sources = {
 
 null_ls.setup({
 	sources = sources,
-	on_attach = require("plugins.lsp.config").on_attach,
+	on_attach = require("config.lsp.config").on_attach,
 })

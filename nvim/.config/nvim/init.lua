@@ -99,7 +99,7 @@ require("lazy").setup({
 				"MunifTanjim/nui.nvim",
 			},
 			config = function()
-				require("plugins.neotree")
+				require("config.neotree")
 			end,
 			keys = {
 				{ "<leader>dd", "<cmd>Neotree toggle=true<cr>", desc = "Explorer Neotree" },
@@ -116,7 +116,7 @@ require("lazy").setup({
 				"princejoogie/dir-telescope.nvim",
 			},
 			config = function()
-				require("plugins.telescope")
+				require("config.telescope")
 			end,
 		},
 		"nvim-telescope/telescope-ui-select.nvim",
@@ -137,7 +137,7 @@ require("lazy").setup({
 		{
 			"ntpeters/vim-better-whitespace",
 			config = function()
-				require("plugins.vim-better-whitespace")
+				require("config.vim-better-whitespace")
 			end,
 		},
 		{
@@ -147,7 +147,7 @@ require("lazy").setup({
 				"nvim-lua/plenary.nvim",
 			},
 			config = function()
-				require("plugins.gitsigns")
+				require("config.gitsigns")
 			end,
 			event = { "BufReadPre", "BufNewFile" },
 		},
@@ -159,7 +159,7 @@ require("lazy").setup({
 			event = "BufRead",
 			build = ":TsUpdate",
 			config = function()
-				require("plugins.treesitter")
+				require("config.treesitter")
 			end,
 		},
 		{
@@ -191,7 +191,7 @@ require("lazy").setup({
 			},
 			event = { "BufRead", "BufNewFile" },
 			config = function()
-				require("plugins.lsp.null-ls")
+				require("config.lsp.null-ls")
 			end,
 		},
 		{
@@ -207,7 +207,7 @@ require("lazy").setup({
 				},
 			},
 			config = function()
-				require("plugins.lsp")
+				require("config.lsp")
 			end,
 			event = { "BufReadPre", "BufNewFile" },
 		},
@@ -225,7 +225,7 @@ require("lazy").setup({
 			},
 			event = { "InsertEnter", "CmdlineEnter" },
 			config = function()
-				require("plugins.cmp")
+				require("config.cmp")
 			end,
 		},
 		"rafamadriz/friendly-snippets",
