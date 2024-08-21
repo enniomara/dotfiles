@@ -4,15 +4,10 @@ local u = require("null-ls.utils")
 
 local b = null_ls.builtins
 local sources = {
-	-- Lua
-	b.formatting.stylua,
-
 	-- Shell
-	b.formatting.shfmt,
 	b.diagnostics.shellcheck,
 	null_ls.builtins.code_actions.shellcheck,
 
-	b.formatting.prettier, -- YAML etc
 	b.diagnostics.yamllint,
 
 	b.diagnostics.cfn_lint,
@@ -22,13 +17,8 @@ local sources = {
 		method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
 	}),
 
-	-- elm
-	b.formatting.elm_format,
-
 	-- python
 	b.diagnostics.flake8.with({ extra_args = { "--max-line-length=100" } }), -- 100 because wide screens are a thing,
-	b.formatting.black.with({ extra_args = { "--fast" } }),
-	b.formatting.isort,
 
 	-- golang
 	b.diagnostics.golangci_lint.with({
@@ -54,11 +44,8 @@ local sources = {
 
 	-- sql
 	null_ls.builtins.diagnostics.sqlfluff.with({
-        extra_args = { "--dialect", "postgres" }, -- change to your dialect
-    }),
-	null_ls.builtins.formatting.sqlfluff.with({
-        extra_args = { "--dialect", "postgres" }, -- change to your dialect
-    }),
+		extra_args = { "--dialect", "postgres" }, -- change to your dialect
+	}),
 }
 
 null_ls.setup({

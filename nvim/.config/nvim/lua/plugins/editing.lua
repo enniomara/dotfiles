@@ -49,12 +49,6 @@ return {
 		event = { "InsertEnter" },
 	},
 	{
-		"ntpeters/vim-better-whitespace",
-		config = function()
-			require("config.vim-better-whitespace")
-		end,
-	},
-	{
 		"ggandor/leap.nvim",
 		config = function()
 			require("leap").create_default_mappings()

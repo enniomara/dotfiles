@@ -28,8 +28,6 @@ M.on_attach = function(client, bufnr)
 		[[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]],
 		opts
 	)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>fm", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opts)
-	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]])
 
 	if client.server_capabilities.inlayHintProvider then
 		vim.lsp.inlay_hint.enable(true, {
