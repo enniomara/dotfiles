@@ -1,38 +1,25 @@
-require("telescope").setup({
-	defaults = {
-		file_ignore_patterns = { ".git/" },
-		vimgrep_arguments = {
-			"rg",
-			"--color=never",
-			"--no-heading",
-			"--with-filename",
-			"--line-number",
-			"--column",
-			"--smart-case",
-			"--hidden", -- so that it shows dotfiles
+return {
+	{
+		"nvim-telescope/telescope.nvim",
+		branch = "0.1.x",
+		cmd = "Telescope",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope-fzf-native.nvim",
+			"nvim-telescope/telescope-ui-select.nvim",
+			"princejoogie/dir-telescope.nvim",
 		},
-		layout_config = {
-			horizontal = {
-				preview_width = 0.55,
-				results_width = 0.8,
-			},
-		},
+		config = function()
+			require("config.telescope")
+		end,
 	},
-	pickers = {
-		find_files = {
-			hidden = true,
-		},
-		file_browser = {
-			hidden = true,
-		},
+	"nvim-telescope/telescope-ui-select.nvim",
+	{
+		"nvim-telescope/telescope-fzf-native.nvim",
+		build = "make",
 	},
-	extensions = {
-		["ui-select"] = {
-			require("telescope.themes").get_dropdown({}),
-		},
+	{
+		"princejoogie/dir-telescope.nvim",
+		version = "*",
 	},
-})
-
-require("telescope").load_extension("dir")
-require("telescope").load_extension("fzf")
-require("telescope").load_extension("ui-select")
+}
