@@ -4,8 +4,7 @@ return {
 		version = "*",
 		event = { "BufWritePre" },
 		cmd = { "ConformInfo" },
-		opts = {
-		},
+		opts = {},
 		keys = {
 			{
 				"<leader>fm",
@@ -41,6 +40,7 @@ return {
 					python = { "isort", "black" },
 					sh = { "shfmt" },
 					sql = { "sqlfluff" },
+					nix = { "nixfmt" },
 					["*"] = { "trim_whitespace" },
 				},
 				formatters = {

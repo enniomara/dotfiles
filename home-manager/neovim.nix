@@ -66,6 +66,9 @@
       # rust
       rust-analyzer
 
+      # will be called nixfmt in the future when the RFC is accepted
+      nixfmt-rfc-style
+
       # yaml
       yaml-language-server
       python311Packages.cfn-lint
