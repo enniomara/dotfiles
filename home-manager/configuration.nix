@@ -25,9 +25,6 @@
 
   homebrew = {
     enable = true;
-    taps = [
-      "homebrew/cask-fonts"
-    ];
     casks = [
       "bettertouchtool"
       "hammerspoon"
