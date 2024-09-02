@@ -12,12 +12,8 @@
              :d-mode {:key :d}
              :space-mode {:key :spacebar}}
  :devices {:work [{:vendor_id 1008 :product_id 842}]
-           :laptop_keyboard [{:vendor_id 1452 :product_id 638} ;; work mbp
-                             {:vendor_id 1452 :product_id 631} ;; home mbp
-                             ]
+           :laptop_keyboard [{:is_built_in_keyboard true}]
            :keychron [{:vendor_id 1452 :product_id 592}]}
-
-
 
  :templates {:toggle "osascript @toggleApplicationPath@ \"%s\""
              :btt "osascript -e 'tell application \"BetterTouchTool\" to trigger_named_async_without_response \"%s\"'"}
