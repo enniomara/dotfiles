@@ -25,8 +25,8 @@
         customOverlays.oh-my-zsh
       ];
 
-      mkDarwinSystem = { username, extraModules ? [ ] }: darwin.lib.darwinSystem {
-        system = "x86_64-darwin";
+      mkDarwinSystem = { username, system, extraModules ? [ ] }: darwin.lib.darwinSystem {
+        system = system;
         modules = [
           ./home-manager/configuration.nix
           home-manager.darwinModules.home-manager
@@ -93,6 +93,28 @@
     {
       darwinConfigurations."M-C02G32FSML7H" = mkDarwinSystem {
         username = "marae";
+        system = "x86_64-darwin";
+        extraModules = [
+          (import ./home-manager/axis.nix)
+          ({
+            services.aws-sso = {
+              enable = true;
+              secureStore = "keychain";
+              extraConfig = ''
+                UrlAction: open-url-in-container
+                ConfigProfilesUrlAction: open-url-in-container
+                UrlExecCommand:
+                  - /Applications/Firefox.app/Contents/MacOS/firefox
+                  - "%s"
+              '';
+            };
+          })
+        ];
+      };
+
+      darwinConfigurations."M-K6P79MG3J6" = mkDarwinSystem {
+        username = "marae";
+        system = "aarch64-darwin";
         extraModules = [
           (import ./home-manager/axis.nix)
           ({
