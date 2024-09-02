@@ -15,4 +15,11 @@
       };
     };
   };
+
+  home.file = {
+    PublicKey = {
+      source = ../ssh_work_key.pub;
+      target = ".ssh/id_ed25519.pub";
+    };
+  };
 }
