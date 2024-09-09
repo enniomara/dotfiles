@@ -23,6 +23,10 @@
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
 
+  nix.extraOptions = ''
+    experimental-features = nix-command flakes
+  '';
+
   homebrew = {
     enable = true;
     casks = [
