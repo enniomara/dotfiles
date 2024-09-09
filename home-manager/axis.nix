@@ -1,7 +1,7 @@
 { ... }:
 {
   programs.zsh.sessionVariables = {
-    GOPRIVATE = "gittools.se.axis.com";
+    GOPRIVATE = "gittools.se.axis.com,github.com/axteams-one";
   };
 
   programs.git = {
