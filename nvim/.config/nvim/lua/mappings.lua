@@ -1,5 +1,6 @@
 vim.keymap.set("n", "<Leader>qq", ":Bdelete<CR>") -- close current buffer
 vim.keymap.set("n", "<Leader>ff", ":Telescope find_files<CR>", { desc = "Find: Files" })
+vim.keymap.set("n", "<Leader>fF", ":Telescope dir find_files<CR>", { desc = "Find: Files in directory" })
 vim.keymap.set("n", "<Leader>fg", ":Telescope live_grep<CR>", { desc = "Find: Fuzzy find" })
 vim.keymap.set("n", "<Leader>fG", ":Telescope dir live_grep<CR>", { desc = "Find: Fuzzy find in directory" })
 vim.keymap.set("n", "<Leader>fb", ":Telescope buffers<CR>", { desc = "Find: Buffer" })
