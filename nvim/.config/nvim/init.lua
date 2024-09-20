@@ -80,8 +80,60 @@ require("lazy").setup({
 		},
 		{
 			"hoob3rt/lualine.nvim",
-			dependencies = { "kyazdani42/nvim-web-devicons", opt = true },
+			dependencies = {
+				{ "kyazdani42/nvim-web-devicons", opt = true },
+				"ThePrimeagen/harpoon",
+			},
 			config = function()
+				local harpoon = require("harpoon")
+
+				-- setup a function to jump to harpoon buffer when lualine clicked
+				vim.cmd([[
+					function! LualinePickHarpoon(tabnr, mouseclicks, mousebutton, modifiers)
+						execute 'lua print("hej")'
+						execute "lua require('harpoon'):list():select(" . a:tabnr . ")"
+					endfunction
+				]])
+
+				function Harpoon_files()
+					local contents = {}
+					local marks_length = harpoon:list():length()
+					local current_file_path = vim.fn.fnamemodify(vim.fn.expand("%:p"), ":.")
+
+					for i = 1, marks_length do
+						local harpoon_file_path = harpoon:list():get(i).value
+
+						local label = ""
+						if vim.startswith(harpoon_file_path, "oil") then
+							local dir_path = string.sub(harpoon_file_path, 7)
+							dir_path = vim.fn.fnamemodify(dir_path, ":.")
+							label = "[" .. dir_path .. "]"
+						elseif harpoon_file_path ~= "" then
+							label = vim.fn.fnamemodify(harpoon_file_path, ":t")
+						end
+
+						label = label ~= "" and label or "(empty)"
+						-- call the function when the buffer is clicked. Magic
+						label = string.format('%%%s@LualinePickHarpoon@%s%%T', i, label)
+
+						if current_file_path == harpoon_file_path then
+							contents[i] = string.format(
+								"%%#lualine_b_normal# %s. %%#lualine_b_normal#%s ",
+								i,
+								label
+							)
+						else
+							contents[i] = string.format(
+								"%%#lualine_b_inactive# %s. %%#lualine_b_inactive#%s ",
+								i,
+								label
+							)
+						end
+					end
+
+					return table.concat(contents)
+				end
+
 				require("lualine").setup({
 					options = {
 						theme = "tokyonight",
@@ -107,6 +159,14 @@ require("lazy").setup({
 								path = 1,
 							},
 						},
+						lualine_b = {
+							{
+								Harpoon_files,
+								on_click = function(no_clicks, mouse_button, modifiers, bla)
+									print("%s %s %s", no_clicks, mouse_button, modifiers, bla)
+								end
+							}
+						},
 						lualine_y = {
 							"tabs",
 						},
@@ -114,6 +174,7 @@ require("lazy").setup({
 				})
 			end,
 		},
+
 		{
 			"lervag/vimtex",
 			version = "*",
