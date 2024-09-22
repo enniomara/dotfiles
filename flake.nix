@@ -152,6 +152,10 @@
               })
             ];
           }
+          {
+            username = "enniomara";
+            imports = [ ./home-manager/personal.nix ];
+          }
         ];
       };
 
