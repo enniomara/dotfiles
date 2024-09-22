@@ -11,3 +11,12 @@ tasks:
       "BTT 3 Config" outputPath
       "{{.TASKFILE_DIR}}/misc/BetterTouchTool/Default.bttpreset" with
       includeSettings'
+
+  switch:
+    desc: Build & switch nix configuration
+    dir: .
+    cmds:
+      - platforms: ['linux']
+        cmd: home-manager switch --flake .
+      - platforms: ['darwin']
+        cmd: darwin-rebuild switch --flake .

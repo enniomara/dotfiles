@@ -14,17 +14,6 @@ flake-utils.lib.eachDefaultSystem (system: {
         pkgs.stow
         pkgs.go-task
       ];
-      commands = [
-        {
-          name = "rebuild-home";
-          command = "home-manager switch --flake \"$PRJ_ROOT\"";
-
-        }
-        {
-          name = "rebuild-darwin";
-          command = "darwin-rebuild switch --flake \"$PRJ_ROOT\"";
-        }
-      ];
     };
 })
 
