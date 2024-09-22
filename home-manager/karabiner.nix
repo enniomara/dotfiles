@@ -6,10 +6,12 @@
       toggleApplicationPath = ../karabiner/.config/karabiner/ToggleApplication.scpt;
     })
     ;
-    onChange = ''
+  };
+
+  home.activation.karabinerConfig = lib.hm.dag.entryAfter [ "linkGeneration" ] ''
+      echo "==== Starting karabiner config update"
       ${pkgs.goku}/bin/goku
       echo "==== Karabiner has successfuly updated"
-    '';
-  };
+  '';
 }
 
