@@ -22,6 +22,7 @@
     ./neovim.nix
     ./work/aws.nix
     ./open-url-via-ssh
+    ./betterTouchTool
   ];
 
   # Let Home Manager install and manage itself.

@@ -1,0 +1,13 @@
+---
+version: "3"
+
+tasks:
+  export-btt-config:
+    desc: Export the BetterTouchTool configuration from BTT and save it to
+      $PWD/misc/BetterTouchTool/Default.bttpreset
+    platforms: [darwin]
+    cmd:
+      osascript -e 'tell application "BetterTouchTool" to export_preset
+      "BTT 3 Config" outputPath
+      "{{.TASKFILE_DIR}}/misc/BetterTouchTool/Default.bttpreset" with
+      includeSettings'

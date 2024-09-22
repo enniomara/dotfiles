@@ -12,6 +12,7 @@ flake-utils.lib.eachDefaultSystem (system: {
       name = "dotfiles";
       packages = [
         pkgs.stow
+        pkgs.go-task
       ];
       commands = [
         {
