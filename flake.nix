@@ -25,48 +25,62 @@
         customOverlays.oh-my-zsh
       ];
 
-      mkDarwinSystem = { username, system, extraModules ? [ ] }: darwin.lib.darwinSystem {
-        system = system;
-        modules = [
-          ./home-manager/configuration.nix
-          home-manager.darwinModules.home-manager
-          {
-            nixpkgs.overlays = overlays;
+      mkDarwinSystem = {
+        userConfigurations,
+        system,
+      }:
+        darwin.lib.darwinSystem {
+          inherit system;
 
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.${username} = { config, ... }: {
-              imports = [
-                ./home-manager/home.nix
-                ./home-manager/hammerspoon.nix
-                ./home-manager/karabiner.nix
-                ./home-manager/mac-containers.nix
-              ] ++ extraModules;
+          modules = let
+            userConfig =
+              builtins.map (userConfig: {
+                # a new version of home manager broke compatibility with
+                # nix-darwin. It started saying that $HOME as empty.
+                # https://github.com/nix-community/./home-manager/issues/4026
+                # https://github.com/nix-community/./home-manager/issues/4026
+                users.users.${userConfig.username}.home = "/Users/${userConfig.username}";
 
-              config = {
-                # from https://discourse.nixos.org/t/nvd-simple-nix-nixos-version-diff-tool/12397/31
-                home.activation.report-changes = config.lib.dag.entryAnywhere ''
-                  echo "++++* System Changes ++++++"
-                  nix store diff-closures $(ls -dv /nix/var/nix/profiles/system-*-link | tail -2)
-                '';
+                home-manager.users.${userConfig.username} = {config, ...}: {
+                  imports =
+                    [
+                      ./home-manager/home.nix
+                      ./home-manager/hammerspoon.nix
+                      ./home-manager/karabiner.nix
+                      ./home-manager/mac-containers.nix
+                    ]
+                    ++ userConfig.imports;
 
-                # use the 1password agent to sign commits on mac
-                programs.git.extraConfig."gpg \"ssh\"".program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
-              };
-            };
+                  config = {
+                    # from https://discourse.nixos.org/t/nvd-simple-nix-nixos-version-diff-tool/12397/31
+                    home.activation.report-changes = config.lib.dag.entryAnywhere ''
+                      echo "++++* System Changes ++++++"
+                      nix store diff-closures $(ls -tdv /nix/var/nix/profiles/system-*-link | head -2)
+                    '';
 
-            # a new version of home manager broke compatibility with
-            # nix-darwin. It started saying that $HOME as empty.
-            # https://github.com/nix-community/./home-manager/issues/4026
-            # https://github.com/nix-community/./home-manager/issues/4026
-            users.users.${username}.home = "/Users/${username}";
+                    # use the 1password agent to sign commits on mac
+                    programs.git.extraConfig."gpg \"ssh\"".program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
+                  };
+                };
+              })
+              userConfigurations;
+          in
+            [
+              ./home-manager/configuration.nix
+              home-manager.darwinModules.home-manager
+              {
+                nixpkgs.overlays = overlays;
 
-            # Create registry so that it can be used in `nix run` commands without downloading upstream nixpkgs again
-            nix.registry.home.flake = nixpkgs;
-          }
-        ];
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
 
-      };
+                # Create registry so that it can be used in `nix run` commands without downloading upstream nixpkgs again
+                nix.registry.home.flake = nixpkgs;
+              }
+            ]
+            ++ userConfig;
+        };
+
       mkLinuxSystem = { username, extraModules ? [ ] }: home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
@@ -92,51 +106,62 @@
     in
     {
       darwinConfigurations."M-C02G32FSML7H" = mkDarwinSystem {
-        username = "marae";
-        system = "x86_64-darwin";
-        extraModules = [
-          (import ./home-manager/axis.nix)
-          ({
-            services.aws-sso = {
-              enable = true;
-              secureStore = "keychain";
-              extraConfig = ''
-                UrlAction: open-url-in-container
-                ConfigProfilesUrlAction: open-url-in-container
-                UrlExecCommand:
-                  - /Applications/Firefox.app/Contents/MacOS/firefox
-                  - "%s"
-              '';
-            };
-          })
+        system = "aarch64-darwin";
+        userConfigurations = [
+          {
+            username = "marae";
+            imports = [
+              (import ./home-manager/axis.nix)
+              ({
+                services.aws-sso = {
+                  enable = true;
+                  secureStore = "keychain";
+                  extraConfig = ''
+                    UrlAction: open-url-in-container
+                    ConfigProfilesUrlAction: open-url-in-container
+                    UrlExecCommand:
+                      - /Applications/Firefox.app/Contents/MacOS/firefox
+                      - "%s"
+                  '';
+                };
+              })
+            ];
+          }
         ];
       };
 
       darwinConfigurations."M-K6P79MG3J6" = mkDarwinSystem {
-        username = "marae";
         system = "aarch64-darwin";
-        extraModules = [
-          (import ./home-manager/axis.nix)
-          ({
-            services.aws-sso = {
-              enable = true;
-              secureStore = "keychain";
-              extraConfig = ''
-                UrlAction: open-url-in-container
-                ConfigProfilesUrlAction: open-url-in-container
-                UrlExecCommand:
-                  - /Applications/Firefox.app/Contents/MacOS/firefox
-                  - "%s"
-              '';
-            };
-          })
+        userConfigurations = [
+          {
+            username = "marae";
+            imports = [
+              (import ./home-manager/axis.nix)
+              ({
+                services.aws-sso = {
+                  enable = true;
+                  secureStore = "keychain";
+                  extraConfig = ''
+                    UrlAction: open-url-in-container
+                    ConfigProfilesUrlAction: open-url-in-container
+                    UrlExecCommand:
+                      - /Applications/Firefox.app/Contents/MacOS/firefox
+                      - "%s"
+                  '';
+                };
+              })
+            ];
+          }
         ];
       };
 
       darwinConfigurations."Ennios-MacBook-Pro" = mkDarwinSystem {
-        username = "enniomara";
-        extraModules = [
-          ./home-manager/personal.nix
+        system = "x86_64-darwin";
+        userConfigurations = [
+          {
+            username = "enniomara";
+            imports = [ ./home-manager/personal.nix ];
+          }
         ];
       };
 
