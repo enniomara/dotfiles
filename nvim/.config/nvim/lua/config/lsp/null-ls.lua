@@ -52,6 +52,9 @@ local sources = {
 		end),
 	}),
 
+	-- nix
+	null_ls.builtins.formatting.alejandra,
+
 	-- sql
 	null_ls.builtins.diagnostics.sqlfluff.with({
         extra_args = { "--dialect", "postgres" }, -- change to your dialect

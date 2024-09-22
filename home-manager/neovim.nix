@@ -50,6 +50,7 @@
       nodePackages.pyright
 
       nil
+      alejandra
       clojure-lsp
 
       gopls
