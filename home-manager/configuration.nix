@@ -39,12 +39,15 @@
       "obsidian"
       "telegram"
       "ticktick"
-      "font-fira-code-nerd-font"
       "monitorcontrol" # allows to control brigtness of external monitor
       "raycast"
       "tailscale"
     ];
   };
+
+  fonts.packages = [
+    pkgs.fira-code-nerdfont
+  ];
 
   system.activationScripts.postUserActivation.text = ''
     # Following line should allow us to avoid a logout/login cycle
