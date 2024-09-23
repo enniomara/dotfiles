@@ -130,4 +130,14 @@ lspconfig.terraformls.setup({
 	capabilities = capabilities,
 })
 
+lspconfig.bashls.setup({
+	on_attach = config.on_attach,
+	capabilities = capabilities,
+})
+
+lspconfig.ruff.setup({
+	on_attach = config.on_attach,
+	capabilities = capabilities,
+})
+
 require("lsp_signature").setup({})

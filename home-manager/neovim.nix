@@ -44,10 +44,13 @@
     ];
     extraPackages = with pkgs; [
       # python
-      black
-      isort
-      python311Packages.flake8
       nodePackages.pyright
+      ruff
+
+      # bash
+      nodePackages.bash-language-server
+      shellcheck # used by bashls
+      shfmt # used by bashls
 
       nil
       alejandra
