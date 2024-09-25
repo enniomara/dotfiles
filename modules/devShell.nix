@@ -1,12 +1,18 @@
-{ self, nixpkgs, flake-utils, devshell, ... }:
+{
+  self,
+  nixpkgs,
+  flake-utils,
+  devshell,
+  ...
+}:
 flake-utils.lib.eachDefaultSystem (system: {
-  devShell =
-    let pkgs = import nixpkgs {
+  devShell = let
+    pkgs = import nixpkgs {
       inherit system;
 
-      overlays = [ devshell.overlays.default ];
+      overlays = [devshell.overlays.default];
     };
-    in
+  in
     pkgs.devshell.mkShell {
       # set the name that will be shown in the zsh prompt
       name = "dotfiles";
@@ -16,4 +22,3 @@ flake-utils.lib.eachDefaultSystem (system: {
       ];
     };
 })
-

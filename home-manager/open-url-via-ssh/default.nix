@@ -1,7 +1,10 @@
-{ lib, config, ... }:
-let
-  cfg = config.services.open-url-via-ssh; in
 {
+  lib,
+  config,
+  ...
+}: let
+  cfg = config.services.open-url-via-ssh;
+in {
   options.services.open-url-via-ssh = {
     enable = lib.mkEnableOption "Enable support for openin URLs in SSH client's browser, instead of the server's.";
 

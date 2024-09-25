@@ -1,12 +1,16 @@
-{ pkgs, lib, config, ... }:
-let
-  cfg = config.services.aws-sso; in
 {
+  pkgs,
+  lib,
+  config,
+  ...
+}: let
+  cfg = config.services.aws-sso;
+in {
   options.services.aws-sso = {
     enable = lib.mkEnableOption "Enable aws-sso-cli";
 
     secureStore = lib.mkOption {
-      type = lib.types.enum [ "file" "keychain" ];
+      type = lib.types.enum ["file" "keychain"];
       description = "What secure store will be used";
     };
 
@@ -21,15 +25,16 @@ let
       awsSSOConfig = {
         # source = ./aws-sso-config.yaml;
         target = ".aws-sso/config.yaml";
-        text = pkgs.lib.strings.concatStrings
+        text =
+          pkgs.lib.strings.concatStrings
           (
-            pkgs.lib.strings.intersperse "\n" ([
+            pkgs.lib.strings.intersperse "\n" [
               (builtins.readFile ./aws-sso-config.yaml)
               ''
                 SecureStore: ${cfg.secureStore}
               ''
               cfg.extraConfig
-            ])
+            ]
           );
       };
     };

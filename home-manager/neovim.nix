@@ -1,38 +1,38 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   programs.neovim = {
     enable = true;
     plugins = [
       (pkgs.vimPlugins.nvim-treesitter.withPlugins (
-        plugins: with plugins; [
-          astro
-          bash
-          comment
-          css
-          diff
-          dockerfile
-          git_rebase
-          go
-          gomod
-          graphql
-          html
-          javascript
-          jq
-          json
-          jsonc
-          latex
-          lua
-          make
-          markdown
-          nix
-          python
-          regex
-          ruby
-          tsx
-          typescript
-          terraform
-          yaml
-        ]
+        plugins:
+          with plugins; [
+            astro
+            bash
+            comment
+            css
+            diff
+            dockerfile
+            git_rebase
+            go
+            gomod
+            graphql
+            html
+            javascript
+            jq
+            json
+            jsonc
+            latex
+            lua
+            make
+            markdown
+            nix
+            python
+            regex
+            ruby
+            tsx
+            typescript
+            terraform
+            yaml
+          ]
       ))
 
       # do not attempt to manage treesitter parsers through nix. Lazy.nvim

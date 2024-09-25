@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   home.packages = [
     pkgs.tmux
   ];
@@ -15,7 +14,10 @@
         (builtins.readFile ../tmux/.tmux-theme.conf)
 
         # install plugins - last
-        /* bash */ ''
+        /*
+        bash
+        */
+        ''
           run-shell ${sensible.rtp}
           run-shell ${prefix-highlight.rtp}
           run-shell ${better-mouse-mode.rtp}

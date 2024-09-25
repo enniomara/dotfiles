@@ -1,5 +1,5 @@
 rec {
-  oh-my-zsh = (final: prev: {
+  oh-my-zsh = final: prev: {
     oh-my-zsh = prev.oh-my-zsh.overrideAttrs (finalAttrs: previousAttrs: {
       src = prev.fetchFromGitHub {
         owner = "ohmyzsh";
@@ -10,5 +10,5 @@ rec {
         sha256 = "sha256-hOemkWFJgh8LBD9GtlGcKdxtHLDequ0LpC7F2nGdDTo=";
       };
     });
-  });
+  };
 }
