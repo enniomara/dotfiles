@@ -23,6 +23,12 @@
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
+    settings = {
+      right_format = "$time";
+      time = {
+        disabled = false;
+      };
+    };
   };
 
   programs.zsh = {
