@@ -20,6 +20,11 @@
     };
   };
 
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   programs.zsh = {
     enable = true;
     autosuggestion = {
@@ -80,27 +85,12 @@
       # Ctrl-W on "nixpkgs#git" removed the entire word, instead of returning
       # "nixpkgs#
       WORDCHARS = "";
-
-      # Disable pure's (zsh theme) automatic git fetching. Very annoying to get
-      # the authentication popup every time
-      PURE_GIT_PULL = 0;
     };
     shellGlobalAliases = {
       L = "| less";
       G = "| grep -i";
       H = "--help";
     };
-    plugins = [
-      {
-        name = "pure";
-        src = pkgs.fetchFromGitHub {
-          owner = "sindresorhus";
-          repo = "pure";
-          rev = "v1.23.0";
-          sha256 = "sha256-BmQO4xqd/3QnpLUitD2obVxL0UulpboT8jGNEh4ri8k=";
-        };
-      }
-    ];
     history = {
       save = 1000000;
       size = 5000000;
