@@ -154,10 +154,6 @@ require("lazy").setup({
 					},
 					tabline = {
 						lualine_a = {
-							{
-								"filename",
-								path = 1,
-							},
 						},
 						lualine_b = {
 							{
@@ -168,6 +164,10 @@ require("lazy").setup({
 							}
 						},
 						lualine_y = {
+							{
+								"filename",
+								path = 1,
+							},
 							"tabs",
 						},
 					},
