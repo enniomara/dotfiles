@@ -141,6 +141,14 @@ return {
 				harpoon:list():select(4)
 			end)
 
+			vim.keymap.set("n", "<M-'>", function()
+				harpoon:list():select(5)
+			end)
+
+			vim.keymap.set("n", "<M-\\>", function()
+				harpoon:list():select(6)
+			end)
+
 			vim.keymap.set("n", "<M-m>", function()
 				harpoon:list():prev()
 			end)
