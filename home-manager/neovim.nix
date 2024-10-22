@@ -11,6 +11,7 @@
             css
             diff
             dockerfile
+            elixir
             git_rebase
             go
             gomod
@@ -51,6 +52,10 @@
       nodePackages.bash-language-server
       shellcheck # used by bashls
       shfmt # used by bashls
+
+      # elixir
+      elixir
+      elixir-ls
 
       nil
       alejandra

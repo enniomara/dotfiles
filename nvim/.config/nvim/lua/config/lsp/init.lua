@@ -139,5 +139,10 @@ lspconfig.ruff.setup({
 	on_attach = config.on_attach,
 	capabilities = capabilities,
 })
+lspconfig.elixirls.setup({
+	cmd = { "elixir-ls" },
+	on_attach = config.on_attach,
+	capabilities = capabilities,
+})
 
 require("lsp_signature").setup({})
