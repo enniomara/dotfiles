@@ -53,6 +53,12 @@
       user = {
         signingkey = "~/.ssh/id_ed25519.pub";
       };
+      fetch = {
+        # Automatically remove remote branches which have been removed from the
+        # remote. Useful when combined with the clean-branches script, which
+        # removes branches I have stopped working on.
+        prune = true;
+      };
     };
     aliases = {
       # used to remove the branches which have been merged
