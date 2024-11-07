@@ -111,7 +111,10 @@
 
     pkgs.lazygit
     pkgs.lazydocker
+
     pkgs.awscli2
+    pkgs.ssm-session-manager-plugin
+
     pkgs.rustup
     pkgs.duckdb
   ];
