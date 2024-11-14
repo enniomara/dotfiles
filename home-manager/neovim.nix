@@ -72,6 +72,9 @@
       vscode-langservers-extracted # eslint
       nodePackages.typescript-language-server
 
+      # sql
+      sqlfluff
+
       # rust
       rust-analyzer
 

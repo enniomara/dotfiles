@@ -45,11 +45,11 @@ local sources = {
 
 	-- sql
 	null_ls.builtins.diagnostics.sqlfluff.with({
-        extra_args = { "--dialect", "postgres" }, -- change to your dialect
-    }),
+		extra_args = { "--dialect", "postgres" }, -- change to your dialect
+	}),
 	null_ls.builtins.formatting.sqlfluff.with({
-        extra_args = { "--dialect", "postgres" }, -- change to your dialect
-    }),
+		extra_args = { "--dialect", "postgres" }, -- change to your dialect
+	}),
 }
 
 null_ls.setup({
