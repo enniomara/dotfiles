@@ -5,6 +5,7 @@ vim.keymap.set("n", "<Leader>fg", ":Telescope live_grep<CR>", { desc = "Find: Fu
 vim.keymap.set("n", "<Leader>fG", ":Telescope dir live_grep<CR>", { desc = "Find: Fuzzy find in directory" })
 vim.keymap.set("n", "<Leader>fb", ":Telescope buffers<CR>", { desc = "Find: Buffer" })
 vim.keymap.set("n", "<Leader>f;", ":Telescope keymaps<CR>", { desc = "Find: Keymaps" })
+vim.keymap.set("n", "<Leader>fr", ":Telescope resume<CR>", { desc = "Find: Resume last search" })
 vim.keymap.set("n", "<Leader>fp", ":Telescope<CR>", { desc = "Find: Telescope Commands" })
 
 vim.keymap.set("n", "<C-k>", ":bnext <CR>")
