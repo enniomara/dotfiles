@@ -56,4 +56,4 @@ local function flip_variable_assignment()
 	vim.api.nvim_buf_set_text(0, start_row, start_col, start_row, end_col + 1, { replace_with })
 end
 
-vim.keymap.set({ "n" }, "<Leader>le", flip_variable_assignment, { desc = "Go: Flip `=` and `:=`" })
+vim.keymap.set({ "n" }, "<Leader>ne", flip_variable_assignment, { desc = "Go: Flip `=` and `:=`" })
