@@ -19,26 +19,7 @@ local sources = {
 	b.formatting.elm_format,
 
 	-- golang
-	b.diagnostics.golangci_lint.with({
-		ignore_stderr = false,
-		args = function(params)
-			local path = u.root_pattern("go.mod")(params.bufname)
-			return {
-				"run",
-				"--fix=false",
-				"--out-format=json",
-				"--path-prefix",
-				-- Nulls requires the full file path to show diagnostics. By default it sets the path prefix to $ROOT,
-				-- which points to the repo root. Since we're changing CWD below, the repo root will lead to an incorrect path.
-				path,
-			}
-		end,
-		debug = true,
-		cwd = h.cache.by_bufnr(function(params)
-			-- start golangcilint where the go.mod is located at. Without this golint will not start since it cannot find the project root
-			return u.root_pattern("go.mod")(params.bufname)
-		end),
-	}),
+	b.diagnostics.golangci_lint,
 
 	-- nix
 	null_ls.builtins.formatting.alejandra,
