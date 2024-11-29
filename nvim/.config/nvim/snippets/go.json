@@ -1,7 +1,11 @@
 {
   "if err != nil": {
     "prefix": ["iferr"],
-    "body": "if err != nil {\n\t${1:return ${2:nil, }${3:err}}\n}",
+    "body": "if err != nil {\n\t${1:return ${2:nil, }fmt.Errorf(\"${3}: %w\", err)}\n}",
     "description": "Snippet for if err != nil"
+  },
+  "fmt.Errorf": {
+    "prefix": ["fmtErr"],
+    "body": "fmt.Errorf(\"${1}: %w\", err)"
   }
 }
