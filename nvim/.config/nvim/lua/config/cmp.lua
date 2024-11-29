@@ -80,4 +80,9 @@ cmp.setup.cmdline(":", {
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
 
+-- load snipepts from vscode
 require("luasnip.loaders.from_vscode").lazy_load()
+-- extend the vsocde snippets with my own
+require("luasnip.loaders.from_vscode").lazy_load({
+	paths = vim.fn.stdpath("config") .. "/snippets",
+})
