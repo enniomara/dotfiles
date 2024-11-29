@@ -58,17 +58,17 @@ end
 
 -- runs `go mod tidy` from the buffer's directory
 local function run_go_mod_tidy()
-	local cwd = vim.fn.expand('%:h')
+	local buffer_parent_folder = vim.fn.expand('%:h')
 	local obj = vim.system(
 		{ "go", "mod", "tidy" },
 		{
-			cwd = cwd,
+			cwd = buffer_parent_folder,
 		}
 	):wait()
 	if obj.code ~= 0 then
 		error("failed to call go mod tidy: " .. (obj.stderr or ""), 1)
 	end
-	print("fininshed running go mod tidy on ", cwd)
+	print("fininshed running go mod tidy on ", buffer_parent_folder)
 end
 
 vim.keymap.set({ "n" }, "<Leader>ne", flip_variable_assignment, { desc = "Go: Flip `=` and `:=`", buffer = true })
