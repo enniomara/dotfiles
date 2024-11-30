@@ -15,7 +15,7 @@ rec {
     # from https://github.com/grafana/loki-hackathon-2023-03-project-lili/blob/main/flake.nix
     golangci-lint =
       prev.callPackage
-      "${prev.path}/pkgs/development/tools/golangci-lint"
+      "${prev.path}/pkgs/by-name/go/golangci-lint/package.nix"
       {
         buildGoModule = args:
           prev.buildGoModule (args

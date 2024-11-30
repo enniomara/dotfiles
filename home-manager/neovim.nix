@@ -45,7 +45,7 @@
     ];
     extraPackages = with pkgs; [
       # python
-      nodePackages.pyright
+      pyright
       ruff
 
       # bash
