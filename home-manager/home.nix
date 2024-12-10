@@ -63,6 +63,7 @@
     aliases = {
       # used to remove the branches which have been merged
       "clean-branches" = "!git switch main && git pull --prune && git branch --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" { print $1 }' | xargs -r git branch -D";
+      "fu" = "!git fetch upstream";
     };
     delta = {
       enable = true;
