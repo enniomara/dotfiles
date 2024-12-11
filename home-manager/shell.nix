@@ -54,6 +54,7 @@
       enable = true;
     };
     shellAliases = {
+      g = "git";
       gs = "git status";
       ga = "git add";
       gco = "git checkout";
