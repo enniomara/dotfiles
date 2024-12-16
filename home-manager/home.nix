@@ -80,6 +80,10 @@
   programs.gh = {
     enable = true;
     settings = {
+      aliases = {
+        # until https://github.com/cli/cli/issues/2329 lands
+        prs = "!gh pr list | ${pkgs.peco}/bin/peco | awk '{print $1}' | xargs gh pr checkout";
+      };
       protocol = "https";
     };
   };
