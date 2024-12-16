@@ -303,11 +303,20 @@ require("lazy").setup({
 				"nvim-lua/plenary.nvim",
 				"nvim-treesitter/nvim-treesitter",
 			},
+			version = '*',
 			config = function()
 				require("codecompanion").setup({
+					strategies = {
+						chat = {
+							adapter = "openai",
+						},
+						inline = {
+							adapter = "openai"
+						},
+					},
 					adapters = {
 						openai = function()
-							return require("codecompanion.adapters").use("openai", {
+							return require("codecompanion.adapters").extend("openai", {
 								env = {
 									api_key = string.format(
 										"cmd:cat %s",
@@ -323,7 +332,7 @@ require("lazy").setup({
 				})
 
 				vim.keymap.set({ "n", "v" }, "<leader>ac", ":CodeCompanionChat<cr>", { desc = "AI: Start new chat" })
-				vim.keymap.set({ "n", "v" }, "<leader>at", ":CodeCompanionToggle<cr>", { desc = "AI: Toggle chat" })
+				vim.keymap.set({ "n", "v" }, "<leader>at", ":CodeCompanionChat Toggle<cr>", { desc = "AI: Toggle chat" })
 			end,
 		},
 	},
