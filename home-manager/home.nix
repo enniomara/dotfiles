@@ -83,6 +83,8 @@
       aliases = {
         # until https://github.com/cli/cli/issues/2329 lands
         prs = "!gh pr list | ${pkgs.peco}/bin/peco | awk '{print $1}' | xargs gh pr checkout";
+        prc = "pr create";
+        pro = "pr view --web";
       };
       protocol = "https";
     };
