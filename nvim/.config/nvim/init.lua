@@ -58,6 +58,7 @@ require("lazy").setup({
 					"williamboman/mason-lspconfig.nvim",
 					version = "*",
 				},
+				{ "saghen/blink.cmp" },
 			},
 			config = function()
 				require("config.lsp")
