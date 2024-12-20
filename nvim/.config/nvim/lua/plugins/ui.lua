@@ -12,6 +12,7 @@ return {
 	},
 	{
 		"nvim-neo-tree/neo-tree.nvim",
+		version = "*",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
@@ -26,6 +27,7 @@ return {
 	},
 	{
 		"folke/tokyonight.nvim",
+		version = '*',
 		opts = {
 			style = "moon",
 		},
