@@ -2,7 +2,6 @@
 --
 return {
 	{
-		-- TODO: Add cmdline supoprt when that is added in blink.cmp
 		"saghen/blink.cmp",
 		version = "*",
 		event = { "InsertEnter", "CmdlineEnter" },
@@ -45,6 +44,19 @@ return {
 					draw = {
 						columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind", gap = 1 } },
 					},
+				},
+				list = {
+					selection = function(ctx)
+						if ctx.mode == 'cmdline' then
+							-- cmdline auto selecting the answer is incredibly
+							-- frustrating. :e becomes :exit because exit is
+							-- the first result and is therefore selected.
+							-- Disable it.
+							return "auto_insert"
+						else
+							return "preselect"
+						end
+					end
 				},
 			},
 			appearance = {
