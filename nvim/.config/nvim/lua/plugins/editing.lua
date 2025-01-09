@@ -46,17 +46,18 @@ return {
 					},
 				},
 				list = {
-					selection = function(ctx)
-						if ctx.mode == 'cmdline' then
+					selection = {
+						preselect = function(ctx)
 							-- cmdline auto selecting the answer is incredibly
 							-- frustrating. :e becomes :exit because exit is
 							-- the first result and is therefore selected.
 							-- Disable it.
-							return "auto_insert"
-						else
-							return "preselect"
-						end
-					end
+							return ctx.mode ~= "cmdline"
+						end,
+						auto_insert = function(ctx)
+							return ctx.mode == "cmdline"
+						end,
+					}
 				},
 			},
 			appearance = {
@@ -69,18 +70,17 @@ return {
 				nerd_font_variant = 'mono'
 			},
 			sources = {
-				default = { 'lsp', "luasnip", 'path', 'snippets', 'buffer' },
+				default = { 'lsp', 'path', 'snippets', 'buffer' },
 			},
-			snippets = {
-				expand = function(snippet) require('luasnip').lsp_expand(snippet) end,
-				active = function(filter)
-					if filter and filter.direction then
-						return require('luasnip').jumpable(filter.direction)
-					end
-					return require('luasnip').in_snippet()
-				end,
-				jump = function(direction) require('luasnip').jump(direction) end,
-			},
+			snippets = { preset = "luasnip" },
+			-- expand = function(snippet) require('luasnip').lsp_expand(snippet) end,
+			-- active = function(filter)
+			-- 	if filter and filter.direction then
+			-- 		return require('luasnip').jumpable(filter.direction)
+			-- 	end
+			-- 	return require('luasnip').in_snippet()
+			-- end,
+			-- jump = function(direction) require('luasnip').jump(direction) end,
 		},
 	},
 	{
