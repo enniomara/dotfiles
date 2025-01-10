@@ -36,6 +36,9 @@ require("lazy").setup({
 		},
 		{
 			"tpope/vim-fugitive",
+			dependencies  = {
+				"tpope/vim-rhubarb",
+			},
 			version = "*",
 			cmd = "Git",
 		},
