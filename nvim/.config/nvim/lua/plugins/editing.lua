@@ -11,6 +11,7 @@ return {
 				'L3MON4D3/LuaSnip',
 				version = "*",
 			},
+			'olimorris/codecompanion.nvim',
 		},
 		opts = {
 			keymap = {
@@ -70,7 +71,7 @@ return {
 				nerd_font_variant = 'mono'
 			},
 			sources = {
-				default = { 'lsp', 'path', 'snippets', 'buffer' },
+				default = { 'lsp', 'path', 'snippets', 'buffer', 'codecompanion' },
 			},
 			snippets = { preset = "luasnip" },
 			-- expand = function(snippet) require('luasnip').lsp_expand(snippet) end,
