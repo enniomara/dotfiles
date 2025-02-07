@@ -36,11 +36,11 @@ require("lazy").setup({
 		},
 		{
 			"tpope/vim-fugitive",
-			dependencies  = {
+			dependencies = {
 				"tpope/vim-rhubarb",
 			},
-			version = "*",
-			cmd = "Git",
+			version      = "*",
+			cmd          = "Git",
 		},
 		{
 			"tpope/vim-unimpaired",
@@ -317,6 +317,9 @@ require("lazy").setup({
 						inline = {
 							adapter = "openai"
 						},
+						cmd = {
+							adapter = "openai"
+						},
 					},
 					adapters = {
 						openai = function()
@@ -337,6 +340,8 @@ require("lazy").setup({
 
 				vim.keymap.set({ "n", "v" }, "<leader>ac", ":CodeCompanionChat<cr>", { desc = "AI: Start new chat" })
 				vim.keymap.set({ "n", "v" }, "<leader>at", ":CodeCompanionChat Toggle<cr>", { desc = "AI: Toggle chat" })
+				vim.keymap.set({ "n", "v" }, "<leader>aa", ":CodeCompanionActions <cr>", { desc = "AI: Show Actions" })
+				vim.cmd([[cab cc CodeCompanion]])
 			end,
 		},
 	},
