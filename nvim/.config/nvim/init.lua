@@ -306,19 +306,25 @@ require("lazy").setup({
 			dependencies = {
 				"nvim-lua/plenary.nvim",
 				"nvim-treesitter/nvim-treesitter",
+				"echasnovski/mini.diff",
 			},
 			version = '*',
 			config = function()
 				require("codecompanion").setup({
+					display = {
+						diff = {
+							provider = "mini_diff",
+						},
+					},
 					strategies = {
 						chat = {
-							adapter = "openai",
+							adapter = "copilot",
 						},
 						inline = {
-							adapter = "openai"
+							adapter = "copilot"
 						},
 						cmd = {
-							adapter = "openai"
+							adapter = "copilot"
 						},
 					},
 					adapters = {
@@ -344,6 +350,15 @@ require("lazy").setup({
 				vim.cmd([[cab cc CodeCompanion]])
 			end,
 		},
+		{
+			"github/copilot.vim",
+			dependencies = {
+				"nvim-lua/plenary.nvim",
+				"nvim-treesitter/nvim-treesitter",
+			},
+			version = '*',
+			cmd = "Copilot",
+		}
 	},
 })
 
