@@ -77,6 +77,15 @@
     };
   };
 
+  xdg.configFile."git/ignore" = {
+    # By default git looks here as the last step when ignoring files. This file
+    # acts as a global gitignore
+    # https://git-scm.com/docs/gitignore
+    text = ''
+      repomix-output.txt
+    '';
+  };
+
   programs.gh = {
     enable = true;
     settings = {
@@ -115,6 +124,7 @@
     pkgs.curl
     pkgs.nushell
     pkgs.go-task
+    pkgs.repomix
 
     pkgs.lazygit
     pkgs.lazydocker
