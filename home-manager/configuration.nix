@@ -36,7 +36,7 @@
       "hammerspoon"
       "karabiner-elements"
 
-      "kitty"
+      "ghostty"
       "spotify"
       "obsidian"
       "telegram"

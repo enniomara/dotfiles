@@ -80,7 +80,7 @@
   {:des "Show/hi(D)e applications"
    :rules [:open-app-mode
            [:j [:toggle "Firefox"]]
-           [:k [:toggle "kitty"]]
+           [:k [:toggle "Ghostty"]]
            [:u [:toggle "Telegram"]]
            [:s [:toggle "Spotify"]]
            [:t [:toggle "TickTick"]]
