@@ -86,6 +86,15 @@
     '';
   };
 
+  xdg.configFile."ghostty/config" = {
+    # By default git looks here as the last step when ignoring files. This file
+    # acts as a global gitignore
+    # https://git-scm.com/docs/gitignore
+    text = ''
+      theme = tokyonight_moon
+    '';
+  };
+
   programs.gh = {
     enable = true;
     settings = {
