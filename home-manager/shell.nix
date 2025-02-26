@@ -16,6 +16,7 @@
       tools = {
         golang = "1.21";
         nodejs = "20";
+        python = "3.12";
       };
     };
   };
