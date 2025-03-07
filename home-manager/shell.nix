@@ -84,6 +84,8 @@
       # -i ignore case
       # -R color output
       LESS = "MqiR";
+
+      MANPAGER = "nvim +Man!"; # instead of less
     };
     localVariables = {
       RPROMPT = "%F{8}%*";
