@@ -102,8 +102,8 @@
     settings = {
       aliases = {
         # until https://github.com/cli/cli/issues/2329 lands
-        prs = "!gh pr list --author '@me' | ${pkgs.peco}/bin/peco | awk '{print $1}' | xargs gh pr checkout";
-        prS = "!gh pr list | ${pkgs.peco}/bin/peco | awk '{print $1}' | xargs gh pr checkout";
+        prs = "!gh pr list --author '@me' | ${pkgs.fzf}/bin/fzf | awk '{print $1}' | xargs gh pr checkout";
+        prS = "!gh pr list | ${pkgs.fzf}/bin/fzf | awk '{print $1}' | xargs gh pr checkout";
         prc = "pr create";
         pro = "pr view --web";
       };
