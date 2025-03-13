@@ -137,6 +137,7 @@
     pkgs.nushell
     pkgs.go-task
     pkgs.repomix
+    pkgs.uv
 
     pkgs.lazygit
     pkgs.lazydocker
