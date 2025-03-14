@@ -8,9 +8,6 @@ vim.keymap.set("n", "<Leader>f;", ":Telescope keymaps<CR>", { desc = "Find: Keym
 vim.keymap.set("n", "<Leader>fr", ":Telescope resume<CR>", { desc = "Find: Resume last search" })
 vim.keymap.set("n", "<Leader>fp", ":Telescope<CR>", { desc = "Find: Telescope Commands" })
 
-vim.keymap.set("n", "<C-k>", ":bnext <CR>")
-vim.keymap.set("n", "<C-j>", ":bprev <CR>")
-
 vim.keymap.set("n", "<Leader>,z", ":Lazy<CR>")
 
 -- easier movement to save buffer than :w
