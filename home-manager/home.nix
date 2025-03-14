@@ -21,7 +21,7 @@
 
   imports = [
     ./shell.nix
-    ./tmux.nix
+    ./tmux
     ./neovim.nix
     ./work/aws.nix
     ./open-url-via-ssh

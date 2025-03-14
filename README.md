@@ -28,13 +28,3 @@ ln -s [path to dotfiles]/vscode/{settings.json,keybindings.json} [path to vscode
 Import the config in `misc/BetterTouchTool` by pressing preset then import.
 
 https://community.folivora.ai/t/how-to-backup-import-btt-settings/9727
-
-### Tmux
-
-Install TPM from [here](https://github.com/tmux-plugins/tpm) and clone it to
-the `~/.tmux/plugins/tpm`. Then symlink the conf files by running:
-
-```
-ln -s [path to dotfiles]/{.tmux.conf,.tmux-osx.conf} ~/
-```
-
