@@ -52,7 +52,7 @@
                 imports =
                   [
                     ./home-manager/home.nix
-                    ./home-manager/hammerspoon.nix
+                    ./home-manager/hammerspoon
                     ./home-manager/karabiner
                     ./home-manager/mac-containers.nix
                   ]
