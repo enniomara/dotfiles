@@ -118,31 +118,6 @@
       };
   in
     {
-      darwinConfigurations."M-C02G32FSML7H" = mkDarwinSystem {
-        system = "aarch64-darwin";
-        userConfigurations = [
-          {
-            username = "marae";
-            imports = [
-              (import ./home-manager/axis.nix)
-              {
-                services.aws-sso = {
-                  enable = true;
-                  secureStore = "keychain";
-                  extraConfig = ''
-                    UrlAction: open-url-in-container
-                    ConfigProfilesUrlAction: open-url-in-container
-                    UrlExecCommand:
-                      - /Applications/Firefox.app/Contents/MacOS/firefox
-                      - "%s"
-                  '';
-                };
-              }
-            ];
-          }
-        ];
-      };
-
       darwinConfigurations."M-K6P79MG3J6" = mkDarwinSystem {
         system = "aarch64-darwin";
         userConfigurations = [
