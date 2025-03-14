@@ -93,6 +93,13 @@ lspconfig.yamlls.setup({
 lspconfig.nil_ls.setup({
 	on_attach = config.on_attach,
 	capabilities = capabilities,
+	settings = {
+		['nil'] = {
+			formatting = {
+				command = { "alejandra" }
+			}
+		}
+	}
 })
 
 lspconfig.pyright.setup({
