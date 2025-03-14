@@ -313,6 +313,7 @@ require("lazy").setup({
 				require("codecompanion").setup({
 					display = {
 						diff = {
+							enabled = true,
 							provider = "mini_diff",
 						},
 					},
