@@ -33,6 +33,7 @@
             typescript
             terraform
             yaml
+            xml
           ]
       ))
 
