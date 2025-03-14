@@ -105,7 +105,7 @@ require("neo-tree").setup({
 			enabled = true,
 		},
 		hijack_netrw_behavior = "open_default", -- netrw disabled, opening a directory opens neo-tree
-		use_libuv_file_watcher = true,    -- This will use the OS level file watchers to detect changes
+		use_libuv_file_watcher = true, -- This will use the OS level file watchers to detect changes
 	},
 	event_handlers = {
 		{

@@ -19,6 +19,9 @@ flake-utils.lib.eachDefaultSystem (system: {
       packages = [
         pkgs.stow
         pkgs.go-task
+        pkgs.alejandra
+        pkgs.stylua
+        pkgs.pre-commit
       ];
     };
 })

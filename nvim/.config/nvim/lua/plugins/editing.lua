@@ -6,26 +6,28 @@ return {
 		version = "*",
 		event = { "InsertEnter", "CmdlineEnter" },
 		dependencies = {
-			'rafamadriz/friendly-snippets',
+			"rafamadriz/friendly-snippets",
 			{
-				'L3MON4D3/LuaSnip',
-				version = 'v2.*',
+				"L3MON4D3/LuaSnip",
+				version = "v2.*",
 				dependencies = {
 					{
 						"rafamadriz/friendly-snippets",
 						config = function()
 							require("luasnip.loaders.from_vscode").lazy_load()
-							require("luasnip.loaders.from_vscode").lazy_load({ paths = { vim.fn.stdpath("config") .. "/snippets" } })
+							require("luasnip.loaders.from_vscode").lazy_load({
+								paths = { vim.fn.stdpath("config") .. "/snippets" },
+							})
 						end,
 					},
 				},
 			},
-			'olimorris/codecompanion.nvim',
+			"olimorris/codecompanion.nvim",
 		},
 		opts = {
 			keymap = {
-				preset = 'enter',
-				['<Tab>'] = {
+				preset = "enter",
+				["<Tab>"] = {
 					function(cmp)
 						if cmp.snippet_active() then
 							return cmp.accept()
@@ -33,8 +35,10 @@ return {
 							return cmp.select_next()
 						end
 					end,
-					'snippet_forward', 'fallback' },
-				['<S-Tab>'] = { 'select_prev', 'snippet_backward', 'fallback' },
+					"snippet_forward",
+					"fallback",
+				},
+				["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
 			},
 			completion = {
 				documentation = {
@@ -67,7 +71,7 @@ return {
 						auto_insert = function(ctx)
 							return ctx.mode == "cmdline"
 						end,
-					}
+					},
 				},
 			},
 			appearance = {
@@ -77,12 +81,12 @@ return {
 				use_nvim_cmp_as_default = true,
 				-- Set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
 				-- Adjusts spacing to ensure icons are aligned
-				nerd_font_variant = 'mono'
+				nerd_font_variant = "mono",
 			},
 			sources = {
-				default = { 'lsp', 'path', 'snippets', 'buffer', 'codecompanion' },
+				default = { "lsp", "path", "snippets", "buffer", "codecompanion" },
 			},
-			snippets = { preset = 'luasnip' },
+			snippets = { preset = "luasnip" },
 		},
 	},
 	{
@@ -95,13 +99,13 @@ return {
 
 			local opts = { nowait = false, remap = false }
 			wk.add({
-				{ "<leader>g", group = "Git",     unpack(opts) },
-				{ "<leader>t", group = "Test",    unpack(opts) },
-				{ "<leader>d", group = "Debug",   unpack(opts) },
-				{ "<leader>f", group = "Find",    unpack(opts) },
+				{ "<leader>g", group = "Git", unpack(opts) },
+				{ "<leader>t", group = "Test", unpack(opts) },
+				{ "<leader>d", group = "Debug", unpack(opts) },
+				{ "<leader>f", group = "Find", unpack(opts) },
 				{ "<leader>k", group = "Harpoon", unpack(opts) },
-				{ "<leader>l", group = "LSP",     unpack(opts) },
-				{ "<leader>a", group = "AI",      unpack(opts) },
+				{ "<leader>l", group = "LSP", unpack(opts) },
+				{ "<leader>a", group = "AI", unpack(opts) },
 			})
 		end,
 	},
@@ -174,18 +178,21 @@ return {
 					table.insert(file_paths, item.value)
 				end
 
-				require("telescope.pickers").new({}, {
-					prompt_title = "Harpoon",
-					finder = require("telescope.finders").new_table({
-						results = file_paths,
-					}),
-					previewer = conf.file_previewer({}),
-					sorter = conf.generic_sorter({}),
-				}):find()
+				require("telescope.pickers")
+					.new({}, {
+						prompt_title = "Harpoon",
+						finder = require("telescope.finders").new_table({
+							results = file_paths,
+						}),
+						previewer = conf.file_previewer({}),
+						sorter = conf.generic_sorter({}),
+					})
+					:find()
 			end
 
-			vim.keymap.set("n", "<leader>fh", function() toggle_telescope(harpoon:list()) end,
-				{ desc = "File: Harpoon" })
+			vim.keymap.set("n", "<leader>fh", function()
+				toggle_telescope(harpoon:list())
+			end, { desc = "File: Harpoon" })
 
 			harpoon:setup()
 			vim.keymap.set("n", "<leader>ke", function()

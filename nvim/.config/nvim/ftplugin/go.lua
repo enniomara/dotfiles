@@ -15,13 +15,12 @@ local function find_node_ancestor(types, node)
 	return find_node_ancestor(types, parent)
 end
 
-
 -- If in a variable assignment (`err := fmt.Errorf()`) convert the `:=` to `=`
 -- and vice versa. Useful when the variable is already assigned earlier in the
 -- code
 local function flip_variable_assignment()
 	local function_node = find_node_ancestor(
-		{ 'assignment_statement', 'short_var_declaration' },
+		{ "assignment_statement", "short_var_declaration" },
 		vim.treesitter.get_node({ ignore_injections = false })
 	)
 
@@ -34,10 +33,10 @@ local function flip_variable_assignment()
 	local start_row = function_node:start()
 
 	local assignment_operator, replace_with
-	if function_node:type() == 'assignment_statement' then
+	if function_node:type() == "assignment_statement" then
 		assignment_operator = "="
 		replace_with = ":="
-	elseif function_node:type() == 'short_var_declaration' then
+	elseif function_node:type() == "short_var_declaration" then
 		assignment_operator = ":="
 		replace_with = "="
 	else
@@ -58,13 +57,10 @@ end
 
 -- runs `go mod tidy` from the buffer's directory
 local function run_go_mod_tidy()
-	local buffer_parent_folder = vim.fn.expand('%:h')
-	local obj = vim.system(
-		{ "go", "mod", "tidy" },
-		{
-			cwd = buffer_parent_folder,
-		}
-	):wait()
+	local buffer_parent_folder = vim.fn.expand("%:h")
+	local obj = vim.system({ "go", "mod", "tidy" }, {
+		cwd = buffer_parent_folder,
+	}):wait()
 	if obj.code ~= 0 then
 		error("failed to call go mod tidy: " .. (obj.stderr or ""), 1)
 	end

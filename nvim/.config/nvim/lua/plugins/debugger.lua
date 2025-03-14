@@ -6,7 +6,7 @@ return {
 			-- Creates a beautiful debugger UI
 			{
 				"rcarriga/nvim-dap-ui",
-				dependencies = {"nvim-neotest/nvim-nio"},
+				dependencies = { "nvim-neotest/nvim-nio" },
 				config = function()
 					local dap = require("dap")
 					local dapui = require("dapui")

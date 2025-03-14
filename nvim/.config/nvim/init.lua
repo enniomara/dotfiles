@@ -39,8 +39,8 @@ require("lazy").setup({
 			dependencies = {
 				"tpope/vim-rhubarb",
 			},
-			version      = "*",
-			cmd          = "Git",
+			version = "*",
+			cmd = "Git",
 		},
 		{
 			"tpope/vim-unimpaired",
@@ -118,20 +118,13 @@ require("lazy").setup({
 
 						label = label ~= "" and label or "(empty)"
 						-- call the function when the buffer is clicked. Magic
-						label = string.format('%%%s@LualinePickHarpoon@%s%%T', i, label)
+						label = string.format("%%%s@LualinePickHarpoon@%s%%T", i, label)
 
 						if current_file_path == harpoon_file_path then
-							contents[i] = string.format(
-								"%%#lualine_b_normal# %s. %%#lualine_b_normal#%s ",
-								i,
-								label
-							)
+							contents[i] = string.format("%%#lualine_b_normal# %s. %%#lualine_b_normal#%s ", i, label)
 						else
-							contents[i] = string.format(
-								"%%#lualine_b_inactive# %s. %%#lualine_b_inactive#%s ",
-								i,
-								label
-							)
+							contents[i] =
+								string.format("%%#lualine_b_inactive# %s. %%#lualine_b_inactive#%s ", i, label)
 						end
 					end
 
@@ -157,15 +150,14 @@ require("lazy").setup({
 						},
 					},
 					tabline = {
-						lualine_a = {
-						},
+						lualine_a = {},
 						lualine_b = {
 							{
 								Harpoon_files,
 								on_click = function(no_clicks, mouse_button, modifiers, bla)
 									print("%s %s %s", no_clicks, mouse_button, modifiers, bla)
-								end
-							}
+								end,
+							},
 						},
 						lualine_y = {
 							{
@@ -266,11 +258,8 @@ require("lazy").setup({
 				vim.diagnostic.config({
 					virtual_text = {
 						format = function(diagnostic)
-							local message = diagnostic.message
-								:gsub("\n", " ")
-								:gsub("\t", " ")
-								:gsub("%s+", " ")
-								:gsub("^%s+", "")
+							local message =
+								diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
 							return message
 						end,
 					},
@@ -308,7 +297,7 @@ require("lazy").setup({
 				"nvim-treesitter/nvim-treesitter",
 				"echasnovski/mini.diff",
 			},
-			version = '*',
+			version = "*",
 			config = function()
 				require("codecompanion").setup({
 					display = {
@@ -322,10 +311,10 @@ require("lazy").setup({
 							adapter = "copilot",
 						},
 						inline = {
-							adapter = "copilot"
+							adapter = "copilot",
 						},
 						cmd = {
-							adapter = "copilot"
+							adapter = "copilot",
 						},
 					},
 					adapters = {
@@ -352,26 +341,30 @@ require("lazy").setup({
 									type = "file",
 									path = {
 										"repomix-output.txt",
-									}
-								}
+									},
+								},
 							},
 							prompts = {
 								{
 									role = "user",
-									content =
-									"You are working on a git repository. I've pasted the contents of relevant files of the repository.\n",
+									content = "You are working on a git repository. I've pasted the contents of relevant files of the repository.\n",
 									opts = {
 										auto_submit = false,
 										user_prompt = true,
 									},
 								},
-							}
-						}
-					}
+							},
+						},
+					},
 				})
 
 				vim.keymap.set({ "n", "v" }, "<leader>ac", ":CodeCompanionChat<cr>", { desc = "AI: Start new chat" })
-				vim.keymap.set({ "n", "v" }, "<leader>at", ":CodeCompanionChat Toggle<cr>", { desc = "AI: Toggle chat" })
+				vim.keymap.set(
+					{ "n", "v" },
+					"<leader>at",
+					":CodeCompanionChat Toggle<cr>",
+					{ desc = "AI: Toggle chat" }
+				)
 				vim.keymap.set({ "n", "v" }, "<leader>aa", ":CodeCompanionActions <cr>", { desc = "AI: Show Actions" })
 				vim.cmd([[cab cc CodeCompanion]])
 			end,
@@ -382,17 +375,17 @@ require("lazy").setup({
 				"nvim-lua/plenary.nvim",
 				"nvim-treesitter/nvim-treesitter",
 			},
-			version = '*',
+			version = "*",
 			init = function()
 				vim.g.copilot_no_tab_map = true
 			end,
 			config = function()
-				vim.keymap.set('i', '<C-J>', 'copilot#Accept("\\<CR>")', {
+				vim.keymap.set("i", "<C-J>", 'copilot#Accept("\\<CR>")', {
 					expr = true,
-					replace_keycodes = false
+					replace_keycodes = false,
 				})
 			end,
-		}
+		},
 	},
 })
 

@@ -27,7 +27,7 @@ return {
 	},
 	{
 		"folke/tokyonight.nvim",
-		version = '*',
+		version = "*",
 		opts = {
 			style = "moon",
 		},

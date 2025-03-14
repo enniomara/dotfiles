@@ -7,8 +7,7 @@ local config = require("config.lsp.config")
 local lspconfig = require("lspconfig")
 
 -- blink supports additional completion capabilities
-local capabilities = require('blink.cmp').get_lsp_capabilities()
-
+local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 lspconfig.lua_ls.setup({
 	on_attach = config.on_attach,
@@ -94,12 +93,12 @@ lspconfig.nil_ls.setup({
 	on_attach = config.on_attach,
 	capabilities = capabilities,
 	settings = {
-		['nil'] = {
+		["nil"] = {
 			formatting = {
-				command = { "alejandra" }
-			}
-		}
-	}
+				command = { "alejandra" },
+			},
+		},
+	},
 })
 
 lspconfig.pyright.setup({
