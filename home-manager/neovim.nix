@@ -32,6 +32,7 @@
             tsx
             typescript
             terraform
+            typst
             yaml
             xml
           ]
