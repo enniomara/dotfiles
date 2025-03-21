@@ -33,8 +33,6 @@ vim.opt.hidden = true -- make leaving unsaved buffer possible
 
 vim.opt.syntax = "on"
 
-vim.cmd([[colorscheme tokyonight]])
-
 vim.opt.termguicolors = true
 
 -- Due to a bug in telescope, folding will not be applied automatically so a

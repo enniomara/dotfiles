@@ -13,6 +13,9 @@ require("lazy").setup({
 			reset = false,
 		},
 	},
+	defaults = {
+		cond = vim.g.vscode == nil, -- disable all plugins when in vscode
+	},
 	spec = {
 		{ import = "plugins" },
 		{
