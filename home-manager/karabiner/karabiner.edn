@@ -88,7 +88,8 @@
            [:p [:toggle "Obsidian"]]
            [:o [:toggle "Mail"]]
            [:m [:toggle "Calendar"]]
-           [:d [:toggle "Discord"]]]}
+           [:d [:toggle "Discord"]]
+           [:n [:toggle "Visual Studio Code"]]]}
   {:des "bracket sequences"
    :rules [:d-mode
            [:j :!S9]
