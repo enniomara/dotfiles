@@ -13,7 +13,7 @@ local function vs_rhs(nvim_rhs, vscode_action)
 	end
 end
 
-vim.keymap.set("n", "<Leader>qq", ":Bdelete<CR>") -- close current buffer
+vim.keymap.set("n", "<Leader>qq", vs_rhs(":Bdelete<CR>", "workbench.action.closeActiveEditor")) -- close current buffer
 vim.keymap.set(
 	"n",
 	"<Leader>ff",
