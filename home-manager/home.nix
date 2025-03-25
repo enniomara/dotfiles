@@ -147,5 +147,7 @@
 
     pkgs.rustup
     pkgs.duckdb
+
+    pkgs._1password-cli
   ];
 }

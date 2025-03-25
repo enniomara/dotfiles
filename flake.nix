@@ -83,6 +83,8 @@
 
               # Create registry so that it can be used in `nix run` commands without downloading upstream nixpkgs again
               nix.registry.home.flake = nixpkgs;
+
+              nixpkgs.config.allowUnfree = true;
             }
           ]
           ++ userConfig;
@@ -112,6 +114,8 @@
 
               # Create registry so that it can be used in `nix run` commands without downloading upstream nixpkgs again
               nix.registry.home.flake = nixpkgs;
+
+              nixpkgs.config.allowUnfree = true;
             }
           ]
           ++ extraModules;
