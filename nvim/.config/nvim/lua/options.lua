@@ -70,4 +70,7 @@ vim.cmd([[
 	au TextYankPost * silent! lua vim.highlight.on_yank {on_visual=false}
 ]])
 
-vim.opt.cmdheight = 0
+-- hack to make vscode not display every message in a new buffer
+if not vim.g.vscode then
+	vim.opt.cmdheight = 0
+end
