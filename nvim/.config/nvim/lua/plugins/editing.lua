@@ -3,7 +3,7 @@
 return {
 	{
 		"saghen/blink.cmp",
-		version = "*",
+		version = "1.*",
 		event = { "InsertEnter", "CmdlineEnter" },
 		dependencies = {
 			"rafamadriz/friendly-snippets",
@@ -24,6 +24,8 @@ return {
 			},
 			"olimorris/codecompanion.nvim",
 		},
+		---@module 'blink.cmp'
+		---@type blink.cmp.Config
 		opts = {
 			keymap = {
 				preset = "enter",
@@ -39,6 +41,24 @@ return {
 					"fallback",
 				},
 				["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
+			},
+			cmdline = {
+				enabled = true,
+				completion = {
+					list = {
+						selection = {
+							-- cmdline auto selecting the answer is incredibly
+							-- frustrating. :e becomes :exit because exit is
+							-- the first result and is therefore selected.
+							-- Disable it.
+							preselect = false,
+							auto_insert = true,
+						},
+					},
+					menu = {
+						auto_show = true,
+					},
+				},
 			},
 			completion = {
 				documentation = {
@@ -61,16 +81,8 @@ return {
 				},
 				list = {
 					selection = {
-						preselect = function(ctx)
-							-- cmdline auto selecting the answer is incredibly
-							-- frustrating. :e becomes :exit because exit is
-							-- the first result and is therefore selected.
-							-- Disable it.
-							return ctx.mode ~= "cmdline"
-						end,
-						auto_insert = function(ctx)
-							return ctx.mode == "cmdline"
-						end,
+						preselect = true,
+						auto_insert = false,
 					},
 				},
 			},
