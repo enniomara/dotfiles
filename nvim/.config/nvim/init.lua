@@ -24,7 +24,8 @@ require("lazy").setup({
 				"nvim-treesitter/nvim-treesitter-textobjects",
 			},
 			event = "BufRead",
-			build = ":TsUpdate",
+			-- the command is commented because treesitter is managed by nix
+			-- build = ":TsUpdate",
 			config = function()
 				require("config.treesitter")
 			end,
@@ -70,20 +71,6 @@ require("lazy").setup({
 				require("config.lsp")
 			end,
 			event = { "BufReadPre", "BufNewFile" },
-		},
-		{
-			"rmagatti/auto-session",
-			keys = {
-				{
-					"<Leader>ql",
-					":SessionRestore<CR>",
-					desc = "Restore last session",
-				},
-			},
-			opts = {
-				auto_restore_enabled = false,
-				pre_save_cmds = { "Neotree action=close" },
-			},
 		},
 		{
 			"hoob3rt/lualine.nvim",

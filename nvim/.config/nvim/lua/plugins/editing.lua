@@ -156,11 +156,9 @@ return {
 	},
 	{
 		"kylechui/nvim-surround",
-		version = "*",
+		version = "3.*",
 		event = { "BufRead" },
-		config = function()
-			require("nvim-surround").setup({})
-		end,
+		opts = {},
 	},
 	{
 		"famiu/bufdelete.nvim",
