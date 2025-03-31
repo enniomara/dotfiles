@@ -13,10 +13,10 @@ rec {
                 owner = "golangci";
                 repo = "golangci-lint";
                 rev = "v${version}";
-                sha256 = "sha256-d3U56fRIyntj/uKTOHuKFvOZqh+6VtzYrbKDjcKzhbI=";
+                sha256 = "sha256-H7IdXAleyzJeDFviISitAVDNJmiwrMysYcGm6vAoWso=";
               };
 
-              vendorHash = "sha256-3gS/F1jcjegtkLfmPcBzYqDA4KmwABkKpPAhTxqguYw=";
+              vendorHash = "sha256-i7ec4U4xXmRvHbsDiuBjbQ0xP7xRuilky3gi+dT1H10=";
 
               ldflags = [
                 "-s"
