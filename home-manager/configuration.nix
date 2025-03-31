@@ -58,6 +58,13 @@
     pkgs.nerd-fonts.iosevka
   ];
 
+  security.pam.services.sudo_local = {
+    # Allow touchid to authorize sudo
+    enable = true;
+    reattach = true;
+    touchIdAuth = true;
+  };
+
   system.activationScripts.postUserActivation.text = ''
     # Following line should allow us to avoid a logout/login cycle
     /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
