@@ -4,7 +4,8 @@ vim.g.mapleader = " "
 -- nix
 vim.cmd([[packloadall ]])
 
-require("lazy").setup({
+---@type LazyConfig
+local lazyConfig = {
 	-- Problems with treesitter and nix, the dependencies for grammas were not
 	-- loaded propery when resetting packpath and rtp
 	performance = {
@@ -12,6 +13,9 @@ require("lazy").setup({
 		rtp = {
 			reset = false,
 		},
+	},
+	change_detection = {
+		enabled = false,
 	},
 	defaults = {
 		cond = vim.g.vscode == nil, -- disable all plugins when in vscode
@@ -377,7 +381,8 @@ require("lazy").setup({
 			end,
 		},
 	},
-})
+}
+require("lazy").setup(lazyConfig)
 
 require("options")
 require("mappings")
