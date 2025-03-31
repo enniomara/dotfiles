@@ -7,9 +7,9 @@ rec {
         buildGoModule = args:
           prev.buildGoModule (args
             // rec {
-              version = "1.57.2";
+              version = "1.64.8";
 
-              src = prev.fetchFromGitHub rec {
+              src = prev.fetchFromGitHub {
                 owner = "golangci";
                 repo = "golangci-lint";
                 rev = "v${version}";
