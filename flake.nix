@@ -28,7 +28,6 @@
 
     customOverlays = import ./home-manager/overlays.nix;
     overlays = [
-      customOverlays.oh-my-zsh
       customOverlays.golangci-lint
     ];
 
