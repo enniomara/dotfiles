@@ -15,7 +15,13 @@
 
   # let nix darwin manage nix
   nix.enable = true;
-  # nix.package = pkgs.nix;
+
+  # this configuration makes nixpkgs use the system configuration (configured
+  # by the flake), instead of using the configuration from GH. Not what I want.
+  # I want 'nixpkgs#<prog>' to always fetch the latest nixpkgs version. For
+  # pinned version i usually use 'home#<prog>'.
+  nixpkgs.flake.setFlakeRegistry = false;
+  nixpkgs.flake.setNixPath = false;
 
   # Create /etc/zshrc that loads the nix-darwin environment.
   programs.zsh.enable = true; # default shell on catalina
