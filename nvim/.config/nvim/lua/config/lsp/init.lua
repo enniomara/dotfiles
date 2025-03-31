@@ -155,5 +155,3 @@ lspconfig.zls.setup({
 	on_attach = config.on_attach,
 	capabilities = capabilities,
 })
-
-require("lsp_signature").setup({})

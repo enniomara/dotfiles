@@ -60,6 +60,9 @@ return {
 					},
 				},
 			},
+			signature = {
+				enabled = true,
+			},
 			completion = {
 				documentation = {
 					auto_show = true,
@@ -141,10 +144,6 @@ return {
 		config = function()
 			require("leap").create_default_mappings()
 		end,
-	},
-	{
-		"ray-x/lsp_signature.nvim",
-		version = "*",
 	},
 	{
 		"abecodes/tabout.nvim",
