@@ -6,6 +6,17 @@ require("mason-lspconfig").setup({
 local config = require("config.lsp.config")
 local lspconfig = require("lspconfig")
 
+vim.diagnostic.config({
+	virtual_text = {
+		current_line = true,
+		severity = { min = "INFO", max = "WARN" },
+	},
+	virtual_lines = {
+		current_line = true,
+		severity = { min = "ERROR" },
+	},
+})
+
 -- blink supports additional completion capabilities
 local capabilities = require("blink.cmp").get_lsp_capabilities()
 

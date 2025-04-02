@@ -4,8 +4,8 @@ rec {
       prev.callPackage
       "${prev.path}/pkgs/by-name/go/golangci-lint/package.nix"
       {
-        buildGoModule = args:
-          prev.buildGoModule (args
+        buildGo124Module = args:
+          prev.buildGo124Module (args
             // rec {
               version = "1.64.8";
 
