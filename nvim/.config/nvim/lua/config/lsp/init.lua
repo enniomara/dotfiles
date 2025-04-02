@@ -49,9 +49,6 @@ lspconfig.gopls.setup({
 	capabilities = capabilities,
 	settings = {
 		gopls = {
-			buildFlags = {
-				"-tags=requireDB,requireAWS,aws",
-			},
 			hints = {
 				compositeLiteralFields = true,
 				constantValues = true,
