@@ -8,12 +8,10 @@ local lspconfig = require("lspconfig")
 
 vim.diagnostic.config({
 	virtual_text = {
-		current_line = true,
-		severity = { min = "INFO", max = "WARN" },
+		current_line = false,
 	},
 	virtual_lines = {
 		current_line = true,
-		severity = { min = "ERROR" },
 	},
 })
 
