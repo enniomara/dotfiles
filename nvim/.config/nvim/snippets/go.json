@@ -5,7 +5,7 @@
     "description": "Snippet for if err != nil"
   },
   "fmt.Errorf": {
-    "prefix": ["fmtErr"],
+    "prefix": ["fmterr"],
     "body": "fmt.Errorf(\"${1}: %w\", err)"
   }
 }
