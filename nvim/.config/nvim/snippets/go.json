@@ -7,5 +7,10 @@
   "fmt.Errorf": {
     "prefix": ["fmterr"],
     "body": "fmt.Errorf(\"${1}: %w\", err)"
+  },
+  "struct": {
+    "prefix": ["struct"],
+    "body": "type ${1:name} struct {\n\t${2}\n}",
+    "description": "Create a struct"
   }
 }
