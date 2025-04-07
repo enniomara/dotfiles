@@ -131,6 +131,7 @@ local lazyConfig = {
 					},
 					sections = {
 						lualine_x = {
+							"searchcount", -- show [12/18] when searching
 							"diff",
 							{
 								"diagnostics",
