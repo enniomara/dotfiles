@@ -62,3 +62,5 @@ end, { desc = "LSP: Toggle inlay hints" })
 -- becusae : is in a horrible place to reach in qwerty
 vim.keymap.set({ "n", "v" }, "<Leader>jj", ":")
 vim.keymap.set({ "n", "v" }, "<Leader>jk", "/")
+
+vim.keymap.set("c", "<m-d>", "<c-r>=expand('%:h')<cr>", { desc = "Insert current file's parent directory" })
