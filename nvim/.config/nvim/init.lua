@@ -365,6 +365,7 @@ local lazyConfig = {
 					{ desc = "AI: Toggle chat" }
 				)
 				vim.keymap.set({ "n", "v" }, "<leader>aa", ":CodeCompanionActions <cr>", { desc = "AI: Show Actions" })
+				vim.keymap.set({ "n", "v" }, "<M-S-k>", ":CodeCompanion ", { desc = "AI: Edit" })
 				vim.cmd([[cab cc CodeCompanion]])
 			end,
 		},
