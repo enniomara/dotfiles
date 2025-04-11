@@ -291,8 +291,12 @@ local lazyConfig = {
 				"nvim-lua/plenary.nvim",
 				"nvim-treesitter/nvim-treesitter",
 				"echasnovski/mini.diff",
+				"j-hui/fidget.nvim",
 			},
 			version = "*",
+			init = function()
+				require("plugins.codecompanion.fidget-spinner"):init()
+			end,
 			config = function()
 				require("codecompanion").setup({
 					display = {

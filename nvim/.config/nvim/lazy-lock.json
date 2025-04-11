@@ -6,6 +6,7 @@
   "codecompanion.nvim": { "branch": "main", "commit": "abc0e1c8edd5a78814830e730eef67b7b5278bdd" },
   "copilot.vim": { "branch": "release", "commit": "a9228e015528c9307890c48083c925eb98a64a79" },
   "dir-telescope.nvim": { "branch": "main", "commit": "1f3a041f870d1edf9cc64635e79f4b829e755978" },
+  "fidget.nvim": { "branch": "main", "commit": "b61e8af9b8b68ee0ec7da5fb7a8c203aae854f2e" },
   "friendly-snippets": { "branch": "main", "commit": "efff286dd74c22f731cdec26a70b46e5b203c619" },
   "gitsigns.nvim": { "branch": "main", "commit": "7010000889bfb6c26065e0b0f7f1e6aa9163edd9" },
   "gp.nvim": { "branch": "main", "commit": "b32327fe4ee65d24acbab0f645747c113eb935c0" },
