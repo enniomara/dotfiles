@@ -119,6 +119,13 @@
     enableZshIntegration = false;
   };
 
+  services.ollama = {
+    enable = true;
+    environmentVariables = {
+      OLLAMA_CONTEXT_LENGTH = "8192";
+    };
+  };
+
   home.packages = [
     pkgs.htop
 
