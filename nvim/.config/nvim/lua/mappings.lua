@@ -65,18 +65,20 @@ vim.keymap.set({ "n", "v" }, "<Leader>jk", "/")
 
 vim.keymap.set("c", "<m-d>", "<c-r>=expand('%:h')<cr>", { desc = "Insert current file's parent directory" })
 
-vim.keymap.set({ "n", "s" }, "<esc>", function()
-	vim.snippet.stop()
-	local luasnip = require("luasnip")
+if not vim.g.vscode then
+	vim.keymap.set({ "n", "s" }, "<esc>", function()
+		vim.snippet.stop()
+		local luasnip = require("luasnip")
 
-	-- Adds an escape hatch to an annoying behaviour where LSP suggestions stop
-	-- working if a snippet is active. Sometimes I use the iferr snippet, and
-	-- then edit the body of the if statement. When that happens the snippet is
-	-- still active, breaking suggestions.
-	if luasnip:in_snippet() == true then
-		luasnip:unlink_current()
-		vim.notify("Snippet was unliked", vim.log.levels.INFO)
-	end
+		-- Adds an escape hatch to an annoying behaviour where LSP suggestions stop
+		-- working if a snippet is active. Sometimes I use the iferr snippet, and
+		-- then edit the body of the if statement. When that happens the snippet is
+		-- still active, breaking suggestions.
+		if luasnip:in_snippet() == true then
+			luasnip:unlink_current()
+			vim.notify("Snippet was unliked", vim.log.levels.INFO)
+		end
 
-	return "<esc>"
-end, { expr = true, desc = "Escape and clear hlsearch/snippet" })
+		return "<esc>"
+	end, { expr = true, desc = "Escape and clear hlsearch/snippet" })
+end
