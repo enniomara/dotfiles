@@ -6,8 +6,7 @@
   xdg.configFile."tmux/tmux.conf".text = pkgs.lib.strings.concatStrings (
     pkgs.lib.strings.intersperse "\n" (
       with pkgs.tmuxPlugins; [
-        (builtins.readFile (pkgs.substituteAll {
-          src = ./tmux.conf;
+        (builtins.readFile (pkgs.replaceVars ./tmux.conf {
           sessionizerPath = ./bin/tmux-sessionizer;
         }))
         # load my custom theme
