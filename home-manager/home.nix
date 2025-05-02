@@ -126,10 +126,16 @@
     };
   };
 
+  home.sessionPath = [
+    "$HOME/.local/bin"
+  ];
+
   home.packages = [
     pkgs.htop
 
-    # pkgs.neovim
+    # used by neovim to install vectorcode. Couldn't get vectorcode to work
+    # with nix. It couldn't start chromadb for some reason
+    pkgs.pipx
 
     # cli
     pkgs.autojump
