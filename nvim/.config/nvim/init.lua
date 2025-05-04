@@ -292,6 +292,11 @@ local lazyConfig = {
 				"nvim-treesitter/nvim-treesitter",
 				"echasnovski/mini.diff",
 				"j-hui/fidget.nvim",
+				{
+					"Davidyz/VectorCode",
+					version = "*",
+					build = "pipx upgrade vectorcode",
+				},
 			},
 			version = "*",
 			init = function()
