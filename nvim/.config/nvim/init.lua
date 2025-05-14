@@ -61,14 +61,6 @@ local lazyConfig = {
 		{
 			"neovim/nvim-lspconfig",
 			dependencies = {
-				{
-					"williamboman/mason.nvim",
-					version = "*",
-				},
-				{
-					"williamboman/mason-lspconfig.nvim",
-					version = "*",
-				},
 				{ "saghen/blink.cmp" },
 			},
 			config = function()
