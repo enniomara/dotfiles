@@ -22,6 +22,8 @@ flake-utils.lib.eachDefaultSystem (system: {
         pkgs.alejandra
         pkgs.stylua
         pkgs.pre-commit
+
+        pkgs.nh
       ];
     };
 })

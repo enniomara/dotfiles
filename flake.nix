@@ -58,12 +58,6 @@
                   ++ userConfig.imports;
 
                 config = {
-                  # from https://discourse.nixos.org/t/nvd-simple-nix-nixos-version-diff-tool/12397/31
-                  home.activation.report-changes = config.lib.dag.entryAnywhere ''
-                    echo "++++* System Changes ++++++"
-                    nix store diff-closures $(ls -tdv /nix/var/nix/profiles/system-*-link | head -2)
-                  '';
-
                   # use the 1password agent to sign commits on mac
                   programs.git.extraConfig."gpg \"ssh\"".program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
                 };
@@ -106,10 +100,6 @@
               home.username = username;
               home.homeDirectory = "/home/${username}";
               targets.genericLinux.enable = true;
-              home.activation.report-changes = home-manager.lib.hm.dag.entryAnywhere ''
-                echo "++++* System Changes ++++++"
-                nix store diff-closures $(ls -dv /nix/var/nix/profiles/per-user/${username}/home-manager-*-link | tail -2)
-              '';
 
               # Create registry so that it can be used in `nix run` commands without downloading upstream nixpkgs again
               nix.registry.home.flake = nixpkgs;

@@ -17,6 +17,6 @@ tasks:
     dir: .
     cmds:
       - platforms: ['linux']
-        cmd: home-manager switch --flake .
+        cmd: nh home switch --ask .
       - platforms: ['darwin']
-        cmd: darwin-rebuild switch --flake .
+        cmd: nh darwin switch --ask .

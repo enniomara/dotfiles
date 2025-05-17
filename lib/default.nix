@@ -22,10 +22,6 @@
             home.username = username;
             home.homeDirectory = "/home/${username}";
             targets.genericLinux.enable = true;
-            home.activation.report-changes = home-manager.lib.hm.dag.entryAnywhere ''
-              echo "++++* System Changes ++++++"
-              nix store diff-closures $(ls -dv /nix/var/nix/profiles/per-user/${username}/home-manager-*-link | tail -2)
-            '';
 
             # Create registry so that it can be used in `nix run` commands without downloading upstream nixpkgs again
             nix.registry.home.flake = nixpkgs;
@@ -56,14 +52,6 @@
                 ../home-manager/karabiner
               ]
               ++ extraModules;
-
-            config = {
-              # from https://discourse.nixos.org/t/nvd-simple-nix-nixos-version-diff-tool/12397/31
-              home.activation.report-changes = config.lib.dag.entryAnywhere ''
-                echo "++++* System Changes ++++++"
-                nix store diff-closures $(ls -dv /nix/var/nix/profiles/system-*-link | tail -2)
-              '';
-            };
           };
 
           # a new version of home manager broke compatibility with
