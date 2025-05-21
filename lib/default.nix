@@ -5,6 +5,58 @@
   overlays,
   ...
 }: {
+  mkDarwinSystem = {
+    userConfigurations,
+    system,
+  }:
+    darwin.lib.darwinSystem {
+      inherit system;
+
+      modules = let
+        userConfig =
+          builtins.map (userConfig: {
+            # a new version of home manager broke compatibility with
+            # nix-darwin. It started saying that $HOME as empty.
+            # https://github.com/nix-community/./home-manager/issues/4026
+            # https://github.com/nix-community/./home-manager/issues/4026
+            users.users.${userConfig.username}.home = "/Users/${userConfig.username}";
+
+            home-manager.users.${userConfig.username} = {config, ...}: {
+              imports =
+                [
+                  ../home-manager/home.nix
+                  ../home-manager/hammerspoon
+                  ../home-manager/karabiner
+                  ../home-manager/mac-containers.nix
+                ]
+                ++ userConfig.imports;
+
+              config = {
+                # use the 1password agent to sign commits on mac
+                programs.git.extraConfig."gpg \"ssh\"".program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
+              };
+            };
+          })
+          userConfigurations;
+      in
+        [
+          ../home-manager/configuration.nix
+          home-manager.darwinModules.home-manager
+          {
+            nixpkgs.overlays = overlays;
+
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            # Create registry so that it can be used in `nix run` commands without downloading upstream nixpkgs again
+            nix.registry.home.flake = nixpkgs;
+
+            nixpkgs.config.allowUnfree = true;
+          }
+        ]
+        ++ userConfig;
+    };
+
   mkLinuxSystem = {
     username,
     extraModules ? [],
@@ -25,44 +77,10 @@
 
             # Create registry so that it can be used in `nix run` commands without downloading upstream nixpkgs again
             nix.registry.home.flake = nixpkgs;
+
+            nixpkgs.config.allowUnfree = true;
           }
         ]
         ++ extraModules;
-    };
-
-  mkDarwinSystem = {
-    username,
-    extraModules ? [],
-  }:
-    darwin.lib.darwinSystem {
-      system = "x86_64-darwin";
-      modules = [
-        ../home-manager/configuration.nix
-        home-manager.darwinModules.home-manager
-        {
-          nixpkgs.overlays = overlays;
-
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.${username} = {config, ...}: {
-            imports =
-              [
-                ../home-manager/home.nix
-                ../home-manager/hammerspoon
-                ../home-manager/karabiner
-              ]
-              ++ extraModules;
-          };
-
-          # a new version of home manager broke compatibility with
-          # nix-darwin. It started saying that $HOME as empty.
-          # https://github.com/nix-community/./home-manager/issues/4026
-          # https://github.com/nix-community/./home-manager/issues/4026
-          users.users.${username}.home = "/Users/${username}";
-
-          # Create registry so that it can be used in `nix run` commands without downloading upstream nixpkgs again
-          nix.registry.home.flake = nixpkgs;
-        }
-      ];
     };
 }
