@@ -83,6 +83,10 @@
     # https://git-scm.com/docs/gitignore
     text = ''
       repomix-output.txt
+
+      .aider*
+      !.aider.conf.yml
+      !.aiderignore
     '';
   };
 
