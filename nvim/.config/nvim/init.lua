@@ -284,10 +284,15 @@ local lazyConfig = {
 				"nvim-treesitter/nvim-treesitter",
 				"echasnovski/mini.diff",
 				"j-hui/fidget.nvim",
+				"ravitemer/mcphub.nvim",
 				{
 					"Davidyz/VectorCode",
 					version = "*",
 					build = "pipx upgrade vectorcode",
+				},
+				{
+					"ravitemer/codecompanion-history.nvim",
+					version = "*",
 				},
 			},
 			version = "*",
@@ -362,6 +367,11 @@ local lazyConfig = {
 									},
 								},
 							},
+						},
+					},
+					extensions = {
+						history = {
+							enabled = true,
 						},
 					},
 				})

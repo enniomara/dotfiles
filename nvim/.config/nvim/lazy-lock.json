@@ -4,6 +4,7 @@
   "VectorCode": { "branch": "main", "commit": "141bf87c28329d099b0fabdfef102ebacdef16ca" },
   "blink.cmp": { "branch": "main", "commit": "cb5e346d9e0efa7a3eee7fd4da0b690c48d2a98e" },
   "bufdelete.nvim": { "branch": "master", "commit": "f6bcea78afb3060b198125256f897040538bcb81" },
+  "codecompanion-history.nvim": { "branch": "main", "commit": "dce0e48cbd14d65fce64c056747c0b537968e247" },
   "codecompanion.nvim": { "branch": "main", "commit": "81691b1f2b95540f09d3910273edb6b83faa7520" },
   "copilot.vim": { "branch": "release", "commit": "7167958954532a0a1b83f2db2f591b43aebff44c" },
   "dir-telescope.nvim": { "branch": "main", "commit": "1f3a041f870d1edf9cc64635e79f4b829e755978" },
