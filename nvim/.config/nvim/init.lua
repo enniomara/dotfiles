@@ -372,6 +372,11 @@ local lazyConfig = {
 					extensions = {
 						history = {
 							enabled = true,
+							opts = {
+								-- hit by https://github.com/ravitemer/codecompanion-history.nvim/issues/10
+								-- Get unprocesseable from API
+								auto_generate_title = false,
+							},
 						},
 					},
 				})
