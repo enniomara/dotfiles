@@ -19,7 +19,6 @@
   "markview.nvim": { "branch": "main", "commit": "183c0ede469be11a88a26094754a0bf596a140e9" },
   "mcphub.nvim": { "branch": "main", "commit": "781d43db9258f81567f0acb6151db219ff815323" },
   "mini.ai": { "branch": "stable", "commit": "e139eb1101beb0250fea322f8c07a42f0f175688" },
-  "mini.diff": { "branch": "main", "commit": "f7bcd3cb4561f7d3a02ae9afafeda899c82f7108" },
   "neo-tree.nvim": { "branch": "main", "commit": "f481de16a0eb59c985abac8985e3f2e2f75b4875" },
   "neotest": { "branch": "master", "commit": "d66cf4e05a116957f0d3a7755a24291c7d1e1f72" },
   "neotest-go": { "branch": "main", "commit": "92950ad7be2ca02a41abca5c6600ff6ffaf5b5d6" },

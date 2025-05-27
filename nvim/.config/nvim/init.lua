@@ -282,7 +282,6 @@ local lazyConfig = {
 			dependencies = {
 				"nvim-lua/plenary.nvim",
 				"nvim-treesitter/nvim-treesitter",
-				"echasnovski/mini.diff",
 				"j-hui/fidget.nvim",
 				"ravitemer/mcphub.nvim",
 				{
@@ -304,7 +303,6 @@ local lazyConfig = {
 					display = {
 						diff = {
 							enabled = true,
-							provider = "mini_diff",
 						},
 					},
 					strategies = {
