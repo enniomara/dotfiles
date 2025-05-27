@@ -322,6 +322,22 @@ local lazyConfig = {
 									auto_submit_errors = false,
 								},
 							},
+							slash_commands = {
+								["buffer"] = {
+									keymaps = {
+										modes = {
+											i = "<C-b>",
+										},
+									},
+								},
+								["file"] = {
+									keymaps = {
+										modes = {
+											i = "<C-f>",
+										},
+									},
+								},
+							},
 						},
 						inline = {
 							adapter = "copilot",
