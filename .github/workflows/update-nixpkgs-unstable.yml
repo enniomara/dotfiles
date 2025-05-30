@@ -1,0 +1,17 @@
+# This workflow updates the nixpkgs-unstable flake input using Determinate Systems' update-flake-lock action
+name: Update nixpkgs-unstable
+
+on:
+  schedule:
+    - cron: '0 6 * * 1' # Every Monday at 6:00 UTC
+  workflow_dispatch:
+
+jobs:
+  update-nixpkgs-unstable:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/determinate-nix-action@v3
+      - uses: DeterminateSystems/update-flake-lock@v25
+        with:
+          inputs: nixpkgs-unstable
