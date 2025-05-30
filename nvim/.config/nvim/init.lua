@@ -363,6 +363,7 @@ local lazyConfig = {
 						["Repomix: File"] = {
 							strategy = "chat",
 							description = "Call AI based on repomix file",
+							opts = {},
 							references = {
 								{
 									type = "file",
@@ -382,6 +383,21 @@ local lazyConfig = {
 								},
 							},
 						},
+						["Edit buffer"] = {
+							strategy = "chat",
+							description = "Edit the current buffer with AI",
+							opts = {
+								short_name = "buffer",
+								auto_submit = false,
+							},
+							prompts = {
+								{
+									role = "user",
+									content = "#buffer{watch} @editor ",
+									opts = {},
+								},
+							},
+						},
 					},
 					extensions = {
 						history = {
@@ -396,6 +412,9 @@ local lazyConfig = {
 				})
 
 				vim.keymap.set({ "n", "v" }, "<leader>ac", ":CodeCompanionChat<cr>", { desc = "AI: Start new chat" })
+				vim.keymap.set({ "n" }, "<leader>ab", function()
+					require("codecompanion").prompt("buffer")
+				end, { desc = "AI: Edit current buffer" })
 				vim.keymap.set(
 					{ "n", "v" },
 					"<leader>at",
