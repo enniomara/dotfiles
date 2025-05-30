@@ -60,6 +60,7 @@
           vscode-extensions.github.vscode-pull-request-github
           vscode-extensions.zhuangtongfa.material-theme
           vscode-extensions.golang.go
+          vscode-extensions.jnoortheen.nix-ide
         ];
       };
     };
