@@ -70,6 +70,9 @@ if vim.g.vscode then
 	vim.keymap.set({ "n", "v" }, "<Leader>dd", function()
 		require("vscode").action("workbench.action.toggleSidebarVisibility")
 	end)
+	vim.keymap.set({ "n", "v" }, "<Leader>ca", function()
+		require("vscode").action("editor.action.quickFix")
+	end)
 end
 
 if not vim.g.vscode then
