@@ -417,7 +417,7 @@ local lazyConfig = {
 				end, { desc = "AI: Edit current buffer" })
 				vim.keymap.set(
 					{ "n", "v" },
-					"<leader>at",
+					"<leader>ai",
 					":CodeCompanionChat Toggle<cr>",
 					{ desc = "AI: Toggle chat" }
 				)
