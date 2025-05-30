@@ -65,6 +65,13 @@ vim.keymap.set({ "n", "v" }, "<Leader>jk", "/")
 
 vim.keymap.set("c", "<m-d>", "<c-r>=expand('%:h')<cr>", { desc = "Insert current file's parent directory" })
 
+-- VSCode specific keymaps
+if vim.g.vscode then
+	vim.keymap.set({ "n", "v" }, "<Leader>dd", function()
+		require("vscode").action("workbench.action.toggleSidebarVisibility")
+	end)
+end
+
 if not vim.g.vscode then
 	vim.keymap.set({ "n", "s" }, "<esc>", function()
 		vim.snippet.stop()
