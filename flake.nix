@@ -13,11 +13,16 @@
 
     flake-utils.url = "github:numtide/flake-utils";
     devshell.url = "github:numtide/devshell";
+
+    # this flake is updated much more frequently than the stable (unstable)
+    # nixpkgs. Added via a custom overlay.
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
   };
 
   outputs = inputs @ {
     self,
     nixpkgs,
+    nixpkgs-unstable,
     flake-utils,
     home-manager,
     darwin,
@@ -26,9 +31,12 @@
     # the devshells used by this repo
     devshells = (import ./modules/devShell.nix) inputs;
 
-    customOverlays = import ./home-manager/overlays.nix;
+    customOverlays = import ./home-manager/overlays.nix {inherit inputs;};
     overlays = [
       customOverlays.golangci-lint
+
+      # extends the default nixpkgs overlay to also include nixpkgs-unstable
+      customOverlays.nixpkgs-unstable
     ];
 
     lib = import ./lib {inherit overlays nixpkgs home-manager darwin;};

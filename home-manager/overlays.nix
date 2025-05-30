@@ -1,4 +1,11 @@
-rec {
+{inputs, ...}: {
+  nixpkgs-unstable = final: prev: {
+    # available via pkgs.nixpkgs-unstable
+    nixpkgs-unstable = import inputs.nixpkgs-unstable {
+      system = final.system;
+      config.allowUnfree = true;
+    };
+  };
   golangci-lint = final: prev: {
     golangci-lint =
       prev.callPackage
