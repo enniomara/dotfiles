@@ -89,7 +89,7 @@
            [:o [:toggle "Mail"]]
            [:m [:toggle "Calendar"]]
            [:d [:toggle "Discord"]]
-           [:n [:toggle "Visual Studio Code"]]]}
+           [:n [:toggle "Code"]]]}
   {:des "bracket sequences"
    :rules [:d-mode
            [:j :!S9]
