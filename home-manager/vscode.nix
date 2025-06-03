@@ -61,6 +61,7 @@
           vscode-extensions.zhuangtongfa.material-theme
           vscode-extensions.golang.go
           vscode-extensions.jnoortheen.nix-ide
+          vscode-extensions.ms-python.python
         ];
       };
     };
