@@ -5,6 +5,7 @@
     profiles = {
       nix = {};
       default = {
+        enableUpdateCheck = false;
         userSettings = {
           "workbench.colorTheme" = "One Dark Pro";
           "editor.fontFamily" = "Iosevka NFM, Menlo, Monaco, 'Courier New', monospace";
