@@ -293,6 +293,9 @@ local lazyConfig = {
 					"ravitemer/codecompanion-history.nvim",
 					version = "*",
 				},
+				{
+					"nvimtools/none-ls.nvim",
+				},
 			},
 			version = "*",
 			init = function()
@@ -419,6 +422,33 @@ local lazyConfig = {
 				vim.keymap.set({ "n", "v" }, "<leader>aa", ":CodeCompanionActions <cr>", { desc = "AI: Show Actions" })
 				vim.keymap.set({ "n", "v" }, "<M-S-k>", ":CodeCompanion ", { desc = "AI: Edit" })
 				vim.cmd([[cab cc CodeCompanion]])
+
+				local null_ls = require("null-ls")
+				null_ls.register({
+					name = "CodeCompanion",
+					method = null_ls.methods.CODE_ACTION,
+					filetypes = {},
+					generator = {
+						fn = function(_)
+							local actions = require("codecompanion.actions")
+							local context = require("codecompanion.utils.context")
+
+							local current_context = context.get(vim.api.nvim_get_current_buf(), {})
+							local actions_list = actions.items(current_context)
+
+							local diagnostics = {}
+							for _, action in ipairs(actions_list) do
+								table.insert(diagnostics, {
+									title = action.name,
+									action = function()
+										actions.resolve(action, current_context)
+									end,
+								})
+							end
+							return diagnostics
+						end,
+					},
+				})
 			end,
 		},
 		{
