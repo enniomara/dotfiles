@@ -1,8 +1,8 @@
 {
-  self,
   nixpkgs,
   flake-utils,
   devshell,
+  overlays,
   ...
 }:
 flake-utils.lib.eachDefaultSystem (system: {
@@ -10,7 +10,9 @@ flake-utils.lib.eachDefaultSystem (system: {
     pkgs = import nixpkgs {
       inherit system;
 
-      overlays = [devshell.overlays.default];
+      overlays =
+        [devshell.overlays.default]
+        ++ overlays;
     };
   in
     pkgs.devshell.mkShell {

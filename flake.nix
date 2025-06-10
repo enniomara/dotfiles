@@ -28,8 +28,6 @@
     darwin,
     devshell,
   }: let
-    # the devshells used by this repo
-    devshells = (import ./modules/devShell.nix) inputs;
 
     customOverlays = import ./home-manager/overlays.nix {inherit inputs;};
     overlays = [
@@ -39,6 +37,9 @@
       customOverlays.nixpkgs-unstable
       customOverlays.custom-packages
     ];
+
+    # the devshells used by this repo
+    devshells = import ./modules/devShell.nix { inherit devshell nixpkgs flake-utils overlays;};
 
     lib = import ./lib {inherit overlays nixpkgs home-manager darwin;};
   in
