@@ -167,5 +167,11 @@
     pkgs.duckdb
 
     pkgs._1password-cli
+
+    (pkgs.python3.withPackages (ps:
+      with ps; [
+        llm
+        llm-github-copilot
+      ]))
   ];
 }

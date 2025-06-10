@@ -35,4 +35,34 @@
             });
       };
   };
+  custom-packages = final: prev: {
+    pythonPackagesExtensions =
+      prev.pythonPackagesExtensions
+      ++ [
+        (python-final: python-prev: {
+          llm-github-copilot = python-final.buildPythonPackage {
+            pname = "llm-github-copilot";
+            version = "0.2.0";
+            pyproject = true;
+
+            src = final.fetchFromGitHub {
+              owner = "jmdaly";
+              repo = "llm-github-copilot";
+              rev = "main";
+              sha256 = "sha256-1/mB4oCCsmDtYpbLm7t0qgeiXHEUL5QeOZRfd1eluDk=";
+            };
+
+            nativeBuildInputs = with final.python3Packages; [
+              setuptools
+              wheel
+            ];
+
+            propagatedBuildInputs = with final.python3Packages; [
+              llm
+              httpx
+            ];
+          };
+        })
+      ];
+  };
 }

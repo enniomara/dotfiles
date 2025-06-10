@@ -37,6 +37,7 @@
 
       # extends the default nixpkgs overlay to also include nixpkgs-unstable
       customOverlays.nixpkgs-unstable
+      customOverlays.custom-packages
     ];
 
     lib = import ./lib {inherit overlays nixpkgs home-manager darwin;};
