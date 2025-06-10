@@ -5,6 +5,7 @@
   overlays,
   ...
 }: {
+  # Userconfiguration is a list of users to configure. The first user will be the primary user.
   mkDarwinSystem = {
     userConfigurations,
     system,
@@ -44,6 +45,8 @@
           home-manager.darwinModules.home-manager
           {
             nixpkgs.overlays = overlays;
+
+            system.primaryUser = (builtins.head userConfigurations).username;
 
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
