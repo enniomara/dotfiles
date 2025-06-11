@@ -396,7 +396,7 @@ local lazyConfig = {
 							prompts = {
 								{
 									role = "user",
-									content = "#buffer{watch} @editor ",
+									content = "#buffer{watch} @insert_edit_into_file ",
 									opts = {},
 								},
 							},
