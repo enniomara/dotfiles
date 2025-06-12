@@ -12,7 +12,9 @@
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     flake-utils.url = "github:numtide/flake-utils";
+
     devshell.url = "github:numtide/devshell";
+    devshell.inputs.nixpkgs.follows = "nixpkgs";
 
     # this flake is updated much more frequently than the stable (unstable)
     # nixpkgs. Added via a custom overlay.
@@ -28,7 +30,6 @@
     darwin,
     devshell,
   }: let
-
     customOverlays = import ./home-manager/overlays.nix {inherit inputs;};
     overlays = [
       customOverlays.golangci-lint
@@ -39,7 +40,7 @@
     ];
 
     # the devshells used by this repo
-    devshells = import ./modules/devShell.nix { inherit devshell nixpkgs flake-utils overlays;};
+    devshells = import ./modules/devShell.nix {inherit devshell nixpkgs flake-utils overlays;};
 
     lib = import ./lib {inherit overlays nixpkgs home-manager darwin;};
   in
