@@ -89,7 +89,8 @@
            [:o [:toggle "Mail"]]
            [:m [:toggle "Calendar"]]
            [:d [:toggle "Discord"]]
-           [:n [:toggle "Code"]]]}
+           [:n [:toggle "Code"]]
+           [:l [:toggle "Zed"]]]}
   {:des "bracket sequences"
    :rules [:d-mode
            [:j :!S9]
