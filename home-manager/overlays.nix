@@ -49,7 +49,7 @@
               owner = "jmdaly";
               repo = "llm-github-copilot";
               rev = "main";
-              sha256 = "sha256-1/mB4oCCsmDtYpbLm7t0qgeiXHEUL5QeOZRfd1eluDk=";
+              sha256 = "sha256-BUVpt1Vv0+kxbTYHDdiYy3+ySJKWJ9b+dYexV7YS+NI=";
             };
 
             nativeBuildInputs = with final.python3Packages; [

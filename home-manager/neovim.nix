@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   programs.neovim = {
     enable = true;
+    package = pkgs.nixpkgs-unstable.neovim-unwrapped;
     plugins = [
       (pkgs.vimPlugins.nvim-treesitter.withPlugins (
         plugins:
