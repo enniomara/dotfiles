@@ -52,16 +52,6 @@ return {
 		ft = "qf",
 	},
 	{
-		"OXY2DEV/markview.nvim",
-		lazy = false,
-		opts = {
-			preview = {
-				filetypes = { "markdown", "codecompanion" },
-				ignore_buftypes = {},
-			},
-		},
-	},
-	{
 		{
 			"j-hui/fidget.nvim",
 			version = "*",
