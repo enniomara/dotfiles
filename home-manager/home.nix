@@ -174,5 +174,7 @@
         llm
         llm-github-copilot
       ]))
+
+    (pkgs.writeShellScriptBin "review" (builtins.readFile ../bin/review.bash))
   ];
 }
