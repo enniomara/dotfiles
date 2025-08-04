@@ -169,7 +169,7 @@
 
     pkgs._1password-cli
 
-    (pkgs.python3.withPackages (ps:
+    (pkgs.nixpkgs-unstable.python3.withPackages (ps:
       with ps; [
         llm
         llm-github-copilot

@@ -36,7 +36,6 @@
 
       # extends the default nixpkgs overlay to also include nixpkgs-unstable
       customOverlays.nixpkgs-unstable
-      customOverlays.custom-packages
     ];
 
     # the devshells used by this repo
