@@ -14,6 +14,7 @@
           # copilot
           "github.copilot.chat.codesearch.enabled" = true;
           "github.copilot.chat.agent.thinkingTool" = true;
+          "github.copilot.nextEditSuggestions.enabled" = true;
           "chat.agent.enabled" = true;
 
           "extensions.experimental.affinity" = {
