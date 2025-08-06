@@ -139,6 +139,7 @@
   home.packages = [
     pkgs.watch
     pkgs.coreutils
+    pkgs.findutils
 
     pkgs.htop
 
