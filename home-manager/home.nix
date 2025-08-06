@@ -137,6 +137,9 @@
   ];
 
   home.packages = [
+    pkgs.watch
+    pkgs.coreutils
+
     pkgs.htop
 
     # used by neovim to install vectorcode. Couldn't get vectorcode to work
