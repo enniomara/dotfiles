@@ -19,6 +19,12 @@
     # this flake is updated much more frequently than the release
     # nixpkgs. Added via a custom overlay.
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.flake-utils.follows = "flake-utils";
+    };
   };
 
   outputs = inputs @ {
@@ -29,6 +35,7 @@
     home-manager,
     darwin,
     devshell,
+    nix-vscode-extensions,
   }: let
     customOverlays = import ./home-manager/overlays.nix {inherit inputs;};
     overlays = [
@@ -36,6 +43,8 @@
 
       # extends the default nixpkgs overlay to also include nixpkgs-unstable
       customOverlays.nixpkgs-unstable
+
+      nix-vscode-extensions.overlays.default
     ];
 
     # the devshells used by this repo

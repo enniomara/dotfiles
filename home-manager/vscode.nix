@@ -55,15 +55,15 @@
             "s"
           ];
         };
-        extensions = with pkgs.nixpkgs-unstable; [
-          vscode-extensions.asvetliakov.vscode-neovim
-          vscode-extensions.github.copilot
-          vscode-extensions.github.copilot-chat
-          vscode-extensions.github.vscode-pull-request-github
-          vscode-extensions.zhuangtongfa.material-theme
-          vscode-extensions.golang.go
-          vscode-extensions.jnoortheen.nix-ide
-          vscode-extensions.ms-python.python
+        extensions = with pkgs.nix-vscode-extensions.vscode-marketplace; [
+          asvetliakov.vscode-neovim
+          github.copilot
+          github.copilot-chat
+          github.vscode-pull-request-github
+          zhuangtongfa.material-theme
+          golang.go
+          jnoortheen.nix-ide
+          ms-python.python
         ];
       };
     };
