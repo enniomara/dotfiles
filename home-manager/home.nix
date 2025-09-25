@@ -94,7 +94,7 @@
 
   xdg.configFile."ghostty/config" = {
     text = ''
-      theme = tokyonight_moon
+      theme = TokyoNight Moon
       # the default scroll (of 1) jumps way too much. Make it more like kitty
       mouse-scroll-multiplier = 0.5
 
