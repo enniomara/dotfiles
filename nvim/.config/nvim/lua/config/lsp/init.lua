@@ -1,5 +1,4 @@
 local config = require("config.lsp.config")
-local lspconfig = require("lspconfig")
 
 vim.diagnostic.config({
 	virtual_text = {
@@ -13,7 +12,7 @@ vim.diagnostic.config({
 -- blink supports additional completion capabilities
 local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-lspconfig.lua_ls.setup({
+vim.lsp.config('lua_ls', {
 	on_attach = config.on_attach,
 	capabilities = capabilities,
 	settings = {
@@ -36,8 +35,9 @@ lspconfig.lua_ls.setup({
 		},
 	},
 })
+vim.lsp.enable('lua_ls')
 
-lspconfig.gopls.setup({
+vim.lsp.config('gopls', {
 	on_attach = config.on_attach,
 	capabilities = capabilities,
 	settings = {
@@ -50,8 +50,9 @@ lspconfig.gopls.setup({
 		},
 	},
 })
+vim.lsp.enable('gopls')
 
-lspconfig.yamlls.setup({
+vim.lsp.config('yamlls', {
 	on_attach = config.on_attach,
 	capabilities = capabilities,
 	settings = {
@@ -88,9 +89,10 @@ lspconfig.yamlls.setup({
 		},
 	},
 })
+vim.lsp.enable('yamlls')
 
 -- LSP for nix
-lspconfig.nil_ls.setup({
+vim.lsp.config('nil_ls', {
 	on_attach = config.on_attach,
 	capabilities = capabilities,
 	settings = {
@@ -101,58 +103,77 @@ lspconfig.nil_ls.setup({
 		},
 	},
 })
+vim.lsp.enable('nil_ls')
 
-lspconfig.pyright.setup({
+vim.lsp.config('pyright', {
 	on_attach = config.on_attach,
 	capabilities = capabilities,
 })
-lspconfig.ts_ls.setup({
-	on_attach = config.on_attach,
-	capabilities = capabilities,
-})
-lspconfig.clojure_lsp.setup({
-	on_attach = config.on_attach,
-	capabilities = capabilities,
-})
-lspconfig.eslint.setup({
-	on_attach = config.on_attach,
-	capabilities = capabilities,
-})
-lspconfig.rust_analyzer.setup({
-	on_attach = config.on_attach,
-	capabilities = capabilities,
-})
+vim.lsp.enable('pyright')
 
-lspconfig.astro.setup({
+vim.lsp.config('ts_ls', {
 	on_attach = config.on_attach,
 	capabilities = capabilities,
 })
+vim.lsp.enable('ts_ls')
 
-lspconfig.elmls.setup({
+vim.lsp.config('clojure_lsp', {
 	on_attach = config.on_attach,
 	capabilities = capabilities,
 })
+vim.lsp.enable('clojure_lsp')
 
-lspconfig.terraformls.setup({
+vim.lsp.config('eslint', {
 	on_attach = config.on_attach,
 	capabilities = capabilities,
 })
+vim.lsp.enable('eslint')
 
-lspconfig.bashls.setup({
+vim.lsp.config('rust_analyzer', {
 	on_attach = config.on_attach,
 	capabilities = capabilities,
 })
+vim.lsp.enable('rust_analyzer')
 
-lspconfig.ruff.setup({
+vim.lsp.config('astro', {
 	on_attach = config.on_attach,
 	capabilities = capabilities,
 })
-lspconfig.elixirls.setup({
+vim.lsp.enable('astro')
+
+vim.lsp.config('elmls', {
+	on_attach = config.on_attach,
+	capabilities = capabilities,
+})
+vim.lsp.enable('elmls')
+
+vim.lsp.config('terraformls', {
+	on_attach = config.on_attach,
+	capabilities = capabilities,
+})
+vim.lsp.enable('terraformls')
+
+vim.lsp.config('bashls', {
+	on_attach = config.on_attach,
+	capabilities = capabilities,
+})
+vim.lsp.enable('bashls')
+
+vim.lsp.config('ruff', {
+	on_attach = config.on_attach,
+	capabilities = capabilities,
+})
+vim.lsp.enable('ruff')
+
+vim.lsp.config('elixirls', {
 	cmd = { "elixir-ls" },
 	on_attach = config.on_attach,
 	capabilities = capabilities,
 })
-lspconfig.zls.setup({
+vim.lsp.enable('elixirls')
+
+vim.lsp.config('zls', {
 	on_attach = config.on_attach,
 	capabilities = capabilities,
 })
+vim.lsp.enable('zls')
