@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   programs.bat = {
     enable = true;
     config = {
@@ -112,24 +116,28 @@
       share = true; # share history between zsh sessions
     };
     defaultKeymap = "viins";
-    initExtra =
-      /*
-      bash
-      */
-      ''
-        # get Delete button working
-        bindkey -M emacs "^[[3~" delete-char
-        bindkey "^o" accept-line  # enter on Ctrl-O
+    initContent = lib.mkMerge [
+      # what used to be initExtra
 
-        # better vi integration
-        # initialize ZVM as sson as it's called. Workaround so that it doesn't
-        # override bindings in fzf
-        export ZVM_INIT_MODE=sourcing
-        source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+      (lib.mkOrder 1000
+        /*
+        bash
+        */
+        ''
+          # get Delete button working
+          bindkey -M emacs "^[[3~" delete-char
+          bindkey "^o" accept-line  # enter on Ctrl-O
 
-        # load fzf
-        source ${pkgs.fzf}/share/fzf/completion.zsh
-        source ${pkgs.fzf}/share/fzf/key-bindings.zsh
-      '';
+          # better vi integration
+          # initialize ZVM as sson as it's called. Workaround so that it doesn't
+          # override bindings in fzf
+          export ZVM_INIT_MODE=sourcing
+          source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+          # load fzf
+          source ${pkgs.fzf}/share/fzf/completion.zsh
+          source ${pkgs.fzf}/share/fzf/key-bindings.zsh
+        '')
+    ];
   };
 }
