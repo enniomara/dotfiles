@@ -112,7 +112,14 @@ vim.lsp.config('pyright', {
 vim.lsp.enable('pyright')
 
 vim.lsp.config('ts_ls', {
-	on_attach = config.on_attach,
+	on_attach = function(client, bufnr)
+		-- the formatting by ts_ls seems to be clashing with eslint for some
+		-- reason. Disable it and let eslint be the primary formatter
+		client.server_capabilities.documentFormattingProvider = false
+		client.server_capabilities.documentRangeFormattingProvider = false
+
+		config.on_attach(client, bufnr)
+	end,
 	capabilities = capabilities,
 })
 vim.lsp.enable('ts_ls')
