@@ -83,7 +83,7 @@
 
       # yaml
       yaml-language-server
-      python311Packages.cfn-lint
+      python3Packages.cfn-lint
       yamllint
     ];
   };
