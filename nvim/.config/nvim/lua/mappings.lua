@@ -76,6 +76,13 @@ if vim.g.vscode then
 	vim.keymap.set({ "n", "v" }, "<Leader>ca", function()
 		require("vscode").action("editor.action.quickFix")
 	end)
+
+	vim.keymap.set({ "n", "v" }, "<Leader>ac", function()
+		require("vscode").action("workbench.panel.chat")
+	end)
+	vim.keymap.set({ "n", "v" }, "<Leader>ai", function()
+		require("vscode").action("workbench.action.openQuickChat")
+	end)
 end
 
 if not vim.g.vscode then
