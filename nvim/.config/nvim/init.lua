@@ -348,19 +348,21 @@ local lazyConfig = {
 						},
 					},
 					adapters = {
-						openai = function()
-							return require("codecompanion.adapters").extend("openai", {
-								env = {
-									api_key = string.format(
-										"cmd:cat %s",
-										os.getenv("HOME") .. "/.config/openai/api.key"
-									),
-								},
-								schema = {
-									model = { default = "gpt-4o-mini" },
-								},
-							})
-						end,
+						http = {
+							openai = function()
+								return require("codecompanion.adapters").extend("openai", {
+									env = {
+										api_key = string.format(
+											"cmd:cat %s",
+											os.getenv("HOME") .. "/.config/openai/api.key"
+										),
+									},
+									schema = {
+										model = { default = "gpt-4o-mini" },
+									},
+								})
+							end,
+						},
 					},
 					prompt_library = {
 						["Repomix: File"] = {
@@ -378,7 +380,8 @@ local lazyConfig = {
 							prompts = {
 								{
 									role = "user",
-									content = "You are working on a git repository. I've pasted the contents of relevant files of the repository.\n",
+									content =
+									"You are working on a git repository. I've pasted the contents of relevant files of the repository.\n",
 									opts = {
 										auto_submit = false,
 										user_prompt = true,
