@@ -10,6 +10,9 @@
           "workbench.colorTheme" = "One Dark Pro";
           "editor.fontFamily" = "Iosevka NFM, Menlo, Monaco, 'Courier New', monospace";
           "editor.fontSize" = 16;
+          # disables highlights when cursor is over a word as it's distracting
+          "editor.occurrencesHighlight" = "off";
+          "editor.scrollBeyondLastLine" = false; # vscode scrolls the editor all the way up even if the file has ended. Make it more like vim
 
           # copilot
           "github.copilot.chat.codesearch.enabled" = true;
