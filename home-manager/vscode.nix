@@ -71,6 +71,7 @@
           golang.go
           jnoortheen.nix-ide
           ms-python.python
+          yzhang.markdown-all-in-one
         ];
 
         keybindings = [
