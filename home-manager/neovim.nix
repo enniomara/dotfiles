@@ -36,6 +36,7 @@
             typst
             yaml
             xml
+            zig
           ]
       ))
 
