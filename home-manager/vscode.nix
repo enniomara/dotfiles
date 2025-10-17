@@ -1,4 +1,23 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  # Tab accepts suggestion. Vim doesn't. Make it like Vim.
+  makeTabBehaveLikeVimKeybindings = [
+    {
+      key = "tab";
+      command = "-acceptSelectedSuggestion";
+      when = "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus";
+    }
+    {
+      key = "tab";
+      command = "selectNextSuggestion";
+      when = "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus";
+    }
+    {
+      key = "shift+tab";
+      command = "selectPrevSuggestion";
+      when = "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus";
+    }
+  ];
+in {
   programs.vscode = {
     enable = true;
     package = pkgs.nixpkgs-unstable.vscode;
@@ -74,21 +93,23 @@
           yzhang.markdown-all-in-one
         ];
 
-        keybindings = [
-          # https://github.com/vscode-neovim/vscode-neovim/issues/2434#issuecomment-2846191267
-          {
-            key = "ctrl+u";
-            command = "vscode-neovim.send";
-            args = "<C-u>";
-            when = "editorTextFocus && neovim.ctrlKeysNormal.u && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'";
-          }
-          {
-            key = "ctrl+d";
-            command = "vscode-neovim.send";
-            args = "<C-d>";
-            when = "editorTextFocus && neovim.ctrlKeysNormal.d && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'";
-          }
-        ];
+        keybindings =
+          [
+            # https://github.com/vscode-neovim/vscode-neovim/issues/2434#issuecomment-2846191267
+            {
+              key = "ctrl+u";
+              command = "vscode-neovim.send";
+              args = "<C-u>";
+              when = "editorTextFocus && neovim.ctrlKeysNormal.u && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'";
+            }
+            {
+              key = "ctrl+d";
+              command = "vscode-neovim.send";
+              args = "<C-d>";
+              when = "editorTextFocus && neovim.ctrlKeysNormal.d && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'";
+            }
+          ]
+          ++ makeTabBehaveLikeVimKeybindings;
       };
     };
   };
