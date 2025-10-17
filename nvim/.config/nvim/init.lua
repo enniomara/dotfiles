@@ -285,11 +285,6 @@ local lazyConfig = {
 				"j-hui/fidget.nvim",
 				"ravitemer/mcphub.nvim",
 				{
-					"Davidyz/VectorCode",
-					version = "*",
-					build = "pipx upgrade vectorcode",
-				},
-				{
 					"ravitemer/codecompanion-history.nvim",
 					version = "*",
 				},
@@ -312,12 +307,6 @@ local lazyConfig = {
 						chat = {
 							adapter = "copilot",
 							tools = {
-								vectorcode = {
-									description = "Run VectorCode to retrieve the project context.",
-									callback = function()
-										return require("vectorcode.integrations").codecompanion.chat.make_tool()
-									end,
-								},
 								opts = {
 									auto_submit_success = true,
 									auto_submit_errors = false,
