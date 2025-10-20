@@ -22,6 +22,9 @@
         nodejs = "22";
         python = "3.12";
       };
+      settings = {
+        idiomatic_version_file_enable_tools = [];
+      };
     };
   };
 
