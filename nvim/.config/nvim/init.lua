@@ -458,6 +458,18 @@ local lazyConfig = {
 					expr = true,
 					replace_keycodes = false,
 				})
+				vim.keymap.set("n", "<leader>ade", function()
+					vim.cmd("Copilot enable")
+					vim.notify("Copilot enabled", vim.log.levels.INFO)
+				end, {
+					desc = "AI: (E)nable Copilot",
+				})
+				vim.keymap.set("n", "<leader>add", function()
+					vim.cmd("Copilot disable")
+					vim.notify("Copilot disabled", vim.log.levels.INFO)
+				end, {
+					desc = "AI: (D)isable Copilot",
+				})
 			end,
 		},
 		{
