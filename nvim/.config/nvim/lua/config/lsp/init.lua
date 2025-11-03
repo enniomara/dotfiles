@@ -184,3 +184,9 @@ vim.lsp.config("zls", {
 	capabilities = capabilities,
 })
 vim.lsp.enable("zls")
+
+vim.lsp.config("sqlls", {
+	on_attach = config.on_attach,
+	capabilities = capabilities,
+})
+vim.lsp.enable("sqlls")
