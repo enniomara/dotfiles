@@ -114,6 +114,10 @@
       extended = true;
       ignoreDups = true;
       ignoreSpace = true;
+      ignoreAllDups = true;
+      ignorePatterns = [
+        "gco -b *"
+      ];
       path = "$HOME/.zsh_history";
       expireDuplicatesFirst = true;
       share = true; # share history between zsh sessions
