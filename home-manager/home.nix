@@ -99,6 +99,7 @@
 
       font-family = Iosevka NFM
       font-size = 16
+      macos-titlebar-style = tabs
     '';
   };
 
