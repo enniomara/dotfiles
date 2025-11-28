@@ -91,6 +91,7 @@ in {
           jnoortheen.nix-ide
           ms-python.python
           yzhang.markdown-all-in-one
+          ms-vscode-remote.remote-ssh
         ];
 
         keybindings =
