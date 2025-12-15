@@ -7,7 +7,10 @@ return {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope-fzf-native.nvim",
 			"nvim-telescope/telescope-ui-select.nvim",
-			"princejoogie/dir-telescope.nvim",
+			{
+				"nvim-telescope/telescope-live-grep-args.nvim",
+				version = "*",
+			},
 		},
 		config = function()
 			require("config.telescope")
@@ -17,9 +20,5 @@ return {
 	{
 		"nvim-telescope/telescope-fzf-native.nvim",
 		build = "make",
-	},
-	{
-		"princejoogie/dir-telescope.nvim",
-		version = "*",
 	},
 }

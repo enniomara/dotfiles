@@ -20,9 +20,11 @@ vim.keymap.set(
 	vs_rhs(":Telescope find_files<CR>", "workbench.action.quickOpen"),
 	{ desc = "Find: Files" }
 )
-vim.keymap.set("n", "<Leader>fF", ":Telescope dir find_files<CR>", { desc = "Find: Files in directory" })
-vim.keymap.set("n", "<Leader>fg", ":Telescope live_grep<CR>", { desc = "Find: Fuzzy find" })
-vim.keymap.set("n", "<Leader>fG", ":Telescope dir live_grep<CR>", { desc = "Find: Fuzzy find in directory" })
+vim.keymap.set("n", "<Leader>fg", ":Telescope live_grep_args<CR>", { desc = "Find: Fuzzy find" })
+vim.keymap.set("v", "<Leader>fg", function()
+	local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
+	live_grep_args_shortcuts.grep_word_under_cursor()
+end, { desc = "Find: Fuzzy Find Selected Word" })
 vim.keymap.set("n", "<Leader>fb", ":Telescope buffers<CR>", { desc = "Find: Buffer" })
 vim.keymap.set("n", "<Leader>f;", ":Telescope keymaps<CR>", { desc = "Find: Keymaps" })
 vim.keymap.set("n", "<Leader>fr", ":Telescope resume<CR>", { desc = "Find: Resume last search" })
@@ -50,7 +52,7 @@ vim.keymap.set("n", "<Leader>gcv", ":Git commit -v<CR>", { desc = "Git: Commit" 
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set("n", "Q", "<nop>") -- disable entering to ex-mode
+vim.keymap.set("n", "Q", "<nop>")            -- disable entering to ex-mode
 
 vim.keymap.set("n", "<Leader>ld", function() -- disable diagnostics on this buffer
 	vim.diagnostic.enable(not vim.diagnostic.is_enabled())

@@ -1,3 +1,5 @@
+local lga_actions = require("telescope-live-grep-args.actions")
+
 require("telescope").setup({
 	defaults = {
 		file_ignore_patterns = { ".git/" },
@@ -30,9 +32,20 @@ require("telescope").setup({
 		["ui-select"] = {
 			require("telescope.themes").get_dropdown({}),
 		},
+		live_grep_args = {
+			auto_quoting = true,
+			mappings = { -- extend mappings
+				i = {
+					["<C-k>"] = lga_actions.quote_prompt(),
+					["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+					["<C-g>"] = lga_actions.quote_prompt({ postfix = " --iglob **/ /**" }),
+					-- freeze the current list and start a fuzzy search in the frozen list
+					["<C-space>"] = lga_actions.to_fuzzy_refine,
+				},
+			},
+		},
 	},
 })
 
-require("telescope").load_extension("dir")
 require("telescope").load_extension("fzf")
 require("telescope").load_extension("ui-select")
