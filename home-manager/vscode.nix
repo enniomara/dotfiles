@@ -109,6 +109,27 @@ in {
               args = "<C-d>";
               when = "editorTextFocus && neovim.ctrlKeysNormal.d && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'";
             }
+            # i like scrolling tabs without leaving home row
+            {
+              key = "alt+j";
+              command = "workbench.action.openEditorAtIndex1";
+              when = "editorTextFocus";
+            }
+            {
+              key = "alt+k";
+              command = "workbench.action.openEditorAtIndex2";
+              when = "editorTextFocus";
+            }
+            {
+              key = "alt+l";
+              command = "workbench.action.openEditorAtIndex3";
+              when = "editorTextFocus";
+            }
+            {
+              key = "alt+;";
+              command = "workbench.action.openEditorAtIndex4";
+              when = "editorTextFocus";
+            }
           ]
           ++ makeTabBehaveLikeVimKeybindings;
       };
