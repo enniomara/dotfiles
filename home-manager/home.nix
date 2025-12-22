@@ -95,6 +95,18 @@
       git = {
         sign-on-push = true;
       };
+
+      templates = {
+        # show the diff in the editor when drafting description. I.e. similar to git commit -v
+        draft_commit_description = ''
+          concat(
+            builtin_draft_commit_description,
+            "\nJJ: ignore-rest\n",
+            diff.git(),
+            self.diff().git(),
+          )
+        '';
+      };
     };
   };
 
