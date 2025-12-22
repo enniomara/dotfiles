@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   ...
 }: {
   # Home Manager needs a bit of information about you and the
@@ -79,6 +80,22 @@
   programs.jujutsu = {
     enable = true;
     package = pkgs.nixpkgs-unstable.jujutsu;
+    settings = {
+      signing = {
+        behaviour = "drop"; # commits are signed on push (via git.sign-on-push)
+        backend = "ssh";
+        key = "~/.ssh/id_ed25519.pub";
+        backends = {
+          ssh = lib.mkIf pkgs.stdenv.isDarwin {
+            program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
+          };
+        };
+      };
+
+      git = {
+        sign-on-push = true;
+      };
+    };
   };
 
   xdg.configFile."git/ignore" = {
