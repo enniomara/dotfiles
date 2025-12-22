@@ -78,6 +78,11 @@
     };
   };
 
+  programs.jujutsu = {
+    enable = true;
+    package = pkgs.nixpkgs-unstable.jujutsu;
+  };
+
   xdg.configFile."git/ignore" = {
     # By default git looks here as the last step when ignoring files. This file
     # acts as a global gitignore
