@@ -50,7 +50,7 @@
     # the devshells used by this repo
     devshells = import ./modules/devShell.nix {inherit devshell nixpkgs flake-utils overlays;};
 
-    lib = import ./lib {inherit overlays nixpkgs home-manager darwin;};
+    lib = import ./lib {inherit overlays nixpkgs nixpkgs-unstable home-manager darwin;};
   in
     {
       darwinConfigurations."M-K6P79MG3J6" = lib.mkDarwinSystem {

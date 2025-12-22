@@ -2,6 +2,7 @@
   darwin,
   home-manager,
   nixpkgs,
+  nixpkgs-unstable,
   overlays,
   ...
 }: {
@@ -52,7 +53,8 @@
             home-manager.useUserPackages = true;
 
             # Create registry so that it can be used in `nix run` commands without downloading upstream nixpkgs again
-            nix.registry.home.flake = nixpkgs;
+            nix.registry.home.flake = nixpkgs-unstable;
+            nix.registry.home-stable.flake = nixpkgs;
 
             nixpkgs.config.allowUnfree = true;
           }
@@ -79,7 +81,8 @@
             targets.genericLinux.enable = true;
 
             # Create registry so that it can be used in `nix run` commands without downloading upstream nixpkgs again
-            nix.registry.home.flake = nixpkgs;
+            nix.registry.home.flake = nixpkgs-unstable;
+            nix.registry.home-stable.flake = nixpkgs;
 
             nixpkgs.config.allowUnfree = true;
           }
