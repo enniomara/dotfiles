@@ -42,6 +42,18 @@
   programs.fish = {
     enable = true;
 
+    shellInit =
+      # fish
+      ''
+        # Configure less to behave consistently across environments
+        # -M, prompt more in the screen
+        # -q quiet, do not ring bell
+        # -i ignore case
+        # -R color output
+        set -U -x LESS 'MqiR'
+        set -U -x MANPAGER 'nvim +Man!' # instead of less
+        set -U -x EDITOR 'nvim'
+      '';
     shellAliases = {
       g = "git";
       gs = "git status";

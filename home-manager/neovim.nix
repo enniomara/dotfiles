@@ -10,6 +10,7 @@
             bash
             comment
             css
+            fish
             diff
             dockerfile
             elixir
