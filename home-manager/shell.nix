@@ -53,6 +53,7 @@
         set -U -x LESS 'MqiR'
         set -U -x MANPAGER 'nvim +Man!' # instead of less
         set -U -x EDITOR 'nvim'
+        set -g fish_greeting # disable greeting
       '';
     shellInitLast =
       # fish
