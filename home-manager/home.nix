@@ -120,6 +120,7 @@
       .aider*
       !.aider.conf.yml
       !.aiderignore
+      .jj
     '';
   };
 
