@@ -9,12 +9,8 @@ vim.diagnostic.config({
 	},
 })
 
--- blink supports additional completion capabilities
-local capabilities = require("blink.cmp").get_lsp_capabilities()
-
 vim.lsp.config("lua_ls", {
 	on_attach = config.on_attach,
-	capabilities = capabilities,
 	settings = {
 		Lua = {
 			hint = {
@@ -39,7 +35,6 @@ vim.lsp.enable("lua_ls")
 
 vim.lsp.config("gopls", {
 	on_attach = config.on_attach,
-	capabilities = capabilities,
 	settings = {
 		gopls = {
 			hints = {
@@ -54,7 +49,6 @@ vim.lsp.enable("gopls")
 
 vim.lsp.config("yamlls", {
 	on_attach = config.on_attach,
-	capabilities = capabilities,
 	settings = {
 		yaml = {
 			customTags = {
@@ -94,7 +88,6 @@ vim.lsp.enable("yamlls")
 -- LSP for nix
 vim.lsp.config("nil_ls", {
 	on_attach = config.on_attach,
-	capabilities = capabilities,
 	settings = {
 		["nil"] = {
 			formatting = {
@@ -107,7 +100,6 @@ vim.lsp.enable("nil_ls")
 
 vim.lsp.config("pyright", {
 	on_attach = config.on_attach,
-	capabilities = capabilities,
 })
 vim.lsp.enable("pyright")
 
@@ -120,73 +112,61 @@ vim.lsp.config("ts_ls", {
 
 		config.on_attach(client, bufnr)
 	end,
-	capabilities = capabilities,
 })
 vim.lsp.enable("ts_ls")
 
 vim.lsp.config("clojure_lsp", {
 	on_attach = config.on_attach,
-	capabilities = capabilities,
 })
 vim.lsp.enable("clojure_lsp")
 
 vim.lsp.config("eslint", {
 	on_attach = config.on_attach,
-	capabilities = capabilities,
 })
 vim.lsp.enable("eslint")
 
 vim.lsp.config("rust_analyzer", {
 	on_attach = config.on_attach,
-	capabilities = capabilities,
 })
 vim.lsp.enable("rust_analyzer")
 
 vim.lsp.config("astro", {
 	on_attach = config.on_attach,
-	capabilities = capabilities,
 })
 vim.lsp.enable("astro")
 
 vim.lsp.config("elmls", {
 	on_attach = config.on_attach,
-	capabilities = capabilities,
 })
 vim.lsp.enable("elmls")
 
 vim.lsp.config("terraformls", {
 	on_attach = config.on_attach,
-	capabilities = capabilities,
 })
 vim.lsp.enable("terraformls")
 
 vim.lsp.config("bashls", {
 	on_attach = config.on_attach,
-	capabilities = capabilities,
 })
 vim.lsp.enable("bashls")
 
 vim.lsp.config("ruff", {
 	on_attach = config.on_attach,
-	capabilities = capabilities,
 })
 vim.lsp.enable("ruff")
 
 vim.lsp.config("elixirls", {
 	cmd = { "elixir-ls" },
 	on_attach = config.on_attach,
-	capabilities = capabilities,
 })
 vim.lsp.enable("elixirls")
 
 vim.lsp.config("zls", {
 	on_attach = config.on_attach,
-	capabilities = capabilities,
 })
 vim.lsp.enable("zls")
 
 vim.lsp.config("sqlls", {
 	on_attach = config.on_attach,
-	capabilities = capabilities,
 })
 vim.lsp.enable("sqlls")
