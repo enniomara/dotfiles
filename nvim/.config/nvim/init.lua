@@ -303,7 +303,7 @@ local lazyConfig = {
 							enabled = true,
 						},
 					},
-					strategies = {
+					interactions = {
 						chat = {
 							adapter = "copilot",
 							tools = {
@@ -382,13 +382,13 @@ local lazyConfig = {
 							strategy = "chat",
 							description = "Edit the current buffer with AI",
 							opts = {
-								short_name = "buffer",
+								alias = "buffer",
 								auto_submit = false,
 							},
 							prompts = {
 								{
 									role = "user",
-									content = "#buffer{watch} @insert_edit_into_file ",
+									content = "#{buffer}{diff} @insert_edit_into_file ",
 									opts = {},
 								},
 							},
