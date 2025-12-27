@@ -114,7 +114,6 @@ vim.lsp.config("nil_ls", {
 })
 vim.lsp.enable("nil_ls")
 
-vim.lsp.config("pyright")
 vim.lsp.enable("pyright")
 
 vim.lsp.config("ts_ls", {
@@ -127,37 +126,24 @@ vim.lsp.config("ts_ls", {
 })
 vim.lsp.enable("ts_ls")
 
-vim.lsp.config("clojure_lsp")
 vim.lsp.enable("clojure_lsp")
 
-vim.lsp.config("eslint")
 vim.lsp.enable("eslint")
 
-vim.lsp.config("rust_analyzer")
 vim.lsp.enable("rust_analyzer")
 
-vim.lsp.config("astro")
 vim.lsp.enable("astro")
 
-vim.lsp.config("elmls")
 vim.lsp.enable("elmls")
 
-vim.lsp.config("terraformls")
 vim.lsp.enable("terraformls")
 
-vim.lsp.config("bashls")
 vim.lsp.enable("bashls")
 
-vim.lsp.config("ruff")
 vim.lsp.enable("ruff")
 
-vim.lsp.config("elixirls", {
-	cmd = { "elixir-ls" },
-})
 vim.lsp.enable("elixirls")
 
-vim.lsp.config("zls")
 vim.lsp.enable("zls")
 
-vim.lsp.config("sqlls")
 vim.lsp.enable("sqlls")
