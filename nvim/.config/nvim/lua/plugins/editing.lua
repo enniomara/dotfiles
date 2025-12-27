@@ -140,14 +140,6 @@ return {
 		end,
 	},
 	{
-		"abecodes/tabout.nvim",
-		config = function()
-			require("tabout").setup({})
-		end,
-		lazy = true,
-		-- after = { "nvim-treesitter" },
-	},
-	{
 		"kylechui/nvim-surround",
 		version = "3.*",
 		event = { "BufRead" },

@@ -260,30 +260,12 @@ local lazyConfig = {
 			end,
 		},
 		{
-			"robitx/gp.nvim",
-			event = "VeryLazy",
-			config = function()
-				require("gp").setup({
-					openai_api_key = { "cat", os.getenv("HOME") .. "/.config/openai/api.key" },
-				})
-
-				vim.keymap.set(
-					{ "n", "v" },
-					"<leader>aC",
-					":GpChatNew vsplit<cr>",
-					{ desc = "AI (GP): Start new chat" }
-				)
-				vim.keymap.set({ "n", "v" }, "<leader>aT", ":GpChatToggle<cr>", { desc = "AI (GP): Toggle chat" })
-			end,
-		},
-		{
 			"olimorris/codecompanion.nvim",
 			event = "VeryLazy",
 			dependencies = {
 				"nvim-lua/plenary.nvim",
 				"nvim-treesitter/nvim-treesitter",
 				"j-hui/fidget.nvim",
-				"ravitemer/mcphub.nvim",
 				{
 					"ravitemer/codecompanion-history.nvim",
 					version = "*",
@@ -298,20 +280,9 @@ local lazyConfig = {
 			end,
 			config = function()
 				require("codecompanion").setup({
-					display = {
-						diff = {
-							enabled = true,
-						},
-					},
 					interactions = {
 						chat = {
 							adapter = "copilot",
-							tools = {
-								opts = {
-									auto_submit_success = true,
-									auto_submit_errors = false,
-								},
-							},
 							slash_commands = {
 								["buffer"] = {
 									keymaps = {
