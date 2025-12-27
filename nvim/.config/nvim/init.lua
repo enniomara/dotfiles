@@ -318,7 +318,7 @@ local lazyConfig = {
 							prompts = {
 								{
 									role = "user",
-									content = "#{buffer}{diff} @insert_edit_into_file ",
+									content = "#{buffer}{diff} @{insert_edit_into_file} ",
 									opts = {},
 								},
 							},
