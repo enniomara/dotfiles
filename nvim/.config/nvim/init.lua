@@ -307,23 +307,6 @@ local lazyConfig = {
 							adapter = "copilot",
 						},
 					},
-					adapters = {
-						http = {
-							openai = function()
-								return require("codecompanion.adapters").extend("openai", {
-									env = {
-										api_key = string.format(
-											"cmd:cat %s",
-											os.getenv("HOME") .. "/.config/openai/api.key"
-										),
-									},
-									schema = {
-										model = { default = "gpt-4o-mini" },
-									},
-								})
-							end,
-						},
-					},
 					prompt_library = {
 						["Edit buffer"] = {
 							strategy = "chat",
