@@ -115,8 +115,6 @@
     # acts as a global gitignore
     # https://git-scm.com/docs/gitignore
     text = ''
-      repomix-output.txt
-
       .aider*
       !.aider.conf.yml
       !.aiderignore
@@ -187,7 +185,6 @@
     pkgs.k9s
     pkgs.curl
     pkgs.go-task
-    pkgs.repomix
     pkgs.uv
 
     pkgs.lazygit

@@ -354,30 +354,6 @@ local lazyConfig = {
 						},
 					},
 					prompt_library = {
-						["Repomix: File"] = {
-							strategy = "chat",
-							description = "Call AI based on repomix file",
-							opts = {},
-							references = {
-								{
-									type = "file",
-									path = {
-										"repomix-output.txt",
-									},
-								},
-							},
-							prompts = {
-								{
-									role = "user",
-									content =
-									"You are working on a git repository. I've pasted the contents of relevant files of the repository.\n",
-									opts = {
-										auto_submit = false,
-										user_prompt = true,
-									},
-								},
-							},
-						},
 						["Edit buffer"] = {
 							strategy = "chat",
 							description = "Edit the current buffer with AI",
