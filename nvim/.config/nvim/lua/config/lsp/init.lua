@@ -1,5 +1,3 @@
-local config = require("config.lsp.config")
-
 vim.diagnostic.config({
 	virtual_text = {
 		current_line = false,
@@ -9,8 +7,29 @@ vim.diagnostic.config({
 	},
 })
 
+vim.api.nvim_create_autocmd("LspAttach", {
+	group = vim.api.nvim_create_augroup("ennio.lsp", {}),
+	callback = function(args)
+		vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { buffer = args.buf, desc = "Code Action" })
+
+		vim.keymap.set("n", "<leader>e", function()
+			vim.diagnostic.open_float({ scope = "line" })
+		end, { buffer = args.buf, desc = "Open Diagnostic Float" })
+
+		vim.keymap.set("n", "<leader>fm", function()
+			vim.lsp.buf.format({ async = true })
+		end, { buffer = args.buf, desc = "Format Code" })
+
+		local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
+		if client.server_capabilities.inlayHintProvider then
+			vim.lsp.inlay_hint.enable(true, {
+				bufnr = args.buf,
+			})
+		end
+	end,
+})
+
 vim.lsp.config("lua_ls", {
-	on_attach = config.on_attach,
 	settings = {
 		Lua = {
 			hint = {
@@ -34,7 +53,6 @@ vim.lsp.config("lua_ls", {
 vim.lsp.enable("lua_ls")
 
 vim.lsp.config("gopls", {
-	on_attach = config.on_attach,
 	settings = {
 		gopls = {
 			hints = {
@@ -48,7 +66,6 @@ vim.lsp.config("gopls", {
 vim.lsp.enable("gopls")
 
 vim.lsp.config("yamlls", {
-	on_attach = config.on_attach,
 	settings = {
 		yaml = {
 			customTags = {
@@ -87,7 +104,6 @@ vim.lsp.enable("yamlls")
 
 -- LSP for nix
 vim.lsp.config("nil_ls", {
-	on_attach = config.on_attach,
 	settings = {
 		["nil"] = {
 			formatting = {
@@ -98,75 +114,50 @@ vim.lsp.config("nil_ls", {
 })
 vim.lsp.enable("nil_ls")
 
-vim.lsp.config("pyright", {
-	on_attach = config.on_attach,
-})
+vim.lsp.config("pyright")
 vim.lsp.enable("pyright")
 
 vim.lsp.config("ts_ls", {
-	on_attach = function(client, bufnr)
+	on_attach = function(client)
 		-- the formatting by ts_ls seems to be clashing with eslint for some
 		-- reason. Disable it and let eslint be the primary formatter
 		client.server_capabilities.documentFormattingProvider = false
 		client.server_capabilities.documentRangeFormattingProvider = false
-
-		config.on_attach(client, bufnr)
 	end,
 })
 vim.lsp.enable("ts_ls")
 
-vim.lsp.config("clojure_lsp", {
-	on_attach = config.on_attach,
-})
+vim.lsp.config("clojure_lsp")
 vim.lsp.enable("clojure_lsp")
 
-vim.lsp.config("eslint", {
-	on_attach = config.on_attach,
-})
+vim.lsp.config("eslint")
 vim.lsp.enable("eslint")
 
-vim.lsp.config("rust_analyzer", {
-	on_attach = config.on_attach,
-})
+vim.lsp.config("rust_analyzer")
 vim.lsp.enable("rust_analyzer")
 
-vim.lsp.config("astro", {
-	on_attach = config.on_attach,
-})
+vim.lsp.config("astro")
 vim.lsp.enable("astro")
 
-vim.lsp.config("elmls", {
-	on_attach = config.on_attach,
-})
+vim.lsp.config("elmls")
 vim.lsp.enable("elmls")
 
-vim.lsp.config("terraformls", {
-	on_attach = config.on_attach,
-})
+vim.lsp.config("terraformls")
 vim.lsp.enable("terraformls")
 
-vim.lsp.config("bashls", {
-	on_attach = config.on_attach,
-})
+vim.lsp.config("bashls")
 vim.lsp.enable("bashls")
 
-vim.lsp.config("ruff", {
-	on_attach = config.on_attach,
-})
+vim.lsp.config("ruff")
 vim.lsp.enable("ruff")
 
 vim.lsp.config("elixirls", {
 	cmd = { "elixir-ls" },
-	on_attach = config.on_attach,
 })
 vim.lsp.enable("elixirls")
 
-vim.lsp.config("zls", {
-	on_attach = config.on_attach,
-})
+vim.lsp.config("zls")
 vim.lsp.enable("zls")
 
-vim.lsp.config("sqlls", {
-	on_attach = config.on_attach,
-})
+vim.lsp.config("sqlls")
 vim.lsp.enable("sqlls")

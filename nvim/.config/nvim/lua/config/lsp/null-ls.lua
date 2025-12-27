@@ -1,6 +1,4 @@
 local null_ls = require("null-ls")
-local h = require("null-ls.helpers")
-local u = require("null-ls.utils")
 
 local b = null_ls.builtins
 local sources = {
@@ -35,5 +33,4 @@ local sources = {
 
 null_ls.setup({
 	sources = sources,
-	on_attach = require("config.lsp.config").on_attach,
 })
