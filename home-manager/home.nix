@@ -103,7 +103,6 @@
             builtin_draft_commit_description,
             "\nJJ: ignore-rest\n",
             diff.git(),
-            self.diff().git(),
           )
         '';
       };
