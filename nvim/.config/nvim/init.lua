@@ -412,6 +412,47 @@ local lazyConfig = {
 			},
 			opts = {},
 		},
+		{
+			"obsidian-nvim/obsidian.nvim",
+			version = "*",
+			-- lazy = true,
+			---@module 'obsidian'
+			---@type obsidian.config
+			opts = {
+				legacy_commands = false,
+				workspaces = {
+					{
+						name = "personal",
+						path = "~/Google Drive/My Drive/Life/Obsidian/Ennio's vault",
+						overrides = {
+							workspaces = {},
+							daily_notes = {
+								folder = "99 - Other/Daily Notes",
+								template = "_templates/Daily Note Template",
+							},
+							templates = {
+								folder = "_templates",
+							},
+						},
+					},
+				},
+				completion = {
+					blink = true,
+					min_chars = 1,
+				},
+			},
+			keys = {
+				{
+					"<leader>oo",
+					"<cmd>Obsidian<cr>",
+					mode = { "n", "v" },
+					desc = "Obsidian",
+				},
+				{ "<leader>off", "<cmd>Obsidian quick_switch<cr>", desc = "Obsidian: (F)ind (F)ile" },
+				{ "<leader>ofg", "<cmd>Obsidian search<cr>",       desc = "Obsidian: (F)ile (S)earch" },
+				{ "<leader>ot",  "<cmd>Obsidian today<cr>",        desc = "Obsidian: (T)oday" },
+			},
+		},
 	},
 }
 require("lazy").setup(lazyConfig)
