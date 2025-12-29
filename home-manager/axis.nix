@@ -9,6 +9,18 @@
     };
   };
 
+  programs.fish = {
+    shellInit =
+      # fish
+      ''
+        set -g -x GOPRIVATE "gittools.se.axis.com,github.com/axteams-one"
+      '';
+
+    shellAliases = {
+      with_clickhouse = "${pkgs.clickhouse}/bin/clickhouse-client --secure --user=$USER --password=$(${pkgs._1password-cli}/bin/op read op://Work/7qbwhze42bf6hgqdn34jbiwmzm/password)";
+    };
+  };
+
   programs.git = {
     userName = "Ennio Mara";
     userEmail = "marae@axis.com";
