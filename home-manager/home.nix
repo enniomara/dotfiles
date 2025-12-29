@@ -120,8 +120,10 @@
           "--"
           "bash"
           "-c"
+          # If we are using a fork, then gh pr create needs the full ref, i.e. <user>:<branch>
+          # bash
           ''
-            gh pr create --head $(jj log -r 'closest_bookmark(@)' -T 'bookmarks' --no-graph | cut -d ' ' -f 1)
+            gh pr create --head "$(gh api user -q .login):$(jj log -r 'closest_bookmark(@)' -T 'bookmarks' --no-graph | cut -d ' ' -f 1)"
           ''
         ];
       };
