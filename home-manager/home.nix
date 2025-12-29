@@ -107,8 +107,23 @@
         '';
       };
 
+      revset-aliases = {
+        "closest_bookmark(to)" = "heads(::to & bookmarks())";
+      };
+
       aliases = {
-        "tug" = ["bookmark" "move" "--from" "heads(::@- & bookmarks())" "--to" "@-"];
+        tug = ["bookmark" "move" "--from" "heads(::@- & bookmarks())" "--to" "@-"];
+        # PR create
+        prc = [
+          "util"
+          "exec"
+          "--"
+          "bash"
+          "-c"
+          ''
+            gh pr create --head $(jj log -r 'closest_bookmark(@)' -T 'bookmarks' --no-graph | cut -d ' ' -f 1)
+          ''
+        ];
       };
     };
   };
