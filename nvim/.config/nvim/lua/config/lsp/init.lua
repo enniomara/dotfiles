@@ -12,6 +12,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(args)
 		vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { buffer = args.buf, desc = "Code Action" })
 
+		vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = args.buf, desc = "Go to Definition" })
+
 		vim.keymap.set("n", "<leader>e", function()
 			vim.diagnostic.open_float({ scope = "line" })
 		end, { buffer = args.buf, desc = "Open Diagnostic Float" })
