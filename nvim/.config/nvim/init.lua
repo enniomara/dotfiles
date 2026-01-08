@@ -423,7 +423,7 @@ local lazyConfig = {
 				workspaces = {
 					{
 						name = "personal",
-						path = "~/Google Drive/My Drive/Life/Obsidian/Ennio's vault",
+						path = "~/obsidian/Ennio's vault",
 						overrides = {
 							workspaces = {},
 							daily_notes = {
