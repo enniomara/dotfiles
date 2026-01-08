@@ -38,6 +38,7 @@ in {
           "github.copilot.chat.agent.thinkingTool" = true;
           "github.copilot.nextEditSuggestions.enabled" = true;
           "chat.agent.enabled" = true;
+          "chat.useAgentSkills" = true;
 
           "extensions.experimental.affinity" = {
             "asvetliakov.vscode-neovim" = 1;
