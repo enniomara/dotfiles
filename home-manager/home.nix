@@ -240,5 +240,6 @@
 
     pkgs.gh-dash
     pkgs.lazyjj
+    pkgs.jjui
   ];
 }
