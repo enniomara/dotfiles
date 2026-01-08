@@ -127,6 +127,7 @@
           ''
         ];
         gf = ["git" "fetch" "--all-remotes"];
+        c = "commit";
       };
 
       "--scope" = [
