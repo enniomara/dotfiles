@@ -236,5 +236,8 @@
       ]))
 
     (pkgs.writeShellScriptBin "review" (builtins.readFile ../bin/review.bash))
+
+    pkgs.gh-dash
+    pkgs.lazyjj
   ];
 }
