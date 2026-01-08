@@ -64,6 +64,7 @@ vim.cmd([[cabbrev grbim Git rebase -i origin/master]])
 vim.cmd([[cabbrev git Git]]) -- fix annoying behaviour, sometimes I don't hit shift
 vim.cmd([[
 	autocmd Filetype gitcommit iabbrev <buffer> solj Solves: Jira DDM-
+	autocmd Filetype jjdescription iabbrev <buffer> solj Solves: Jira DDM-
 ]])
 -- highlight yanked text
 vim.cmd([[
