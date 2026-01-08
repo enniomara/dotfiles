@@ -126,6 +126,7 @@
             gh pr create --head "$(gh api user -q .login):$(jj log -r 'closest_bookmark(@)' -T 'bookmarks' --no-graph | cut -d ' ' -f 1)"
           ''
         ];
+        gf = ["git" "fetch" "--all-remotes"];
       };
 
       "--scope" = [
