@@ -39,4 +39,8 @@
       target = ".ssh/id_ed25519.pub";
     };
   };
+
+  home.packages = [
+    pkgs.jira-cli-go
+  ];
 }
