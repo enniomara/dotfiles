@@ -107,6 +107,12 @@
         '';
       };
 
+      template-aliases = {
+        # from https://github.com/jj-vcs/jj/issues/7702
+        "list_first(list)" = "stringify(list.join('\n')).first_line()";
+        "first_bookmark_name(bookmarks)" = "list_first(bookmarks.map(|b| b.name()))";
+      };
+
       revset-aliases = {
         "closest_bookmark(to)" = "heads(::to & bookmarks())";
       };
@@ -124,6 +130,26 @@
           # bash
           ''
             gh pr create --head "$(gh api user -q .login):$(jj log -r 'closest_bookmark(@)' -T 'bookmarks' --no-graph | cut -d ' ' -f 1)"
+          ''
+        ];
+        prw = [
+          "util"
+          "exec"
+          "--"
+          "bash"
+          "-c"
+          # sleep to allow time for github to register the new PR and start
+          # checks. Otherwise it returns no checks found
+          # bash
+          ''
+            sleep 5 && \
+            gh pr checks --watch $(
+              gh pr list \
+                --head $(jj log -r 'closest_bookmark(@)' -T 'first_bookmark_name(remote_bookmarks)' --no-graph) \
+                --json number \
+                -q '.[0].number'
+            ) && \
+            osascript -e 'display notification "PR checks finished" with title "Github PR"'
           ''
         ];
         gf = ["git" "fetch" "--all-remotes"];
