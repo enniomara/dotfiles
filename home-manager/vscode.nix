@@ -93,6 +93,8 @@ in {
           ms-python.python
           yzhang.markdown-all-in-one
           ms-vscode-remote.remote-ssh
+          adpyke.codesnap
+          bierner.markdown-mermaid
         ];
 
         keybindings =
