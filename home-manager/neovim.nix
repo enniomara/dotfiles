@@ -8,6 +8,8 @@
           with plugins; [
             astro
             bash
+            c
+            cpp
             comment
             css
             fish
