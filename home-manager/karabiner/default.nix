@@ -5,7 +5,7 @@
 }: {
   xdg.configFile."karabiner.edn" = lib.mkIf pkgs.stdenv.isDarwin {
     text = builtins.readFile (pkgs.replaceVars ./karabiner.edn {
-      toggleApplicationPath = ./ToggleApplication.scpt;
+      toggleApplicationPath = "${./ToggleApplication.scpt}";
     });
   };
 

@@ -7,7 +7,7 @@
     pkgs.lib.strings.intersperse "\n" (
       with pkgs.tmuxPlugins; [
         (builtins.readFile (pkgs.replaceVars ./tmux.conf {
-          sessionizerPath = ./bin/tmux-sessionizer;
+          sessionizerPath = "${./bin/tmux-sessionizer}";
         }))
         # load my custom theme
         (builtins.readFile ./.tmux-theme.conf)
