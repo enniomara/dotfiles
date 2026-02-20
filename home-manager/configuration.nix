@@ -14,7 +14,7 @@
   # environment.darwinConfig = "$HOME/.config/nixpkgs/darwin/configuration.nix";
 
   # let nix darwin manage nix
-  nix.enable = true;
+  nix.enable = false;
 
   # this configuration makes nixpkgs use the system configuration (configured
   # by the flake), instead of using the configuration from GH. Not what I want.
