@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   # environment.systemPackages =
@@ -12,9 +8,6 @@
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
   # environment.darwinConfig = "$HOME/.config/nixpkgs/darwin/configuration.nix";
-
-  # let nix darwin manage nix
-  nix.enable = false;
 
   # this configuration makes nixpkgs use the system configuration (configured
   # by the flake), instead of using the configuration from GH. Not what I want.

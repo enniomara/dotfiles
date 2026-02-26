@@ -4,6 +4,7 @@
   nixpkgs,
   nixpkgs-unstable,
   overlays,
+  determinate,
   ...
 }: {
   # Userconfiguration is a list of users to configure. The first user will be the primary user.
@@ -43,18 +44,24 @@
       in
         [
           ../home-manager/configuration.nix
+          determinate.darwinModules.default
           home-manager.darwinModules.home-manager
           {
+            determinateNix = {
+              enable = true;
+              registry = {
+                # Create registry so that it can be used in `nix run` commands without downloading upstream nixpkgs again
+                home.flake = nixpkgs-unstable;
+                home-stable.flake = nixpkgs;
+              };
+            };
+
             nixpkgs.overlays = overlays;
 
             system.primaryUser = (builtins.head userConfigurations).username;
 
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-
-            # Create registry so that it can be used in `nix run` commands without downloading upstream nixpkgs again
-            nix.registry.home.flake = nixpkgs-unstable;
-            nix.registry.home-stable.flake = nixpkgs;
 
             nixpkgs.config.allowUnfree = true;
           }

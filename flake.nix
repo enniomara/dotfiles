@@ -25,6 +25,8 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
       inputs.flake-utils.follows = "flake-utils";
     };
+
+    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/3";
   };
 
   outputs = inputs @ {
@@ -36,6 +38,7 @@
     darwin,
     devshell,
     nix-vscode-extensions,
+    determinate,
   }: let
     customOverlays = import ./home-manager/overlays.nix {inherit inputs;};
     overlays = [
@@ -50,7 +53,7 @@
     # the devshells used by this repo
     devshells = import ./modules/devShell.nix {inherit devshell nixpkgs flake-utils overlays;};
 
-    lib = import ./lib {inherit overlays nixpkgs nixpkgs-unstable home-manager darwin;};
+    lib = import ./lib {inherit overlays nixpkgs nixpkgs-unstable home-manager darwin determinate;};
   in
     {
       darwinConfigurations."M-K6P79MG3J6" = lib.mkDarwinSystem {
