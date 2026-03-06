@@ -5,7 +5,7 @@
     };
 
     shellAliases = {
-      with_clickhouse = "${pkgs.clickhouse}/bin/clickhouse-client --secure --user=$USER --password=$(${pkgs._1password-cli}/bin/op read op://Work/7qbwhze42bf6hgqdn34jbiwmzm/password)";
+      with_clickhouse = "${pkgs.nixpkgs-unstable.clickhouse}/bin/clickhouse-client --secure --user=$USER --password=$(${pkgs._1password-cli}/bin/op read op://Work/7qbwhze42bf6hgqdn34jbiwmzm/password)";
     };
   };
 
@@ -17,7 +17,7 @@
       '';
 
     shellAliases = {
-      with_clickhouse = "${pkgs.clickhouse}/bin/clickhouse-client --secure --user=$USER --password=$(${pkgs._1password-cli}/bin/op read op://Work/7qbwhze42bf6hgqdn34jbiwmzm/password)";
+      with_clickhouse = "${pkgs.nixpkgs-unstable.clickhouse}/bin/clickhouse-client --secure --user=$USER --password=$(${pkgs._1password-cli}/bin/op read op://Work/7qbwhze42bf6hgqdn34jbiwmzm/password)";
     };
   };
 
