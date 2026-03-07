@@ -95,6 +95,7 @@ in {
           ms-vscode-remote.remote-ssh
           adpyke.codesnap
           bierner.markdown-mermaid
+          ms-playwright.playwright
         ];
 
         keybindings =
