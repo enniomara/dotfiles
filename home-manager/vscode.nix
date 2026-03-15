@@ -39,6 +39,11 @@ in {
           "github.copilot.nextEditSuggestions.enabled" = true;
           "chat.agent.enabled" = true;
           "chat.useAgentSkills" = true;
+          # ZSH support is not working, the agent runs comands but cannot see
+          # the output. Bash seems to work
+          "chat.tools.terminal.terminalProfile.osx" = {
+            "path" = "bash";
+          };
 
           "extensions.experimental.affinity" = {
             "asvetliakov.vscode-neovim" = 1;
