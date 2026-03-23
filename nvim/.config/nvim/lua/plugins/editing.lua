@@ -134,10 +134,13 @@ return {
 		end,
 	},
 	{
-		"ggandor/leap.nvim",
-		config = function()
-			require("leap").create_default_mappings()
-		end,
+		url = "https://codeberg.org/andyg/leap.nvim.git",
+		opts = {},
+		keys = {
+			{ "s",  "<Plug>(leap-forward)",     mode = { "n", "x", "o" }, desc = "Leap Forward to" },
+			{ "S",  "<Plug>(leap-backward)",    mode = { "n", "x", "o" }, desc = "Leap Backward to" },
+			{ "gs", "<Plug>(leap-from-window)", mode = "n",               desc = "Leap from Windows" },
+		},
 	},
 	{
 		"kylechui/nvim-surround",
