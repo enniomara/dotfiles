@@ -38,9 +38,9 @@ local lazyConfig = {
 			"nvim-treesitter/nvim-treesitter-context",
 			dependencies = { "nvim-treesitter/nvim-treesitter" },
 			event = { "BufRead" },
-			config = function()
-				require("treesitter-context").setup()
-			end,
+			opts = {
+				multiline_threshold = 5,
+			},
 		},
 		{
 			"tpope/vim-fugitive",
