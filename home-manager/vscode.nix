@@ -101,6 +101,7 @@ in {
           adpyke.codesnap
           bierner.markdown-mermaid
           ms-playwright.playwright
+          orta.vscode-jest
         ];
 
         keybindings =
