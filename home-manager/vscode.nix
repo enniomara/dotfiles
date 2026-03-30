@@ -17,10 +17,11 @@
       when = "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus";
     }
   ];
+  package = pkgs.nixpkgs-unstable.vscode;
 in {
   programs.vscode = {
     enable = true;
-    package = pkgs.nixpkgs-unstable.vscode;
+    package = package;
     profiles = {
       nix = {};
       default = {
@@ -86,8 +87,8 @@ in {
         # let the release extensions be primarily checked. If it doesn't exist
         # there then the latest version will be checked. The first value in the
         # with statement is overshadowed by the second.
-        extensions = with pkgs.nix-vscode-extensions.vscode-marketplace;
-        with pkgs.nix-vscode-extensions.vscode-marketplace-release; [
+        extensions = with (pkgs.nix-vscode-extensions.forVSCodeVersion (package.version)).vscode-marketplace;
+        with (pkgs.nix-vscode-extensions.forVSCodeVersion (package.version)).vscode-marketplace-release; [
           asvetliakov.vscode-neovim
           github.copilot
           github.copilot-chat
