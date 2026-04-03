@@ -11,6 +11,7 @@
   mkDarwinSystem = {
     userConfigurations,
     system,
+    denModule,
   }:
     darwin.lib.darwinSystem {
       inherit system;
@@ -44,6 +45,7 @@
       in
         [
           ../home-manager/configuration.nix
+          denModule
           determinate.darwinModules.default
           home-manager.darwinModules.home-manager
           {
