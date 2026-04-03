@@ -27,6 +27,9 @@
     };
 
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/3";
+
+    import-tree.url = "github:vic/import-tree";
+    den.url = "github:vic/den";
   };
 
   outputs = inputs @ {
@@ -39,6 +42,8 @@
     devshell,
     nix-vscode-extensions,
     determinate,
+    import-tree,
+    den,
   }: let
     customOverlays = import ./home-manager/overlays.nix {inherit inputs;};
     overlays = [
@@ -51,13 +56,22 @@
     ];
 
     # the devshells used by this repo
-    devshells = import ./modules/devShell.nix {inherit devshell nixpkgs flake-utils overlays;};
+    devshells = import ./devShell.nix {inherit devshell nixpkgs flake-utils overlays;};
 
     lib = import ./lib {inherit overlays nixpkgs nixpkgs-unstable home-manager darwin determinate;};
+
+    den =
+      (inputs.nixpkgs.lib.evalModules {
+        modules = [(inputs.import-tree ./modules)];
+        specialArgs.inputs = inputs;
+      }).config;
+
+    inherit (den.den.hosts.aarch64-darwin) M-K6P79MG3J6;
   in
     {
       darwinConfigurations."M-K6P79MG3J6" = lib.mkDarwinSystem {
         system = "aarch64-darwin";
+        denModule = M-K6P79MG3J6.mainModule;
         userConfigurations = [
           {
             username = "marae";
