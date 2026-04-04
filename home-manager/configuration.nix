@@ -34,7 +34,6 @@
     enable = true;
     casks = [
       "bettertouchtool"
-      "hammerspoon"
       "karabiner-elements"
 
       "ghostty"
