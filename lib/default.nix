@@ -29,7 +29,6 @@
               imports =
                 [
                   ../home-manager/home.nix
-                  ../home-manager/karabiner
                   ../home-manager/mac-containers.nix
                 ]
                 ++ userConfig.imports;

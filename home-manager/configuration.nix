@@ -34,7 +34,6 @@
     enable = true;
     casks = [
       "bettertouchtool"
-      "karabiner-elements"
 
       "ghostty"
       "spotify"
