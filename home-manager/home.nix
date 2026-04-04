@@ -14,11 +14,6 @@
     ./open-url-via-ssh
   ];
 
-  xdg.configFile."kitty/kitty.conf".text = pkgs.lib.strings.concatStrings [
-    (builtins.readFile ../kitty/.config/kitty/kitty.conf)
-    (builtins.readFile ../kitty/.config/kitty/tokyo-night-moon.conf)
-  ];
-
   services.open-url-via-ssh.enable = true;
 
   programs.fzf = {
