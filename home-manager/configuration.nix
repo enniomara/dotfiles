@@ -27,7 +27,6 @@
   homebrew = {
     enable = true;
     casks = [
-      "ghostty"
       "spotify"
       "obsidian"
       "telegram"
