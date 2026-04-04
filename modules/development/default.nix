@@ -7,5 +7,6 @@
     me.git
 
     me.ghostty
+    me.vscode
   ];
 }

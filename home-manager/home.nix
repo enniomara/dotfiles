@@ -23,7 +23,6 @@
     ./tmux
     ./work/aws.nix
     ./open-url-via-ssh
-    ./vscode.nix
   ];
 
   # Let Home Manager install and manage itself.
