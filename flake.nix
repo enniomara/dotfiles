@@ -58,7 +58,7 @@
     # the devshells used by this repo
     devshells = import ./devShell.nix {inherit devshell nixpkgs flake-utils overlays;};
 
-    lib = import ./lib {inherit overlays nixpkgs nixpkgs-unstable home-manager darwin determinate;};
+    lib = import ./lib {inherit overlays nixpkgs nixpkgs-unstable home-manager darwin;};
 
     den =
       (inputs.nixpkgs.lib.evalModules {

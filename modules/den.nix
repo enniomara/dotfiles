@@ -26,6 +26,9 @@
   den.homes.x86_64-linux."marae@pcczc65196q9" = {};
 
   den.aspects.M-K6P79MG3J6 = {
+    includes = [
+      me.determinate
+    ];
     darwin = {
       system.primaryUser = "marae";
     };
