@@ -16,10 +16,6 @@
   nixpkgs.flake.setFlakeRegistry = false;
   nixpkgs.flake.setNixPath = false;
 
-  # Used for backwards compatibility, please read the changelog before changing.
-  # $ darwin-rebuild changelog
-  system.stateVersion = 4;
-
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';
