@@ -27,8 +27,6 @@
   homebrew = {
     enable = true;
     casks = [
-      "bettertouchtool"
-
       "ghostty"
       "spotify"
       "obsidian"
