@@ -10,7 +10,6 @@
 
   imports = [
     ./shell.nix
-    ./tmux
     ./work/aws.nix
     ./open-url-via-ssh
   ];
