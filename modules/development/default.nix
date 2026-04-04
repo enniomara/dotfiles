@@ -3,5 +3,6 @@
     me.neovim
     me.jujutsu
     me.fish
+    me.zsh
   ];
 }
