@@ -31,13 +31,6 @@
           enable = true;
         };
         shellAliases = {
-          g = "git";
-          gs = "git status";
-          ga = "git add";
-          gco = "git checkout";
-          "gc!" = "git commit --verbose --amend";
-          gc = "git commit --verbose";
-          glog = "git log --oneline --decorate --graph";
           ccat = "cat";
           cat = "bat";
           ".." = "cd ..";

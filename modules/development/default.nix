@@ -4,6 +4,7 @@
     me.jujutsu
     me.fish
     me.zsh
+    me.git
 
     me.ghostty
   ];
