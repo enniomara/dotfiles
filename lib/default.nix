@@ -19,12 +19,6 @@
       modules = let
         userConfig =
           builtins.map (userConfig: {
-            # a new version of home manager broke compatibility with
-            # nix-darwin. It started saying that $HOME as empty.
-            # https://github.com/nix-community/./home-manager/issues/4026
-            # https://github.com/nix-community/./home-manager/issues/4026
-            users.users.${userConfig.username}.home = "/Users/${userConfig.username}";
-
             home-manager.users.${userConfig.username} = {config, ...}: {
               imports =
                 [
@@ -82,8 +76,6 @@
           ../home-manager/home.nix
           {
             nixpkgs.overlays = overlays;
-            home.username = username;
-            home.homeDirectory = "/home/${username}";
             targets.genericLinux.enable = true;
 
             # Create registry so that it can be used in `nix run` commands without downloading upstream nixpkgs again
