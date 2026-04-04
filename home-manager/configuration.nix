@@ -33,10 +33,6 @@
     ];
   };
 
-  fonts.packages = [
-    pkgs.nerd-fonts.fira-code
-  ];
-
   security.pam.services.sudo_local = {
     # Allow touchid to authorize sudo
     enable = true;
