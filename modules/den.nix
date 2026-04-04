@@ -10,6 +10,11 @@
     (inputs.den.namespace "me" true)
   ];
 
+  den.default = {
+    homeManager.home.stateVersion = lib.mkDefault "23.05";
+    darwin.system.stateVersion = lib.mkDefault 4;
+  };
+
   den.schema.user.classes = lib.mkDefault ["homeManager"];
 
   den.hosts.aarch64-darwin.M-K6P79MG3J6.users.marae = {};
