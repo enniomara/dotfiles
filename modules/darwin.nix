@@ -3,5 +3,6 @@
     me.hammerspoon
     me.karabiner
     me.betterTouchTool
+    me.macContainers
   ];
 }
