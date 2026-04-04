@@ -24,6 +24,7 @@
     includes = [
       den.provides.hostname
       me.darwin-common
+      me.home-common
       me.development
     ];
   };
@@ -31,6 +32,7 @@
     includes = [
       den.provides.hostname
       me.darwin-common
+      me.home-common
       me.development
     ];
   };
