@@ -51,8 +51,6 @@
 
             nixpkgs.overlays = overlays;
 
-            system.primaryUser = (builtins.head userConfigurations).username;
-
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
