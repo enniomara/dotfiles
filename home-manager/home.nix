@@ -23,7 +23,6 @@
     ./tmux
     ./work/aws.nix
     ./open-url-via-ssh
-    ./betterTouchTool
     ./vscode.nix
   ];
 
