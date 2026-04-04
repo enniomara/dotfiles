@@ -18,12 +18,14 @@
   den.aspects.marae = {
     includes = [
       den.provides.hostname
+      me.darwin-common
       me.development
     ];
   };
   den.aspects.enniomara = {
     includes = [
       den.provides.hostname
+      me.darwin-common
       me.development
     ];
   };
