@@ -8,11 +8,6 @@
   # home.username = "marae";
   # home.homeDirectory = "/Users/marae";
 
-  imports = [
-    ./shell.nix
-    ./open-url-via-ssh
-  ];
-
   programs.fzf = {
     enable = true;
     # false because shell.nix imports fzf
