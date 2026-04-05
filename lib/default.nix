@@ -56,10 +56,6 @@
           {
             nixpkgs.overlays = overlays;
             targets.genericLinux.enable = true;
-
-            # Create registry so that it can be used in `nix run` commands without downloading upstream nixpkgs again
-            nix.registry.home.flake = nixpkgs-unstable;
-            nix.registry.home-stable.flake = nixpkgs;
           }
         ]
         ++ extraModules;
