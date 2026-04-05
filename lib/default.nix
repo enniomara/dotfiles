@@ -34,9 +34,6 @@
           denModule
           {
             nixpkgs.overlays = overlays;
-
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
           }
         ]
         ++ userConfig;

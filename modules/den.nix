@@ -12,7 +12,13 @@
 
   den.default = {
     homeManager.home.stateVersion = lib.mkDefault "23.05";
-    darwin.system.stateVersion = lib.mkDefault 4;
+
+    darwin = {
+      system.stateVersion = lib.mkDefault 4;
+
+      home-manager.useGlobalPkgs = true;
+      home-manager.useUserPackages = true;
+    };
 
     includes = [
       den.provides.define-user
