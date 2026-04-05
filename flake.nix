@@ -45,64 +45,17 @@
     import-tree,
     den,
   }: let
-    customOverlays = import ./home-manager/overlays.nix {inherit inputs;};
-    overlays = [
-      customOverlays.golangci-lint
-
-      # extends the default nixpkgs overlay to also include nixpkgs-unstable
-      customOverlays.nixpkgs-unstable
-
-      nix-vscode-extensions.overlays.default
-    ];
-
     # the devshells used by this repo
-    devshells = import ./devShell.nix {inherit devshell nixpkgs flake-utils overlays;};
-
-    lib = import ./lib {inherit overlays nixpkgs nixpkgs-unstable home-manager darwin;};
+    devshells = import ./devShell.nix inputs;
 
     den =
       (inputs.nixpkgs.lib.evalModules {
         modules = [(inputs.import-tree ./modules)];
         specialArgs.inputs = inputs;
       }).config;
-
-    inherit (den.den.hosts.aarch64-darwin) M-K6P79MG3J6;
-    pcczc65196q9 = den.den.homes.x86_64-linux."marae@pcczc65196q9";
   in
     {
-      darwinConfigurations."M-K6P79MG3J6" = lib.mkDarwinSystem {
-        system = "aarch64-darwin";
-        denModule = M-K6P79MG3J6.mainModule;
-        userConfigurations = [
-          {
-            username = "marae";
-            imports = [];
-          }
-          {
-            username = "enniomara";
-            imports = [];
-          }
-        ];
-      };
-
-      darwinConfigurations."Ennios-MacBook-Pro" = lib.mkDarwinSystem {
-        system = "x86_64-darwin";
-        userConfigurations = [
-          {
-            username = "enniomara";
-            imports = [];
-          }
-        ];
-      };
-
-      # work workstation
-      homeConfigurations."marae@pcczc65196q9" = lib.mkLinuxSystem {
-        username = "marae";
-        denModule = pcczc65196q9.mainModule;
-        extraModules = [];
-      };
-
-      homeConfigurations."vagrant@linux-box" = lib.mkLinuxSystem {username = "vagrant";};
+      inherit (den.flake) nixosConfigurations darwinConfigurations homeConfigurations;
     }
     // devshells;
 }
