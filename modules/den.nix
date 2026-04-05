@@ -96,6 +96,7 @@
       me.darwin-common
       me.home-common
       me.development
+      me.personal
     ];
   };
 }

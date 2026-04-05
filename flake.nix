@@ -68,7 +68,6 @@
 
     inherit (den.den.hosts.aarch64-darwin) M-K6P79MG3J6;
     pcczc65196q9 = den.den.homes.x86_64-linux."marae@pcczc65196q9";
-
   in
     {
       darwinConfigurations."M-K6P79MG3J6" = lib.mkDarwinSystem {
@@ -81,7 +80,7 @@
           }
           {
             username = "enniomara";
-            imports = [./home-manager/personal.nix];
+            imports = [];
           }
         ];
       };
@@ -91,7 +90,7 @@
         userConfigurations = [
           {
             username = "enniomara";
-            imports = [./home-manager/personal.nix];
+            imports = [];
           }
         ];
       };
