@@ -77,9 +77,7 @@
         userConfigurations = [
           {
             username = "marae";
-            imports = [
-              (import ./home-manager/axis.nix)
-            ];
+            imports = [];
           }
           {
             username = "enniomara";
@@ -102,9 +100,7 @@
       homeConfigurations."marae@pcczc65196q9" = lib.mkLinuxSystem {
         username = "marae";
         denModule = pcczc65196q9.mainModule;
-        extraModules = [
-          (import ./home-manager/axis.nix)
-        ];
+        extraModules = [];
       };
 
       homeConfigurations."vagrant@linux-box" = lib.mkLinuxSystem {username = "vagrant";};

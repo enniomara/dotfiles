@@ -87,6 +87,7 @@
       me.darwin-common
       me.home-common
       me.development
+      me.axis
     ];
   };
   den.aspects.enniomara = {
