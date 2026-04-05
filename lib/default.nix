@@ -50,6 +50,7 @@
 
   mkLinuxSystem = {
     username,
+    denModule,
     extraModules ? [],
   }:
     home-manager.lib.homeManagerConfiguration {
@@ -60,6 +61,7 @@
       modules =
         [
           ../home-manager/home.nix
+          denModule
           {
             nixpkgs.overlays = overlays;
             targets.genericLinux.enable = true;

@@ -67,6 +67,8 @@
       }).config;
 
     inherit (den.den.hosts.aarch64-darwin) M-K6P79MG3J6;
+    pcczc65196q9 = den.den.homes.x86_64-linux."marae@pcczc65196q9";
+
   in
     {
       darwinConfigurations."M-K6P79MG3J6" = lib.mkDarwinSystem {
@@ -112,6 +114,7 @@
       # work workstation
       homeConfigurations."marae@pcczc65196q9" = lib.mkLinuxSystem {
         username = "marae";
+        denModule = pcczc65196q9.mainModule;
         extraModules = [
           (import ./home-manager/axis.nix)
           {
@@ -129,7 +132,6 @@
               '';
             };
           }
-          ./home-manager/agent-forwarding-tmux.nix
         ];
       };
 

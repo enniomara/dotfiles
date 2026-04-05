@@ -34,6 +34,12 @@
     };
   };
 
+  den.aspects."marae@pcczc65196q9" = {
+    includes = [
+      me.agentForwardingTmux
+    ];
+  };
+
   den.aspects.marae = den.lib.parametric.exactly {
     includes = [
       den.provides.hostname
