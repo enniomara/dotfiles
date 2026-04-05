@@ -1,5 +1,13 @@
-{
+{den, ...}: {
   me.vscode = {
+    includes = [
+      (den.provides.unfree [
+        "vscode-extension-github-copilot"
+        "vscode-extension-github-copilot-chat"
+        "vscode-extension-ms-vscode-remote-remote-ssh"
+      ])
+    ];
+
     darwin = {pkgs, ...}: {
       fonts.packages = [
         pkgs.nerd-fonts.iosevka
