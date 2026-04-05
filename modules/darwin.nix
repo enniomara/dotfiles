@@ -8,6 +8,30 @@
     ];
 
     darwin = {
+      nix.extraOptions = ''
+        experimental-features = nix-command flakes
+      '';
+
+      homebrew = {
+        enable = true;
+        casks = [
+          "spotify"
+          "obsidian"
+          "telegram"
+          "ticktick"
+          "monitorcontrol" # allows to control brigtness of external monitor
+          "raycast"
+          "tailscale"
+        ];
+      };
+
+      security.pam.services.sudo_local = {
+        # Allow touchid to authorize sudo
+        enable = true;
+        reattach = true;
+        touchIdAuth = true;
+      };
+
       system = {
         defaults = {
           NSGlobalDomain = {
