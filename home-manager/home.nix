@@ -13,8 +13,6 @@
     ./open-url-via-ssh
   ];
 
-  services.open-url-via-ssh.enable = true;
-
   programs.fzf = {
     enable = true;
     # false because shell.nix imports fzf
