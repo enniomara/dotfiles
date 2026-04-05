@@ -15,15 +15,12 @@
 
     darwin = {
       system.stateVersion = lib.mkDefault 4;
-
-      home-manager.useGlobalPkgs = true;
-      home-manager.useUserPackages = true;
     };
 
     includes = [
       den.provides.define-user
+      me.nix
       me.nix-registries
-      me.nix-overlays
     ];
   };
 
