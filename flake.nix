@@ -79,19 +79,6 @@
             username = "marae";
             imports = [
               (import ./home-manager/axis.nix)
-              {
-                services.aws-sso = {
-                  enable = true;
-                  secureStore = "keychain";
-                  extraConfig = ''
-                    UrlAction: open-url-in-container
-                    ConfigProfilesUrlAction: open-url-in-container
-                    UrlExecCommand:
-                      - /Applications/Firefox.app/Contents/MacOS/firefox
-                      - "%s"
-                  '';
-                };
-              }
             ];
           }
           {
@@ -121,16 +108,6 @@
             # I want to automatically open in my laptop's browser, instead of
             # having to override the BROWSER variable
             services.open-url-via-ssh.automaticBrowserOverride = true;
-            services.aws-sso = {
-              enable = true;
-              secureStore = "file";
-              # if url opening doesn't work, make sure that the GUI services in
-              # ubuntu are not started (i.e. when a user is logged in through
-              # the gui)
-              extraConfig = ''
-                UrlAction: open
-              '';
-            };
           }
         ];
       };
