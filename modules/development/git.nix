@@ -1,5 +1,11 @@
-{
+{lib, ...}: {
   me.git = {
+    includes = [
+      ({host, ...}:
+        lib.optionalAttrs (host.class == "darwin") {
+          homeManager.programs.git.extraConfig."gpg \"ssh\"".program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
+        })
+    ];
     homeManager = {pkgs, ...}: {
       home.packages = [
         pkgs.lazygit
@@ -54,13 +60,13 @@
       };
 
       programs.zsh.shellAliases = {
-          g = "git";
-          gs = "git status";
-          ga = "git add";
-          gco = "git checkout";
-          "gc!" = "git commit --verbose --amend";
-          gc = "git commit --verbose";
-          glog = "git log --oneline --decorate --graph";
+        g = "git";
+        gs = "git status";
+        ga = "git add";
+        gco = "git checkout";
+        "gc!" = "git commit --verbose --amend";
+        gc = "git commit --verbose";
+        glog = "git log --oneline --decorate --graph";
       };
 
       programs.gh = {

@@ -20,11 +20,6 @@
           builtins.map (userConfig: {
             home-manager.users.${userConfig.username} = {config, ...}: {
               imports = userConfig.imports;
-
-              config = {
-                # use the 1password agent to sign commits on mac
-                programs.git.extraConfig."gpg \"ssh\"".program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
-              };
             };
           })
           userConfigurations;
