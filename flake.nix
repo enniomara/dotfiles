@@ -104,11 +104,6 @@
         denModule = pcczc65196q9.mainModule;
         extraModules = [
           (import ./home-manager/axis.nix)
-          {
-            # I want to automatically open in my laptop's browser, instead of
-            # having to override the BROWSER variable
-            services.open-url-via-ssh.automaticBrowserOverride = true;
-          }
         ];
       };
 

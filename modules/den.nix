@@ -48,6 +48,10 @@
               - "%s"
           '';
         })
+        (me.open-url-via-ssh {
+          # i only want the sshWithBrowser command available
+          enableAutomaticBrowserOverride = false;
+        })
       ];
     };
   };
@@ -67,6 +71,11 @@
           extraConfig = ''
             UrlAction: open
           '';
+        })
+        (me.open-url-via-ssh {
+          # I want to automatically open in my laptop's browser, instead of
+          # having to override the BROWSER variable
+          enableAutomaticBrowserOverride = true;
         })
       ];
     };
