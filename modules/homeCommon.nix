@@ -1,5 +1,9 @@
-{
+{den, ...}: {
   me.home-common = {
+    includes = [
+      (den.provides.unfree ["1password-cli"])
+    ];
+
     homeManager = {pkgs, ...}: {
       programs.home-manager.enable = true;
       programs.direnv = {
