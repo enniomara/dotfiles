@@ -10,7 +10,6 @@
 
   imports = [
     ./shell.nix
-    ./work/aws.nix
     ./open-url-via-ssh
   ];
 

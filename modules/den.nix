@@ -20,6 +20,7 @@
   };
 
   den.schema.user.classes = lib.mkDefault ["homeManager"];
+  den.ctx.user.includes = [den._.mutual-provider];
 
   den.hosts.aarch64-darwin.M-K6P79MG3J6.users.marae = {};
   den.hosts.aarch64-darwin.M-K6P79MG3J6.users.enniomara = {};
@@ -28,9 +29,26 @@
   den.aspects.M-K6P79MG3J6 = {
     includes = [
       me.determinate
+      den.provides.mutual-provider
     ];
+
     darwin = {
       system.primaryUser = "marae";
+    };
+
+    provides.marae = {
+      includes = [
+        (me.aws {
+          secureStore = "keychain";
+          extraConfig = ''
+            UrlAction: open-url-in-container
+            ConfigProfilesUrlAction: open-url-in-container
+            UrlExecCommand:
+              - /Applications/Firefox.app/Contents/MacOS/firefox
+              - "%s"
+          '';
+        })
+      ];
     };
   };
 
@@ -38,6 +56,20 @@
     includes = [
       me.agentForwardingTmux
     ];
+
+    provides.marae = {
+      includes = [
+        (me.aws {
+          secureStore = "file";
+          # if url opening doesn't work, make sure that the GUI services in
+          # ubuntu are not started (i.e. when a user is logged in through
+          # the gui)
+          extraConfig = ''
+            UrlAction: open
+          '';
+        })
+      ];
+    };
   };
 
   den.aspects.marae = den.lib.parametric.exactly {
