@@ -19,11 +19,7 @@
         userConfig =
           builtins.map (userConfig: {
             home-manager.users.${userConfig.username} = {config, ...}: {
-              imports =
-                [
-                  ../home-manager/home.nix
-                ]
-                ++ userConfig.imports;
+              imports = userConfig.imports;
 
               config = {
                 # use the 1password agent to sign commits on mac
@@ -56,11 +52,8 @@
     home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-      # Specify your home configuration modules here, for example,
-      # the path to your home.nix.
       modules =
         [
-          ../home-manager/home.nix
           denModule
           {
             nixpkgs.overlays = overlays;
