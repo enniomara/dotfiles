@@ -27,12 +27,6 @@
   den.schema.user.classes = lib.mkDefault ["homeManager"];
   den.ctx.user.includes = [den._.mutual-provider];
 
-  den.hosts.aarch64-darwin.M-K6P79MG3J6.users.marae = {};
-  den.hosts.aarch64-darwin.M-K6P79MG3J6.users.enniomara = {};
-  den.hosts.x86_64-darwin.Ennios-MacBook-Pro.users.enniomara = {};
-  den.homes.x86_64-linux."marae@pcczc65196q9" = {};
-  den.homes.x86_64-linux."vagrant@linux-box" = {};
-
   den.aspects.M-K6P79MG3J6 = {
     includes = [
       me.determinate
