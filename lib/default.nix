@@ -3,7 +3,6 @@
   home-manager,
   nixpkgs,
   nixpkgs-unstable,
-  overlays,
   ...
 }: {
   # Userconfiguration is a list of users to configure. The first user will be the primary user.
@@ -25,11 +24,7 @@
           userConfigurations;
       in
         [
-          ../home-manager/configuration.nix
           denModule
-          {
-            nixpkgs.overlays = overlays;
-          }
         ]
         ++ userConfig;
     };
@@ -46,7 +41,6 @@
         [
           denModule
           {
-            nixpkgs.overlays = overlays;
             targets.genericLinux.enable = true;
           }
         ]
