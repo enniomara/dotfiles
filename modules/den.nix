@@ -16,6 +16,7 @@
 
     includes = [
       den.provides.define-user
+      me.nix-registries
     ];
   };
 
