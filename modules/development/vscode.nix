@@ -110,7 +110,6 @@
               github.copilot-chat
               github.vscode-pull-request-github
               zhuangtongfa.material-theme
-              golang.go
               jnoortheen.nix-ide
               ms-python.python
               yzhang.markdown-all-in-one
