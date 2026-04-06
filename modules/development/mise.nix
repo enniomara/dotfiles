@@ -5,7 +5,6 @@
       enableZshIntegration = true;
       globalConfig = {
         tools = {
-          nodejs = "22";
           python = "3.12";
         };
         settings = {

@@ -90,6 +90,7 @@
       me.development
       me.axis
       me.languages._.go
+      me.languages._.node
     ];
   };
   den.aspects.enniomara = {
@@ -99,6 +100,7 @@
       me.home-common
       me.development
       me.personal
+      me.languages._.node
     ];
   };
 }
