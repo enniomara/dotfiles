@@ -5,11 +5,7 @@
     # any extra config added to the aws-sso config file
     extraConfig,
   }: {
-    homeManager = {
-      pkgs,
-      lib,
-      ...
-    }: {
+    homeManager = {pkgs, ...}: {
       home.file = {
         awsSSOConfig = {
           # source = ./aws-sso-config.yaml;
@@ -28,8 +24,9 @@
         };
       };
 
-      home.packages = [
-        pkgs.aws-sso-cli
+      home.packages = with pkgs; [
+        awscli2
+        aws-sso-cli
       ];
     };
   };
