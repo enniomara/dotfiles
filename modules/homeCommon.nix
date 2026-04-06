@@ -33,7 +33,6 @@
         pkgs.k9s
         pkgs.curl
         pkgs.go-task
-        pkgs.uv
 
         pkgs.lazydocker
 

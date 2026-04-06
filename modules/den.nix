@@ -91,6 +91,7 @@
       me.axis
       me.languages._.go
       me.languages._.node
+      me.languages._.python
     ];
   };
   den.aspects.enniomara = {
