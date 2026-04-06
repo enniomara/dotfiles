@@ -11,7 +11,7 @@
   ];
 
   den.default = {
-    homeManager.home.stateVersion = lib.mkDefault "23.05";
+    homeManager.home.stateVersion = lib.mkDefault "25.05";
 
     darwin = {
       system.stateVersion = lib.mkDefault 4;
