@@ -5,7 +5,6 @@
       enableZshIntegration = true;
       globalConfig = {
         tools = {
-          golang = "1.21";
           nodejs = "22";
           python = "3.12";
         };
@@ -16,3 +15,4 @@
     };
   };
 }
+

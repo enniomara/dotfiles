@@ -69,9 +69,6 @@
         alejandra
         clojure-lsp
 
-        gopls
-        golangci-lint
-
         lua-language-server
 
         # ts/html/css etc

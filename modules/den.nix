@@ -82,13 +82,14 @@
     };
   };
 
-  den.aspects.marae = den.lib.parametric.exactly {
+  den.aspects.marae = {
     includes = [
       den.provides.hostname
       me.darwin-common
       me.home-common
       me.development
       me.axis
+      me.languages._.go
     ];
   };
   den.aspects.enniomara = {
