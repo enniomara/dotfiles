@@ -52,10 +52,6 @@
         pkgs.vimPlugins.lazy-nvim
       ];
       extraPackages = with pkgs; [
-        # python
-        pyright
-        ruff
-
         # bash
         nodePackages.bash-language-server
         shellcheck # used by bashls
