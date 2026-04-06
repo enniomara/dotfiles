@@ -18,6 +18,17 @@
           nodePackages.typescript-language-server
         ];
       };
+
+      programs.vscode = {
+        profiles = {
+          default = {
+            extensions = with pkgs.nix-vscode-extensions.vscode-marketplace-release; [
+              ms-playwright.playwright
+              orta.vscode-jest
+            ];
+          };
+        };
+      };
     };
   };
 }
