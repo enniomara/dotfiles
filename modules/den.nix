@@ -14,7 +14,7 @@
     homeManager.home.stateVersion = lib.mkDefault "25.05";
 
     darwin = {
-      system.stateVersion = lib.mkDefault 4;
+      system.stateVersion = lib.mkDefault 6;
     };
 
     includes = [
