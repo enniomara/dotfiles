@@ -3,7 +3,7 @@
     includes = [
       ({host, ...}:
         lib.optionalAttrs (host.class == "darwin") {
-          homeManager.programs.git.extraConfig."gpg \"ssh\"".program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
+          homeManager.programs.git.settings."gpg \"ssh\"".program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
         })
     ];
     homeManager = {pkgs, ...}: {
@@ -13,7 +13,7 @@
       ];
       programs.git = {
         enable = true;
-        extraConfig = {
+        settings = {
           commit = {
             # sign all commits
             gpgsign = true;
@@ -30,20 +30,22 @@
             # removes branches I have stopped working on.
             prune = true;
           };
+          alias = {
+            # used to remove the branches which have been merged
+            "clean-branches" = "!git switch main && git pull --prune && git branch --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" { print $1 }' | xargs -r git branch -D";
+            "fu" = "!git fetch upstream";
+          };
         };
-        aliases = {
-          # used to remove the branches which have been merged
-          "clean-branches" = "!git switch main && git pull --prune && git branch --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" { print $1 }' | xargs -r git branch -D";
-          "fu" = "!git fetch upstream";
-        };
-        delta = {
-          enable = true;
-          options = {
-            line-numbers = "true";
-            features = "decorations";
-            decorations = {
-              commit-decoration-style = "yellow ol";
-            };
+      };
+
+      programs.delta = {
+        enable = true;
+        enableGitIntegration = true;
+        options = {
+          line-numbers = "true";
+          features = "decorations";
+          decorations = {
+            commit-decoration-style = "yellow ol";
           };
         };
       };

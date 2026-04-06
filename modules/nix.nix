@@ -3,6 +3,8 @@
   overlays = [
     customOverlays.golangci-lint
 
+    customOverlays.direnv
+
     # extends the default nixpkgs overlay to also include nixpkgs-unstable
     customOverlays.nixpkgs-unstable
 

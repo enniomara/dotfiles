@@ -2,7 +2,6 @@
   me.languages._.node = {
     homeManager = {pkgs, ...}: {
       programs.mise = {
-        enable = true;
         globalConfig = {
           tools = {
             nodejs = "22";
