@@ -105,16 +105,16 @@ vim.lsp.config("yamlls", {
 vim.lsp.enable("yamlls")
 
 -- LSP for nix
-vim.lsp.config("nil_ls", {
+vim.lsp.config("nixd", {
 	settings = {
-		["nil"] = {
+		["nixd"] = {
 			formatting = {
 				command = { "alejandra" },
 			},
 		},
 	},
 })
-vim.lsp.enable("nil_ls")
+vim.lsp.enable("nixd")
 
 vim.lsp.enable("pyright")
 

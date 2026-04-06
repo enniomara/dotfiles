@@ -61,7 +61,7 @@
         elixir
         elixir-ls
 
-        nil
+        pkgs.nixpkgs-unstable.nixd
         alejandra
         clojure-lsp
 
