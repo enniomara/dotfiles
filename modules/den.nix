@@ -33,12 +33,9 @@
       den.provides.mutual-provider
     ];
 
-    darwin = {
-      system.primaryUser = "marae";
-    };
-
     provides.marae = {
       includes = [
+        den.provides.primary-user
         (me.aws {
           secureStore = "keychain";
           extraConfig = ''
