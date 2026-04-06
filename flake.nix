@@ -32,19 +32,7 @@
     den.url = "github:vic/den";
   };
 
-  outputs = inputs @ {
-    self,
-    nixpkgs,
-    nixpkgs-unstable,
-    flake-utils,
-    home-manager,
-    darwin,
-    devshell,
-    nix-vscode-extensions,
-    determinate,
-    import-tree,
-    den,
-  }: let
+  outputs = inputs: let
     # the devshells used by this repo
     devshells = import ./devShell.nix inputs;
 
