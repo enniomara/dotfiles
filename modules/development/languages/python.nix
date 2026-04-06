@@ -19,6 +19,16 @@
           ruff
         ];
       };
+
+      programs.vscode = {
+        profiles = {
+          default = {
+            extensions = with pkgs.nix-vscode-extensions.vscode-marketplace-release; [
+              ms-python.python
+            ];
+          };
+        };
+      };
     };
   };
 }
