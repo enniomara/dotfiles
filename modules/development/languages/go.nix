@@ -6,6 +6,7 @@
       ...
     }: {
       programs.mise = {
+        enable = true;
         globalConfig = {
           tools = {
             golang = "1.21";

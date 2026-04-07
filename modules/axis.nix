@@ -22,14 +22,14 @@
       };
     };
 
-    programs.git.settings = {
-      user = {
-        name = "Ennio Mara";
-        email = "marae@axis.com";
-      };
-      url = {
-        "ssh://marae@gittools.se.axis.com:29418/" = {
-          insteadOf = "https://gittools.se.axis.com/gerrit/a/";
+    programs.git = {
+      userName = "Ennio Mara";
+      userEmail = "marae@axis.com";
+      extraConfig = {
+        url = {
+          "ssh://marae@gittools.se.axis.com:29418/" = {
+            insteadOf = "https://gittools.se.axis.com/gerrit/a/";
+          };
         };
       };
     };
