@@ -14,7 +14,7 @@
         buildGo124Module = args:
           prev.buildGo124Module (args
             // rec {
-              version = "2.1.6";
+              version = "2.11.4";
 
               src = prev.fetchFromGitHub {
                 owner = "golangci";

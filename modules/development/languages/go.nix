@@ -5,6 +5,10 @@
       lib,
       ...
     }: {
+      home.packages = with pkgs; [
+        golangci-lint
+      ];
+
       programs.mise = {
         enable = true;
         globalConfig = {
@@ -18,7 +22,6 @@
         extraPackages = with pkgs;
           lib.mkAfter [
             gopls
-            golangci-lint
           ];
       };
 
