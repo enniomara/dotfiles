@@ -19,6 +19,7 @@
     # this flake is updated much more frequently than the release
     # nixpkgs. Added via a custom overlay.
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs-master.url = "github:nixos/nixpkgs/master";
 
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";

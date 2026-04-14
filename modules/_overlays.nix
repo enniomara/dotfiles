@@ -5,6 +5,11 @@
       system = final.system;
       config.allowUnfree = true;
     };
+
+    nixpkgs-master = import inputs.nixpkgs-master {
+      system = final.system;
+      config.allowUnfree = true;
+    };
   };
   golangci-lint = final: prev: {
     golangci-lint =

@@ -34,7 +34,7 @@
             when = "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus";
           }
         ];
-        package = pkgs.nixpkgs-unstable.vscode;
+        package = pkgs.nixpkgs-master.vscode;
       in {
         enable = true;
         package = package;
