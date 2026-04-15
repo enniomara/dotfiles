@@ -84,6 +84,23 @@
               osascript -e 'display notification "PR checks finished" with title "Github PR"'
             ''
           ];
+          work = [
+            "util"
+            "exec"
+            "--"
+            "bash"
+            "-c"
+            ''
+              set -ex
+              echo "$@"
+              branch="$1"
+
+              jj git fetch --all-remotes
+              jj new "$branch@upstream"
+              jj bookmark track "$branch" --remote upstream
+            ''
+            "" # needed otherwise arugments are not passed to the bash script
+          ];
           gf = ["git" "fetch" "--all-remotes"];
           c = "commit";
         };
