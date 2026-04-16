@@ -6,7 +6,7 @@
   }: {
     home.packages = [
       pkgs.lazyjj
-      pkgs.jjui
+      pkgs.nixpkgs-unstable.jjui
     ];
 
     programs.jujutsu = {
