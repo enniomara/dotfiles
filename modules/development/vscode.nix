@@ -2,7 +2,6 @@
   me.vscode = {
     includes = [
       (den.provides.unfree [
-        "vscode-extension-github-copilot-chat"
         "vscode-extension-ms-vscode-remote-remote-ssh"
       ])
     ];
@@ -105,7 +104,7 @@
             extensions = with (pkgs.nix-vscode-extensions.forVSCodeVersion (package.version)).vscode-marketplace;
             with (pkgs.nix-vscode-extensions.forVSCodeVersion (package.version)).vscode-marketplace-release; [
               asvetliakov.vscode-neovim
-              github.copilot-chat
+              # github.copilot-chat
               github.vscode-pull-request-github
               zhuangtongfa.material-theme
               jnoortheen.nix-ide
