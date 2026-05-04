@@ -184,7 +184,6 @@ local lazyConfig = {
 			"nvim-neotest/neotest",
 			dependencies = {
 				"nvim-lua/plenary.nvim",
-				"antoinemadec/FixCursorHold.nvim",
 				"nvim-neotest/neotest-go",
 			},
 			version = "*",
@@ -206,7 +205,7 @@ local lazyConfig = {
 				{
 					"<leader>tT",
 					function()
-						require("neotest").run.run(vim.loop.cwd())
+						require("neotest").run.run(vim.uv.cwd())
 					end,
 					desc = "Test: Run All Tests",
 				},
