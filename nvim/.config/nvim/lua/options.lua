@@ -75,3 +75,5 @@ vim.cmd([[
 if not vim.g.vscode then
 	vim.opt.cmdheight = 0
 end
+
+require("vim._core.ui2").enable({})
