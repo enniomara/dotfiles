@@ -79,7 +79,7 @@
         python3Packages.cfn-lint
         yamllint
 
-        tree-sitter
+        pkgs.nixpkgs-unstable.tree-sitter
       ];
     };
   };

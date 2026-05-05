@@ -27,6 +27,7 @@ local lazyConfig = {
 			dependencies = {
 				"nvim-treesitter/nvim-treesitter-textobjects",
 			},
+			branch = "main",
 			event = "BufRead",
 			-- the command is commented because treesitter is managed by nix
 			-- build = ":TsUpdate",
