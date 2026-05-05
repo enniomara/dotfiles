@@ -1,10 +1,12 @@
 {...}: {
   me.neovim.homeManager = {pkgs, ...}: {
-    programs.neovim = {
+    programs.neovim = let
+      pkg = pkgs.nixpkgs-unstable;
+    in {
       enable = true;
-      package = pkgs.nixpkgs-unstable.neovim-unwrapped;
+      package = pkg.neovim-unwrapped;
       plugins = [
-        (pkgs.vimPlugins.nvim-treesitter.withPlugins (
+        (pkg.vimPlugins.nvim-treesitter.withPlugins (
           plugins:
             with plugins; [
               astro
@@ -25,7 +27,6 @@
               javascript
               jq
               json
-              jsonc
               latex
               lua
               make
@@ -49,7 +50,7 @@
         # work, as it puts the parsers in the packpath
         # https://github.com/folke/lazy.nvim/issues/402
         # https://github.com/folke/lazy.nvim/issues/516
-        pkgs.vimPlugins.lazy-nvim
+        pkg.vimPlugins.lazy-nvim
       ];
       extraPackages = with pkgs; [
         # bash
@@ -77,6 +78,8 @@
         yaml-language-server
         python3Packages.cfn-lint
         yamllint
+
+        tree-sitter
       ];
     };
   };

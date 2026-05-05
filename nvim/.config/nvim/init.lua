@@ -31,7 +31,34 @@ local lazyConfig = {
 			-- the command is commented because treesitter is managed by nix
 			-- build = ":TsUpdate",
 			config = function()
-				require("config.treesitter")
+				require("nvim-treesitter").setup({})
+				local gofolds = [[
+					[
+					(const_declaration)
+					(expression_switch_statement)
+					(for_statement)
+					(func_literal)
+					(function_declaration)
+					(if_statement)
+					(import_declaration)
+					(method_declaration)
+					(type_declaration)
+					(var_declaration)
+					(argument_list)
+					(composite_literal)
+					] @fold
+				]]
+				vim.treesitter.query.set("go", "folds", gofolds)
+			end,
+			init = function()
+				vim.api.nvim_create_autocmd("FileType", {
+					callback = function()
+						-- Enable treesitter highlighting and disable regex syntax
+						pcall(vim.treesitter.start)
+						-- Enable treesitter-based indentation
+						vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+					end,
+				})
 			end,
 		},
 		{
