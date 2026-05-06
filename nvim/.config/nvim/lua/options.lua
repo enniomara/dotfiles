@@ -35,11 +35,12 @@ vim.opt.syntax = "on"
 
 vim.opt.termguicolors = true
 
--- Due to a bug in telescope, folding will not be applied automatically so a
--- `zx` needs to be ran in order to recompute folds.
--- See https://github.com/nvim-telescope/telescope.nvim/issues/699
-vim.opt.foldenable = false -- I don't want to fold by default
+vim.opt.foldenable = true -- I don't want to fold by default
 vim.opt.foldmethod = "expr"
+-- this makes sure that all folds are open. Combined with foldenable it
+-- automatically enables folding but keeps the code unfolded (basically a
+-- vanilla experience)
+vim.opt.foldlevelstart = 99
 vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.o.foldtext = "" -- when folding it shows something like `+-- 3 lines: function foo()`. Hide it
 vim.opt.fillchars = { fold = " ", foldopen = "▾", foldclose = "▸", foldinner = " ", foldsep = " ", }
