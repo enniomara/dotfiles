@@ -40,7 +40,9 @@ vim.opt.termguicolors = true
 -- See https://github.com/nvim-telescope/telescope.nvim/issues/699
 vim.opt.foldenable = false -- I don't want to fold by default
 vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.o.foldtext = "" -- when folding it shows something like `+-- 3 lines: function foo()`. Hide it
+vim.opt.fillchars = { fold = " ", foldopen = "▾", foldclose = "▸", foldinner = " ", foldsep = " ", }
 
 vim.opt.timeoutlen = 500 -- more reasonalble default (and to make which-key show result faster)
 vim.opt.cursorline = true
